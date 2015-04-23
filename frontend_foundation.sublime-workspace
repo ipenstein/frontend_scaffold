@@ -1,0 +1,1062 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"font",
+				"font-size"
+			],
+			[
+				"padding",
+				"padding-top"
+			],
+			[
+				"back",
+				"background-position"
+			],
+			[
+				"d",
+				"d:b	display:block"
+			],
+			[
+				"border",
+				"border-right"
+			],
+			[
+				"text",
+				"text-align"
+			],
+			[
+				"pos",
+				"pos:a	position:absolute"
+			],
+			[
+				"marg",
+				"margin-top"
+			],
+			[
+				"b",
+				"bd	border"
+			],
+			[
+				"footer",
+				"footer-top"
+			],
+			[
+				"yell",
+				"yellow2"
+			],
+			[
+				"po",
+				"pos:a	position:absolute"
+			],
+			[
+				"A",
+				"Ansprechpartnerlisten"
+			],
+			[
+				"fon",
+				"font-size"
+			],
+			[
+				"list",
+				"list-style"
+			],
+			[
+				"backgrou",
+				"background"
+			],
+			[
+				"border-rad",
+				"border-radius"
+			],
+			[
+				"col",
+				"col-3"
+			],
+			[
+				"max-",
+				"max-width"
+			],
+			[
+				"backg",
+				"background"
+			],
+			[
+				"lt",
+				"lt-ie9"
+			],
+			[
+				"vertical",
+				"vertical-align"
+			],
+			[
+				"box",
+				"box-primary-big"
+			],
+			[
+				"nav-products",
+				"nav-products-categories"
+			],
+			[
+				"background",
+				"background-color"
+			],
+			[
+				"nav",
+				"nav-main"
+			],
+			[
+				"padd",
+				"padding"
+			],
+			[
+				"ba",
+				"background-color"
+			],
+			[
+				"max",
+				"max-width"
+			],
+			[
+				"margin",
+				"margin-top"
+			],
+			[
+				"badge",
+				"badge-discount"
+			],
+			[
+				"min",
+				"min-width"
+			],
+			[
+				"upp",
+				"uppercase"
+			],
+			[
+				"bra",
+				"border-radius"
+			],
+			[
+				"f",
+				"fza	font-size-adjust"
+			],
+			[
+				"whit",
+				"white-space"
+			],
+			[
+				"fontsize",
+				"fontsize-small"
+			],
+			[
+				"word",
+				"word-wrap"
+			],
+			[
+				"fz",
+				"fz	font-size"
+			],
+			[
+				"no-",
+				"no-repeat"
+			],
+			[
+				"no",
+				"nowrap"
+			],
+			[
+				"BACK",
+				"background-color"
+			],
+			[
+				"content",
+				"content-secondary"
+			],
+			[
+				"pad",
+				"padding"
+			],
+			[
+				"con",
+				"container-fluid"
+			],
+			[
+				"bac",
+				"background"
+			],
+			[
+				"page",
+				"page-articles-details"
+			],
+			[
+				"box-primary",
+				"box-primary-title-bgcolor"
+			],
+			[
+				"padding-",
+				"padding-top"
+			],
+			[
+				"artciles",
+				"articles-repeater"
+			],
+			[
+				"big-list",
+				"big-list-label"
+			],
+			[
+				"big",
+				"big-list-label"
+			],
+			[
+				"border-",
+				"border-radius"
+			],
+			[
+				"percent",
+				"percent-big"
+			],
+			[
+				"articles",
+				"articles-sub-medium"
+			],
+			[
+				"art",
+				"articles-sub-huge"
+			],
+			[
+				"articles-unit",
+				"articles-unit-custom"
+			],
+			[
+				"margi",
+				"margin-bottom"
+			],
+			[
+				"line",
+				"lineheight1"
+			],
+			[
+				"equa",
+				"equalize-me"
+			],
+			[
+				"ar",
+				"articles-basic-rate"
+			],
+			[
+				"fonts",
+				"fontsize-small"
+			],
+			[
+				"in",
+				"include"
+			],
+			[
+				"head",
+				"headingsize2"
+			],
+			[
+				"backgr",
+				"background-color"
+			],
+			[
+				"bak",
+				"background-color"
+			],
+			[
+				"inline",
+				"inline-block"
+			],
+			[
+				"form-input-margin",
+				"form-input-margin-bottom"
+			],
+			[
+				"bor",
+				"border-radius"
+			],
+			[
+				"li",
+				"lineheight1"
+			],
+			[
+				"heading",
+				"headingsize3"
+			],
+			[
+				"benefits",
+				"benefits-advantages"
+			],
+			[
+				"yelo",
+				"yellow1"
+			],
+			[
+				"NAVSIZE",
+				"navsize-small"
+			],
+			[
+				"backgorun",
+				"background-color"
+			],
+			[
+				"trans",
+				"transition"
+			],
+			[
+				"border-radius",
+				"border-top-right-radius"
+			],
+			[
+				"meta",
+				"metanav-active-color"
+			],
+			[
+				"box-socn",
+				"box-secondary-heading-color1"
+			],
+			[
+				"tex",
+				"text-transform"
+			],
+			[
+				"cen",
+				"center"
+			],
+			[
+				"op",
+				"op+	opacity: $1;\nfilter: alpha(opacity=$2);"
+			],
+			[
+				"tr",
+				"transform	CSS - transform: ;"
+			],
+			[
+				"re",
+				"relative"
+			],
+			[
+				"ff",
+				"ff6600"
+			],
+			[
+				"c",
+				"c6c6cc"
+			],
+			[
+				"tra",
+				"transparent"
+			],
+			[
+				"hi",
+				"hidden"
+			],
+			[
+				"bower",
+				"bower_components"
+			],
+			[
+				"hea",
+				"headingsize2"
+			],
+			[
+				"grid",
+				"grid-span"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "index.html",
+			"settings":
+			{
+				"buffer_size": 849,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "sass/base/_toolbelt.scss",
+			"settings":
+			{
+				"buffer_size": 5713,
+				"line_ending": "Windows"
+			}
+		}
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 368.0,
+		"last_filter": "status",
+		"selected_items":
+		[
+			[
+				"status",
+				"Git: Status"
+			],
+			[
+				"add",
+				"Git: Add..."
+			],
+			[
+				"Package Control: ",
+				"Package Control: Remove Package"
+			],
+			[
+				"in",
+				"Package Control: Install Package"
+			],
+			[
+				"insta",
+				"Package Control: Install Package"
+			],
+			[
+				"Package Control: install",
+				"Package Control: Install Package"
+			],
+			[
+				"Package Control: insta",
+				"Package Control: Install Package"
+			],
+			[
+				"prv",
+				"PackageResourceViewer: Extract Package"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"browse",
+				"Preferences: Browse Packages"
+			],
+			[
+				"Package Control: install package",
+				"Package Control: Install Package"
+			],
+			[
+				"sublimeh",
+				"SublimeHighlight: copy to clipboard as HTML"
+			],
+			[
+				"packe",
+				"Package Control: Install Package"
+			],
+			[
+				"packa",
+				"Package Control: Add Channel"
+			],
+			[
+				"list",
+				"Package Control: List Packages"
+			],
+			[
+				"Package Control: list",
+				"Package Control: List Packages"
+			]
+		],
+		"width": 496.0
+	},
+	"console":
+	{
+		"height": 203.0,
+		"history":
+		[
+			"import urllib.request,os,hashlib; h = '7183a2d3e96f11eeadd761d777e62404' + 'e330c659d4bb41d3bdf022e94cab3cd0'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://sublime.wbond.net/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/C/xampp/htdocs/frontend_foundation",
+		"/C/xampp/htdocs/frontend_foundation/sass",
+		"/C/xampp/htdocs/frontend_foundation/sass/base"
+	],
+	"file_history":
+	[
+		"/C/Users/Marc/AppData/Local/Temp/scp10060/kraeutertest/skins/website/en/accessories/sass/elements/_buttons.scss",
+		"/C/Users/Marc/AppData/Local/Temp/scp06244/kraeutertest/modules/in_shop_cart_storage/skins/dark/en/templates/layout_link.html",
+		"/C/Users/Marc/AppData/Local/Temp/scp06887/kraeutertest/modules/in_shop_cart/skins/dark/en/templates/layout_overview.html",
+		"/C/Users/Marc/AppData/Local/Temp/scp04037/sanct_bernhard_ksb_website_shop/modules/in_shop_cart/skins/dark/en/templates/layout_overview.html",
+		"/C/xampp/htdocs/wittenbrink.com/www/package.json",
+		"/C/xampp/htdocs/wittenbrink.com/www/Gruntfile.js",
+		"/C/xampp/htdocs/wittenbrink.com/www/bower.json",
+		"/C/Users/Marc/Google Drive/Dev/scss/base/_scaffold.scss",
+		"/C/Users/Marc/Google Drive/Dev/scss/base/_toolbelt.scss",
+		"/C/xampp/htdocs/ibase_dev/current_devel/skins/website/en/accessories/sass/basic/_variables.scss",
+		"/C/Users/Marc/Google Drive/Dev/scss/_vars.scss",
+		"/C/Users/Marc/Google Drive/Dev/scss/style.scss",
+		"/C/xampp/htdocs/ibase_dev/website-skin/website-skin/website/en/accessories/sass/_mixins.scss",
+		"/C/xampp/htdocs/burgerstein/www/sass/basic/_toolbelt.scss",
+		"/C/xampp/htdocs/eick_und_partner/www/skins/website/en/accessories/sass/_mixins.scss",
+		"/C/xampp/htdocs/ksb/sanct_bernhard_ksb_website_shop/skins/website/en/accessories/sass/basic/_toolbelt.scss",
+		"/C/Users/Marc/Google Drive/Dev/scss/_toolbelt.scss",
+		"/C/Users/Marc/Google Drive/Dev/scss/gradient-animation.scss",
+		"/Z/hermes_printec_hep/02_online/hermes_printec_shop_2014_04/www/modules/in_shop_articles_categories/skins/dark/en/templates/layout_flyout.html",
+		"/Z/hermes_printec_hep/02_online/hermes_printec_shop_2014_04/www/skins/website/en/templates/layout_main.html",
+		"/Z/hermes_printec_hep/02_online/hermes_printec_shop_2014_04/www/modules/in_shop_articles_variations/skins/dark/en/templates/layout_overview.html",
+		"/Z/hermes_printec_hep/02_online/hermes_printec_shop_2014_04/www/skins/website/en/accessories/sass/screen.scss",
+		"/Z/hermes_printec_hep/02_online/hermes_printec_shop_2014_04/www/skins/website/en/accessories/styles/joerg.css",
+		"/Z/hermes_printec_hep/02_online/hermes_printec_shop_2014_04/www/skins/website/en/accessories/sass/_blueprint.scss",
+		"/C/Users/Marc/Desktop/_blueprint.scss",
+		"/Z/hermes_printec_hep/02_online/hermes_printec_shop_2014_04/www/modules/in_shop_articles_variations/skins/dark/en/templates/layout_overview_multi.html",
+		"/C/xampp/htdocs/akkurat/www/akkurat_website_intranet_praesentation/sass/_basic.scss",
+		"/C/xampp/htdocs/akkurat/www/akkurat_website_intranet_praesentation/sass/_header.scss",
+		"/C/Users/Marc/.bashrc",
+		"/C/Users/Marc/.bash_profile",
+		"/C/Users/Marc/Google Drive/Sublime Text 3/Data/Packages/User/Preferences.sublime-settings",
+		"/C/xampp/htdocs/akkurat/www/akkurat_website_intranet_praesentation/sass/_toolbelt.scss",
+		"/C/xampp/htdocs/akkurat/www/akkurat_website_intranet_praesentation/sass/_variables.scss",
+		"/C/xampp/htdocs/akkurat/www/akkurat_website_intranet_praesentation/config.rb",
+		"/C/Users/Marc/Google Drive/Sublime Text 3/Data/Packages/Theme - Cobalt2/Cobalt2.sublime-theme",
+		"/C/xampp/htdocs/akkurat/www/akkurat_website_intranet_praesentation/_header.php",
+		"/C/xampp/htdocs/akkurat/www/akkurat_website_intranet_praesentation/_footer.php",
+		"/C/xampp/htdocs/akkurat/www/akkurat_website_intranet_praesentation/rechner.php",
+		"/C/xampp/htdocs/akkurat/www/akkurat_website_intranet_praesentation/maklersoftware.php",
+		"/C/xampp/htdocs/akkurat/www/akkurat_website_intranet_praesentation/index.php",
+		"/C/xampp/htdocs/akkurat/www/akkurat_website_intranet_praesentation/sass/_scaffold.scss",
+		"/C/xampp/htdocs/akkurat/www/akkurat_website_intranet_praesentation/sass/_footer.scss",
+		"/C/xampp/htdocs/akkurat/www/akkurat_website_intranet_praesentation/unterstuetzung.php",
+		"/C/xampp/htdocs/akkurat/www/akkurat_website_intranet_praesentation/formulare.php",
+		"/C/xampp/htdocs/akkurat/www/akkurat_website_intranet_praesentation/service.php",
+		"/C/Users/Marc/Google Drive/Sublime Text 3/Data/Packages/User/Default (Windows).sublime-keymap",
+		"/Z/euba_eub/EUBA_HP_2011_07/skins/website/en/accessories/styles/styles.css",
+		"/Z/akkurat_financial_service_akk/02_online/akkurat_website_intranet_praesentation_2014_09/www/ajax.php",
+		"/Z/akkurat_financial_service_akk/02_online/akkurat_website_intranet_praesentation_2014_09/www/_header.php",
+		"/C/xampp/htdocs/akkurat/www/akkurat_website_intranet_praesentation/grundlagen.php",
+		"/C/xampp/htdocs/akkurat/www/akkurat_website_intranet_praesentation/js/main.js",
+		"/C/xampp/htdocs/akkurat/www/akkurat_website_intranet_praesentation/sass/screen.scss",
+		"/C/xampp/htdocs/akkurat/www/akkurat_website_intranet_praesentation/css/screen.css",
+		"/C/xampp/htdocs/ksb/sanct_bernhard_ksb_website_shop/skins/website/en/accessories/sass/elements/_forms.scss",
+		"/C/xampp/htdocs/ksb/sanct_bernhard_ksb_website_shop/skins/website/en/accessories/javascript/layout.js",
+		"/C/Users/Marc/Downloads/Fusion364/Fusion364/Readme.txt",
+		"/C/xampp/htdocs/ksb/sanct_bernhard_ksb_website_shop/skins/website/en/accessories/sass/basic/_basic.scss",
+		"/C/Users/Marc/Desktop/AddTrustExternalCARoot-2048.pem.txt",
+		"/C/Users/Marc/Downloads/initializr-verekia-4.0/initializr/index.html",
+		"/C/xampp/htdocs/ksb/sanct_bernhard_ksb_website_shop/skins/website/en/accessories/sass/screen.scss",
+		"/C/Users/Marc/Downloads/initializr-verekia-4.0/initializr/js/main.js",
+		"/C/Users/Marc/Downloads/initializr-verekia-4.0/initializr/js/plugins.js",
+		"/C/Users/Marc/AppData/Local/Temp/scp24207/buecker_hp_suk_2015/modules/in_events/skins/dark/en/templates/layout_overview.html",
+		"/C/Users/Marc/AppData/Local/Temp/scp24768/buecker_hp_suk_2015/modules/in_products/skins/dark/de/templates/layout_overview.html",
+		"/C/Users/Marc/AppData/Local/Temp/scp23221/buecker_hp_suk_2015/modules/in_products/skins/dark/en/templates/layout_overview.html",
+		"/C/Users/Marc/AppData/Local/Temp/scp38622/EUBA_HP_2011_07/temp/config_user.php",
+		"/Z/euba_eub/EUBA_HP_2011_07/modules/in_contact/skins/dark/en/templates/layout_mail.html",
+		"/Z/euba_eub/EUBA_HP_2011_07/modules/in_contact/skins/de.ini",
+		"/Z/euba_eub/translate.txt",
+		"/C/Users/Marc/AppData/Local/Temp/scp42114/buecker_hp_suk_2015/skins/website/en/accessories/styles/styles.css",
+		"/C/Users/Marc/AppData/Local/Temp/scp43862/buecker_hp_suk_2015/skins/website/en/templates/layout_main.html",
+		"/C/Users/Marc/AppData/Local/Temp/scp52637/buecker_hp_suk_2015/skins/website/de/language.ini",
+		"/C/Users/Marc/AppData/Local/Temp/scp52233/buecker_hp_suk_2015/skins/website/en/language.ini",
+		"/C/Users/Marc/AppData/Local/Temp/scp58145/buecker_hp_suk_2015/skins/website/en/accessories/styles/styles.css",
+		"/C/Users/Marc/AppData/Local/Temp/scp05945/buecker_hp_suk_2015/modules/in_events/skins/dark/en/templates/layout_overview.html",
+		"/C/Users/Marc/AppData/Local/Temp/scp05096/buecker_hp_suk_2015/modules/in_events/skins/dark/en/templates/layout_details.html",
+		"/C/Users/Marc/AppData/Local/Temp/scp06468/buecker_hp_suk_2015/modules/in_products/skins/dark/en/templates/layout_overview.html",
+		"/C/Users/Marc/AppData/Local/Temp/scp06362/buecker_hp_suk_2015/modules/in_products/skins/dark/de/templates/layout_details.html",
+		"/C/Users/Marc/AppData/Local/Temp/scp11880/buecker_hp_suk_2015/modules/in_events/index.php",
+		"/C/Users/Marc/AppData/Local/Temp/scp03073/buecker_hp_suk_2015/modules/ex_eventsbak/index.php",
+		"/Z/euba_eub/EUBA_HP_2011_07/modules/in_accessories/skins/en.ini",
+		"/Z/euba_eub/EUBA_HP_2011_07/plugins/website_navigation.php",
+		"/C/Users/Marc/AppData/Local/Temp/scp32281/kraeutertest/skins/website/en/templates/layout_main.html",
+		"/C/Users/Marc/AppData/Local/Temp/scp48832/kraeutertest/skins/website/en/accessories/javascript/layout.js",
+		"/C/Users/Marc/AppData/Local/Temp/scp28832/kraeutertest/skins/website/en/accessories/javascript/core.js",
+		"/C/Users/Marc/AppData/Local/Temp/scp28664/kraeutertest/skins/website/en/accessories/javascript/legacy.js",
+		"/C/Users/Marc/AppData/Local/Temp/scp26928/kraeutertest/skins/website/en/accessories/javascript/shop.js",
+		"/C/Users/Marc/AppData/Local/Temp/scp26455/kraeutertest/skins/website/en/accessories/javascript/main.js",
+		"/C/Users/Marc/AppData/Local/Temp/scp25052/kraeutertest/skins/website/en/accessories/javascript/jquery/jquery.live.js",
+		"/C/Users/Marc/AppData/Local/Temp/scp01588/kraeutertest/skins/website/en/accessories/styles/screen.css",
+		"/C/Users/Marc/Documents/molyneux.txt",
+		"/C/Users/Marc/Downloads/f.txt",
+		"/C/Program Files/zabkat/xplorer2/changes.txt",
+		"/C/Users/Marc/Downloads/razor-lrx22c-factory-a9c6e55f/razor-lrx22c-factory-a9c6e55f/razor-lrx22c/flash-all.bat",
+		"/C/xampp/htdocs/ksb/sanct_bernhard_ksb_website_shop/temp/config_user.php",
+		"/C/xampp/htdocs/ksb/sanct_bernhard_ksb_website_shop/skins/checkout/de/language.ini",
+		"/C/xampp/htdocs/ksb/sanct_bernhard_ksb_website_shop/skins/mobile/en/accessories/styles/styles.css",
+		"/C/xampp/htdocs/ksb/sanct_bernhard_ksb_website_shop/skins/website/en/accessories/sass/sections/_header.scss",
+		"/C/xampp/htdocs/ksb/sanct_bernhard_ksb_website_shop/skins/checkout/en/templates/layout_main.html",
+		"/C/xampp/htdocs/ksb/sanct_bernhard_ksb_website_shop/skins/website/en/templates/layout_main.html",
+		"/C/Users/Marc/AppData/Local/Temp/scp10681/herbafit/ibase/module/medienarchiv/dateien/newsletter/Newsletter_2014_10/index.html",
+		"/C/xampp/htdocs/ksb/sanct_bernhard_ksb_website_shop/skins/website/en/accessories/sass/basic/_variables.scss",
+		"/C/xampp/htdocs/ksb/sanct_bernhard_ksb_website_shop/skins/mobile/en/accessories/styles/styles_jquery_mobile.css",
+		"/C/xampp/htdocs/ksb/sanct_bernhard_ksb_website_shop/modules/ex_imprint/skins/mobile/en/templates/layout_default.html",
+		"/C/AdwCleaner/AdwCleaner[S0].txt",
+		"/C/Users/Marc/AppData/Local/Temp/scp49204/kraeuterhaus.de/ibase/module/medienarchiv/dateien/newsletter/Newsletter_Oktober_2014/index.html",
+		"/C/xampp/htdocs/test-jekyll/testsite2/_config.yml",
+		"/C/xampp/htdocs/ksb/sanct_bernhard_ksb_website_shop/modules/in_shop_articles_variations/skins/de.ini",
+		"/C/xampp/htdocs/ksb/sanct_bernhard_ksb_website_shop/skins/mobile/en/accessories/styles/screen_css.php",
+		"/C/xampp/htdocs/ksb/sanct_bernhard_ksb_website_shop/modules/in_shop_articles/index.php",
+		"/C/xampp/htdocs/ksb/sanct_bernhard_ksb_website_shop/skins/mobile/en/templates/layout_main.html",
+		"/C/xampp/htdocs/ksb/sanct_bernhard_ksb_website_shop/modules/in_shop_articles_variations/skins/mobile/en/templates/layout_details.html",
+		"/C/xampp/htdocs/ksb/sanct_bernhard_ksb_website_shop/modules/in_shop_articles_variations/index.php",
+		"/C/xampp/htdocs/ksb/sanct_bernhard_ksb_website_shop/modules/in_shop_articles_variations/skins/mobile/en/templates/layout_overview.html",
+		"/C/xampp/htdocs/ksb/sanct_bernhard_ksb_website_shop/temp/explorer/files/webpflege/layout_home_mobile.html",
+		"/C/xampp/htdocs/ksb/sanct_bernhard_ksb_website_shop/temp/explorer/files/webpflege/layout_home.html",
+		"/C/xampp/htdocs/ksb/sanct_bernhard_ksb_website_shop/modules/in_shop_articles/skins/dark/en/templates/layout_overview.html",
+		"/C/xampp/htdocs/ksb/sanct_bernhard_ksb_website_shop/modules/in_shop_articles_categories/skins/dark/en/templates/layout_teaser_worlds_top.html",
+		"/C/xampp/htdocs/ksb/sanct_bernhard_ksb_website_shop/modules/in_shop_articles_categories/skins/mobile/en/templates/layout_teaser_worlds_top.html",
+		"/C/xampp/htdocs/ksb/sanct_bernhard_ksb_website_shop/modules/in_shop_articles/skins/mobile/en/templates/layout_overview.html",
+		"/C/xampp/htdocs/ksb/sanct_bernhard_ksb_website_shop/skins/mobile/en/templates/layout_char_selector.html",
+		"/C/Users/Marc/Downloads/prevent-overscroll-master/prevent-overscroll-master/index.html",
+		"/C/Users/Marc/Downloads/prevent-overscroll-master/prevent-overscroll-master/index.js",
+		"/C/xampp/htdocs/ksb/sanct_bernhard_ksb_website_shop/modules/in_shop_order/skins/mobile/en/templates/layout_edit.html",
+		"/C/xampp/htdocs/ksb/sanct_bernhard_ksb_website_shop/modules/in_shop_cart/skins/mobile/en/templates/layout_teaser.html",
+		"/C/xampp/htdocs/ksb/sanct_bernhard_ksb_website_shop/modules/in_shop_cart/skins/mobile/en/templates/layout_overview.html",
+		"/C/xampp/htdocs/ksb/sanct_bernhard_ksb_website_shop/modules/in_shop_cart/skins/mobile/en/templates/layout_table.html",
+		"/C/xampp/htdocs/ksb/sanct_bernhard_ksb_website_shop/modules/in_shop_articles/skins/mobile/en/templates/layout_details.html"
+	],
+	"find":
+	{
+		"height": 57.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			".box",
+			"cols",
+			"caption",
+			"caret",
+			"dropdown",
+			"SUB_NAVIGATION",
+			"focus",
+			"autofocus",
+			"force",
+			"query",
+			"search",
+			"top",
+			"warenkorb",
+			"450",
+			"basic_rate",
+			".ui-header .ui-btn-inner",
+			"footer",
+			"ui-focus",
+			"cart-ul",
+			"charselector",
+			"char_selector",
+			".png",
+			"ui-search",
+			"query",
+			"ui-btn",
+			"p {",
+			"h3",
+			"ul-li-static",
+			"search",
+			"ui-input-search ",
+			"ui-body-b",
+			"h1",
+			"search",
+			"-e",
+			"ui-body-d",
+			"ref=nl1409",
+			"ui-collapsible-heading",
+			"ui-collaps",
+			".6em",
+			"ui-corner-top",
+			"ui-shadow",
+			"text-shadow",
+			"ui-bar-e",
+			"ui-title",
+			".more",
+			"include",
+			"query",
+			"einwohl",
+			"content.php",
+			"email",
+			"login",
+			"loginForm",
+			"console",
+			"log",
+			"git",
+			"active",
+			"open",
+			".open",
+			".nav-articles-categories ul li.active",
+			"footer em",
+			":first-ch",
+			"badge-discount",
+			"checkbox_newsletter",
+			"checkbox_newsletter	",
+			"incen",
+			"number",
+			"order",
+			"column1",
+			".scss",
+			"versand",
+			"txt_history_order_no",
+			"upper",
+			"art",
+			"mwst",
+			"nav_aktionen",
+			"badge-top",
+			"user",
+			"%",
+			"code",
+			"articles-unit",
+			"secondary",
+			"SEC06",
+			"active",
+			"dropdown",
+			"input-placeholder",
+			"0px",
+			"auto",
+			"}\"",
+			"width-2cols",
+			"width-1cols",
+			"red",
+			"primary",
+			"button",
+			"Button",
+			"button",
+			"Button",
+			"button",
+			"Button",
+			"button",
+			"Button",
+			"button",
+			"Button",
+			"button",
+			"Semibold",
+			"z-index",
+			"opacity",
+			"scale",
+			"border-color",
+			"E9AC00",
+			"option",
+			"select",
+			"ff66",
+			"}\n",
+			"box-",
+			"makedirec",
+			"maked",
+			"SEC08",
+			"opacity",
+			"translate(10px,0);",
+			"transform:",
+			"translate",
+			"scale(1.5)",
+			"1.2",
+			"0E8FBD",
+			"after",
+			"SEC06",
+			";\n",
+			"transition"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"-f",
+			"ref=nl1410",
+			"5px",
+			"http://www.kraeuterhaus.de/content.php",
+			"                <label class=\"{class_contact_salutation}\" for=\"index[contact][data][contact_salutation]\">\n                    {asterix_contact_salutation}\n                    {name_contact_salutation}\n                </label>\n                {selectbox_salutation}\n                <span class=\"formError\">{error_contact_salutation}</span><br clear=\"left\" />\n            </div>"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 1,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "index.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 849,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								819,
+								819
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"auto_name": "",
+							"bh_regions":
+							[
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content"
+							],
+							"hasHeader": false,
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/HTML/HTML.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "sass/base/_toolbelt.scss",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 5713,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								5100,
+								5100
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"bh_regions":
+							[
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content"
+							],
+							"hasHeader": false,
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/Sass/Syntaxes/Sass.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 5456.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 34.0
+	},
+	"input":
+	{
+		"height": 43.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"output.sftp":
+	{
+		"height": 317.0
+	},
+	"pinned_build_system": "",
+	"project": "frontend_foundation.sublime-project",
+	"replace":
+	{
+		"height": 110.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"home",
+				"temp\\explorer\\files\\webpflege\\layout_home.html"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"",
+				"Z:\\hermes_printec_hep\\02_online\\hermes_printec_shop_2014_04\\hermes_printec_shop_2014_04.sublime-project"
+			]
+		],
+		"width": 380.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 263.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

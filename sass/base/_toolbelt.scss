@@ -1,0 +1,279 @@
+/*
+# base/_toolbelt.scss
+
+A collection of helper mixins, placeholders and classes.
+*/
+
+/*
+# .clearfix helper class
+
+Don't use clearfix-mixin from compass as it isn't considered a best practice.
+Use HTML5-Boilerplate's @mixin micro-clearfix instead.
+*/
+.clearfix {
+    @include micro-clearfix;
+}
+
+/*
+# @mixin bp
+
+Dynamic breakpoint mixin. Use it to place media queries inside of CSS
+declaration blocks. Feel free to add more breakpoints in _variables.scss.
+
+    $breakpoints: small 500px, medium 700px, big 900px;
+    .wrapper {
+        width: 220px;
+        @include bp(small) {
+            width: 460px;
+        }
+    }
+
+https://github.com/DarbyBrown/QuickSass/blob/master/scss/mixins/_breakpoints.scss
+*/
+@mixin bp($point) {
+    @each $breakpoint in $breakpoints {
+        $name: nth($breakpoint, 1);
+        $width: nth($breakpoint, 2);
+        @if $name == $point {
+            @media (min-width: $width) {
+                @content;
+            }
+        }
+    }
+}
+
+/*
+# @mixin hd
+
+Retina breakpoint.
+*/
+@mixin hd($ratio: 2, $resolution: 192dpi) {
+    @media (-min-device-pixel-ratio: $ratio), (min-resolution: $resolution) {
+        @content;
+    }
+}
+
+/*
+# Dynamic classes based on $breakpoints.
+
+Dont't show an element until or hide it starting at a specific breakpoint.
+
+$breakpoints: small 500px, medium 700px, big 900px;
+.reveal-small {}
+.reveal-medium {}
+.reveal-big {}
+.hide-small {}
+.hide-medium {}
+.hide-big {}
+*/
+@each $breakpoint in $breakpoints {
+    $name: nth($breakpoint, 1);
+    $width: nth($breakpoint, 2);
+    .reveal-#{$name} {
+        display: none !important;
+        @media (min-width: $width) {
+            display: block !important;
+        }
+    }
+    .hide-#{$name} {
+        display: block !important;
+        @media (min-width: $width) {
+            display: none !important;
+        }
+    }
+}
+
+/*
+# REM font sizing
+
+http://css-tricks.com/snippets/css/less-mixin-for-rem-font-sizing/
+*/
+@mixin font-size($size: 1.6) {
+    font-size: ($size * 10) + px;
+    font-size: $size + rem;
+}
+
+/*
+# @mixin word-wrap
+*/
+@mixin word-wrap {
+    word-break: break-word;
+    -webkit-hyphens: auto;
+       -moz-hyphens: auto;
+            hyphens: auto;
+}
+
+/*
+# @mixin truncate-text
+
+Ensuring that your text element doesn’t overflow its container and breaks
+nicely. It takes one parameter, which is any of the valid text-overflow values.
+
+http://hackingui.com/front-end/10-best-scss-utilities/
+*/
+@mixin truncate-text( $overflow: ellipsis ) {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: $overflow; // values are: clip, ellipsis, or a string
+}
+
+/*
+# @mixin cover everything
+*/
+@mixin cover {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/*
+# @mixin center-vertical
+
+For vertically centering elements with a dynamic size. Works beautifully and
+doesn’t require an extra, non-semantic HTML element.
+
+http://hackingui.com/front-end/10-best-scss-utilities/
+*/
+@mixin center-vertical {
+    &:before {
+        content: '';
+        @include inline-block;
+        height: 100%; width: .1px;
+    }
+}
+
+/*
+# @mixin center-both
+
+Horizontally and vertically center elements with a dynamic size. Works only
+in modern Browsers.
+*/
+@mixin center-both {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    @include translate(-50%, -50%);
+}
+
+/*
+# @mixin no-list
+
+Reset list styles (list-style-type, margin, padding)
+*/
+@mixin no-list {
+    &,
+    & li {
+        list-style: none;
+        background-image: none;
+        padding: 0;
+        margin: 0;
+    }
+}
+
+/*
+# %currency
+
+Display a currency symbol on any type of text element.
+
+    .price {
+        @extend %currency;
+    }
+
+    <body class="EUR">
+        <span class="price">45</span>
+    </body>
+
+http://hackingui.com/front-end/10-best-scss-utilities/
+*/
+%currency {
+    position: relative;
+    &:before {
+        content: '\20AC';
+        position: relative;
+        left: 0;
+    }
+}
+.USD %currency:before { content: '$'; }
+.EUR %currency:before { content: '\20AC'; }
+.ILS %currency:before { content: '\20AA'; }
+.GBP %currency:before { content: '\00A3'; }
+
+/*
+# @mixin caret
+
+Creates a right angled triangle pointing to a direction specified by $direction.
+
+$direction: top, right, bottom or left
+$size: px-value
+$color: color-value
+*/
+@mixin caret($direction: top, $size: 10px, $color: #333) {
+    $opposite: opposite-position($direction);
+    border: $size solid transparent;
+    border-#{$opposite}: $size solid $color;
+    border-#{$direction}: 0;
+    height: 0;
+    width: 0;
+}
+
+/*
+# @mixin gradient-transition
+
+Creates a :hover-transition-effect with a gradient.
+
+$start: color-value
+$end: color-value
+$time: transition duration
+
+*/
+@mixin gradient-transition( $start, $end, $duration ){
+    background-size: 100%;
+    background-image: linear-gradient($start, $end);
+    position: relative;
+    z-index: 100;
+    &:before {
+        background-image: linear-gradient($end, $start);
+        content: '';
+        display: block;
+        height: 100%;
+        position: absolute;
+        top: 0; left: 0;
+        opacity: 0;
+        width: 100%;
+        z-index: -100;
+        transition: opacity $duration;
+    }
+    &:hover {
+        &:before {
+            opacity: 1;
+        }
+    }
+}
+
+/*
+# Webkit Scrollbar Styling
+
+http://codepen.io/HugoGiraudel/details/KFDuB
+*/
+@mixin scrollbar($size, $primary, $secondary: lighten($primary, 25%)) {
+    ::-webkit-scrollbar {
+        width:  $size;
+        height: $size;
+    }
+
+    ::-webkit-scrollbar-thumb {
+        background: $primary;
+    }
+
+    ::-webkit-scrollbar-track {
+        background: $secondary;
+    }
+
+    // For Internet Explorer
+    body {
+        scrollbar-face-color: $primary;
+        scrollbar-track-color: $secondary;
+    }
+}
