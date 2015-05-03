@@ -1,5 +1,15 @@
 /* _scaffold.scss */
 
+* {
+    @include box-sizing(border-box);
+}
+
 html {
     font-size: 62.5%; /* Sets up the Base 10 stuff */
+}
+
+body,
+p {
+    @include font-size(16,20);
+
 }
