@@ -1,0 +1,21 @@
+/*
+# sections/_hero.scss
+*/
+
+.hero {
+    background-color: $grey2;
+    background: image-url("bg-hero.png");
+    height: 300px;
+    z-index: 10;
+    position: relative;
+}
+
+.hero-rocket {
+    position: absolute;
+    right: 80px;
+    top: -30px;
+    width: 409px;
+    height: 375px;
+    background: image-url("rocket-hero.png") no-repeat;
+    z-index: 9;
+}

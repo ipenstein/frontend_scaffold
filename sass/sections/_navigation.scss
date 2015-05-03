@@ -1,0 +1,38 @@
+/*
+# gui/_navigation.scss
+*/
+
+.main-nav {
+    position: absolute;
+    right: 0;
+    top: 0;
+
+    ul {
+        @include inline-list;
+    }
+
+    li {
+        background: none;
+    }
+
+    a {
+        float: left;
+        margin: 0 10px;
+        padding: 0px 0 11px;
+        border: 10px solid transparent;
+        color: $green1;
+        text-transform: uppercase;
+        text-decoration: none;
+        @include transition-property(color);
+        @include transition-duration(0.2s);
+        @include transition-timing-function(ease-in);
+        &:hover {
+            color: $grey4;
+        }
+    }
+
+    li.active a {
+        color: $grey4;
+        border-bottom-color: $grey4;
+    }
+}

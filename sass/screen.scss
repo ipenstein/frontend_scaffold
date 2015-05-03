@@ -31,17 +31,25 @@ $fa-font-path: "../bower_components/font-awesome/fonts/";
 /*
 # Basic styles
 */
-//@import "base/webfonts";               // Local Webfonts
-@import "base/vars";                   // Variablen
-@import "base/toolbelt";               // Hilfreiche Klassen und Mixins
-//@import "base/basic";                  // Basiselemente
-@import "base/scaffold";               // Basisgerüst
+//@import "base/webfonts";              // Local webfonts
+@import "base/vars";                    // Variables
+@import "base/toolbelt";                // Helpful class and mixins
+@import "base/animations";              // CSS3-Animation mixins
+@import "base/base";                    // HTML-elements
+@import "base/scaffold";                // Basic site scaffold
 
 /*
-# Elements
+# GUI
 
-Styles for reusable elements.
+Styles for gui-elements.
 */
+
+
+
+
+
+
+
 //@import "elements/icons";               // Icons
 //@import "elements/badges";              // Abzeichen, Störer
 //@import "elements/lists";               // Listen
@@ -68,7 +76,8 @@ Styles for reusable elements.
 
 Styles for specific sections of the page (i.E. Header, Footer etc.).
 */
-//@import "sections/topnav";              // Top-Navigation
+@import "sections/navigation";          // Main navigation
+@import "sections/hero";                // Hero unit
 //@import "sections/header";              // Header
 //@import "sections/mainnav";             // Hauptnavigation
 //@import "sections/bottom-notice";       // Alle Preise MwSt

@@ -1,0 +1,79 @@
+/*
+# base/_base.scss
+*/
+
+html {
+    font-size: 62.5%; /* Sets up the Base 10 stuff */
+}
+
+body,
+p,
+td,
+input,
+textarea,
+select {
+    font-family: $fontfamily1;
+    @include font-size(16,20);
+}
+
+p {
+   padding: 0;
+   margin: 10px 0;
+}
+
+h1, h2, h3, h4 {
+    font-family: $fontfamily2;
+    font-weight: normal;
+    padding: 0;
+    margin: 20px 0;
+}
+h1 {    @include font-size(32,30);  }
+h2 {    @include font-size(26,30);  }
+h3 {    @include font-size(20,20);  }
+h4 {    @include font-size(16,20);
+        font-weight: bold;          }
+
+a {
+    color: $link-color;
+    text-decoration: underline;
+    &:visited {
+        color: $link-visited-color;
+    }
+    &:hover,
+    &:focus,
+    &:active {
+        color: $link-hover-color;
+        text-decoration: none;
+    }
+}
+
+em, i {
+    font-style: italic;
+}
+
+b, strong {
+    font-weight: bold;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0px;
+    margin: 10px 0;
+    & > ul {
+        margin: 0;
+    }
+}
+
+ul li {
+    background: image-url("li.png") 0 8px no-repeat;
+    padding-left: 15px;
+}
+
+hr {
+    border: 0;
+    border-bottom: 1px solid $hr-color;
+    height: 1px;
+    margin-top: 19px;
+    margin-bottom: 20px;
+    padding: 0;
+}

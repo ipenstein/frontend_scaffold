@@ -2371,33 +2371,236 @@ $time: transition duration
 
 http://codepen.io/HugoGiraudel/details/KFDuB
 */
+/*
+# _animations.scss
+
+Mixins for CSS3 keyframe animations.
+*/
+/*
+Example:
+    button {
+        &.working {
+            @include animation('working-bg 0.5s');
+            @include animation-property('iteration-count', 'infinite');
+        }
+    }
+    @include keyframes('working-bg') {
+        from { background-color: rgba(#090, 0); }
+        to { background-color: rgba(#090, 0.5); }
+    }
+
+    <button class="working">Please wait...</button>
+*/
+/*
+# base/_base.scss
+*/
+html {
+  font-size: 62.5%;
+  /* Sets up the Base 10 stuff */ }
+
+body,
+p,
+td,
+input,
+textarea,
+select {
+  font-family: "Helvetica-Neue", Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  line-height: 20px;
+  font-size: 1.6rem;
+  line-height: 2rem; }
+
+p {
+  padding: 0;
+  margin: 10px 0; }
+
+h1, h2, h3, h4 {
+  font-family: "Droid Serif", Georgia, "Times New Roman", Times, serif;
+  font-weight: normal;
+  padding: 0;
+  margin: 20px 0; }
+
+h1 {
+  font-size: 32px;
+  line-height: 30px;
+  font-size: 3.2rem;
+  line-height: 3rem; }
+
+h2 {
+  font-size: 26px;
+  line-height: 30px;
+  font-size: 2.6rem;
+  line-height: 3rem; }
+
+h3 {
+  font-size: 20px;
+  line-height: 20px;
+  font-size: 2rem;
+  line-height: 2rem; }
+
+h4 {
+  font-size: 16px;
+  line-height: 20px;
+  font-size: 1.6rem;
+  line-height: 2rem;
+  font-weight: bold; }
+
+a {
+  color: #109acc;
+  text-decoration: underline; }
+  a:visited {
+    color: #09536d; }
+  a:hover, a:focus, a:active {
+    color: #e53f32;
+    text-decoration: none; }
+
+em, i {
+  font-style: italic; }
+
+b, strong {
+  font-weight: bold; }
+
+ul {
+  list-style-type: none;
+  padding: 0px;
+  margin: 10px 0; }
+  ul > ul {
+    margin: 0; }
+
+ul li {
+  background: url('../img/li.png?1410785647') 0 8px no-repeat;
+  padding-left: 15px; }
+
+hr {
+  border: 0;
+  border-bottom: 1px solid #999;
+  height: 1px;
+  margin-top: 19px;
+  margin-bottom: 20px;
+  padding: 0; }
+
 /* _scaffold.scss */
 * {
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
   box-sizing: border-box; }
 
-html {
-  font-size: 62.5%;
-  /* Sets up the Base 10 stuff */ }
+html,
+body {
+  background-color: #eee;
+  text-align: center; }
 
-body,
-p {
-  font-size: 16px;
-  line-height: 20px;
-  font-size: 1.6rem;
-  line-height: 2rem; }
+.container {
+  margin: 0 auto;
+  text-align: left;
+  min-width: 320px;
+  max-width: 1200px;
+  padding: 0 20px;
+  position: relative; }
+
+.site-header {
+  background-color: #333;
+  padding: 20px 0;
+  position: relative;
+  z-index: 30;
+  -moz-box-shadow: rgba(0, 0, 0, 0.2) 0 15px 15px;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.2) 0 15px 15px;
+  box-shadow: rgba(0, 0, 0, 0.2) 0 15px 15px; }
+
+.logo {
+  color: #ccc;
+  font-family: "Droid Serif", Georgia, "Times New Roman", Times, serif;
+  font-size: 30px;
+  line-height: 30px;
+  font-size: 3rem;
+  line-height: 3rem;
+  text-transform: uppercase;
+  text-decoration: none;
+  padding-top: 20px; }
+  .logo i {
+    color: #6fa938; }
+
+.content {
+  padding: 20px 0;
+  z-index: 20;
+  position: relative;
+  background-color: rgba(238, 238, 238, 0.75); }
+
+.site-footer {
+  background-color: #ccc;
+  padding: 20px 0;
+  z-index: 10; }
 
 /*
-# Elements
+# GUI
 
-Styles for reusable elements.
+Styles for gui-elements.
 */
 /*
 # Sections
 
 Styles for specific sections of the page (i.E. Header, Footer etc.).
 */
+/*
+# gui/_navigation.scss
+*/
+.main-nav {
+  position: absolute;
+  right: 0;
+  top: 0; }
+  .main-nav ul {
+    list-style-type: none; }
+    .main-nav ul, .main-nav ul li {
+      margin: 0;
+      padding: 0;
+      display: inline; }
+  .main-nav li {
+    background: none; }
+  .main-nav a {
+    float: left;
+    margin: 0 10px;
+    padding: 0px 0 11px;
+    border: 10px solid transparent;
+    color: #6fa938;
+    text-transform: uppercase;
+    text-decoration: none;
+    -moz-transition-property: color;
+    -o-transition-property: color;
+    -webkit-transition-property: color;
+    transition-property: color;
+    -moz-transition-duration: 0.2s;
+    -o-transition-duration: 0.2s;
+    -webkit-transition-duration: 0.2s;
+    transition-duration: 0.2s;
+    -moz-transition-timing-function: ease-in;
+    -o-transition-timing-function: ease-in;
+    -webkit-transition-timing-function: ease-in;
+    transition-timing-function: ease-in; }
+    .main-nav a:hover {
+      color: #ccc; }
+  .main-nav li.active a {
+    color: #ccc;
+    border-bottom-color: #ccc; }
+
+/*
+# sections/_hero.scss
+*/
+.hero {
+  background-color: #666;
+  background: url('../img/bg-hero.png?1430690381');
+  height: 300px;
+  z-index: 10;
+  position: relative; }
+
+.hero-rocket {
+  position: absolute;
+  right: 80px;
+  top: -30px;
+  width: 409px;
+  height: 375px;
+  background: url('../img/rocket-hero.png?1430690418') no-repeat;
+  z-index: 9; }
+
 /*
 # Pages
 

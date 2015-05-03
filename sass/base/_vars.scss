@@ -49,15 +49,18 @@ $turquise1:             #86cee0;
 /*
 # basic site colors
 */
-$body-bgcolor:          $grey5;
-$body-color:            $grey1;
-$body-color-alt:        $grey3;
+$text-color:            $grey1;
 
 $link-color:            $blue1;
 $link-hover-color:      $red1;
 $link-visited-color:    darken($blue1, 20%);
 
 $hr-color:              $grey3;
+
+$body-bgcolor:          $grey5;
+$hero-bgcolor:          $grey4;
+$header-bgcolor:        $grey1;
+$footer-bgcolor:        $grey4;
 
 /*
 # Basic typography
