@@ -1,0 +1,24 @@
+/*
+# misc/_example.scss
+*/
+
+.example-grid {
+    @include container;
+}
+
+.example-col-left {
+    @include bp(small) {    @include span(6);   }
+    @include bp(medium) {   @include span(4);   }
+    @include bp(big) {      @include span(3);   }
+}
+
+.example-col-right {
+    @include bp(small) {    @include span(6 last);  }
+    @include bp(medium) {   @include span(8 last);  }
+    @include bp(big) {      @include span(9 last);  }
+}
+
+.example-module {
+    background: $green1;
+    padding: 20px;
+}

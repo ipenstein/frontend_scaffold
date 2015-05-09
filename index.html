@@ -29,8 +29,9 @@
     <![endif]-->
     <header class="site-header">
         <div class="container">
-            <a class="logo" href="index.html"><i class="fa fa-rocket"></i> Frontend Foundation</a>
+            <a class="logo" href="index.html"><i class="fa fa-rocket"></i> Foundation</a>
             <nav class="main-nav">
+                <a class="trigger" href="javascript:void(0);"><i class="fa fa-bars"></i></a>
                 <ul>
                     <li id="nav-home" class="active"><a href="index.html">Home</a></li>
                     <li id="nav-about"><a href="about.html">About</a></li>
@@ -43,7 +44,6 @@
     <section class="hero">
         <div class="container">
             Hero Unit
-            <div class="hero-rocket"></div>
         </div>
     </section>
     <main class="content">
@@ -52,31 +52,167 @@
             <h2>Dies ist die zweite Überschrift</h2>
             <h3>Dies ist die dritte Überschrift</h3>
             <h4>Dies ist die vierte Überschrift</h4>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum in posuere orci. Nam euismod gravida nunc. Ut accumsan vitae dolor interdum ullamcorper. Ut luctus, lacus quis finibus bibendum, tortor nisl tristique mauris, eu efficitur nisi felis sit amet lacus. Duis a euismod erat. Sed faucibus ultricies sem, varius fringilla velit ullamcorper sit amet. Duis mauris felis, eleifend eget dignissim a, gravida eget libero. Fusce a fringilla justo, id hendrerit nunc. Duis fringilla tristique neque, non ullamcorper arcu sodales iaculis. Aliquam nec cursus neque. Donec suscipit ante nunc. Nam lacinia nunc quis velit porta, id aliquam tellus lacinia. Nunc at sem velit. Nunc iaculis, ex nec commodo fermentum, nulla lectus iaculis ante, ac laoreet magna enim vel sem.</p>
-            <h3>Dies ist die dritte Überschrift</h3>
-            <p>In hendrerit ex non pharetra iaculis. Donec fringilla nulla sed tortor varius blandit. Proin commodo ipsum sit amet auctor pellentesque. Integer a odio lorem. Curabitur sollicitudin nibh ut metus volutpat, a semper leo lacinia. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Morbi viverra neque in ante malesuada ullamcorper. Vivamus eget massa nec tellus consequat bibendum at ut odio. Praesent semper rhoncus libero, a sagittis libero ultricies a. Integer et dolor leo. Suspendisse quis urna id dui sodales posuere. Quisque vulputate quis arcu id vulputate. Curabitur aliquet est egestas, aliquam ex eu, molestie leo. Vivamus convallis elementum tempor. Pellentesque in dui sed sem porttitor sodales.</p>
-            <p>Sed a sapien non magna eleifend luctus. Praesent eget nisl risus. Integer eu nibh imperdiet, lacinia lorem id, vulputate augue. Vestibulum ut consequat nulla. Praesent aliquet congue diam at eleifend. Vivamus ut sagittis nisi. Nulla nec aliquet purus. Sed tincidunt lacinia quam ac rutrum. Nulla blandit porttitor ultrices. Sed eleifend pellentesque consectetur.</p>
-            <h3>Dies ist die dritte Überschrift</h3>
-            <p>Sed luctus ex non sagittis luctus. Maecenas ultricies felis ac laoreet aliquam. Aenean pharetra interdum dolor, quis pharetra enim vulputate feugiat. Sed turpis turpis, elementum id blandit nec, tincidunt id felis. Etiam iaculis lobortis orci at mollis. In ac aliquet turpis, in sollicitudin odio. Aenean sem mi, ultricies non tincidunt id, ullamcorper non tellus. Praesent nec nisl augue. Phasellus sed interdum dolor. Nullam vitae metus varius, lacinia purus id, ornare justo.</p>
-            <hr>
-            <h2>Dies ist eine Liste</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum in posuere orci. Nam euismod gravida nunc. Ut accumsan vitae dolor interdum ullamcorper. Ut luctus, lacus quis finibus bibendum, tortor nisl tristique mauris, eu efficitur nisi felis sit amet lacus. Duis a euismod erat. Sed faucibus ultricies sem, varius fringilla velit ullamcorper sit amet.</p>
             <ul>
                 <li>Eins
                     <ul>
                         <li>Eins.Eins</li>
                         <li>Eins.Zwei</li>
-                        <li>Eins.Drei</li>
                     </ul>
                 </li>
                 <li>Zwei</li>
                 <li>Drei</li>
                 <li>Vier</li>
-                <li>Fünf</li>
-                <li>Sechs</li>
             </ul>
-            <p>Quisque vel velit ac elit egestas hendrerit eget nec est. Curabitur porta iaculis ligula quis iaculis. Fusce imperdiet mattis sem, non bibendum risus rutrum quis. Interdum et malesuada fames ac ante ipsum primis in faucibus. Nullam viverra orci eget tellus fermentum consectetur. Maecenas sed fringilla lorem. In eu ullamcorper ipsum. Donec pellentesque dui luctus, mollis felis eu, ultricies turpis. Fusce sit amet tortor tortor. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Nulla eu laoreet arcu, non placerat mi. Aenean pellentesque nibh a arcu tincidunt, vitae vulputate felis vehicula. Praesent ut tellus mollis, cursus turpis sed, egestas risus.</p>
             <hr>
-
+            <h2>Grid System</h2>
+            <div class="example-grid">
+                <div class="example-col-left">
+                    <article class="example-module">
+                        <code>
+                            .example-col-left {<br>
+                                @include bp(small) {    @include span(6);   }<br>
+                                @include bp(medium) {   @include span(4);   }<br>
+                                @include bp(big) {      @include span(3);   }<br>
+                            }
+                        </code>
+                    </article>
+                </div>
+                <div class="example-col-right">
+                    <article class="example-module">
+                        <code>
+                            .example-col-right {<br>
+                                @include bp(small) {    @include span(6 last);  }<br>
+                                @include bp(medium) {   @include span(8 last);  }<br>
+                                @include bp(big) {      @include span(9 last);  }<br>
+                            }
+                        </code>
+                    </article>
+                </div>
+            </div>
+            <hr>
+            <h2>Tables</h2>
+            <h3>.table</h3>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Lorem ipsum</th>
+                        <th>dolor sit</th>
+                        <th>amet consectetur</th>
+                        <th>adipiscing elit</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th>1st</th>
+                        <td>Vestibulum in</td>
+                        <td>posuere orci</td>
+                        <td>Nam euismod</td>
+                    </tr>
+                    <tr>
+                        <th>2nd</th>
+                        <td>Vestibulum in</td>
+                        <td>posuere orci</td>
+                        <td>Nam euismod</td>
+                    </tr>
+                    <tr>
+                        <th>3rd</th>
+                        <td>Vestibulum in</td>
+                        <td>posuere orci</td>
+                        <td>Nam euismod</td>
+                    </tr>
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <td>tfoot</td>
+                        <td>tfoot</td>
+                        <td>tfoot</td>
+                        <td>tfoot</td>
+                    </tr>
+                </tfoot>
+            </table>
+            <h3>.table .table-bordered .table-striped .table-hover</h3>
+            <table class="table table-bordered table-striped table-hover">
+                <thead>
+                    <tr>
+                        <th>Lorem ipsum</th>
+                        <th>dolor sit</th>
+                        <th>amet consectetur</th>
+                        <th>adipiscing elit</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th>1st</th>
+                        <td>Vestibulum in</td>
+                        <td>posuere orci</td>
+                        <td>Nam euismod</td>
+                    </tr>
+                    <tr>
+                        <th>2nd</th>
+                        <td>Vestibulum in</td>
+                        <td>posuere orci</td>
+                        <td>Nam euismod</td>
+                    </tr>
+                    <tr>
+                        <th>3rd</th>
+                        <td>Vestibulum in</td>
+                        <td>posuere orci</td>
+                        <td>Nam euismod</td>
+                    </tr>
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <td>tfoot</td>
+                        <td>tfoot</td>
+                        <td>tfoot</td>
+                        <td>tfoot</td>
+                    </tr>
+                </tfoot>
+            </table>
+            <h3>.table-responsive > .table</h3>
+            <div class="table-responsive">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Lorem ipsum ----------</th>
+                            <th>dolor sit ----------</th>
+                            <th>amet consectetur ----------</th>
+                            <th>adipiscing elit ----------</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th>1st</th>
+                            <td>Vestibulum in</td>
+                            <td>posuere orci</td>
+                            <td>Nam euismod</td>
+                        </tr>
+                        <tr>
+                            <th>2nd</th>
+                            <td>Vestibulum in</td>
+                            <td>posuere orci</td>
+                            <td>Nam euismod</td>
+                        </tr>
+                        <tr>
+                            <th>3rd</th>
+                            <td>Vestibulum in</td>
+                            <td>posuere orci</td>
+                            <td>Nam euismod</td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <td>tfoot</td>
+                            <td>tfoot</td>
+                            <td>tfoot</td>
+                            <td>tfoot</td>
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>
+            <hr>
+            <h2>Buttons</h2>
         </div>
     </main>
     <footer class="site-footer">
@@ -85,5 +221,6 @@
         </div>
     </footer>
     <script src="bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="js/layout.js"></script>
 </body>
 </html>

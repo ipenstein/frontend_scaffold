@@ -14,11 +14,16 @@ Use HTML5-Boilerplate's @mixin micro-clearfix instead.
     @include micro-clearfix;
 }
 
+@mixin box-sizing($value) {
+    -moz-box-sizing: $value;
+         box-sizing: $value;
+}
+
 /*
 # @mixin bp
 
 Dynamic breakpoint mixin. Use it to place media queries inside of CSS
-declaration blocks. Feel free to add more breakpoints in _variables.scss.
+declaration blocks. Feel free to add more breakpoints in "base/_vars.scss".
 
     $breakpoints: small 500px, medium 700px, big 900px;
     .wrapper {
@@ -36,6 +41,18 @@ https://github.com/DarbyBrown/QuickSass/blob/master/scss/mixins/_breakpoints.scs
         $width: nth($breakpoint, 2);
         @if $name == $point {
             @media (min-width: $width) {
+                @content;
+            }
+        }
+    }
+}
+
+@mixin bp-max($point) {
+    @each $breakpoint in $breakpoints {
+        $name: nth($breakpoint, 1);
+        $width: nth($breakpoint, 2);
+        @if $name == $point {
+            @media (max-width: $width - 1) {
                 @content;
             }
         }

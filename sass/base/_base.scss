@@ -2,6 +2,10 @@
 # base/_base.scss
 */
 
+* {
+    @include box-sizing(border-box);
+}
+
 html {
     font-size: 62.5%; /* Sets up the Base 10 stuff */
 }
@@ -12,20 +16,20 @@ td,
 input,
 textarea,
 select {
-    font-family: $fontfamily1;
-    @include font-size(16,20);
+    font-family: $font-family-1;
+    @include font-size($base-font-size, $base-line-height);
 }
 
 p {
    padding: 0;
-   margin: 10px 0;
+   margin: 0 0 $base-line-height-px 0;
 }
 
 h1, h2, h3, h4 {
-    font-family: $fontfamily2;
+    font-family: $font-family-2;
     font-weight: normal;
     padding: 0;
-    margin: 20px 0;
+    margin: $base-line-height-px 0;
 }
 h1 {    @include font-size(32,30);  }
 h2 {    @include font-size(26,30);  }
@@ -58,22 +62,23 @@ b, strong {
 ul {
     list-style-type: none;
     padding: 0px;
-    margin: 10px 0;
-    & > ul {
+    margin: 0 0 $base-line-height-px 0;
+
+    & > li > ul {
         margin: 0;
     }
-}
 
-ul li {
-    background: image-url("li.png") 0 8px no-repeat;
-    padding-left: 15px;
+    li {
+        background: image-url("li.png") 0 8px no-repeat;
+        padding-left: 15px;
+    }
 }
 
 hr {
     border: 0;
     border-bottom: 1px solid $hr-color;
     height: 1px;
-    margin-top: 19px;
-    margin-bottom: 20px;
+    margin-top: #{$base-line-height - 1}px;
+    margin-bottom: $base-line-height-px;
     padding: 0;
 }

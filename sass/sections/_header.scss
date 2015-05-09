@@ -1,0 +1,30 @@
+/*
+# sections/_header.scss
+*/
+
+.site-header {
+    background-color: $header-bg-color;
+    padding: 20px 0;
+    height: 80px;
+    position: relative;
+    z-index: 30;
+    @include box-shadow(rgba(#000000, 0.2) 0 15px 15px);
+}
+
+.logo {
+    font-family: $font-family-2;
+    @include font-size(30,30);
+    text-transform: uppercase;
+    text-decoration: none;
+    padding-top: 20px;
+
+    &,
+    &:hover {
+        color: $grey4;
+    }
+
+    i {
+        color: $green1;
+    }
+
+}

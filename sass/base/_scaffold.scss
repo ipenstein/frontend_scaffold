@@ -1,53 +1,27 @@
 /* _scaffold.scss */
 
-* {
-    @include box-sizing(border-box);
-}
-
 html,
 body {
-    background-color: $body-bgcolor;
+    background-color: $body-bg-color;
     text-align: center;
 }
 
 .container {
-    margin: 0 auto;
     text-align: left;
     min-width: $min-width;
-    max-width: $max-width;
     padding: 0 20px;
     position: relative;
-}
-
-.site-header {
-    background-color: $header-bgcolor;
-    padding: 20px 0;
-    position: relative;
-    z-index: 30;
-    @include box-shadow(rgba(#000000, 0.2) 0 15px 15px);
-}
-
-.logo {
-    color: $grey4;
-    font-family: $fontfamily2;
-    @include font-size(30,30);
-    text-transform: uppercase;
-    text-decoration: none;
-    padding-top: 20px;
-    i {
-        color: $green1;
-    }
+    @include container();
 }
 
 .content {
-    padding: 20px 0;
-    z-index: 20;
+    padding: $base-line-height-px 0;
+    z-index: 10;
     position: relative;
-    background-color: rgba($body-bgcolor, 0.75);
 }
 
 .site-footer {
-    background-color: $footer-bgcolor;
-    padding: 20px 0;
-    z-index: 10;
+    background-color: $footer-bg-color;
+    padding: $base-line-height-px 0;
+    z-index: 20;
 }

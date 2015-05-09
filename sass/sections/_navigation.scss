@@ -4,35 +4,55 @@
 
 .main-nav {
     position: absolute;
-    right: 0;
+    right: 10px;
     top: 0;
-
-    ul {
-        @include inline-list;
-    }
-
     li {
         background: none;
     }
+}
 
-    a {
-        float: left;
-        margin: 0 10px;
-        padding: 0px 0 11px;
-        border: 10px solid transparent;
-        color: $green1;
-        text-transform: uppercase;
-        text-decoration: none;
-        @include transition-property(color);
-        @include transition-duration(0.2s);
-        @include transition-timing-function(ease-in);
-        &:hover {
-            color: $grey4;
-        }
+.main-nav .trigger {
+    display: block;
+    padding: 4px 10px;
+    border: 1px solid rgba($green1, 0.3);
+    @include border-radius(5px);
+    @include font-size(24, 20);
+    @include transition-property(background-color);
+    @include bp(big) {
+        display: none;
     }
+    &:hover,
+    &:focus,
+    &:active,
+    &.active {
+        background-color: $green1;
+        color: $header-bg-color;
+    }
+}
 
-    li.active a {
+.main-nav ul {
+    @include no-list;
+    display: none;
+    @include bp(big) {
+        @include inline-list;
+    }
+}
+
+.main-nav a {
+    float: left;
+    margin: 0 10px;
+    padding: 10px 0;
+    color: $green1;
+    text-transform: uppercase;
+    text-decoration: none;
+    @include transition-property(color);
+    @include transition-duration(0.2s);
+    @include transition-timing-function(ease-in);
+    &:hover {
         color: $grey4;
-        border-bottom-color: $grey4;
     }
+}
+
+.main-nav li.active a {
+    color: $grey4;
 }

@@ -24,16 +24,22 @@ Main stylesheet file. All Sass-files are included here.
 /*
 # Dependencies
 */
-@import "../bower_components/susy/sass/susy";                   // http://susy.oddbird.net/
+
+// Susy
+// http://susy.oddbird.net/
+@import "../bower_components/susy/sass/susy";
+
+// Font Awesome
+// http://fortawesome.github.io/Font-Awesome/
 $fa-font-path: "../bower_components/font-awesome/fonts/";
-@import "../bower_components/font-awesome/scss/font-awesome";   // http://fortawesome.github.io/Font-Awesome/
+@import "../bower_components/font-awesome/scss/font-awesome";
 
 /*
 # Basic styles
 */
 //@import "base/webfonts";              // Local webfonts
 @import "base/vars";                    // Variables
-@import "base/toolbelt";                // Helpful class and mixins
+@import "base/toolbelt";                // Helpful classes and mixins
 @import "base/animations";              // CSS3-Animation mixins
 @import "base/base";                    // HTML-elements
 @import "base/scaffold";                // Basic site scaffold
@@ -44,6 +50,7 @@ $fa-font-path: "../bower_components/font-awesome/fonts/";
 Styles for gui-elements.
 */
 
+@import "elements/tables";              // Tabellen
 
 
 
@@ -58,7 +65,6 @@ Styles for gui-elements.
 //@import "elements/alerts";              // (Fehler-)meldungen
 //@import "elements/dropdowns";           // Dropdownmenüs
 //@import "elements/charselector";        // A-Z Navigation
-//@import "elements/tables";              // Tabellen
 //@import "elements/buttons";             // Buttons
 //@import "elements/forms";               // Formulare
 //@import "elements/search";              // Suche
@@ -76,14 +82,10 @@ Styles for gui-elements.
 
 Styles for specific sections of the page (i.E. Header, Footer etc.).
 */
+@import "sections/header";              // Header
 @import "sections/navigation";          // Main navigation
 @import "sections/hero";                // Hero unit
-//@import "sections/header";              // Header
-//@import "sections/mainnav";             // Hauptnavigation
-//@import "sections/bottom-notice";       // Alle Preise MwSt
-//@import "sections/benefits";            // Zahlungsarten und "Ihre Vorteile"
 //@import "sections/footer";              // Footer
-//@import "sections/checkout-progress";   // Fortschrittsanzeige
 
 /*
 # Pages
@@ -117,4 +119,4 @@ Styles for specific pages.
 # Misc
 */
 //@import "misc/shame";                   // Hacks
-//@import "font-awesome.min";
+@import "misc/example";                 // Example styles
