@@ -4,9 +4,12 @@
 Main stylesheet file. All Sass-files are included here.
 */
 
+
 /*
-# Include Compass and HTML5-Boilerplate
+# Dependencies
 */
+
+// Compass H5BP
 @import "compass";
 @import "h5bp";
 
@@ -15,15 +18,6 @@ Main stylesheet file. All Sass-files are included here.
 @include h5bp-chromeframe;
 @include h5bp-helpers;
 @include h5bp-media;
-
-.print-block,
-.print-inline {
-    display: none;
-}
-
-/*
-# Dependencies
-*/
 
 // Susy
 // http://susy.oddbird.net/
@@ -37,7 +31,7 @@ $fa-font-path: "../bower_components/font-awesome/fonts/";
 /*
 # Basic styles
 */
-//@import "base/webfonts";              // Local webfonts
+@import "base/webfonts";                // Local webfonts
 @import "base/vars";                    // Variables
 @import "base/toolbelt";                // Helpful classes and mixins
 @import "base/animations";              // CSS3-Animation mixins
@@ -45,37 +39,17 @@ $fa-font-path: "../bower_components/font-awesome/fonts/";
 @import "base/scaffold";                // Basic site scaffold
 
 /*
-# GUI
+# Elements
 
 Styles for gui-elements.
 */
 
 @import "elements/tables";              // Tabellen
-
-
-
-
-
-
-//@import "elements/icons";               // Icons
-//@import "elements/badges";              // Abzeichen, Störer
-//@import "elements/lists";               // Listen
-//@import "elements/tabs";                // Tabs
-//@import "elements/boxes";               // Contentboxen
-//@import "elements/alerts";              // (Fehler-)meldungen
-//@import "elements/dropdowns";           // Dropdownmenüs
-//@import "elements/charselector";        // A-Z Navigation
-//@import "elements/buttons";             // Buttons
-//@import "elements/forms";               // Formulare
-//@import "elements/search";              // Suche
-//@import "elements/dealoftheweek";       // Produktteaser
-//@import "elements/teaser-context";      // Kontextsensitive Teaser
-//@import "elements/breadcrumbs";         // Brutkrumen-Navigation
-//@import "elements/nav-categories";      // Rubriknavigation
-//@import "elements/cart-message";        // Popup-Warenkorbnachricht
-//@import "elements/articles";            // Produktlisten, Details, Teaser
-//@import "elements/confirm-dialog";      // Bestellvorgang-abbrechen-Dialog
-//@import "elements/fancybox";            // Fancybox-Inhalte schöner machen
+@import "elements/buttons";             // Buttons
+@import "elements/forms";               // Formulare
+@import "elements/tabs";                // Tabs
+@import "elements/alerts";              // (Fehler-)meldungen
+@import "elements/dropdowns";           // Dropdownmenüs
 
 /*
 # Sections
@@ -85,38 +59,20 @@ Styles for specific sections of the page (i.E. Header, Footer etc.).
 @import "sections/header";              // Header
 @import "sections/navigation";          // Main navigation
 @import "sections/hero";                // Hero unit
-//@import "sections/footer";              // Footer
+@import "sections/footer";              // Footer
 
 /*
 # Pages
 
 Styles for specific pages.
 */
-//@import "pages/home";                   // Startseite
-//@import "pages/articles-overview";      // Produktübersicht
-//@import "pages/articles-details";       // Produktdetails
-//@import "pages/articles-popup";         // Produkt inner Fancybox
-//@import "pages/cart";                   // Warenkorb
-//@import "pages/customer-intro";         // Login-Seite
-//@import "pages/customer-edit";          // Registrierung / Kundenkonto-Formulare
-//@import "pages/customer-overview";      // Kundenkonto-Übersicht
-//@import "pages/payment.scss";           // Zahlungsweise wählen
-//@import "pages/deliveryaddress.scss";   // Lieferadresse wählen
-//@import "pages/order.scss";             // Bestellung bestätigen
-//@import "pages/order-finished";         // Bestellung abgeschlossen+
-//@import "pages/direct-order";           // Direktbestellung
-//@import "pages/shipping-costs";         // Versandkosten
+@import "pages/home";                   // Startseite
 //@import "pages/contact";                // Kontakt
 //@import "pages/route";                  // Anfahrtsbeschreibung (Google Maps)
 //@import "pages/imprint";                // Impressum
-//@import "pages/recommend";              // Freundschaftswerbung
-//@import "pages/help";                   // Hilfe zum Shop
-//@import "pages/faq";                    // FAQ
-//@import "pages/sepa";                   // SEPA-Mandat
-
 
 /*
 # Misc
 */
-//@import "misc/shame";                   // Hacks
+@import "misc/shame";                   // Hacks
 @import "misc/example";                 // Example styles

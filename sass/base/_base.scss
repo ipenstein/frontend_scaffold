@@ -31,11 +31,21 @@ h1, h2, h3, h4 {
     padding: 0;
     margin: $base-line-height-px 0;
 }
-h1 {    @include font-size(32,30);  }
-h2 {    @include font-size(26,30);  }
-h3 {    @include font-size(20,20);  }
-h4 {    @include font-size(16,20);
-        font-weight: bold;          }
+h1 {
+    @include font-size(40,50);
+    border-bottom: 4px solid $green1;
+}
+h2 {
+    @include font-size(26,30);
+}
+h3 {
+    @include font-size(20,20);
+}
+h4 {
+    @include font-size(16,20);
+    font-weight: bold;
+    margin-bottom: 0;
+}
 
 a {
     color: $link-color;
@@ -81,4 +91,9 @@ hr {
     margin-top: #{$base-line-height - 1}px;
     margin-bottom: $base-line-height-px;
     padding: 0;
+}
+
+.print-block,
+.print-inline {
+    display: none;
 }

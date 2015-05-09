@@ -5,7 +5,7 @@
 Main stylesheet file. All Sass-files are included here.
 */
 /*
-# Include Compass and HTML5-Boilerplate
+# Dependencies
 */
 article,
 aside,
@@ -383,13 +383,6 @@ textarea {
   h2,
   h3 {
     page-break-after: avoid; } }
-.print-block,
-.print-inline {
-  display: none; }
-
-/*
-# Dependencies
-*/
 /*!
  *  Font Awesome 4.3.0 by @davegandy - http://fontawesome.io - @fontawesome
  *  License - http://fontawesome.io/license (Font: SIL OFL 1.1, CSS: MIT License)
@@ -2184,6 +2177,9 @@ textarea {
 # Basic styles
 */
 /*
+# base/_webfonts.scss
+*/
+/*
 # base/_vars.scss
 
 Make your changes here.
@@ -2207,6 +2203,9 @@ Make your changes here.
 */
 /*
 # Tables
+*/
+/*
+# Buttons
 */
 /*
 # base/_toolbelt.scss
@@ -2428,10 +2427,11 @@ h1, h2, h3, h4 {
   margin: 20px 0; }
 
 h1 {
-  font-size: 32px;
-  line-height: 30px;
-  font-size: 3.2rem;
-  line-height: 3rem; }
+  font-size: 40px;
+  line-height: 50px;
+  font-size: 4rem;
+  line-height: 5rem;
+  border-bottom: 4px solid #6fa938; }
 
 h2 {
   font-size: 26px;
@@ -2450,7 +2450,8 @@ h4 {
   line-height: 20px;
   font-size: 1.6rem;
   line-height: 2rem;
-  font-weight: bold; }
+  font-weight: bold;
+  margin-bottom: 0; }
 
 a {
   color: #109acc;
@@ -2485,6 +2486,10 @@ hr {
   margin-bottom: 20px;
   padding: 0; }
 
+.print-block,
+.print-inline {
+  display: none; }
+
 /* _scaffold.scss */
 html,
 body {
@@ -2509,18 +2514,15 @@ body {
   z-index: 10;
   position: relative; }
 
-.site-footer {
-  background-color: #ccc;
-  padding: 20px 0;
-  z-index: 20; }
-
 /*
-# GUI
+# Elements
 
 Styles for gui-elements.
 */
 /*
 # elements/_tables.scss
+
+Styles mostly taken from bootstrap
 */
 table {
   max-width: 100%;
@@ -2529,6 +2531,9 @@ table {
 th {
   text-align: left; }
 
+/*
+# Basic table
+*/
 .table {
   width: 100%;
   margin-bottom: 20px; }
@@ -2557,6 +2562,11 @@ th {
   .table .table {
     background-color: #eee; }
 
+/*
+# Bordered version
+
+Add borders all around the table and between all the columns.
+*/
 .table-bordered {
   border: 1px solid #999; }
   .table-bordered > thead > tr > th,
@@ -2570,14 +2580,31 @@ th {
   .table-bordered > thead > tr > td {
     border-bottom-width: 2px; }
 
+/*
+# Zebra-striping
+
+Default zebra-stripe styles (alternating gray and transparent backgrounds)
+*/
 .table-striped > tbody > tr:nth-child(odd) > td,
 .table-striped > tbody > tr:nth-child(odd) > th {
   background-color: #fff; }
 
+/*
+# Hover effect
+
+Placed here since it has to come after the potential zebra striping
+*/
 .table-hover > tbody > tr:hover > td,
 .table-hover > tbody > tr:hover > th {
   background-color: #6fa938; }
 
+/*
+# Responsive tables
+
+Wrap your tables in `.table-responsive` and we'll make them mobile friendly
+by enabling horizontal scrolling. Only applies up to the $table-breakpoint.
+Everything above that will display normally.
+*/
 @media (max-width: 499px) {
   .table-responsive {
     width: 100%;
@@ -2618,6 +2645,228 @@ th {
       .table-responsive > .table-bordered > tfoot > tr:last-child > td {
         border-bottom: 0; } }
 
+/*
+# elements/_buttons.scss
+*/
+/*
+# elements/_buttons.scss
+
+Button styles
+*/
+.btn {
+  display: inline-block;
+  vertical-align: middle;
+  *vertical-align: auto;
+  *zoom: 1;
+  *display: inline;
+  font-weight: 400;
+  text-align: center;
+  text-decoration: none;
+  vertical-align: middle;
+  cursor: pointer;
+  background-image: none;
+  white-space: nowrap;
+  padding: 8px 15px;
+  font-family: "Helvetica-Neue", Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  line-height: 16px;
+  font-size: 1.6rem;
+  line-height: 1.6rem;
+  border: 0;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none; }
+  .btn:hover, .btn.hover {
+    color: inherit;
+    text-decoration: none; }
+  .btn:active, .btn.active {
+    outline: 0;
+    background-image: none;
+    text-decoration: none;
+    border-bottom-color: transparent;
+    -moz-box-shadow: inset 0 2px 3px rgba(0, 0, 0, 0.175);
+    -webkit-box-shadow: inset 0 2px 3px rgba(0, 0, 0, 0.175);
+    box-shadow: inset 0 2px 3px rgba(0, 0, 0, 0.175); }
+
+/*
+# Button colors
+
+    <a class="btn btn-default">Default button</a>
+    <a class="btn btn-primary">Primary button</a>
+    <a class="btn btn-red">Red button</a>
+    <a class="btn btn-green">Green button</a>
+    <a class="btn btn-olive">Olive button</a>
+*/
+.btn {
+  color: #fff;
+  background-color: #666;
+  border-color: transparent; }
+  .btn:hover, .btn.hover {
+    color: #fff;
+    background-color: #737373; }
+  .btn:active, .btn.active {
+    color: #fff;
+    background-color: #595959;
+    border-color: transparent; }
+
+.btn-accept {
+  color: #fff;
+  background-color: #6fa938;
+  border-color: transparent; }
+  .btn-accept:hover, .btn-accept.hover {
+    color: #fff;
+    background-color: #7cbc3e; }
+  .btn-accept:active, .btn-accept.active {
+    color: #fff;
+    background-color: #629632;
+    border-color: transparent; }
+
+.btn-decline {
+  color: #fff;
+  background-color: #e53f32;
+  border-color: transparent; }
+  .btn-decline:hover, .btn-decline.hover {
+    color: #fff;
+    background-color: #e85449; }
+  .btn-decline:active, .btn-decline.active {
+    color: #fff;
+    background-color: #e12b1d;
+    border-color: transparent; }
+
+/*
+# Button sizes
+
+    <a class="btn btn-sm btn-default">Small button</a>
+    <a class="btn btn-big btn-default">Big button</a>
+*/
+.btn-sm,
+.btn-group-sm > .btn {
+  font-size: 14px;
+  padding: 5px 12px; }
+
+.btn-big,
+.btn-group-big > .btn {
+  font-size: 20px;
+  padding: 12px 20px; }
+
+/*
+# Variants
+
+    <a class="btn btn-default btn-return">Return</a>
+    <a class="btn btn-default btn-proceed">Proceed</a>
+*/
+.btn-next {
+  -moz-border-radius-topright: 16px;
+  -webkit-border-top-right-radius: 16px;
+  border-top-right-radius: 16px;
+  -moz-border-radius-bottomright: 16px;
+  -webkit-border-bottom-right-radius: 16px;
+  border-bottom-right-radius: 16px; }
+
+.btn-sm.btn-next {
+  -moz-border-radius-topright: 12px;
+  -webkit-border-top-right-radius: 12px;
+  border-top-right-radius: 12px;
+  -moz-border-radius-bottomright: 12px;
+  -webkit-border-bottom-right-radius: 12px;
+  border-bottom-right-radius: 12px; }
+
+.btn-big.btn-next {
+  -moz-border-radius-topright: 20px;
+  -webkit-border-top-right-radius: 20px;
+  border-top-right-radius: 20px;
+  -moz-border-radius-bottomright: 20px;
+  -webkit-border-bottom-right-radius: 20px;
+  border-bottom-right-radius: 20px; }
+
+.btn-prev {
+  -moz-border-radius-topleft: 16px;
+  -webkit-border-top-left-radius: 16px;
+  border-top-left-radius: 16px;
+  -moz-border-radius-bottomleft: 16px;
+  -webkit-border-bottom-left-radius: 16px;
+  border-bottom-left-radius: 16px; }
+
+.btn-sm.btn-prev {
+  -moz-border-radius-topleft: 12px;
+  -webkit-border-top-left-radius: 12px;
+  border-top-left-radius: 12px;
+  -moz-border-radius-bottomleft: 12px;
+  -webkit-border-bottom-left-radius: 12px;
+  border-bottom-left-radius: 12px; }
+
+.btn-big.btn-prev {
+  -moz-border-radius-topleft: 20px;
+  -webkit-border-top-left-radius: 20px;
+  border-top-left-radius: 20px;
+  -moz-border-radius-bottomleft: 20px;
+  -webkit-border-bottom-left-radius: 20px;
+  border-bottom-left-radius: 20px; }
+
+/*
+# Button group
+
+    <div class="btn-group">
+        <a class="btn btn-default">Default button</a>
+        <a class="btn btn-primary">Primary button</a>
+        <a class="btn btn-green">Green button</a>
+    </div>
+*/
+.btn-group {
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+  *vertical-align: auto;
+  *zoom: 1;
+  *display: inline;
+  vertical-align: middle; }
+
+.btn-group > .btn {
+  position: relative;
+  float: left; }
+
+.btn-group > .btn:not(:first-child):not(:last-child) {
+  -moz-border-radius: 0;
+  -webkit-border-radius: 0;
+  border-radius: 0; }
+
+.btn-group > .btn:first-child:not(:last-child) {
+  -moz-border-radius-bottomright: 0;
+  -webkit-border-bottom-right-radius: 0;
+  border-bottom-right-radius: 0;
+  -moz-border-radius-topright: 0;
+  -webkit-border-top-right-radius: 0;
+  border-top-right-radius: 0; }
+
+.btn-group > .btn:last-child:not(:first-child) {
+  -moz-border-radius-bottomleft: 0;
+  -webkit-border-bottom-left-radius: 0;
+  border-bottom-left-radius: 0;
+  -moz-border-radius-topleft: 0;
+  -webkit-border-top-left-radius: 0;
+  border-top-left-radius: 0; }
+
+.btn-group > .btn:hover,
+.btn-group > .btn:active,
+.btn-group > .btn.active {
+  z-index: 2; }
+
+/*
+# elements/_forms.scss
+*/
+/*
+# elements/_tabs.scss
+*/
+/*
+# elements/_alerts.scss
+*/
+/*
+# elements/_dropdowns.scss
+*/
 /*
 # Sections
 
@@ -2726,12 +2975,28 @@ Styles for specific sections of the page (i.E. Header, Footer etc.).
 # sections/_hero.scss
 */
 /*
+# sections/_footer.scss
+*/
+.site-footer {
+  background-color: #ccc;
+  padding: 20px 0;
+  z-index: 20; }
+
+/*
 # Pages
 
 Styles for specific pages.
 */
 /*
+# pages/_home.scss
+*/
+/*
 # Misc
+*/
+/*
+# misc/_shame.scss
+
+Place your shameless hacks here
 */
 /*
 # misc/_example.scss

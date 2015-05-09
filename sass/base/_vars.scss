@@ -46,8 +46,6 @@ $white:                 #fff;
 $violet1:               #a5037c;
 $green1:                #6fa938;
 $blue1:                 #109acc;
-$blue2:                 shade($blue1, 20);
-$blue3:                 tint($blue1, 80);
 $red1:                  #e53f32;
 $yellow1:               #e9ac00;
 $turquise1:             #86cee0;
@@ -86,3 +84,44 @@ $table-bg-accent-color: $white;
 $table-bg-hover-color:  $green1;
 $table-border-color:    $grey3;
 $table-cell-padding:    10px;
+
+/*
+# Buttons
+*/
+
+// Basic Styles
+$btn-font-family:               $font-family-1;
+$btn-border:                    0;
+$btn-border-radius:             3px;
+
+// Color variants
+$btn-color:                     $white;
+$btn-bg-color:                  $grey2;
+$btn-border-color:              transparent;
+$btn-hover-bg-color:            lighten($grey2, 5%);
+$btn-active-bg-color:           darken($grey2, 5%);
+
+$btn-accept-color:              $white;
+$btn-accept-bg-color:           $green1;
+$btn-accept-border-color:       transparent;
+$btn-accept-hover-bg-color:     lighten($green1, 5%);
+$btn-accept-active-bg-color:    darken($green1, 5%);
+
+$btn-decline-color:             $white;
+$btn-decline-bg-color:          $red1;
+$btn-decline-border-color:      transparent;
+$btn-decline-hover-bg-color:    lighten($red1, 5%);
+$btn-decline-active-bg-color:   darken($red1, 5%);
+
+// Sizes
+$btn-font-size:                 $base-font-size;
+$btn-padding:                   8px 15px;
+$btn-next-border-radius:        16px;
+
+$btn-sm-font-size:              14px;
+$btn-sm-padding:                5px 12px;
+$btn-sm-next-border-radius:     12px;
+
+$btn-big-font-size:             20px;
+$btn-big-padding:               12px 20px;
+$btn-big-next-border-radius:    20px;
