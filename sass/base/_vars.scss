@@ -10,18 +10,18 @@ Make your changes here.
 $max-width:             1200px;
 $min-width:             320px;
 
+// Breakpoint configuration
 // Feel free to add more breakpoints!
 $breakpoints:           small 500px, medium 700px, big 900px !default;
-$form-breakpoint:       medium;
-$table-breakpoint:      small;
 
-// Column padding
-$pad:                   20px;
+$grid-brakepoint:       small;          // min-brakepoint where easy grid will become active
+$grid-gutter:           20px;           // horizontal gap between grid columns
 
 /*
-# Susy config
+# Susy settings
 
-(http://susydocs.oddbird.net/en/latest/settings/)
+Global settings for susy grid system.
+http://susydocs.oddbird.net/en/latest/settings/
 */
 $susy: (
     //debug:              (image: show),
@@ -56,10 +56,10 @@ $turquise1:             #86cee0;
 $text-color:            $grey1;
 
 $link-color:            $blue1;
-$link-hover-color:      $red1;
-$link-visited-color:    darken($blue1, 20%);
+$link-hover-color:      $grey2;
+$link-visited-color:    darken($blue1, 10%);
 
-$hr-color:              $grey3;
+$hr-color:              $grey2;
 
 $body-bg-color:         $grey5;
 $hero-bg-color:         $grey4;
@@ -77,12 +77,34 @@ $base-line-height:      20;             //in px without unit
 $base-line-height-px:   #{$base-line-height}px;
 
 /*
+# Forms
+*/
+$form-breakpoint-1:             small;
+$form-breakpoint-2:             medium;
+$form-font-family:              $font-family-1;
+$form-font-size:                $base-font-size;
+$form-line-height:              $base-line-height;
+$form-placeholder-color:        $grey3;
+$form-input-margin:             4px 0;
+$form-input-padding:            6px;
+$form-input-border:             1px solid $grey4; //#d9d9d9;
+$form-input-bg-color:           $grey5; //#fafafa
+$form-input-hover-border-color: darken($grey4, 10%);
+$form-input-focus-border-color: $blue1;
+$form-error-color:              $red1;
+$form-error-font-size:          12px;
+$form-select-padding:           5px;
+$form-label-font-size:          14px;
+$form-gutter-width:             10px;
+
+/*
 # Tables
 */
+$table-breakpoint:      medium;         // max-brakepoint where responsive tables will become scrollable
 $table-bg-color:        transparent;
 $table-bg-accent-color: $white;
-$table-bg-hover-color:  $green1;
-$table-border-color:    $grey3;
+$table-bg-hover-color:  $turquise1;
+$table-border-color:    $grey4;
 $table-cell-padding:    10px;
 
 /*
@@ -93,29 +115,37 @@ $table-cell-padding:    10px;
 $btn-font-family:               $font-family-1;
 $btn-border:                    0;
 $btn-border-radius:             3px;
+$btn-margin:                    4px 0;
 
 // Color variants
-$btn-color:                     $white;
-$btn-bg-color:                  $grey2;
-$btn-border-color:              transparent;
-$btn-hover-bg-color:            lighten($grey2, 5%);
-$btn-active-bg-color:           darken($grey2, 5%);
+$btn-color:                     $grey1;
+$btn-bg-color:                  $white;
+$btn-hover-bg-color:            darken($white, 2%);
+$btn-active-bg-color:           darken($white, 10%);
+
+$btn-primary-color:             $white;
+$btn-primary-bg-color:          $blue1;
+$btn-primary-hover-bg-color:    darken($blue1, 2%);
+$btn-primary-active-bg-color:   darken($blue1, 10%);
+
+$btn-disabled-color:            $grey4;
+$btn-disabled-bg-color:         darken($white, 5%);
+$btn-disabled-hover-bg-color:   darken($white, 5%);
+$btn-disabled-active-bg-color:  darken($white, 5%);
 
 $btn-accept-color:              $white;
 $btn-accept-bg-color:           $green1;
-$btn-accept-border-color:       transparent;
-$btn-accept-hover-bg-color:     lighten($green1, 5%);
-$btn-accept-active-bg-color:    darken($green1, 5%);
+$btn-accept-hover-bg-color:     darken($green1, 2%);
+$btn-accept-active-bg-color:    darken($green1, 10%);
 
 $btn-decline-color:             $white;
 $btn-decline-bg-color:          $red1;
-$btn-decline-border-color:      transparent;
-$btn-decline-hover-bg-color:    lighten($red1, 5%);
-$btn-decline-active-bg-color:   darken($red1, 5%);
+$btn-decline-hover-bg-color:    darken($red1, 5%);
+$btn-decline-active-bg-color:   darken($red1, 10%);
 
 // Sizes
 $btn-font-size:                 $base-font-size;
-$btn-padding:                   8px 15px;
+$btn-padding:                   7px 20px;
 $btn-next-border-radius:        16px;
 
 $btn-sm-font-size:              14px;
@@ -123,5 +153,45 @@ $btn-sm-padding:                5px 12px;
 $btn-sm-next-border-radius:     12px;
 
 $btn-big-font-size:             20px;
-$btn-big-padding:               12px 20px;
+$btn-big-padding:               16px 30px;
 $btn-big-next-border-radius:    20px;
+
+/*
+# Tabs
+*/
+$tab-padding:                   10px 20px;
+$tab-color:                     $grey3;
+$tab-border-color:              $grey3;
+$tab-bg-color:                  $white;
+$tab-hover-color:               $grey1;
+$tab-hover-border-color:        $grey1;
+$tab-hover-bg-color:            $turquise1;
+$tab-active-color:              $grey2;
+$tab-active-border-color:       $grey2;
+$tab-active-bg-color:           $grey5;
+
+/*
+# Alerts
+*/
+$alert-font-family:             $font-family-1;
+$alert-font-size:               14;
+$alert-line-height:             20;
+$alert-padding:                 10px 15px;
+$alert-margin:                  0 0 $base-line-height-px 0;
+$alert-border:                  1px solid;
+
+$alert-info-color:              $grey1;
+$alert-info-bg-color:           $white;
+$alert-info-border-color:       $grey3;
+
+$alert-danger-color:            $grey1;
+$alert-danger-bg-color:         $white;
+$alert-danger-border-color:     $yellow1;
+
+$alert-error-color:             $grey1;
+$alert-error-bg-color:          $white;
+$alert-error-border-color:      $red1;
+
+$alert-success-color:           $grey1;
+$alert-success-bg-color:        $white;
+$alert-success-border-color:    $green1;

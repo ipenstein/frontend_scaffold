@@ -35,6 +35,8 @@ declaration blocks. Feel free to add more breakpoints in "base/_vars.scss".
 
 https://github.com/DarbyBrown/QuickSass/blob/master/scss/mixins/_breakpoints.scss
 */
+
+// Min-width breakpoints
 @mixin bp($point) {
     @each $breakpoint in $breakpoints {
         $name: nth($breakpoint, 1);
@@ -47,6 +49,7 @@ https://github.com/DarbyBrown/QuickSass/blob/master/scss/mixins/_breakpoints.scs
     }
 }
 
+// Max-width breakpoints
 @mixin bp-max($point) {
     @each $breakpoint in $breakpoints {
         $name: nth($breakpoint, 1);
@@ -86,16 +89,15 @@ $breakpoints: small 500px, medium 700px, big 900px;
 @each $breakpoint in $breakpoints {
     $name: nth($breakpoint, 1);
     $width: nth($breakpoint, 2);
+    .hide-#{$name} {
+        @media (min-width: $width) {
+            display: none !important;
+        }
+    }
     .reveal-#{$name} {
         display: none !important;
         @media (min-width: $width) {
             display: block !important;
-        }
-    }
-    .hide-#{$name} {
-        display: block !important;
-        @media (min-width: $width) {
-            display: none !important;
         }
     }
 }
@@ -187,7 +189,7 @@ Reset list styles (list-style-type, margin, padding)
         list-style: none;
         background-image: none;
         padding: 0;
-        margin: 0;
+        //margin: 0;
     }
 }
 
@@ -295,4 +297,17 @@ http://codepen.io/HugoGiraudel/details/KFDuB
         scrollbar-face-color: $primary;
         scrollbar-track-color: $secondary;
     }
+}
+
+@mixin visually-hidden() {
+    position: absolute;
+    z-index: -1;
+    opacity: 0;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    border: 0;
+    clip: rect(0 0 0 0);
+    overflow: hidden;
 }

@@ -1,3 +1,47 @@
 /*
 # elements/_tabs.scss
 */
+
+.tabs {
+    @include no-list;
+    @include micro-clearfix;
+    display: block;
+    border-bottom: 1px solid $tab-active-border-color;
+    margin-bottom: $base-line-height-px;
+    li {
+        display: inline;
+    }
+    a {
+        position: relative;
+        z-index: 10;
+        display: block;
+        float: left;
+        padding: $tab-padding;
+        margin-bottom: -1px;
+        margin-right: -1px;
+        cursor: pointer;
+        text-decoration: none;
+        color: $tab-color;
+        background-color: $tab-bg-color;
+        border: 1px solid $tab-border-color;
+        border-bottom: 1px solid $tab-active-border-color;
+        @include transition-property(all);
+        @include transition-duration(0.2s);
+        @include transition-timing-function(ease-out);
+    }
+    a:hover,
+    a:focus,
+    a:active {
+        z-index: 20;
+        color: $tab-hover-color;
+        background-color: $tab-hover-bg-color;
+        border-color: $tab-hover-border-color;
+    }
+    .active a {
+        z-index: 30;
+        color: $tab-active-color;
+        background-color: $tab-active-bg-color;
+        border-color: $tab-active-border-color;
+        border-bottom: 1px solid $body-bg-color;
+    }
+}

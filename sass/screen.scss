@@ -4,7 +4,6 @@
 Main stylesheet file. All Sass-files are included here.
 */
 
-
 /*
 # Dependencies
 */
@@ -34,8 +33,8 @@ $fa-font-path: "../bower_components/font-awesome/fonts/";
 @import "base/webfonts";                // Local webfonts
 @import "base/vars";                    // Variables
 @import "base/toolbelt";                // Helpful classes and mixins
-@import "base/animations";              // CSS3-Animation mixins
-@import "base/base";                    // HTML-elements
+//@import "base/animations";              // CSS3-Animation mixins
+@import "base/base";                    // HTML-elements and basic classes
 @import "base/scaffold";                // Basic site scaffold
 
 /*
@@ -43,7 +42,6 @@ $fa-font-path: "../bower_components/font-awesome/fonts/";
 
 Styles for gui-elements.
 */
-
 @import "elements/tables";              // Tabellen
 @import "elements/buttons";             // Buttons
 @import "elements/forms";               // Formulare

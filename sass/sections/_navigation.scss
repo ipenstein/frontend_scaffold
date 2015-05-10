@@ -14,7 +14,7 @@
 .main-nav .trigger {
     display: block;
     padding: 4px 10px;
-    border: 1px solid rgba($green1, 0.3);
+    border: 1px solid rgba($blue1, 0.3);
     @include border-radius(5px);
     @include font-size(24, 20);
     @include transition-property(background-color);
@@ -25,7 +25,7 @@
     &:focus,
     &:active,
     &.active {
-        background-color: $green1;
+        background-color: $blue1;
         color: $header-bg-color;
     }
 }
@@ -42,7 +42,7 @@
     float: left;
     margin: 0 10px;
     padding: 10px 0;
-    color: $green1;
+    color: $blue1;
     text-transform: uppercase;
     text-decoration: none;
     @include transition-property(color);
