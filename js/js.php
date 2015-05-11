@@ -5,6 +5,8 @@
     ob_start ( 'ob_gzhandler' ) ;
 
         $sourcen = array (
+                    'lib/jquery.syncheight.js',
+                    'responsive.js',
                     'layout.js' ,
                     '../bower_components/jquery-validation/dist/jquery.validate.min.js',
                     '../bower_components/jquery-validation/src/localization/messages_de.js',

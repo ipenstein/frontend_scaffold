@@ -98,16 +98,6 @@ $form-label-font-size:          14px;
 $form-gutter-width:             10px;
 
 /*
-# Tables
-*/
-$table-breakpoint:      medium;         // max-brakepoint where responsive tables will become scrollable
-$table-bg-color:        transparent;
-$table-bg-accent-color: $white;
-$table-bg-hover-color:  $turquise1;
-$table-border-color:    $grey4;
-$table-cell-padding:    10px;
-
-/*
 # Buttons
 */
 
@@ -119,9 +109,9 @@ $btn-margin:                    4px 0;
 
 // Color variants
 $btn-color:                     $grey1;
-$btn-bg-color:                  $white;
-$btn-hover-bg-color:            darken($white, 2%);
-$btn-active-bg-color:           darken($white, 10%);
+$btn-bg-color:                  $grey4;
+$btn-hover-bg-color:            darken($grey4, 2%);
+$btn-active-bg-color:           darken($grey4, 10%);
 
 $btn-primary-color:             $white;
 $btn-primary-bg-color:          $blue1;
@@ -148,13 +138,23 @@ $btn-font-size:                 $base-font-size;
 $btn-padding:                   7px 20px;
 $btn-next-border-radius:        16px;
 
-$btn-sm-font-size:              14px;
+$btn-sm-font-size:              14;
 $btn-sm-padding:                5px 12px;
 $btn-sm-next-border-radius:     12px;
 
-$btn-big-font-size:             20px;
+$btn-big-font-size:             20;
 $btn-big-padding:               16px 30px;
-$btn-big-next-border-radius:    20px;
+$btn-big-next-border-radius:    26px;
+
+/*
+# Tables
+*/
+$table-breakpoint:      medium;         // max-brakepoint where responsive tables will become scrollable
+$table-bg-color:        transparent;
+$table-bg-accent-color: $white;
+$table-bg-hover-color:  $turquise1;
+$table-border-color:    $grey4;
+$table-cell-padding:    10px;
 
 /*
 # Tabs

@@ -46,6 +46,11 @@
     padding: 10px;
 }
 
+.example-equal-1 {  @include bp(small) { @include span(4); }}
+.example-equal-2 {  @include bp(small) { @include span(4); }}
+.example-equal-3 {  @include bp(small) { @include span(4 last); }}
+
+
 /*
 # CSS selector example for external links
 */

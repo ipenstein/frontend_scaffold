@@ -26,14 +26,13 @@ Button styles
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
-    @include box-shadow(0 1px 0 rgba(0, 0, 0, 0.05));
+    @include box-shadow(0 1px 0 rgba(0, 0, 0, 0.075));
     &:hover,
     &.hover {
         text-decoration: none;
     }
     &:active,
     &.active {
-        outline: 0;
         background-image: none;
         text-decoration: none;
         @include box-shadow(inset 0 2px 3px rgba(0, 0, 0, 0.175));
@@ -89,7 +88,7 @@ button[disabled].btn-disabled,
     cursor: not-allowed;
     &:active,
     &.active {
-        @include box-shadow(none);
+        @include box-shadow(0 1px 0 rgba(0, 0, 0, 0.075));
     }
 }
 .btn-accept {
@@ -117,13 +116,13 @@ button[disabled].btn-disabled,
 */
 .btn-sm,
 .btn-group-sm > .btn {
-    font-size: $btn-sm-font-size;
+    @include font-size($btn-sm-font-size, $btn-sm-font-size);
     padding: $btn-sm-padding;
 }
 
 .btn-big,
 .btn-group-big > .btn {
-    font-size: $btn-big-font-size;
+    @include font-size ($btn-big-font-size, $btn-big-font-size);
     padding: $btn-big-padding;
 }
 

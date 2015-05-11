@@ -311,3 +311,17 @@ http://codepen.io/HugoGiraudel/details/KFDuB
     clip: rect(0 0 0 0);
     overflow: hidden;
 }
+
+#responsive-status {
+    display: none;
+    font-family: "mobile";
+}
+@each $breakpoint in $breakpoints {
+    $name: nth($breakpoint, 1);
+    $width: nth($breakpoint, 2);
+    @media (min-width: $width) {
+        #responsive-status {
+            font-family: "#{$name}";
+        }
+    }
+}
