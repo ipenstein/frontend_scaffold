@@ -76,18 +76,12 @@ b, strong {
     font-weight: bold;
 }
 
-ul {
-    list-style-type: none;
-    padding: 0px;
-    margin: 0 0 $base-line-height-px 0;
-
-    & > li > ul {
-        margin: 0;
-    }
-
-    li {
-        background: image-url("li.png") 0 8px no-repeat;
-        padding-left: 15px;
+ul,
+ol {
+    & ul,
+    & ol {
+        margin-top: 0;
+        margin-bottom: 0;
     }
 }
 

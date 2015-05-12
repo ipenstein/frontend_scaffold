@@ -11,7 +11,8 @@ Button styles
     @include inline-block;
     font-family: $btn-font-family;
     font-weight: 400;
-    @include font-size($btn-font-size, $btn-font-size);
+    font-size: $btn-font-size;
+    line-height: normal;
     border: 1px solid transparent;
     border: 1px solid rgba(0,0,0,.15);
     text-align: center;
@@ -116,13 +117,13 @@ button[disabled].btn-disabled,
 */
 .btn-sm,
 .btn-group-sm > .btn {
-    @include font-size($btn-sm-font-size, $btn-sm-font-size);
+    font-size: $btn-sm-font-size;
     padding: $btn-sm-padding;
 }
 
 .btn-big,
 .btn-group-big > .btn {
-    @include font-size ($btn-big-font-size, $btn-big-font-size);
+    font-size: $btn-big-font-size;
     padding: $btn-big-padding;
 }
 

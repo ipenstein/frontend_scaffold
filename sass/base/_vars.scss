@@ -69,12 +69,15 @@ $footer-bg-color:       $grey4;
 /*
 # Basic typography
 */
-$font-family-1:         "Helvetica-Neue", Helvetica, Arial, sans-serif;
-$font-family-2:         "Droid Serif", Georgia, "Times New Roman", Times, serif;
+$font-family-1:         "Roboto", "Helvetica-Neue", Helvetica, Arial, sans-serif;
+$font-family-2:         "Roboto Slab", Georgia, "Times New Roman", Times, serif;
 
 $base-font-size:        16;             //in px without unit
 $base-line-height:      20;             //in px without unit
+
+$base-font-size-px:     #{$base-font-size}px;
 $base-line-height-px:   #{$base-line-height}px;
+
 
 /*
 # Forms
@@ -134,17 +137,17 @@ $btn-decline-hover-bg-color:    darken($red1, 5%);
 $btn-decline-active-bg-color:   darken($red1, 10%);
 
 // Sizes
-$btn-font-size:                 $base-font-size;
-$btn-padding:                   7px 20px;
-$btn-next-border-radius:        16px;
+$btn-font-size:                 $base-font-size-px;
+$btn-padding:                   6px 20px;
+$btn-next-border-radius:        17px;
 
-$btn-sm-font-size:              14;
+$btn-sm-font-size:              14px;
 $btn-sm-padding:                5px 12px;
-$btn-sm-next-border-radius:     12px;
+$btn-sm-next-border-radius:     14px;
 
-$btn-big-font-size:             20;
-$btn-big-padding:               16px 30px;
-$btn-big-next-border-radius:    26px;
+$btn-big-font-size:             20px;
+$btn-big-padding:               10px 30px;
+$btn-big-next-border-radius:    23px;
 
 /*
 # Tables

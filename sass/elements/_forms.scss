@@ -249,8 +249,12 @@ fieldset {
                 content: "\00a0";
                 display: block;
                 font-size: $form-label-font-size;
+                /*
+                line-height: $form-line-height;
+                font-size: $form-label-font-size;
                 line-height: 15px;
                 height: 15px;
+                */
                 margin-top: -15px; // font-size * line-height
             }
 
