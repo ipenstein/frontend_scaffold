@@ -9,6 +9,7 @@
                     'lib/jquery.scrollTo.min.js',
                     'lib/jquery-scrollspy.js',
                     'responsive.js',
+                    'nav.js',
                     'layout.js' ,
                     '../bower_components/jquery-validation/dist/jquery.validate.min.js',
                     '../bower_components/jquery-validation/src/localization/messages_de.js',
