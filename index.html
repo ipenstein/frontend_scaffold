@@ -33,23 +33,26 @@
         <div class="container">
             <a class="logo" href="index.html"><i class="fa fa-rocket"></i> Scaffold</a>
             <nav class="main-nav">
-                <a class="trigger" href="javascript:void(0);"><i class="fa fa-bars"></i></a>
+                <a class="trigger" href="javascript://"><i class="fa fa-bars"></i></a>
                 <ul>
-                    <li id="nav-home" class="active"><a href="index.html">Home</a></li>
-                    <li id="nav-about"><a href="about.html">About</a></li>
-                    <li id="nav-contact"><a href="contact.html">Contact</a></li>
-                    <li id="nav-imprint"><a href="imprint.html">Imprint</a></li>
+                    <li id="nav-basic"><a href="#basic">Basic Elements</a></li>
+                    <li id="nav-grid"><a href="#grid">Grid</a></li>
+                    <li id="nav-forms"><a href="#forms">Forms</a></li>
+                    <li id="nav-buttons"><a href="#buttons">Buttons</a></li>
+                    <li id="nav-tabs"><a href="#tabs">Tabs</a></li>
+                    <li id="nav-tables"><a href="#tables">Tables</a></li>
+                    <li id="nav-alerts"><a href="#alerts">Alerts</a></li>
+                    <li id="nav-dropdowns"><a href="#dropdowns">Dropdowns</a></li>
                 </ul>
             </nav>
         </div>
     </header>
     <section class="hero">
-        <div class="container">
-            Hero Unit
-        </div>
+        <img src="img/blueprint.png">
     </section>
     <main class="content">
         <div class="container">
+            <a id="basic"></a>
             <h1>Frontend Scaffold &lt;h1&gt;</h1>
             <h2>Basic Elements &lt;h2&gt;</h2>
             <h3>Headings and paragraphs &lt;h3&gt;</h3>
@@ -84,7 +87,8 @@
             <p>Here you see an <a href="about.html">internal link</a>. Nothing special.</p>
             <p>An <a href="http://www.alistapart.com">external link</a> is marked with an appropriate icon. See "sass/misc/_example.scss" for more info.</p>
             <hr>
-            <h2>Grid System</h2>
+            <a id="grid"></a>
+            <h2>Grid</h2>
             <h3>Current active breakpoint:</h3>
             <p class="hide-small">(none)</p>
             <p class="reveal-small hide-medium">small</p>
@@ -197,8 +201,7 @@
                     <article class="example-module-2">.col-4of5</article>
                 </div>
             </div>
-            <hr>
-            <h2>Columns with synced heights</h2>
+            <h3>Columns with synced heights</h3>
             <p>syncHeight Plugin for YAML (<a href="https://github.com/ginader/syncHeight">https://github.com/ginader/syncHeight</a>)</p>
             <div class="example-grid equalize">
                 <div class="example-equal-1 example-module-2">
@@ -213,6 +216,7 @@
             </div>
 
             <hr>
+            <a id="forms"></a>
             <h2>Forms</h2>
             <h3><span>Best Practice</span> Forms</h3>
             <p>Based on Form Kitchen Sink (<a href="http://codepen.io/njsteele/pen/ajLpb">http://codepen.io/njsteele/pen/ajLpb</a>).</p>
@@ -404,6 +408,7 @@
               </fieldset>
             </form>
             <hr>
+            <a id="buttons"></a>
             <h2>Buttons</h2>
             <h3>Regular Size</h3>
             <a class="btn btn-prev">Prev</a>
@@ -452,6 +457,7 @@
             <a class="btn btn-round">Round button</a>
             <a class="btn btn-big btn-round">Big and round button</a>
             <hr>
+            <a id="tabs"></a>
             <h2>Tabs</h2>
             <div class="tabs-container">
                 <ul class="tabs">
@@ -476,6 +482,7 @@
                 </div>
             </div>
             <hr>
+            <a id="tables"></a>
             <h2>Tables</h2>
             <p>Based on Bootstrap (<a href="http://getbootstrap.com/css/#tables">http://getbootstrap.com/css/#tables</a>).</p>
             <h3>.table</h3>
@@ -598,6 +605,7 @@
                 </table>
             </div>
             <hr>
+            <a id="alerts"></a>
             <h2>Alerts</h2>
             <div class="alerts">
                 <div class="alert-message info">
@@ -618,13 +626,18 @@
                 </div>
             </div>
             <hr>
+            <a id="dropdowns"></a>
             <h2>Dropdowns</h2>
             <hr>
         </div>
     </main>
     <footer class="site-footer">
         <div class="container">
-            Footer
+            <h4>Scaffold</h4>
+            <p>
+                A frontend boilerplate<br>
+                by Marc Wittenbrink
+            </p>
         </div>
     </footer>
     <span id="responsive-status"></span>

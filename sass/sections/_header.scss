@@ -3,10 +3,11 @@
 */
 
 .site-header {
-    background-color: $header-bg-color;
+    background-color: $header-bg-color;;
     padding: 20px 0;
     height: 80px;
-    position: relative;
+    position: fixed;
+    width: 100%;
     z-index: 30;
     @include box-shadow(rgba(#000000, 0.2) 0 15px 15px);
 }
@@ -18,9 +19,9 @@
     text-transform: uppercase;
     text-decoration: none;
     padding-top: 20px;
-
     &,
-    &:hover {
+    &:hover,
+    &:visited {
         color: $white;
     }
 

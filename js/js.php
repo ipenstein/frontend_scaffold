@@ -6,6 +6,8 @@
 
         $sourcen = array (
                     'lib/jquery.syncheight.js',
+                    'lib/jquery.scrollTo.min.js',
+                    'lib/jquery-scrollspy.js',
                     'responsive.js',
                     'layout.js' ,
                     '../bower_components/jquery-validation/dist/jquery.validate.min.js',

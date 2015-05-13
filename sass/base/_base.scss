@@ -34,7 +34,6 @@ h1, h2, h3, h4 {
 h1 {
     @include font-size(50,60);
     border-bottom: 1px solid $blue1;
-    margin-top: 0;
 }
 h2 {
     @include font-size(32,40);
@@ -44,7 +43,7 @@ h3 {
 }
 h4 {
     @include font-size(18,20);
-    margin: 0;
+    margin: $base-line-height-px 0;
 }
 
 a,
@@ -91,6 +90,11 @@ hr {
     margin-top: #{$base-line-height * 2 - 1}px;
     margin-bottom: #{$base-line-height * 2}px;;
     padding: 0;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
 }
 
 .floatleft {

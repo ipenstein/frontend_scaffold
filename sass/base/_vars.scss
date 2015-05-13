@@ -187,17 +187,17 @@ $alert-margin:                  0 0 $base-line-height-px 0;
 $alert-border:                  1px solid;
 
 $alert-info-color:              $grey1;
-$alert-info-bg-color:           rgba($grey3, 0.2);
-$alert-info-border-color:       $grey3;
+$alert-info-bg-color:           rgba($blue1, 0.1);
+$alert-info-border-color:       $blue1;
 
 $alert-danger-color:            $grey1;
-$alert-danger-bg-color:         rgba($yellow1, 0.2);
+$alert-danger-bg-color:         rgba($yellow1, 0.1);
 $alert-danger-border-color:     $yellow1;
 
 $alert-error-color:             $grey1;
-$alert-error-bg-color:          rgba($red1, 0.2);
+$alert-error-bg-color:          rgba($red1, 0.1);
 $alert-error-border-color:      $red1;
 
 $alert-success-color:           $grey1;
-$alert-success-bg-color:        rgba($green1, 0.2);
+$alert-success-bg-color:        rgba($green1, 0.1);
 $alert-success-border-color:    $green1;
