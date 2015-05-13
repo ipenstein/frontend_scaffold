@@ -10,8 +10,13 @@
 }
 
 .example-col-1 {
+    // This is equivalent to @include span(6 of 12);
     @include bp(small) {    @include span(6);   }
+
+    // This is equivalent to @include span(4 of 12);
     @include bp(medium) {   @include span(4);   }
+
+    // This is equivalent to @include span(3 of 12);
     @include bp(big) {      @include span(3);   }
 }
 
@@ -35,8 +40,8 @@
 
 .example-module,
 .example-module-2 {
-    border: 1px solid $turquise1;
-    background-color: $white;
+    border: 1px dotted $grey3;
+    background-color: $grey5;
     padding: 20px;
     font-family: "Consolas", "Source Code Pro", "Courier New", Courier, monospace;
     font-size: 14px;
@@ -46,6 +51,7 @@
     padding: 10px;
 }
 
+// This is equivalent to @include span(4 of 12);
 .example-equal-1 {  @include bp(small) { @include span(4); }}
 .example-equal-2 {  @include bp(small) { @include span(4); }}
 .example-equal-3 {  @include bp(small) { @include span(4 last); }}
@@ -57,8 +63,8 @@
 a[href^="http"] {
     &:before {
         font-family: "FontAwesome";
-        font-size: 73%;
+        font-size: 85%;
         content: "\f08e";
-        margin-right: 2px;
+        margin-right: 3px;
     }
 }

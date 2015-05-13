@@ -25,6 +25,7 @@
         background-color: $tab-bg-color;
         border: 1px solid $tab-border-color;
         border-bottom: 1px solid $tab-active-border-color;
+        @include border-radius(3px 3px 0 0);
         @include transition-property(all);
         @include transition-duration(0.2s);
         @include transition-timing-function(ease-out);
@@ -36,6 +37,7 @@
         color: $tab-hover-color;
         background-color: $tab-hover-bg-color;
         border-color: $tab-hover-border-color;
+        border-bottom: 1px solid $tab-active-border-color;
     }
     .active a {
         z-index: 30;

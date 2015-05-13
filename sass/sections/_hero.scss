@@ -2,3 +2,13 @@
 # sections/_hero.scss
 */
 
+.hero {
+    background: black image-url("bg-hero.jpg") center center repeat-x;
+    height: 200px;
+    @include bp(small) {
+        height: 300px;
+    }
+    @include bp(medium) {
+        height: 450px;
+    }
+}

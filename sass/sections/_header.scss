@@ -14,17 +14,21 @@
 .logo {
     font-family: $font-family-2;
     @include font-size(30,30);
+    font-weight: 700;
     text-transform: uppercase;
     text-decoration: none;
     padding-top: 20px;
 
     &,
     &:hover {
-        color: $grey4;
+        color: $white;
     }
 
     i {
         color: $blue1;
+        @include font-size(45,30);
+        font-weight: normal;
+        margin-right: -6px;
     }
 
 }

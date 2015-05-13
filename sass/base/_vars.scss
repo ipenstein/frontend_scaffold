@@ -56,12 +56,12 @@ $turquise1:             #86cee0;
 $text-color:            $grey1;
 
 $link-color:            $blue1;
-$link-hover-color:      $grey2;
+$link-hover-color:      $grey3;
 $link-visited-color:    darken($blue1, 10%);
 
-$hr-color:              $grey2;
+$hr-color:              $grey1;
 
-$body-bg-color:         $grey5;
+$body-bg-color:         $white;
 $hero-bg-color:         $grey4;
 $header-bg-color:       $grey1;
 $footer-bg-color:       $grey4;
@@ -70,7 +70,10 @@ $footer-bg-color:       $grey4;
 # Basic typography
 */
 $font-family-1:         "Roboto", "Helvetica-Neue", Helvetica, Arial, sans-serif;
+//$font-family-1:         Georgia, "Times New Roman", serif;
 $font-family-2:         "Roboto Slab", Georgia, "Times New Roman", Times, serif;
+$font-family-2:         "Oswald", Arial, sans-serif;
+
 
 $base-font-size:        16;             //in px without unit
 $base-line-height:      20;             //in px without unit
@@ -112,9 +115,9 @@ $btn-margin:                    4px 0;
 
 // Color variants
 $btn-color:                     $grey1;
-$btn-bg-color:                  $grey4;
-$btn-hover-bg-color:            darken($grey4, 2%);
-$btn-active-bg-color:           darken($grey4, 10%);
+$btn-bg-color:                  $grey5;
+$btn-hover-bg-color:            darken($grey5, 2%);
+$btn-active-bg-color:           darken($grey5, 10%);
 
 $btn-primary-color:             $white;
 $btn-primary-bg-color:          $blue1;
@@ -153,8 +156,8 @@ $btn-big-next-border-radius:    23px;
 # Tables
 */
 $table-breakpoint:      medium;         // max-brakepoint where responsive tables will become scrollable
-$table-bg-color:        transparent;
-$table-bg-accent-color: $white;
+$table-bg-color:        $white;
+$table-bg-accent-color: $grey5;
 $table-bg-hover-color:  $turquise1;
 $table-border-color:    $grey4;
 $table-cell-padding:    10px;
@@ -164,14 +167,14 @@ $table-cell-padding:    10px;
 */
 $tab-padding:                   10px 20px;
 $tab-color:                     $grey3;
-$tab-border-color:              $grey3;
-$tab-bg-color:                  $white;
+$tab-border-color:              $grey4;
+$tab-bg-color:                  $grey5;
 $tab-hover-color:               $grey1;
-$tab-hover-border-color:        $grey1;
+$tab-hover-border-color:        darken($turquise1, 40%);
 $tab-hover-bg-color:            $turquise1;
 $tab-active-color:              $grey2;
 $tab-active-border-color:       $grey2;
-$tab-active-bg-color:           $grey5;
+$tab-active-bg-color:           $white;
 
 /*
 # Alerts
@@ -184,17 +187,17 @@ $alert-margin:                  0 0 $base-line-height-px 0;
 $alert-border:                  1px solid;
 
 $alert-info-color:              $grey1;
-$alert-info-bg-color:           $white;
+$alert-info-bg-color:           rgba($grey3, 0.2);
 $alert-info-border-color:       $grey3;
 
 $alert-danger-color:            $grey1;
-$alert-danger-bg-color:         $white;
+$alert-danger-bg-color:         rgba($yellow1, 0.2);
 $alert-danger-border-color:     $yellow1;
 
 $alert-error-color:             $grey1;
-$alert-error-bg-color:          $white;
+$alert-error-bg-color:          rgba($red1, 0.2);
 $alert-error-border-color:      $red1;
 
 $alert-success-color:           $grey1;
-$alert-success-bg-color:        $white;
+$alert-success-bg-color:        rgba($green1, 0.2);
 $alert-success-border-color:    $green1;
