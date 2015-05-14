@@ -28,6 +28,6 @@
 
 @include keyframes('blink') {
     0% { color: rgba($white, 0); bottom: 50px; }
-    90% { color: rgba($white, 0.9); bottom: 0px; }
+    90% { color: rgba($white, 0.6); bottom: 0px; }
     100% { color: rgba($white, 0); }
 }

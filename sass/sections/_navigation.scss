@@ -23,6 +23,7 @@
     color: $blue1;
     float: right;
     margin-right: 20px;
+    margin-top: 2px;
     border: 1px solid rgba($blue1, 0.3);
     background-color: transparent;
     @include border-radius(5px);
@@ -40,9 +41,9 @@
 
 .main-nav ul {
     @include no-list;
+    @include micro-clearfix;
     display: none;
-    background-color: $grey1;
-    margin-top: 60px;
+    margin-top: 50px;
     @include bp(big) {
         margin-top: 0;
         background-color: transparent;
@@ -58,9 +59,12 @@
     color: $blue1;
     text-transform: uppercase;
     text-decoration: none;
+    float: left;
     padding: 13px 20px;
     display: block;
-    border-top: 1px solid $grey2;
+    border-top: 1px solid rgba($white, 0.1);
+    background-color: rgba($grey1, 0.75);
+    width: 50%;
     &:hover {
         background-color: $blue1;
         color: $grey1;
@@ -70,13 +74,20 @@
         @include transition-duration(0.2s);
         @include transition-timing-function(ease-in);
         border-top: none;
-        float: left;
+        width: auto;
         margin: 0 10px;
         padding: 10px 0;
         &:hover {
             background-color: transparent;
             color: $grey4;
         }
+    }
+}
+
+.main-nav li:nth-child(odd) a {
+    border-right: 1px solid rgba($white, 0.1);
+    @include bp(big) {
+        border-right: none;
     }
 }
 

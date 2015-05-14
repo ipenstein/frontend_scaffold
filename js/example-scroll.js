@@ -7,7 +7,7 @@ $(document).ready(function() {
             $(".main-nav li").removeClass("active");
             $(this).closest("li").addClass("active");
             var haref = $(this).attr('href');
-            $(window).scrollTo($(haref), 500, {offset:-100});
+            $(window).scrollTo($(haref), 1000, {offset:-100});
         });
     });
 

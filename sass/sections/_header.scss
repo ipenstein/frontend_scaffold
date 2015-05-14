@@ -4,8 +4,8 @@
 
 .site-header {
     background-color: $header-bg-color;;
-    padding: 20px 0;
-    height: 80px;
+    padding: 10px 0;
+    height: 60px;
     position: fixed;
     width: 100%;
     z-index: 30;
@@ -14,13 +14,14 @@
 
 .logo {
     z-index: 30;
-    position: relative;
+    position: absolute;
+    left: 20px;
+    top: 2px;
     font-family: $font-family-2;
     @include font-size(30,30);
     font-weight: 700;
     text-transform: uppercase;
     text-decoration: none;
-    padding-top: 20px;
     &,
     &:hover,
     &:visited {
