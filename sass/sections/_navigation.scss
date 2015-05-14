@@ -3,27 +3,35 @@
 */
 
 .main-nav {
+    z-index: 20;
     position: absolute;
-    right: 10px;
+    right: 0px;
+    left: 0px;
     top: 0;
     li {
         background: none;
     }
+    @include bp(big) {
+        right: 10px;
+        left: auto;
+    }
 }
 
-.main-nav .trigger {
+.main-nav .dropdown-toggle {
     display: block;
     padding: 4px 10px;
+    color: $blue1;
+    float: right;
+    margin-right: 20px;
     border: 1px solid rgba($blue1, 0.3);
+    background-color: transparent;
     @include border-radius(5px);
     @include font-size(24, 20);
     @include transition-property(background-color);
     @include bp(big) {
-        display: none;
+        display: none !important;
     }
     &:hover,
-    &:focus,
-    &:active,
     &.active {
         background-color: $blue1;
         color: $header-bg-color;
@@ -33,24 +41,42 @@
 .main-nav ul {
     @include no-list;
     display: none;
+    background-color: $grey1;
+    margin-top: 60px;
     @include bp(big) {
+        margin-top: 0;
+        background-color: transparent;
+        display: block !important;
+        opacity: 1 !important;
         @include inline-list;
     }
 }
 
+
 .main-nav a {
-    float: left;
     font-family: $font-family-2;
-    margin: 0 10px;
-    padding: 10px 0;
     color: $blue1;
     text-transform: uppercase;
     text-decoration: none;
-    @include transition-property(color);
-    @include transition-duration(0.2s);
-    @include transition-timing-function(ease-in);
+    padding: 13px 20px;
+    display: block;
+    border-top: 1px solid $grey2;
     &:hover {
-        color: $grey4;
+        background-color: $blue1;
+        color: $grey1;
+    }
+    @include bp(big) {
+        @include transition-property(color);
+        @include transition-duration(0.2s);
+        @include transition-timing-function(ease-in);
+        border-top: none;
+        float: left;
+        margin: 0 10px;
+        padding: 10px 0;
+        &:hover {
+            background-color: transparent;
+            color: $grey4;
+        }
     }
 }
 

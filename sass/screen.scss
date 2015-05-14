@@ -33,7 +33,7 @@ $fa-font-path: "../bower_components/font-awesome/fonts/";
 @import "base/webfonts";                // Local webfonts
 @import "base/vars";                    // Variables
 @import "base/toolbelt";                // Helpful classes and mixins
-//@import "base/animations";              // CSS3-Animation mixins
+@import "base/animations";              // CSS3-Animation mixins
 @import "base/base";                    // HTML-elements and basic classes
 @import "base/scaffold";                // Basic site scaffold
 

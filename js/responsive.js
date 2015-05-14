@@ -17,19 +17,19 @@ function checkResponsiveStatus() {
         // Add your own cases if you like
         switch(status) {
             case "mobile":
-                console.log("call functions for mobile resolution");
+                console.log("JavaScript-Code for mobile resolution");
                 break;
 
             case "small":
-                console.log("call functions for small resolution");
+                console.log("JavaScript-Code for small resolution");
                 break;
 
             case "medium":
-                console.log("call functions for medium resolution");
+                console.log("JavaScript-Code for medium resolution");
                 break;
 
             case "big":
-                console.log("call functions for big resolution");
+                console.log("JavaScript-Code for big resolution");
                 break;
         }
     }
@@ -41,12 +41,12 @@ var laststatus = false;
 
 $(document).ready(function() {
 
-    //Groessenaenderung des Browserfensters abfangen
+    // Groessenaenderung des Browserfensters abfangen
     $( window ).bind( "resize", function(){
         checkResponsiveStatus();
     });
 
-    //Seite initialisieren
+    // Seite initialisieren
     checkResponsiveStatus();
 
 });

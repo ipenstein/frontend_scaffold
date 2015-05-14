@@ -34,7 +34,13 @@ $( document ).ready ( function () {
 
         if ( self.document.location.hash ) {
             var h = self.document.location.hash.replace('panel-', '');
-            $( 'a[rel=' + h + ']' ).parent().click () ;
+            var el = $( 'a[rel=' + h + ']', u );
+
+            if (el.length) {
+                $( el ).parent().click () ;
+            } else {
+                $( ".tabs li:first" , u ).click () ;
+            }
         } else {
             $( ".tabs li:first" , u ).click () ;
         }

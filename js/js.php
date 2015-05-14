@@ -5,17 +5,24 @@
     ob_start ( 'ob_gzhandler' ) ;
 
         $sourcen = array (
-                    'lib/jquery.syncheight.js',
-                    'lib/jquery.scrollTo.min.js',
-                    'lib/jquery-scrollspy.js',
-                    'responsive.js',
-                    'nav.js',
-                    'layout.js' ,
+                    // dependencies
                     '../bower_components/jquery-validation/dist/jquery.validate.min.js',
                     '../bower_components/jquery-validation/src/localization/messages_de.js',
+                    'lib/jquery.syncheight.js',
+                    'lib/jquery.scrollTo.min.js',
+                    'lib/parallax.min.js',
+
+                    // user scripts
+                    'responsive.js',
                     'forms.js',
                     'tabs.js',
-                    'alerts.js'
+                    'dropdowns.js',
+                    'alerts.js',
+                    'syncheight.js',
+                    'example-parallax.js',
+                    'example-scroll.js',
+                    'example-navigation.js',
+                    'layout.js'
                 ) ;
 
         foreach ( $sourcen AS $filename ) {

@@ -201,3 +201,16 @@ $alert-error-border-color:      $red1;
 $alert-success-color:           $grey1;
 $alert-success-bg-color:        rgba($green1, 0.1);
 $alert-success-border-color:    $green1;
+
+/*
+# Dropdowns
+*/
+$dropdown-font-size:            16;
+$dropdown-line-height:          20;
+$dropdown-padding:              5px 0;
+$dropdown-option-padding:       5px 20px;
+$dropdown-border:               1px solid $grey4;
+$dropdown-color:                $grey1;
+$dropdown-bg-color:             $white;
+$dropdown-hover-bg-color:       $grey5;
+$dropdown-divider-color:        $grey4;

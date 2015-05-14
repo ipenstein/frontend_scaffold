@@ -13,6 +13,8 @@
 }
 
 .logo {
+    z-index: 30;
+    position: relative;
     font-family: $font-family-2;
     @include font-size(30,30);
     font-weight: 700;
@@ -29,7 +31,6 @@
         color: $blue1;
         @include font-size(45,30);
         font-weight: normal;
-        margin-right: -6px;
+        margin-right: -4px;
     }
-
 }

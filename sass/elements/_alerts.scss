@@ -68,14 +68,14 @@ Alert messages
     }
 }
 
-.alert-message.info {
+.alert-message.alert-info {
     background-color: $alert-info-bg-color;
     border-color: $alert-info-border-color;
     &, & p, & a {
         color: $alert-info-color;
     }
 }
-.alert-message.danger {
+.alert-message.alert-danger {
     background-color: $alert-danger-bg-color;
     border-color: $alert-danger-border-color;
     &, & p, & a {
@@ -85,7 +85,7 @@ Alert messages
         content: "\f071";
     }
 }
-.alert-message.error {
+.alert-message.alert-error {
     background-color: $alert-error-bg-color;
     border-color: $alert-error-border-color;
     &, & p, & a {
@@ -95,7 +95,7 @@ Alert messages
         content: "\f05e";
     }
 }
-.alert-message.success {
+.alert-message.alert-success {
     background-color: $alert-success-bg-color;
     border-color: $alert-success-border-color;
     &, & p, & a {

@@ -1,3 +1,51 @@
 /*
 # elements/_dropdowns.scss
 */
+
+.dropdown {
+    position: relative;
+
+    ul {
+        list-style: none;
+        display: block;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        float: left;
+        min-width: 160px;
+        margin: 0;
+        padding: $dropdown-padding;
+        z-index: 50;
+        background-color: $dropdown-bg-color;
+        border: $dropdown-border;
+        @include font-size($dropdown-font-size, $dropdown-line-height);
+        @include box-shadow(0 6px 12px rgba(0,0,0,.175));
+
+        .divider {
+            height: 1px;
+            margin: 9px 0;
+            overflow: hidden;
+            background-color: $dropdown-divider-color;
+        }
+        a {
+            display: block;
+            padding: $dropdown-option-padding;
+            clear: both;
+            color: $dropdown-color;
+            white-space: nowrap;
+            &:hover {
+                background-color: $dropdown-hover-bg-color;
+            }
+        }
+    }
+}
+
+.caret {
+    @include inline-block;
+    @include caret(bottom, 5px, #333);
+    margin-left: 2px;
+}
+
+.dropdown-toggle.active .caret {
+    @include caret(top, 5px, #333);
+}

@@ -1,0 +1,814 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js ie7 lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js ie8 lt-ie9"> <![endif]-->
+<!--[if IE 9]>         <html class="no-js ie9"> <![endif]-->
+<!--[if gt IE 9]><!--> <html class="no-js"> <!--<![endif]-->
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+    <title>Document</title>
+    <meta name="author" content="Interface Medien GmbH - www.interface-medien.de">
+    <meta name="publisher" content="Interface Medien GmbH - www.interface-medien.de">
+    <meta name="copyright" content="">
+    <meta name="description" content="{PAGE_DESCRIPTION}">
+    <meta name="keywords" content="{PAGE_KEYWORDS}">
+
+    <meta name="viewport" content="width=device-width">
+
+    <link href='http://fonts.googleapis.com/css?family=Roboto:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Oswald:400,700' rel='stylesheet' type='text/css'>
+
+    <link rel="stylesheet" media="screen, projection" href="css/screen.css" type="text/css">
+    <link rel="stylesheet" media="print" href="css/print.css" type="text/css">
+
+    <script src="bower_components/modernizr/modernizr.js"></script>
+
+    <!-- Syntax Highlighting -->
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/styles/default.min.css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js"></script>
+</head>
+<body>
+    <!--[if lt IE 7]>
+        <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+    <![endif]-->
+    <header class="site-header">
+        <div class="container">
+            <a class="logo" href="example.html"><i class="fa fa-rocket"></i> Scaffold</a>
+            <nav class="main-nav">
+                <button class="dropdown-toggle"><i class="fa fa-bars"></i></button>
+                <ul>
+                    <li id="nav-basic"><a href="#basic">Basic Elements</a></li>
+                    <li id="nav-grid"><a href="#grid">Grid</a></li>
+                    <li id="nav-forms"><a href="#forms">Forms</a></li>
+                    <li id="nav-buttons"><a href="#buttons">Buttons</a></li>
+                    <li id="nav-tabs"><a href="#tabs">Tabs</a></li>
+                    <li id="nav-tables"><a href="#tables">Tables</a></li>
+                    <li id="nav-alerts"><a href="#alerts">Alerts</a></li>
+                    <li id="nav-dropdowns"><a href="#dropdowns">Dropdowns</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <section class="hero parallax-window">
+        <a href="#basic"><i class="fa fa-angle-down"></i></a>
+    </section>
+    <main class="content">
+        <div class="container">
+            <a id="basic"></a>
+            <h1>Frontend Scaffold &lt;h1&gt;</h1>
+            <h2>Basic Elements &lt;h2&gt;</h2>
+            <h3>Headings and paragraphs &lt;h3&gt;</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum in posuere orci. Nam euismod gravida nunc. Ut accumsan vitae dolor interdum ullamcorper. Ut luctus, lacus quis finibus bibendum, tortor nisl tristique mauris, eu efficitur nisi felis sit amet lacus. Duis a euismod erat. Sed faucibus ultricies sem, varius fringilla velit ullamcorper sit amet.</p>
+            <h4>This is a &lt;h4&gt; heading</h4>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum in posuere orci. Nam euismod gravida nunc. Ut accumsan vitae dolor interdum ullamcorper. Ut luctus, lacus quis finibus bibendum, tortor nisl tristique mauris, eu efficitur nisi felis sit amet lacus. Duis a euismod erat. Sed faucibus ultricies sem, varius fringilla velit ullamcorper sit amet.</p>
+            <h3>Unordered list</h3>
+            <ul>
+                <li>Eins
+                    <ul>
+                        <li>Eins.Eins</li>
+                        <li>Eins.Zwei</li>
+                    </ul>
+                </li>
+                <li>Zwei</li>
+                <li>Drei</li>
+                <li>Vier</li>
+            </ul>
+            <h3>Ordered list</h3>
+            <ol>
+                <li>Eins
+                    <ol>
+                        <li>Eins.Eins</li>
+                        <li>Eins.Zwei</li>
+                    </ol>
+                </li>
+                <li>Zwei</li>
+                <li>Drei</li>
+                <li>Vier</li>
+            </ol>
+            <h3>Text-links</h3>
+            <p>Here you see an <a href="about.html">internal link</a>. Nothing special.</p>
+            <p>An <a href="http://www.alistapart.com">external link</a> is marked with an appropriate icon. See "sass/misc/_example.scss" for more info.</p>
+            <hr>
+            <a id="grid"></a>
+            <h2>Grid</h2>
+            <h3>Current active breakpoint:</h3>
+            <p class="hide-small">(none)</p>
+            <p class="reveal-small hide-medium">small</p>
+            <p class="reveal-medium hide-big">medium</p>
+            <p class="reveal-big">big</p>
+            <h3>Susy</h3>
+            <p>
+                Responsive grid system.<br>
+                <a href="http://susy.oddbird.net/">http://susy.oddbird.net/</a>
+            </p>
+            <div class="example-grid">
+                <div class="example-col-1">
+                    <article class="example-module">
+                        <div class="hide-small">(none)</div>
+                        <div class="reveal-small hide-medium">@include bp(small) {   @include span(6);   }</div>
+                        <div class="reveal-medium">@include bp(medium) {   @include span(4);   }</div>
+                    </article>
+                </div>
+                <div class="example-col-2">
+                    <article class="example-module">
+                        <div class="hide-small">(none)</div>
+                        <div class="reveal-small hide-medium">@include bp(small) {   @include span(6);   }</div>
+                        <div class="reveal-medium">@include bp(medium) {   @include span(4);   }</div>
+                    </article>
+                </div>
+                <div class="example-col-3 reveal-medium">
+                    <article class="example-module">
+                        <div class="reveal-medium">@include bp(medium) {   @include span(4);   }</div>
+                    </article>
+                </div>
+            </div>
+            <br>
+            <div class="example-grid">
+                <div class="example-col-4">
+                    <article class="example-module">
+                        <div class="hide-small">(none)</div>
+                        <div class="reveal-small hide-medium">@include bp(small) {    @include span(6);   }</div>
+                        <div class="reveal-medium hide-big">@include bp(medium) {   @include span(4);   }</div>
+                        <div class="reveal-big">@include bp(big) {      @include span(3);   }</div>
+                    </article>
+                </div>
+                <div class="example-col-5">
+                    <article class="example-module">
+                        <div class="hide-small">(none)</div>
+                        <div class="reveal-small hide-medium">@include bp(small) {    @include span(6 last);   }</div>
+                        <div class="reveal-medium hide-big">@include bp(medium) {   @include span(8 last);   }</div>
+                        <div class="reveal-big">@include bp(big) {      @include span(9 last);   }</div>
+                    </article>
+                </div>
+            </div>
+<pre>
+<h4>HTML</h4>
+<code class="html">&lt;div class="example-grid"&gt;
+    &lt;div class="example-col-4"&gt;
+        ...
+    &lt;/div&gt;
+    &lt;div class="example-col-5"&gt;
+        ...
+    &lt;/div&gt;
+&lt;/div&gt;
+</code>
+<h4>CSS</h4>
+<code class="css">.example-grid {
+    @include container;
+}
+
+.example-col-4 {
+    @include bp(small) {    @include span(6);   }
+    @include bp(medium) {   @include span(4);   }
+    @include bp(big) {      @include span(3);   }
+}
+
+.example-col-5 {
+    @include bp(small) {    @include span(6 last);  }
+    @include bp(medium) {   @include span(8 last);  }
+    @include bp(big) {      @include span(9 last);  }
+}
+</code></pre>
+
+            <h3>Easy grid</h3>
+            <p>Light, selfmade grid. Classes mandatory for "form kitchen sink" (see below).</p>
+            <div class="grid">
+                <div class="col-1of4">
+                    <article class="example-module-2">.col-1of4</article>
+                </div>
+                <div class="col-1of4">
+                    <article class="example-module-2">.col-1of4</article>
+                </div>
+                <div class="col-1of4">
+                    <article class="example-module-2">.col-1of4</article>
+                </div>
+                <div class="col-1of4">
+                    <article class="example-module-2">.col-1of4</article>
+                </div>
+            </div>
+            <div class="grid">
+                <div class="col-1of1">
+                    <article class="example-module-2">.col-1of1</article>
+                </div>
+            </div>
+            <div class="grid">
+                <div class="col-1of2">
+                    <article class="example-module-2">.col-1of2</article>
+                </div>
+                <div class="col-1of2">
+                    <article class="example-module-2">.col-1of2</article>
+                </div>
+            </div>
+            <div class="grid">
+                <div class="col-1of3">
+                    <article class="example-module-2">.col-1of3</article>
+                </div>
+                <div class="col-2of3">
+                    <article class="example-module-2">.col-2of3</article>
+                </div>
+            </div>
+            <div class="grid">
+                <div class="col-1of4">
+                    <article class="example-module-2">.col-1of4</article>
+                </div>
+                <div class="col-3of4">
+                    <article class="example-module-2">.col-3of4</article>
+                </div>
+            </div>
+            <div class="grid">
+                <div class="col-2of5">
+                    <article class="example-module-2">.col-2of5</article>
+                </div>
+                <div class="col-3of5">
+                    <article class="example-module-2">.col-3of5</article>
+                </div>
+            </div>
+            <div class="grid">
+                <div class="col-1of5">
+                    <article class="example-module-2">.col-1of5</article>
+                </div>
+                <div class="col-4of5">
+                    <article class="example-module-2">.col-4of5</article>
+                </div>
+            </div>
+<pre>
+<h4>HTML</h4>
+<code class="html">&lt;div class="grid"&gt;
+    &lt;div class="col-1of5"&gt;
+        ...
+    &lt;/div&gt;
+    &lt;div class="col-4of5"&gt;
+        ...
+    &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+            <h3>Columns with synced heights</h3>
+            <p>syncHeight Plugin for YAML (<a href="https://github.com/ginader/syncHeight">https://github.com/ginader/syncHeight</a>)</p>
+            <div class="example-grid sync-height">
+                <div class="example-equal-1 example-module-2">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque a ligula vitae risus vulputate venenatis. Donec luctus, sapien non maximus interdum, risus elit condimentum enim, a commodo metus ipsum vel erat.
+                </div>
+                <div class="example-equal-2 example-module-2">
+                    Maecenas ac purus vitae leo pellentesque congue a id nisi. Phasellus ultrices interdum tellus eget auctor. Morbi tristique lectus sed mi malesuada, in sagittis massa consequat. Sed sed accumsan nisl. Sed bibendum gravida lorem eu tristique. Aliquam facilisis congue venenatis. Proin dui neque, commodo eget leo eget, pretium ornare lacus.
+                </div>
+                <div class="example-equal-3 example-module-2">
+                    Ut pretium orci arcu, vitae pharetra neque pharetra sed.
+                </div>
+            </div>
+<pre>
+<h4>HTML</h4>
+<code class="html">&lt;div class="sync-height"&gt;
+    &lt;div&gt;
+        ...
+    &lt;/div&gt;
+    &lt;div&gt;
+        ...
+    &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+            <hr>
+            <a id="forms"></a>
+            <h2>Forms</h2>
+            <h3><span>Best Practice</span> Forms</h3>
+            <p>Based on Form Kitchen Sink (<a href="http://codepen.io/njsteele/pen/ajLpb">http://codepen.io/njsteele/pen/ajLpb</a>).</p>
+            <h4>This example meets the following requirements:</h4>
+            <ul>
+              <li>Container independent, flexible widths in percent</li>
+              <li>Responsive, linearizable, mobile-ready</li>
+              <li>Browser support: IE9 and up, Chrome latest, Safari latest, Firefox latest, Opera latest, major mobile browsers</li>
+              <li>2 variants: labels left (for most forms) and labels above (small or narrow forms)</li>
+              <li>Doesn't break with multi-line labels</li>
+              <li>Client-side validation via HTML5 input types and JavaScript support</li>
+              <li>Inline error messages</li>
+              <li>Backend/templating friendly
+                <ul>
+                  <li>Suitable for using label/input/error includes/snippets</li>
+                  <li>Slim and flexible markup</li>
+                </ul>
+              </li>
+            </ul>
+            <form action="#" method="get">
+              <fieldset class="wideform">
+                <h3 class="legend">Form kitchen sink</h3>
+                <p><b>Labels left:</b> Suitable for most forms<br/>
+                  <b>Labels above:</b> Better for short or narrow forms</p>
+                <a href="javascript://" class="btn js_toggleLabelPosition">Switch label position</a>
+
+                <hr/>
+
+                <div class="formrow">
+                  <div class="formitem">
+                    <div class="label req">Salutation</div>
+                    <div class="ticks">
+                      <label>
+                        <input type="radio" name="salutation" value="mrs" required="required"/>
+                        <span>Mrs.</span>
+                      </label>
+                      <label>
+                        <input type="radio" name="salutation" value="mr" required="required"/>
+                        <span>Mr.</span>
+                      </label>
+                      <label>
+                        <input type="radio" name="salutation" value="miss" required="required"/>
+                        <span>Miss</span>
+                      </label>
+                      <label>
+                        <input type="radio" name="salutation" value="jack" required="required"/>
+                        <span>Jack</span>
+                      </label>
+                      <label>
+                        <input type="radio" name="salutation" value="queen" required="required"/>
+                        <span>Queen</span>
+                      </label>
+                      <label>
+                        <input type="radio" name="salutation" value="king" required="required"/>
+                        <span>King</span>
+                      </label>
+                      <label>
+                        <input type="radio" name="salutation" value="sir" required="required"/>
+                        <span>Sir</span>
+                      </label>
+                      <label>
+                        <input type="radio" name="salutation" value="lord" required="required"/>
+                        <span>Lord</span>
+                      </label>
+                      <label>
+                        <input type="radio" name="salutation" value="master" required="required"/>
+                        <span>Master</span>
+                      </label>
+                      <label>
+                        <input type="radio" name="salutation" value="president" required="required"/>
+                        <span>President</span>
+                      </label>
+                    </div>
+                  </div>
+                </div>
+                <div class="formrow">
+                  <label class="label req" for="firstname">First/last name</label>
+                  <div class="formitem col-1of2">
+                    <label class="label req" for="firstname">First name</label>
+                    <input type="text" name="firstname" id="firstname" placeholder="Placeholder" required="required" x-autocompletetype="given-name"/>
+                  </div>
+                  <div class="formitem col-1of2">
+                    <label class="label req" for="firstname">Last name</label>
+                    <input type="text" name="lastname" id="lastname" placeholder="... with polyfill" required="required" x-autocompletetype="family-name"/>
+                  </div>
+                </div>
+                <div class="formrow">
+                  <div class="formitem col-1of3">
+                    <label class="label" for="zip">Zip</label>
+                    <input type="text" name="zip" id="zip" pattern="[0-9]{5}" x-autocompletetype="postal-code"/>
+                  </div>
+                  <div class="formitem col-2of3">
+                    <label class="label" for="zip">City</label>
+                    <input type="text" name="city" id="city" x-autocompletetype="city"/>
+                  </div>
+                </div>
+                <div class="formrow">
+                  <div class="formitem col-1of2">
+                    <label class="label" for="email">Email</label>
+                    <input type="email" name="email" id="email" x-autocompletetype="email"/>
+                  </div>
+                  <div class="formitem col-1of2">
+                    <label class="label" for="phone">Phone... Some more text for testing super long labels. It will happen, clients will do that. Lorem ipsum dolor sit amet, consectetuer adipiscing elit...</label>
+                    <input type="tel" name="phone" id="phone" x-autocompletetype="tel"/>
+                  </div>
+                </div>
+                <div class="formrow">
+                  <div class="formitem col-1of2">
+                    <label class="label" for="website">Your website, blog, Ihr Google Plus, Twitter or Facebook profile, whatever. Lots of text for testing really long labels, you know...</label>
+                    <input type="url" name="website" id="website" x-autocompletetype="url"/>
+                  </div>
+                  <div class="formitem col-1of2">
+                    <a href="javascript://" class="btn">Link button</a>
+                    <button type="button" class="btn btn-disabled" disabled="disabled">Disabled button</button>
+                  </div>
+                </div>
+                <div class="formrow">
+                  <div class="formitem col-1of2">
+                    <label class="label" for="password">Password</label>
+                    <input type="password" placeholder="Password" name="password" id="password"/>
+                  </div>
+                  <div class="formitem col-1of2">
+                    <input type="password" placeholder="Password again" name="passwordagain" id="passwordagain"/>
+                  </div>
+                </div>
+                <div class="formrow">
+                  <div class="formitem">
+                    <label class="label req" for="message">Message</label>
+                    <textarea name="message" id="message" cols="40" rows="5" required="required"></textarea>
+                  </div>
+                </div>
+                <div class="formrow">
+                  <div class="formitem">
+                    <div class="label req">Your rating</div>
+                    <div class="rating">
+                      <input type="radio" name="rating" value="5" id="rating5" required="required"/>
+                      <label for="rating5" class="star">
+                        <span>5 stars</span>
+                      </label>
+                      <input type="radio" name="rating" value="4" id="rating4" required="required"/>
+                      <label for="rating4" class="star">
+                        <span>4 stars</span>
+                      </label>
+                      <input type="radio" name="rating" value="3" id="rating3" required="required"/>
+                      <label for="rating3" class="star">
+                        <span>3 stars</span>
+                      </label>
+                      <input type="radio" name="rating" value="2" id="rating2" required="required"/>
+                      <label for="rating2" class="star">
+                        <span>2 stars</span>
+                      </label>
+                      <input type="radio" name="rating" value="1" id="rating1" required="required"/>
+                      <label for="rating1" class="star">
+                        <span>1 star</span>
+                      </label>
+                    </div>
+                  </div>
+                </div>
+                <div class="formrow">
+                  <div class="formitem col-1of2">
+                    <label class="label" for="country">Country</label>
+                    <select name="country" id="country" x-autocompletetype="country-name">
+                      <option selected="selected">please choose</option>
+                      <option>U.S.A.</option>
+                      <option>France</option>
+                      <option>Italy</option>
+                      <option>Spain</option>
+                      <option>Germany</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="formrow">
+                  <div class="formitem">
+                    <div class="ticks">
+                      <label>
+                        <input type="checkbox" name="terms" class="error" required="required"/>
+                        <span>Yes, of course I agree to your monstrous <a href="javascript://">terms and conditions</a> and I allow everything.</span>
+                      </label>
+                    </div>
+                    <label for="terms" class="error">Please agree to our terms of service to proceed.</label>
+                  </div>
+                </div>
+                <div class="formrow">
+                    <div class="formitem">
+                        <input type="reset" value="Reset" class="btn btn-decline"/>
+                        <button class="btn btn-primary">Submit</button>
+                    </div>
+                </div>
+              </fieldset>
+            </form>
+            <hr>
+            <a id="buttons"></a>
+            <h2>Buttons</h2>
+            <h3>Colors</h3>
+            <a class="btn">Normal button</a>
+            <a class="btn btn-primary">Primary button</a>
+            <a class="btn btn-disabled">Disabled button</a>
+            <a class="btn btn-decline">Decline button</a>
+            <a class="btn btn-accept">Accept button</a>
+
+<pre><h4>HTML</h4>
+<code class="html">&lt;a class="btn"&gt;Normal button&lt;/div&gt;
+&lt;a class="btn btn-primary"&gt;Primary button&lt;/a&gt;
+&lt;a class="btn btn-disabled"&gt;Disabled button&lt;/a&gt;
+&lt;a class="btn btn-decline"&gt;Decline button&lt;/a&gt;
+&lt;a class="btn btn-accept"&gt;Accept button&lt;/a&gt;
+</code></pre>
+
+            <h3>Size Variations</h3>
+            <a class="btn btn-sm">Small button</a>
+            <a class="btn btn-big">Big button</a>
+<pre><h4>HTML</h4>
+<code class="html">&lt;a class="btn btn-sm"&gt;Small button&lt;/div&gt;
+&lt;a class="btn btn-big"&gt;Big button&lt;/a&gt;
+</code></pre>
+
+            <h3>Round Buttons</h3>
+            <a class="btn btn-prev">Prev button</a>
+            <a class="btn btn-next">Next button</a>
+            <a class="btn btn-round">Round button</a>
+<pre><h4>HTML</h4>
+<code class="html">&lt;a class="btn btn-prev"&gt;Prev button&lt;/div&gt;
+&lt;a class="btn btn-next"&gt;Next button&lt;/a&gt;
+&lt;a class="btn btn-round"&gt;Round button&lt;/a&gt;
+</code></pre>
+
+            <h3>Full Button</h3>
+            <a class="btn btn-full">Full button</a>
+<pre><h4>HTML</h4>
+<code class="html">&lt;a class="btn btn-full"&gt;Full button&lt;/div&gt;
+</code></pre>
+
+            <h3>Button Group</h3>
+            <div class="btn-group">
+                <a class="btn">Grouped</a>
+                <a class="btn">buttons</a>
+                <a class="btn">Grouped</a>
+                <a class="btn">buttons</a>
+            </div>
+<pre><h4>HTML</h4>
+<code class="html">&lt;div class="btn-group"&gt;
+    &lt;a class="btn"&gt;Grouped&lt;/a&gt;
+    &lt;a class="btn"&gt;buttons&lt;/a&gt;
+    ...
+&lt;/div&gt;
+</code></pre>
+
+            <h3>Combinations</h3>
+            <a class="btn btn-sm btn-round">Small and round button</a>
+            <br>
+            <div class="btn-group">
+                <a class="btn btn-decline btn-prev">Abort</a>
+                <a class="btn btn-accept btn-next">Okay</a>
+            </div>
+            <a class="btn btn-big btn-primary btn-full">Big, primary and full button</a>
+
+            <hr>
+            <a id="tabs"></a>
+            <h2>Tabs</h2>
+            <div class="tabs-container">
+                <ul class="tabs">
+                    <li><a href="#tab1">Tab 1</a></li>
+                    <li><a href="#tab2">Tab 2</a></li>
+                    <li><a href="#tab3">Tab 3</a></li>
+                </ul>
+                <div id="tab1" class="tab-content">
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam malesuada fermentum mi. Integer ut massa dignissim, fermentum odio a, scelerisque sem. Cras ut mi sed mi iaculis tempor ac ut est. Nulla iaculis eu lectus in luctus. Ut pretium felis sit amet quam rutrum malesuada. Phasellus gravida quam nunc, nec faucibus turpis feugiat et. Sed nec sem a nunc pellentesque volutpat. Duis pharetra varius blandit. Nulla posuere lorem dui, vel suscipit mauris tincidunt eget. Proin sed finibus justo. Integer vel aliquet nulla, a fermentum ex.
+                    </p>
+                </div>
+                <div id="tab2" class="tab-content">
+                    <p>
+                        Vivamus sed aliquet nisl, sit amet mollis leo. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Nam tempor orci id lectus condimentum feugiat. In eleifend urna elit, et semper odio dapibus eu. Fusce imperdiet faucibus lectus. Donec lobortis tempus arcu, in lacinia purus. Curabitur placerat elementum porta.
+                    </p>
+                </div>
+                <div id="tab3" class="tab-content">
+                    <p>
+                        Phasellus rhoncus ipsum in nulla mattis hendrerit. Vestibulum magna nunc, luctus at luctus a, sodales eget ligula. Vivamus eget massa ac dolor vehicula gravida eu ac quam. Ut eu ante bibendum, facilisis lectus eu, imperdiet felis. In nec nibh et nunc tincidunt malesuada. Duis a porta ligula, sit amet scelerisque purus. Etiam scelerisque sed lectus nec dictum. Duis at justo nunc. Ut justo est, eleifend eu libero vitae, gravida congue lacus. Cras nec neque id nisl dapibus tincidunt. Etiam id vehicula nisi, ut rutrum mauris. In sollicitudin non ex sit amet facilisis. Cras mauris arcu, sagittis vel bibendum eu, ornare sit amet felis. Phasellus accumsan enim ligula, vitae suscipit mi blandit sed. Ut lobortis risus non aliquet venenatis. Etiam eros mauris, eleifend non leo nec, dictum mollis magna.
+                    </p>
+                </div>
+            </div>
+<pre><h4>HTML</h4>
+<code class="html">&lt;div class="tabs-container"&gt;
+    &lt;ul class="tabs"&gt;
+        &lt;li&gt;&lt;a href="#tab1"&gt;Tab 1&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="#tab2"&gt;Tab 2&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="#tab3"&gt;Tab 3&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+    &lt;div id="tab1" class="tab-content"&gt;...&lt;/div&gt;
+    &lt;div id="tab2" class="tab-content"&gt;...&lt;/div&gt;
+    &lt;div id="tab3" class="tab-content"&gt;...&lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+
+            <hr>
+            <a id="tables"></a>
+            <h2>Tables</h2>
+            <p>Based on Bootstrap (<a href="http://getbootstrap.com/css/#tables">http://getbootstrap.com/css/#tables</a>).</p>
+            <h3>.table</h3>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Lorem ipsum</th>
+                        <th>dolor sit</th>
+                        <th>amet consectetur</th>
+                        <th>adipiscing elit</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th>1st</th>
+                        <td>Vestibulum in</td>
+                        <td>posuere orci</td>
+                        <td>Nam euismod</td>
+                    </tr>
+                    <tr>
+                        <th>2nd</th>
+                        <td>Vestibulum in</td>
+                        <td>posuere orci</td>
+                        <td>Nam euismod</td>
+                    </tr>
+                    <tr>
+                        <th>3rd</th>
+                        <td>Vestibulum in</td>
+                        <td>posuere orci</td>
+                        <td>Nam euismod</td>
+                    </tr>
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <td>tfoot</td>
+                        <td>tfoot</td>
+                        <td>tfoot</td>
+                        <td>tfoot</td>
+                    </tr>
+                </tfoot>
+            </table>
+<pre><h4>HTML</h4>
+<code class="html">&lt;table class="table"&gt;
+    ...
+&lt;/table&gt;
+</code></pre>
+            <h3>.table.table-bordered.table-striped.table-hover</h3>
+            <table class="table table-bordered table-striped table-hover">
+                <thead>
+                    <tr>
+                        <th>Lorem ipsum</th>
+                        <th>dolor sit</th>
+                        <th>amet consectetur</th>
+                        <th>adipiscing elit</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th>1st</th>
+                        <td>Vestibulum in</td>
+                        <td>posuere orci</td>
+                        <td>Nam euismod</td>
+                    </tr>
+                    <tr>
+                        <th>2nd</th>
+                        <td>Vestibulum in</td>
+                        <td>posuere orci</td>
+                        <td>Nam euismod</td>
+                    </tr>
+                    <tr>
+                        <th>3rd</th>
+                        <td>Vestibulum in</td>
+                        <td>posuere orci</td>
+                        <td>Nam euismod</td>
+                    </tr>
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <td>tfoot</td>
+                        <td>tfoot</td>
+                        <td>tfoot</td>
+                        <td>tfoot</td>
+                    </tr>
+                </tfoot>
+            </table>
+<pre><h4>HTML</h4>
+<code class="html">&lt;table class="table table-bordered table-striped table-hover"&gt;
+    ...
+&lt;/table&gt;
+</code></pre>
+            <h3>.table-responsive > .table</h3>
+            <div class="table-responsive">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Lorem ipsum ----------</th>
+                            <th>dolor sit ----------</th>
+                            <th>amet consectetur ----------</th>
+                            <th>adipiscing elit ----------</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th>1st</th>
+                            <td>Vestibulum in</td>
+                            <td>posuere orci</td>
+                            <td>Nam euismod</td>
+                        </tr>
+                        <tr>
+                            <th>2nd</th>
+                            <td>Vestibulum in</td>
+                            <td>posuere orci</td>
+                            <td>Nam euismod</td>
+                        </tr>
+                        <tr>
+                            <th>3rd</th>
+                            <td>Vestibulum in</td>
+                            <td>posuere orci</td>
+                            <td>Nam euismod</td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <td>tfoot</td>
+                            <td>tfoot</td>
+                            <td>tfoot</td>
+                            <td>tfoot</td>
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>
+<pre><h4>HTML</h4>
+<code class="html">&lt;div class="table-repsonsive"&gt;
+    &lt;table class="table"&gt;
+        ...
+    &lt;/table&gt;
+&lt;/div&gt;
+</code></pre>
+            <hr>
+            <a id="alerts"></a>
+            <h2>Alerts</h2>
+            <div class="alerts">
+                <div class="alert-message alert-info">
+                    <p>This is an info-text.</p>
+                </div>
+                <div class="alert-message alert-danger">
+                    <p>Warning!</p>
+                </div>
+                <div class="alert-message alert-error">
+                    <p>Something went wrong...</p>
+                </div>
+                <div class="alert-message alert-success">
+                    <p>Entry successfully created!</p>
+                </div>
+            </div>
+<pre><h4>HTML</h4>
+<code class="html">&lt;div class="alerts"&gt;
+    &lt;div class="alert-message alert-info"&gt;
+        ...
+    &lt;/div&gt;
+    &lt;div class="alert-message alert-danger"&gt;
+        ...
+    &lt;/div&gt;
+    &lt;div class="alert-message alert-error"&gt;
+        ...
+    &lt;/div&gt;
+    &lt;div class="alert-message alert-success"&gt;
+        ...
+    &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+            <hr>
+            <a id="dropdowns"></a>
+            <h2>Dropdowns</h2>
+            <div class="dropdown">
+                <button class="btn dropdown-toggle">
+                    Open dropdown
+                    <span class="caret"></span>
+                </button>
+                <ul>
+                    <li><a href="javascript://">Option 1</a></li>
+                    <li><a href="javascript://">Option 2</a></li>
+                    <li><a href="javascript://">Option 3</a></li>
+                    <li class="divider"></li>
+                    <li><a href="javascript://">Seperated option 4</a></li>
+                </ul>
+            </div>
+            <br><br><br><br><br><br><br>
+            <pre><h4>HTML</h4>
+<code class="html">&lt;div class="dropdown"&gt;
+    &lt;button class="btn dropdown-toggle"&gt;
+        Open dropdown
+        &lt;span class="caret"&gt;&lt;/span&gt;
+    &lt;/button&gt;
+    &lt;ul&gt;
+        &lt;li&gt;&lt;a href="..."&gt;Option 1&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="..."&gt;Option 2&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="..."&gt;Option 3&lt;/a&gt;&lt;/li&gt;
+        &lt;li class="divider"&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="..."&gt;Seperated option 4&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/div&gt;
+</code></pre>
+            <hr>
+        </div>
+    </main>
+    <footer class="site-footer">
+        <div class="container">
+            <div class="grid">
+                <div class="col-1of2">
+                    <h4>Scaffold</h4>
+                    <p>
+                        A frontend boilerplate<br>
+                        by Marc Wittenbrink
+                    </p>
+                    <p>
+                        <a href="https://github.com/ipenstein/frontend_scaffold">Fork on <i class="fa fa-github"></i> GitHub</a>
+                    </p>
+                </div>
+                <div class="col-1of2">
+                    <h4>Dependencies:</h4>
+                    <ul>
+                        <li>Bower</li>
+                        <li>Sass/Compass</li>
+                        <li>jQuery</li>
+                    </ul>
+                    <h4>Optional:</h4>
+                    <ul>
+                        <li>Susy</li>
+                        <li>Font Awesome</li>
+                        <li>Modernizr</li>
+                        <li>jQuery.Validation</li>
+                        <li>jQuery.ScrollTo</li>
+                        <li>jQuery.SyncHeight</li>
+                        <li>parallax.js</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <span id="responsive-status"></span>
+    <script src="bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="js/js.php"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+</body>
+</html>
