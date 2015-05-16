@@ -44,6 +44,7 @@
                     <li id="nav-forms"><a href="#forms">Forms</a></li>
                     <li id="nav-buttons"><a href="#buttons">Buttons</a></li>
                     <li id="nav-tabs"><a href="#tabs">Tabs</a></li>
+                    <li id="nav-collapse"><a href="#collapse">Collapse</a></li>
                     <li id="nav-tables"><a href="#tables">Tables</a></li>
                     <li id="nav-alerts"><a href="#alerts">Alerts</a></li>
                     <li id="nav-dropdowns"><a href="#dropdowns">Dropdowns</a></li>
@@ -91,6 +92,11 @@
             <h3>Text-links</h3>
             <p>Here you see an <a href="about.html">internal link</a>. Nothing special.</p>
             <p>An <a href="http://www.alistapart.com">external link</a> is marked with an appropriate icon. See "sass/misc/_example.scss" for more info.</p>
+<pre><h4>Files</h4>
+<div class="files">sass/base/_vars.scss
+sass/base/_base.scss
+</div>
+</pre>
             <hr>
             <a id="grid"></a>
             <h2>Grid</h2>
@@ -146,33 +152,36 @@
             </div>
 <pre>
 <h4>HTML</h4>
-<code class="html">&lt;div class="example-grid"&gt;
-    &lt;div class="example-col-4"&gt;
+<code class="html">&lt;div class="container"&gt;
+    &lt;div class="sidebar"&gt;
         ...
     &lt;/div&gt;
-    &lt;div class="example-col-5"&gt;
+    &lt;div class="content"&gt;
         ...
     &lt;/div&gt;
 &lt;/div&gt;
 </code>
-<h4>CSS</h4>
-<code class="css">.example-grid {
+<h4>SCSS</h4>
+<code class="css">.container {
     @include container;
 }
 
-.example-col-4 {
+.sidebar {
     @include bp(small) {    @include span(6);   }
     @include bp(medium) {   @include span(4);   }
     @include bp(big) {      @include span(3);   }
 }
 
-.example-col-5 {
+.content {
     @include bp(small) {    @include span(6 last);  }
     @include bp(medium) {   @include span(8 last);  }
     @include bp(big) {      @include span(9 last);  }
 }
 </code></pre>
-
+<pre><h4>Files</h4>
+<div class="files">bower_components/susy/
+</div>
+</pre>
             <h3>Easy grid</h3>
             <p>Light, selfmade grid. Classes mandatory for "form kitchen sink" (see below).</p>
             <div class="grid">
@@ -245,6 +254,10 @@
     &lt;/div&gt;
 &lt;/div&gt;
 </code></pre>
+<pre><h4>Files</h4>
+<div class="files">sass/base/_scaffold.scss
+</div>
+</pre>
             <h3>Columns with synced heights</h3>
             <p><a href="https://github.com/ginader/syncHeight">syncHeight Plugin for YAML</a></p>
             <div class="example-grid sync-height">
@@ -269,6 +282,11 @@
     &lt;/div&gt;
 &lt;/div&gt;
 </code></pre>
+<pre><h4>Files</h4>
+<div class="files">js/lib/jquery.syncheight.js
+js/syncheight.js
+</div>
+</pre>
             <hr>
             <a id="forms"></a>
             <h2>Forms</h2>
@@ -461,10 +479,20 @@
                 </div>
               </fieldset>
             </form>
+<pre><h4>Files</h4>
+<div class="files">sass/base/_vars.scss
+sass/elements/_forms.scss
+bower_components/jquery-validation/dist/jquery.validate.min.js
+bower_components/jquery-validation/src/localization/messages_de.js
+js/forms.js
+</div>
+</pre>
             <hr>
             <a id="buttons"></a>
             <h2>Buttons</h2>
+            <p>Create a button by using the class <code class="css">.btn</code>.</p>
             <h3>Colors</h3>
+            <p>Use <code class="css">.btn-primary</code>, <code class="css">.btn-disabled</code>, <code class="css">.btn-decline</code> or <code class="css">.btn-accept</code> to give your button its purpose.</p>
             <a class="btn">Normal button</a>
             <a class="btn btn-primary">Primary button</a>
             <a class="btn btn-disabled">Disabled button</a>
@@ -472,7 +500,7 @@
             <a class="btn btn-accept">Accept button</a>
 
 <pre><h4>HTML</h4>
-<code class="html">&lt;a class="btn"&gt;Normal button&lt;/div&gt;
+<code class="html">&lt;a class="btn"&gt;Normal button&lt;/a&gt;
 &lt;a class="btn btn-primary"&gt;Primary button&lt;/a&gt;
 &lt;a class="btn btn-disabled"&gt;Disabled button&lt;/a&gt;
 &lt;a class="btn btn-decline"&gt;Decline button&lt;/a&gt;
@@ -480,30 +508,34 @@
 </code></pre>
 
             <h3>Size Variations</h3>
+            <p>You may alter its size with <code class="css">.btn-sm</code> or <code class="css">.btn-big</code>.</p>
             <a class="btn btn-sm">Small button</a>
             <a class="btn btn-big">Big button</a>
 <pre><h4>HTML</h4>
-<code class="html">&lt;a class="btn btn-sm"&gt;Small button&lt;/div&gt;
+<code class="html">&lt;a class="btn btn-sm"&gt;Small button&lt;/a&gt;
 &lt;a class="btn btn-big"&gt;Big button&lt;/a&gt;
 </code></pre>
 
             <h3>Round Buttons</h3>
+            <p>Add shapes with <code class="css">.btn-prev</code>, <code class="css">.btn-next</code> or <code class="css">.btn-round</code>.</p>
             <a class="btn btn-prev">Prev button</a>
             <a class="btn btn-next">Next button</a>
             <a class="btn btn-round">Round button</a>
 <pre><h4>HTML</h4>
-<code class="html">&lt;a class="btn btn-prev"&gt;Prev button&lt;/div&gt;
+<code class="html">&lt;a class="btn btn-prev"&gt;Prev button&lt;/a&gt;
 &lt;a class="btn btn-next"&gt;Next button&lt;/a&gt;
 &lt;a class="btn btn-round"&gt;Round button&lt;/a&gt;
 </code></pre>
 
             <h3>Full Button</h3>
+            <p>A <code class="css">.btn-full</code> spans the available horizontal space.</p>
             <a class="btn btn-full">Full button</a>
 <pre><h4>HTML</h4>
-<code class="html">&lt;a class="btn btn-full"&gt;Full button&lt;/div&gt;
+<code class="html">&lt;a class="btn btn-full"&gt;Full button&lt;/a&gt;
 </code></pre>
 
             <h3>Button Group</h3>
+            <p>Setup a button group by wrapping your buttons with <code class="css">.btn-group</code>.</p>
             <div class="btn-group">
                 <a class="btn">Grouped</a>
                 <a class="btn">buttons</a>
@@ -519,6 +551,7 @@
 </code></pre>
 
             <h3>Combinations</h3>
+            <p>You may combine every colour with every size and every shape.</p>
             <a class="btn btn-sm btn-round">Small and round button</a>
             <br>
             <div class="btn-group">
@@ -526,10 +559,15 @@
                 <a class="btn btn-accept btn-next">Okay</a>
             </div>
             <a class="btn btn-big btn-primary btn-full">Big, primary and full button</a>
-
+<pre><h4>Files</h4>
+<div class="files">sass/base/_vars.scss
+sass/elements/_buttons.scss
+</div>
+</pre>
             <hr>
             <a id="tabs"></a>
             <h2>Tabs</h2>
+            <p>Create a tabbed section by adding a <code class="css">.tabs-container</code>. Place your tabs into <code class="css">ul.tabs</code> and add the correspoding content panes having <code class="css">.tab-content</code> and an <code class="html">id</code> corresponding to the <code class="html">href</code>-Attribute of the tab-links.</p>
             <div class="tabs-container">
                 <ul class="tabs">
                     <li><a href="#tab1">Tab 1</a></li>
@@ -564,6 +602,115 @@
     &lt;div id="tab3" class="tab-content"&gt;...&lt;/div&gt;
 &lt;/div&gt;
 </code></pre>
+<pre><h4>Files</h4>
+<div class="files">sass/base/_vars.scss
+sass/elements/_tabs.scss
+js/tabs.js
+</div>
+</pre>
+
+            <hr>
+            <a id="collapse"></a>
+            <h2>Collapse</h2>
+            <p>Place at least one combination of <code class="css">.collapse-toggle</code> and <code class="css">.collapse-content</code> into a <code class="css">.collapse-container</code> to make one or more collapsables. Use padding instead of margin for each the toggle and the container to ensure a soft animation.</p>
+            <h3>Initially closed collapsable</h3>
+            <div class="collapse-container">
+                <h4 class="collapse-toggle">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit
+                </h4>
+                <p class="collapse-content">
+                    Phasellus finibus maximus libero, eget tincidunt nisl dapibus vitae. Vestibulum sem purus, sollicitudin ut consectetur eget, dignissim eget mi. Curabitur scelerisque dui non tellus auctor, sed euismod sapien molestie. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Etiam nec ornare sapien. Etiam eu dolor aliquam, sollicitudin nibh quis, tempor nisl. Quisque eget turpis suscipit, imperdiet nisi eget, elementum lorem. Aliquam ultrices, metus in egestas elementum, purus sapien elementum tortor, vitae tempus nulla quam in purus.
+                </p>
+                <h4 class="collapse-toggle">
+                    Ut a molestie tellus
+                </h4>
+                <p class="collapse-content">
+                    Phasellus sit amet accumsan massa. Aliquam erat volutpat. Ut iaculis posuere mattis. Sed porttitor pellentesque sapien, eu bibendum arcu sagittis nec. Donec auctor justo ut rhoncus suscipit. Ut laoreet finibus felis non molestie. Donec dapibus orci in erat interdum auctor. Maecenas vulputate nisl nec blandit accumsan. Praesent vitae ultrices tellus. Nullam ultricies neque et urna placerat rhoncus.
+                </p>
+            </div>
+<pre><h4>HTML</h4>
+<code class="html">&lt;div class="collapse-container"&gt;
+    &lt;h4 class="collapse-toggle"&gt;
+        ...
+    &lt;/h4&gt;
+    &lt;p class="collapse-content"&gt;
+        ...
+    &lt;/p&gt;
+    ...
+&lt;/div&gt;
+</code></pre>
+            <h3>Initially open collapsable</h3>
+            <p>Add class <code class="css">.collapse-open</code> to a <code class="css">.collapse-toggle</code> to have its <code class="css">.collapse-content</code> initially opened at page load.</p>
+            <div class="collapse-container">
+                <h4 class="collapse-toggle collapse-open">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                </h4>
+                <p class="collapse-content">
+                    Phasellus finibus maximus libero, eget tincidunt nisl dapibus vitae. Vestibulum sem purus, sollicitudin ut consectetur eget, dignissim eget mi. Curabitur scelerisque dui non tellus auctor, sed euismod sapien molestie. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Etiam nec ornare sapien. Etiam eu dolor aliquam, sollicitudin nibh quis, tempor nisl. Quisque eget turpis suscipit, imperdiet nisi eget, elementum lorem. Aliquam ultrices, metus in egestas elementum, purus sapien elementum tortor, vitae tempus nulla quam in purus.
+                </p>
+                <h4 class="collapse-toggle collapse-open">
+                    Ut a molestie tellus
+                </h4>
+                <p class="collapse-content">
+                    Phasellus sit amet accumsan massa. Aliquam erat volutpat. Ut iaculis posuere mattis. Sed porttitor pellentesque sapien, eu bibendum arcu sagittis nec. Donec auctor justo ut rhoncus suscipit. Ut laoreet finibus felis non molestie. Donec dapibus orci in erat interdum auctor. Maecenas vulputate nisl nec blandit accumsan. Praesent vitae ultrices tellus. Nullam ultricies neque et urna placerat rhoncus.
+                </p>
+            </div>
+<pre><h4>HTML</h4>
+<code class="html">&lt;div class="collapse-container"&gt;
+    &lt;h4 class="collapse-toggle collapse-open"&gt;
+        ...
+    &lt;/h4&gt;
+    &lt;p class="collapse-content"&gt;
+        ...
+    &lt;/p&gt;
+    ...
+&lt;/div&gt;
+</code></pre>
+            <h3>Accordion</h3>
+            <p>Add class <code class="css">.collapse-accordion</code> to the <code class="css">.collapse-container</code> to create an accordion.</p>
+            <div class="collapse-container collapse-accordion">
+                <h4 class="collapse-toggle collapse-open">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit
+                </h4>
+                <p class="collapse-content">
+                    Phasellus finibus maximus libero, eget tincidunt nisl dapibus vitae. Vestibulum sem purus, sollicitudin ut consectetur eget, dignissim eget mi. Curabitur scelerisque dui non tellus auctor, sed euismod sapien molestie. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Etiam nec ornare sapien. Etiam eu dolor aliquam, sollicitudin nibh quis, tempor nisl. Quisque eget turpis suscipit, imperdiet nisi eget, elementum lorem. Aliquam ultrices, metus in egestas elementum, purus sapien elementum tortor, vitae tempus nulla quam in purus.
+                </p>
+                <h4 class="collapse-toggle">
+                    Ut a molestie tellus
+                </h4>
+                <p class="collapse-content">
+                    Phasellus sit amet accumsan massa. Aliquam erat volutpat. Ut iaculis posuere mattis. Sed porttitor pellentesque sapien, eu bibendum arcu sagittis nec. Donec auctor justo ut rhoncus suscipit. Ut laoreet finibus felis non molestie. Donec dapibus orci in erat interdum auctor. Maecenas vulputate nisl nec blandit accumsan. Praesent vitae ultrices tellus. Nullam ultricies neque et urna placerat rhoncus.
+                </p>
+                <h4 class="collapse-toggle">
+                    Nam ut gravida purus, vitae ullamcorper leo
+                </h4>
+                <p class="collapse-content">
+                    Proin urna risus, rutrum vitae sem condimentum, elementum gravida nisi. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Vivamus elementum euismod sodales. Sed sodales aliquam velit sed cursus. Praesent venenatis faucibus turpis vitae eleifend. Pellentesque lacinia in lectus id pulvinar. Vestibulum euismod nulla quis nulla semper, at pellentesque augue congue. Vestibulum sed sodales odio. Vivamus vitae feugiat nibh. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nullam eu est vitae nulla aliquam varius. Mauris lectus dui, fermentum sit amet mi sed, volutpat commodo nisi. Vivamus aliquam semper nibh, faucibus tempus lectus egestas in.
+                </p>
+            </div>
+
+<pre><h4>HTML</h4>
+<code class="html">&lt;div class="collapse-container collapse-accordion"&gt;
+    &lt;h4 class="collapse-toggle"&gt;
+        ...
+    &lt;/h4&gt;
+    &lt;p class="collapse-content"&gt;
+        ...
+    &lt;/p&gt;
+    &lt;h4 class="collapse-toggle"&gt;
+        ...
+    &lt;/h4&gt;
+    &lt;p class="collapse-content"&gt;
+        ...
+    &lt;/p&gt;
+    ...
+&lt;/div&gt;
+</code></pre>
+<pre><h4>Files</h4>
+<div class="files">sass/elements/_collapse.scss
+js/collapse.js
+</div>
+</pre>
 
             <hr>
             <a id="tables"></a>
@@ -701,12 +848,17 @@
                 </table>
             </div>
 <pre><h4>HTML</h4>
-<code class="html">&lt;div class="table-repsonsive"&gt;
+<code class="html">&lt;div class="table-responsive"&gt;
     &lt;table class="table"&gt;
         ...
     &lt;/table&gt;
 &lt;/div&gt;
 </code></pre>
+<pre><h4>Files</h4>
+<div class="files">sass/base/_vars.scss
+sass/elements/_tables.scss
+</div>
+</pre>
             <hr>
             <a id="alerts"></a>
             <h2>Alerts</h2>
@@ -740,6 +892,12 @@
     &lt;/div&gt;
 &lt;/div&gt;
 </code></pre>
+<pre><h4>Files</h4>
+<div class="files">sass/base/_vars.scss
+sass/elements/_alerts.scss
+js/alerts.js
+</div>
+</pre>
             <hr>
             <a id="dropdowns"></a>
             <h2>Dropdowns</h2>
@@ -772,8 +930,13 @@
         &lt;li&gt;&lt;a href="..."&gt;Seperated option 4&lt;/a&gt;&lt;/li&gt;
     &lt;/ul&gt;
 &lt;/div&gt;
-</code></pre>
-            <hr>
+</code></pre><pre><h4>Files</h4>
+<div class="files">
+sass/base/_vars.scss
+sass/elements/_dropdowns.scss
+js/dropdowns.js
+</div>
+</pre>
         </div>
     </main>
     <footer class="site-footer">

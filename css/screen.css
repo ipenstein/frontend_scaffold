@@ -2432,26 +2432,26 @@ textarea,
 select {
   font-family: "Roboto", "Helvetica-Neue", Helvetica, Arial, sans-serif;
   font-size: 16px;
-  line-height: 20px;
+  line-height: 24px;
   font-size: 1.6rem;
-  line-height: 2rem; }
+  line-height: 2.4rem; }
 
 p {
   padding: 0;
-  margin: 0 0 20px 0; }
+  margin: 0 0 24px 0; }
 
 h1, h2, h3, h4 {
   font-family: "Oswald", Arial, sans-serif;
   font-weight: normal;
   padding: 0;
-  margin: 40px 0 20px 0; }
+  margin: 48px 0 24px 0; }
 
 h1 {
   font-size: 50px;
-  line-height: 60px;
+  line-height: 70px;
   font-size: 5rem;
-  line-height: 6rem;
-  border-bottom: 1px solid #109acc; }
+  line-height: 7rem;
+  border-bottom: 2px dashed #333; }
 
 h2 {
   font-size: 32px;
@@ -2470,7 +2470,7 @@ h4 {
   line-height: 20px;
   font-size: 1.8rem;
   line-height: 2rem;
-  margin: 20px 0; }
+  margin: 24px 0; }
 
 a,
 button,
@@ -2503,8 +2503,8 @@ hr {
   border: 0;
   border-bottom: 2px dashed #333;
   height: 1px;
-  margin-top: 39px;
-  margin-bottom: 40px;
+  margin-top: 47px;
+  margin-bottom: 48px;
   padding: 0; }
 
 img {
@@ -2533,7 +2533,7 @@ body {
 .container {
   text-align: left;
   min-width: 320px;
-  padding: 0 20px;
+  padding: 0 10px;
   position: relative;
   max-width: 1200px;
   margin-left: auto;
@@ -2542,9 +2542,12 @@ body {
     content: " ";
     display: block;
     clear: both; }
+  @media (min-width: 500px) {
+    .container {
+      padding: 0 20px; } }
 
 .content {
-  padding: 20px 0;
+  padding: 24px 0;
   z-index: 10;
   position: relative; }
 
@@ -2623,7 +2626,7 @@ th {
   .table > tfoot > tr > th,
   .table > tfoot > tr > td {
     padding: 10px;
-    line-height: 20px;
+    line-height: 24px;
     vertical-align: top;
     border-top: 1px solid #ccc; }
   .table > thead > tr > th {
@@ -2687,7 +2690,7 @@ Everything above that will display normally.
 @media (max-width: 699px) {
   .table-responsive {
     width: 100%;
-    margin-bottom: 20px;
+    margin-bottom: 24px;
     overflow-y: hidden;
     overflow-x: scroll;
     -ms-overflow-style: -ms-autohiding-scrollbar;
@@ -2989,9 +2992,9 @@ button,
 select,
 textarea {
   font-size: 16px;
-  line-height: 20px;
+  line-height: 24px;
   font-size: 1.6rem;
-  line-height: 2rem;
+  line-height: 2.4rem;
   font-family: "Roboto", "Helvetica-Neue", Helvetica, Arial, sans-serif; }
 
 button::-moz-focus-inner,
@@ -3206,9 +3209,9 @@ fieldset {
     margin-right: -10px; }
     .formrow .formitem {
       font-size: 16px;
-      line-height: 20px;
+      line-height: 24px;
       font-size: 1.6rem;
-      line-height: 2rem;
+      line-height: 2.4rem;
       padding-right: 10px; }
       .formrow .formitem:last-child {
         margin-right: -99px; }
@@ -3232,9 +3235,9 @@ fieldset {
     padding-left: 25%; }
     .wideform .formrow > .label {
       font-size: 16px;
-      line-height: 20px;
+      line-height: 24px;
       font-size: 1.6rem;
-      line-height: 2rem;
+      line-height: 2.4rem;
       font-size: 14px;
       display: inline-block;
       vertical-align: top;
@@ -3259,7 +3262,7 @@ fieldset {
 .tabs {
   display: block;
   border-bottom: 1px solid #666;
-  margin-bottom: 20px; }
+  margin-bottom: 24px; }
   .tabs, .tabs li {
     list-style: none;
     background-image: none;
@@ -3318,6 +3321,34 @@ fieldset {
     border-bottom: 1px solid #fff; }
 
 /*
+# elements/_collapse.scss
+*/
+.collapse-toggle {
+  position: relative;
+  cursor: pointer;
+  padding: 24px 0 0;
+  padding-left: 1.25em;
+  margin: 0;
+  color: #333; }
+  .collapse-toggle:first-child {
+    padding-top: 0; }
+  .collapse-toggle:before {
+    position: absolute;
+    left: 0.2em;
+    font-family: "FontAwesome";
+    content: "\f054"; }
+  .collapse-toggle:hover:before {
+    color: #109acc; }
+  .collapse-toggle.collapse-open:before {
+    left: 0;
+    content: "\f078"; }
+
+.collapse-content {
+  display: none;
+  margin: 0;
+  padding: 24px 0 0; }
+
+/*
 # elements/_alerts.scss
 
 Alert messages
@@ -3348,7 +3379,7 @@ Alert messages
   font-family: "Roboto", "Helvetica-Neue", Helvetica, Arial, sans-serif;
   position: relative;
   padding: 10px 15px;
-  margin: 0 0 20px 0;
+  margin: 0 0 24px 0;
   border: 1px solid;
   border-left: 40px solid; }
   .alert-message:before {
@@ -3429,9 +3460,9 @@ Alert messages
     background-color: #fff;
     border: 1px solid #ccc;
     font-size: 16px;
-    line-height: 20px;
+    line-height: 24px;
     font-size: 1.6rem;
-    line-height: 2rem;
+    line-height: 2.4rem;
     -moz-box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
     -webkit-box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175); }
@@ -3491,7 +3522,7 @@ Styles for specific sections of the page (i.E. Header, Footer etc.).
 .logo {
   z-index: 30;
   position: absolute;
-  left: 20px;
+  left: 10px;
   top: 2px;
   font-family: "Oswald", Arial, sans-serif;
   font-size: 30px;
@@ -3511,6 +3542,9 @@ Styles for specific sections of the page (i.E. Header, Footer etc.).
     line-height: 3rem;
     font-weight: normal;
     margin-right: -4px; }
+  @media (min-width: 500px) {
+    .logo {
+      left: 20px; } }
 
 /*
 # gui/_navigation.scss
@@ -3533,7 +3567,7 @@ Styles for specific sections of the page (i.E. Header, Footer etc.).
   padding: 4px 10px;
   color: #109acc;
   float: right;
-  margin-right: 20px;
+  margin-right: 10px;
   margin-top: 2px;
   border: 1px solid rgba(16, 154, 204, 0.3);
   background-color: transparent;
@@ -3548,6 +3582,9 @@ Styles for specific sections of the page (i.E. Header, Footer etc.).
   -o-transition-property: background-color;
   -webkit-transition-property: background-color;
   transition-property: background-color; }
+  @media (min-width: 500px) {
+    .main-nav .dropdown-toggle {
+      margin-right: 20px; } }
   @media (min-width: 900px) {
     .main-nav .dropdown-toggle {
       display: none !important; } }
@@ -3590,7 +3627,7 @@ Styles for specific sections of the page (i.E. Header, Footer etc.).
   padding: 13px 20px;
   display: block;
   border-top: 1px solid rgba(255, 255, 255, 0.1);
-  background-color: rgba(51, 51, 51, 0.75);
+  background-color: rgba(0, 0, 0, 0.85);
   width: 50%; }
   .main-nav a:hover {
     background-color: #109acc;
@@ -3612,7 +3649,8 @@ Styles for specific sections of the page (i.E. Header, Footer etc.).
       border-top: none;
       width: auto;
       margin: 0 10px;
-      padding: 10px 0; }
+      padding: 10px 0;
+      background-color: transparent; }
       .main-nav a:hover {
         background-color: transparent;
         color: #ccc; } }
@@ -3697,9 +3735,10 @@ Styles for specific sections of the page (i.E. Header, Footer etc.).
 # sections/_footer.scss
 */
 .site-footer {
-  background-color: #ccc;
-  padding: 20px 0;
-  z-index: 20; }
+  background-color: #333;
+  padding: 24px 0;
+  z-index: 20;
+  color: #ccc; }
 
 /*
 # Pages
@@ -3832,16 +3871,21 @@ a[href^="http"]:before {
 /*
 # Code coloring style-overrides
 */
-.hljs {
+.hljs,
+.files {
   border: 1px dotted #666 !important;
   font-family: "Consolas", "Source Code Pro", "Courier New", Courier, monospace;
-  font-size: 14px; }
+  font-size: 14px;
+  padding: 20px !important; }
 
 .html {
   background: rgba(16, 154, 204, 0.15) !important; }
 
 .css {
   background: rgba(233, 172, 0, 0.25) !important; }
+
+.files {
+  background: rgba(238, 238, 238, 0.8) !important; }
 
 pre {
   margin-top: 20px;
@@ -3853,4 +3897,4 @@ pre h4 {
   color: #666;
   border: 1px dotted #666;
   border-bottom: 0;
-  padding: 5px 10px; }
+  padding: 5px 20px; }

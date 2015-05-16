@@ -32,8 +32,8 @@ h1, h2, h3, h4 {
     margin: #{$base-line-height * 2}px 0 $base-line-height-px 0;
 }
 h1 {
-    @include font-size(50,60);
-    border-bottom: 1px solid $blue1;
+    @include font-size(50,70);
+    border-bottom: 2px dashed $hr-color;
 }
 h2 {
     @include font-size(32,40);

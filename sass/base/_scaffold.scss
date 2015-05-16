@@ -8,9 +8,12 @@ body {
 .container {
     text-align: left;
     min-width: $min-width;
-    padding: 0 20px;
+    padding: 0 10px;
     position: relative;
     @include container();
+    @include bp(small) {
+        padding: 0 20px;
+    }
 }
 
 .content {

@@ -16,6 +16,7 @@
                     'responsive.js',
                     'forms.js',
                     'tabs.js',
+                    'collapse.js',
                     'dropdowns.js',
                     'alerts.js',
                     'syncheight.js',

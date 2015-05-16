@@ -5,19 +5,19 @@ $(document).ready(function() {
     // Detect browser-window resize
     $( window ).bind( "resize", function(){
 
-        // Sync new height of columns
-        $('.equalize > div').syncHeight();
+        // Detect new hero unit height
+        $(".hero").css("height", $(window).height());
     });
 
     $('.hero').parallax({
-        imageSrc:       "img/nebula.jpg",
+        imageSrc:       "img/bokeh.jpg",
         position:       "top",
         bleed:          "10",
-        naturalWidth:   "1440",
-        naturalHeight:  "960",
+        naturalWidth:   "1500",
+        naturalHeight:  "844",
         zIndex:         "1"
     });
 
-    // Detect initial hero height
+    // Detect initial hero unit height
     $(".hero").css("height", $(window).height());
 });

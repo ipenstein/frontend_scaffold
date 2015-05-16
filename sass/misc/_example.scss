@@ -68,14 +68,17 @@ a[href^="http"] {
 /*
 # Code coloring style-overrides
 */
-.hljs {
+.hljs,
+.files {
     border: 1px dotted $grey2 !important;
     font-family: "Consolas", "Source Code Pro", "Courier New", Courier, monospace;
     font-size: 14px;
+    padding: 20px !important;
 }
 
-.html { background: rgba($blue1, 0.15) !important;      }
-.css {  background: rgba($yellow1, 0.25) !important;    }
+.html {     background: rgba($blue1, 0.15) !important;      }
+.css {      background: rgba($yellow1, 0.25) !important;    }
+.files {    background: rgba($grey5, 0.8) !important;    }
 
 pre {
     margin-top: 20px;
@@ -88,5 +91,5 @@ pre h4 {
     color: $grey2;
     border: 1px dotted $grey2;
     border-bottom: 0;
-    padding: 5px 10px;
+    padding: 5px 20px;
 }
