@@ -69,27 +69,45 @@ a[href^="http"] {
 # Code coloring style-overrides
 */
 .hljs,
-.files {
+div.files,
+.example-content {
     border: 1px dotted $grey2 !important;
-    font-family: "Consolas", "Source Code Pro", "Courier New", Courier, monospace;
-    font-size: 14px;
-    padding: 20px !important;
+    padding: 10px !important;
+    position: relative;
+    @include bp(small) {
+        padding: 20px !important;
+    }
+    z-index: 1;
 }
 
-.html {     background: rgba($blue1, 0.15) !important;      }
-.css {      background: rgba($yellow1, 0.25) !important;    }
-.files {    background: rgba($grey5, 0.8) !important;    }
+.hljs,
+div.files {
+    font-family: "Consolas", "Source Code Pro", "Courier New", Courier, monospace;
+    font-size: 14px;
+}
+
+.example {  background: $white; }
+.html {     background: #DBF0F8 !important; }
+.css {      background: #FAEBC0 !important; }
+.files {    background: #F1F1F1 !important; }
 
 pre {
     margin-top: 20px;
     margin-bottom: 20px;
 }
 
-pre h4 {
+pre h4,
+.example-heading {
     margin: 0;
     display: inline-block;
+    position: relative;
     color: $grey2;
     border: 1px dotted $grey2;
-    border-bottom: 0;
+    border-bottom: 1px solid #fff;
     padding: 5px 20px;
+    z-index: 2;
+    margin-bottom: -1px;
+    &.html {    border-bottom-color: #DBF0F8;   }
+    &.css {     border-bottom-color: #FAEBC0;   }
+    &.files {   border-bottom-color: #F1F1F1;   }
 }

@@ -10,11 +10,11 @@ $(document).ready(function() {
     });
 
     $('.hero').parallax({
-        imageSrc:       "img/bokeh.jpg",
+        imageSrc:       "img/uni.jpg",
         position:       "top",
         bleed:          "10",
-        naturalWidth:   "1500",
-        naturalHeight:  "844",
+        naturalWidth:   "1680",
+        naturalHeight:  "1050",
         zIndex:         "1"
     });
 

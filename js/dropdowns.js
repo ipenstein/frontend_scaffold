@@ -14,7 +14,7 @@ $.fn.initDropdown = function() {
     });
     $(document).on('click', function(event) {
         if (!$(event.target).closest(el).length) {
-            if (nav.is(':visible') && el.hasClass('dropdown')) {
+            if (nav.is(':visible') && (el.hasClass('dropdown') || el.hasClass('dropup'))) {
                 nav.fadeOut(300);
                 trigger.removeClass('active');
             }
@@ -38,7 +38,7 @@ $.fn.clearDropdown = function() {
 
 $(document).ready(function() {
 
-    $(".dropdown").each(function() {
+    $(".dropdown, .dropup").each(function() {
         $(this).initDropdown();
     });
 

@@ -62,9 +62,12 @@ $link-visited-color:    darken($blue1, 10%);
 $hr-color:              $grey1;
 
 $body-bg-color:         $white;
-$hero-bg-color:         $grey4;
-$header-bg-color:       $grey1;
-$footer-bg-color:       $grey1;
+
+$primary-color:         $blue1;
+$info-color:            $turquise1;
+$error-color:           $red1;
+$danger-color:          $yellow1;
+$success-color:         $green1;
 
 /*
 # Basic typography
@@ -191,16 +194,16 @@ $alert-info-bg-color:           rgba($blue1, 0.1);
 $alert-info-border-color:       $blue1;
 
 $alert-danger-color:            $grey1;
-$alert-danger-bg-color:         rgba($yellow1, 0.1);
-$alert-danger-border-color:     $yellow1;
+$alert-danger-bg-color:         rgba($danger-color, 0.1);
+$alert-danger-border-color:     $danger-color;
 
 $alert-error-color:             $grey1;
-$alert-error-bg-color:          rgba($red1, 0.1);
-$alert-error-border-color:      $red1;
+$alert-error-bg-color:          rgba($error-color, 0.1);
+$alert-error-border-color:      $error-color;
 
 $alert-success-color:           $grey1;
-$alert-success-bg-color:        rgba($green1, 0.1);
-$alert-success-border-color:    $green1;
+$alert-success-bg-color:        rgba($success-color, 0.1);
+$alert-success-border-color:    $success-color;
 
 /*
 # Dropdowns

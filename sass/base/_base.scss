@@ -32,18 +32,23 @@ h1, h2, h3, h4 {
     margin: #{$base-line-height * 2}px 0 $base-line-height-px 0;
 }
 h1 {
-    @include font-size(50,70);
+    @include font-size(48,72);
     border-bottom: 2px dashed $hr-color;
+    margin-bottom: #{$base-line-height * 2}px;
 }
 h2 {
     @include font-size(32,40);
 }
 h3 {
-    @include font-size(24,30);
+    @include font-size(24,32);
 }
 h4 {
-    @include font-size(18,20);
+    @include font-size(16,24);
     margin: $base-line-height-px 0;
+}
+
+.lead {
+    @include font-size(20, 32);
 }
 
 a,

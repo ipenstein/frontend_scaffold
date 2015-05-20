@@ -46,3 +46,15 @@ body {
     .col-3of5, .formrow .formitem.col-3of5 { width: 60%; }
     .col-4of5, .formrow .formitem.col-4of5 { width: 80%; }
 }
+
+// Page preload
+.js #preloader {
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 999;
+    width: 100%;
+    height: 100%;
+    overflow: visible;
+    background: #333 url('http://files.mimoymima.com/images/loading.gif') no-repeat center center;
+}

@@ -8,4 +8,11 @@ $(document).ready(function() {
 
     //$(".navigation li").rollover();
 
+    $('#preloader').fadeOut(
+        'slow',
+        function(){
+            $(this).remove();
+        }
+    );
+
 });

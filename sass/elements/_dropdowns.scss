@@ -2,7 +2,8 @@
 # elements/_dropdowns.scss
 */
 
-.dropdown {
+.dropdown,
+.dropup {
     position: relative;
 
     ul {
@@ -40,12 +41,17 @@
     }
 }
 
+.dropup ul {
+    top: auto;
+    bottom: 100%;
+}
+
 .caret {
     @include inline-block;
     @include caret(bottom, 5px, #333);
     margin-left: 2px;
 }
 
-.dropdown-toggle.active .caret {
+.dropup .caret {
     @include caret(top, 5px, #333);
 }
