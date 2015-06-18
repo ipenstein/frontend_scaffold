@@ -8,12 +8,12 @@
     height: 60px;
     position: fixed;
     width: 100%;
-    z-index: 30;
+    z-index: z(site-header);
     @include box-shadow(rgba(#000000, 0.2) 0 15px 15px);
 }
 
 .logo {
-    z-index: 30;
+    z-index: z(logo);
     position: absolute;
     left: 10px;
     top: 2px;

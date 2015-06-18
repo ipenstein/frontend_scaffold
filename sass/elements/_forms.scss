@@ -170,7 +170,7 @@ fieldset {
                 input[type="checkbox"],
                 input[type="radio"] {
                     float: left;
-                    margin: 1px -9px 0 0; // ensure label text doesn't start below input
+                    margin: 6px -9px 0 0; // ensure label text doesn't start below input
                     &.error ~ span {
                         color: $form-error-color;
                     }

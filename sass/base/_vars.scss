@@ -12,7 +12,11 @@ $min-width:             320px;
 
 // Breakpoint configuration
 // Feel free to add more breakpoints!
-$breakpoints:           small 500px, medium 700px, big 900px !default;
+$breakpoints: (
+    small:  500px,
+    medium: 700px,
+    big:    900px
+) !default;
 
 $grid-brakepoint:       small;          // min-brakepoint where easy grid will become active
 $grid-gutter:           20px;           // horizontal gap between grid columns
@@ -31,6 +35,24 @@ $susy: (
     //gutter-position:    inside,
     global-box-sizing:  border-box
 );
+
+/*
+# Z-Layers
+Gather all z-indexes into a single map, and stick to them. Then you know how
+many layers the application uses, making it easy to understand what’s going on
+(and, sooner or later, to debug).
+*/
+$z-layers: (
+    preloader:      999,
+    site-header:    30,
+    content:        10,
+    site-footer:    20,
+
+    logo:           30,
+    main-nav:       20,
+    hero:           10
+);
+
 
 /*
 # Basic color palette

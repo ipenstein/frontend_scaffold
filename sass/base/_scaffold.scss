@@ -18,7 +18,7 @@ body {
 
 .content {
     padding: $base-line-height-px 0;
-    z-index: 10;
+    z-index: z(content);
     position: relative;
 }
 
@@ -52,7 +52,7 @@ body {
     position: fixed;
     left: 0;
     top: 0;
-    z-index: 999;
+    z-index: z(preloader);
     width: 100%;
     height: 100%;
     overflow: visible;

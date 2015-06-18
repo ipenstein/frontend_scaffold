@@ -1,3 +1,5 @@
 // example-navigation
 
-$(".main-nav").initDropdown();
+$(document).ready(function() {
+    $(".main-nav").initDropdown();
+});

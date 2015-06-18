@@ -14,6 +14,9 @@ Use HTML5-Boilerplate's @mixin micro-clearfix instead.
     @include micro-clearfix;
 }
 
+/*
+# box-sizing mixin with prefixes
+*/
 @mixin box-sizing($value) {
     -moz-box-sizing: $value;
          box-sizing: $value;
@@ -22,8 +25,12 @@ Use HTML5-Boilerplate's @mixin micro-clearfix instead.
 /*
 # @mixin bp
 
-Dynamic breakpoint mixin. Use it to place media queries inside of CSS
-declaration blocks. Feel free to add more breakpoints in "base/_vars.scss".
+Mixin to manage responsive breakpoints.
+Feel free to add more breakpoints in "base/_vars.scss".
+
+@author Hugo Giraudel
+@param {String} $breakpoint - Breakpoint name
+@require $breakpoints
 
     $breakpoints: small 500px, medium 700px, big 900px;
     .wrapper {
@@ -33,32 +40,31 @@ declaration blocks. Feel free to add more breakpoints in "base/_vars.scss".
         }
     }
 
-https://github.com/DarbyBrown/QuickSass/blob/master/scss/mixins/_breakpoints.scss
 */
 
 // Min-width breakpoints
-@mixin bp($point) {
-    @each $breakpoint in $breakpoints {
-        $name: nth($breakpoint, 1);
-        $width: nth($breakpoint, 2);
-        @if $name == $point {
-            @media (min-width: $width) {
-                @content;
-            }
+@mixin bp($breakpoint) {
+    @if map-has-key($breakpoints, $breakpoint) {
+        @media (min-width: map-get($breakpoints, $breakpoint)) {
+            @content;
         }
+    }
+    @else {
+        @warn "Unfortunately, no value could be retrieved from `#{$breakpoint}`. "
+            + "Available breakpoints are: #{map-keys($breakpoints)}.";
     }
 }
 
 // Max-width breakpoints
-@mixin bp-max($point) {
-    @each $breakpoint in $breakpoints {
-        $name: nth($breakpoint, 1);
-        $width: nth($breakpoint, 2);
-        @if $name == $point {
-            @media (max-width: $width - 1) {
-                @content;
-            }
+@mixin bp-max($breakpoint) {
+    @if map-has-key($breakpoints, $breakpoint) {
+        @media (max-width: map-get($breakpoints, $breakpoint)) {
+            @content;
         }
+    }
+    @else {
+        @warn "Unfortunately, no value could be retrieved from `#{$breakpoint}`. "
+            + "Available breakpoints are: #{map-keys($breakpoints)}.";
     }
 }
 
@@ -100,6 +106,25 @@ $breakpoints: small 500px, medium 700px, big 900px;
             display: block !important;
         }
     }
+}
+
+/*
+# @function z
+
+Gather all z-indexes into a single map, and stick to them. Then you know how
+many layers the application uses, making it easy to understand what’s going on
+(and, sooner or later, to debug).
+
+@param {String} $z - layer name
+@require $z-layers
+*/
+@function z($key) {
+    @if map-has-key($z-layers, $key) {
+        @return map-get($z-layers, $key);
+    }
+
+    @warn "Unknown `#{$key}` in $z-layers.";
+    @return null;
 }
 
 /*
@@ -189,7 +214,6 @@ Reset list styles (list-style-type, margin, padding)
         list-style: none;
         background-image: none;
         padding: 0;
-        //margin: 0;
     }
 }
 

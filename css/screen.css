@@ -4,6 +4,16 @@
 
 Main stylesheet file. All Sass-files are included here.
 */
+@-webkit-viewport {
+  width: device-width; }
+@-moz-viewport {
+  width: device-width; }
+@-ms-viewport {
+  width: device-width; }
+@-o-viewport {
+  width: device-width; }
+@viewport {
+  width: device-width; }
 /*
 # Dependencies
 */
@@ -2194,6 +2204,12 @@ Global settings for susy grid system.
 http://susydocs.oddbird.net/en/latest/settings/
 */
 /*
+# Z-Layers
+Gather all z-indexes into a single map, and stick to them. Then you know how
+many layers the application uses, making it easy to understand whatÔÇÖs going on
+(and, sooner or later, to debug).
+*/
+/*
 # Basic color palette
 */
 /*
@@ -2240,10 +2256,17 @@ Use HTML5-Boilerplate's @mixin micro-clearfix instead.
   *zoom: 1; }
 
 /*
+# box-sizing mixin with prefixes
+*/
+/*
 # @mixin bp
 
-Dynamic breakpoint mixin. Use it to place media queries inside of CSS
-declaration blocks. Feel free to add more breakpoints in "base/_vars.scss".
+Mixin to manage responsive breakpoints.
+Feel free to add more breakpoints in "base/_vars.scss".
+
+@author Hugo Giraudel
+@param {String} $breakpoint - Breakpoint name
+@require $breakpoints
 
     $breakpoints: small 500px, medium 700px, big 900px;
     .wrapper {
@@ -2253,7 +2276,6 @@ declaration blocks. Feel free to add more breakpoints in "base/_vars.scss".
         }
     }
 
-https://github.com/DarbyBrown/QuickSass/blob/master/scss/mixins/_breakpoints.scss
 */
 /*
 # @mixin hd
@@ -2303,6 +2325,16 @@ $breakpoints: small 500px, medium 700px, big 900px;
     .reveal-big {
       display: block !important; } }
 
+/*
+# @function z
+
+Gather all z-indexes into a single map, and stick to them. Then you know how
+many layers the application uses, making it easy to understand whatÔÇÖs going on
+(and, sooner or later, to debug).
+
+@param {String} $z - layer name
+@require $z-layers
+*/
 /*
 # REM font-size and line-height with px-fallback
 
@@ -3169,7 +3201,7 @@ fieldset {
       .formrow .formitem .ticks label input[type="checkbox"],
       .formrow .formitem .ticks label input[type="radio"] {
         float: left;
-        margin: 1px -9px 0 0; }
+        margin: 6px -9px 0 0; }
         .formrow .formitem .ticks label input[type="checkbox"].error ~ span,
         .formrow .formitem .ticks label input[type="radio"].error ~ span {
           color: #e53f32; }
@@ -3453,7 +3485,12 @@ Alert messages
 */
 .dropdown,
 .dropup {
-  position: relative; }
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+  *vertical-align: auto;
+  *zoom: 1;
+  *display: inline; }
   .dropdown ul,
   .dropup ul {
     list-style: none;
@@ -3888,21 +3925,21 @@ a[href^="http"]:before {
 # Code coloring style-overrides
 */
 .hljs,
-div.files,
 .example-content {
   border: 1px dotted #666 !important;
   padding: 10px !important;
   position: relative;
-  z-index: 1; }
+  z-index: 2; }
   @media (min-width: 500px) {
     .hljs,
-    div.files,
     .example-content {
       padding: 20px !important; } }
 
 .hljs,
-div.files {
-  font-family: "Consolas", "Source Code Pro", "Courier New", Courier, monospace;
+.files {
+  font-family: "Consolas", "Source Code Pro", "Courier New", Courier, monospace; }
+
+.hljs {
   font-size: 14px; }
 
 .example {
@@ -3914,8 +3951,11 @@ div.files {
 .css {
   background: #FAEBC0 !important; }
 
-.files {
-  background: #F1F1F1 !important; }
+.js {
+  background: #F6E6F2 !important; }
+
+html.js {
+  background: transparent !important; }
 
 pre {
   margin-top: 20px;
@@ -3930,7 +3970,7 @@ pre h4,
   border: 1px dotted #666;
   border-bottom: 1px solid #fff;
   padding: 5px 20px;
-  z-index: 2;
+  z-index: 3;
   margin-bottom: -1px; }
   pre h4.html,
   .example-heading.html {
@@ -3938,6 +3978,6 @@ pre h4,
   pre h4.css,
   .example-heading.css {
     border-bottom-color: #FAEBC0; }
-  pre h4.files,
-  .example-heading.files {
-    border-bottom-color: #F1F1F1; }
+  pre h4.js,
+  .example-heading.js {
+    border-bottom-color: #F6E6F2; }

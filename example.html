@@ -40,7 +40,8 @@
             <nav class="main-nav">
                 <button class="dropdown-toggle"><i class="fa fa-bars"></i></button>
                 <ul>
-                    <li id="nav-basic"><a href="#basic">Basic Elements</a></li>
+                    <li id="nav-basic"><a href="#basic">Basics</a></li>
+                    <li id="nav-toolbelt"><a href="#toolbelt">Toolbelt</a></li>
                     <li id="nav-grid"><a href="#grid">Grid</a></li>
                     <li id="nav-forms"><a href="#forms">Forms</a></li>
                     <li id="nav-buttons"><a href="#buttons">Buttons</a></li>
@@ -58,145 +59,363 @@
     </section>
     <main class="content">
         <div class="container">
-            <a id="basic"></a>
-            <h1>Nebula - Frontend Pattern Library</h1>
-            <p>A collection of conventional frontend patterns, some selfmade, some taken from other sources. This page should give you a quick rundown of the included components and show you how to assemble them into your own projects.</p>
-            <hr>
-            <h2>Basic Elements</h2>
-            <h3>Headings and body copy</h3>
-            <div class="example">
-                <h4 class="example-heading">Example</h4>
-                <div class="example-content">
-                    <h1>Heading 1 &lt;h1&gt;</h1>
-                    <h2>Heading 2 &lt;h2&gt;</h2>
-                    <h3>Heading 3 &lt;h3&gt;</h3>
-                    <h4>Heading 4 &lt;h4&gt;</h4>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum in posuere orci. Nam euismod gravida nunc. Ut accumsan vitae dolor interdum ullamcorper. Ut luctus, lacus quis finibus bibendum, tortor nisl tristique mauris, eu efficitur nisi felis sit amet lacus. Duis a euismod erat. Sed faucibus ultricies sem, varius fringilla velit ullamcorper sit amet.</p>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum in posuere orci. Nam euismod gravida nunc. Ut accumsan vitae dolor interdum ullamcorper. Ut luctus, lacus quis finibus bibendum, tortor nisl tristique mauris, eu efficitur nisi felis sit amet lacus. Duis a euismod erat. Sed faucibus ultricies sem, varius fringilla velit ullamcorper sit amet.</p>
-                </div>
-            </div>
-            <h3>Lead body copy</h3>
-            <p>Make a paragraph stand out by adding <code class="css">.lead</code>.</p>
-            <div class="example">
-                <h4 class="example-heading">Example</h4>
-                <div class="example-content">
-                    <p class="lead">Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Duis mollis, est non commodo luctus. Ut luctus, lacus quis finibus bibendum, tortor nisl tristique mauris, eu efficitur nisi felis sit amet lacus. Duis a euismod erat.</p>
-                </div>
-            </div>
-
-            <h3>Unordered list</h3>
-            <div class="example">
-                <h4 class="example-heading">Example</h4>
-                <div class="example-content">
-                    <ul>
-                        <li>Eins
-                            <ul>
-                                <li>Eins.Eins</li>
-                                <li>Eins.Zwei</li>
-                            </ul>
-                        </li>
-                        <li>Zwei</li>
-                        <li>Drei</li>
-                        <li>Vier</li>
-                    </ul>
-                </div>
-            </div>
-            <h3>Ordered list</h3>
-            <div class="example">
-                <h4 class="example-heading">Example</h4>
-                <div class="example-content">
-                    <ol>
-                        <li>Eins
-                            <ol>
-                                <li>Eins.Eins</li>
-                                <li>Eins.Zwei</li>
-                            </ol>
-                        </li>
-                        <li>Zwei</li>
-                        <li>Drei</li>
-                        <li>Vier</li>
-                    </ol>
-                </div>
-            </div>
-            <h3>Text-links</h3>
-            <div class="example">
-                <h4 class="example-heading">Example</h4>
-                <div class="example-content">
-                    <p>Here you see an <a href="about.html">internal link</a>. Nothing special.</p>
-                    <p>An <a href="http://www.alistapart.com">external link</a> is marked with an appropriate icon. See "sass/misc/_example.scss" for more info.</p>
-                </div>
-            </div>
-            <h3>Horizontal ruler</h3>
-            <div class="example">
-                <h4 class="example-heading">Example</h4>
-                <div class="example-content">
-                    <hr>
-                </div>
-            </div>
-
-<pre><h4 class="files">Files</h4>
-<div class="files">sass/base/_vars.scss
-sass/base/_base.scss
-</div>
-</pre>
-            <hr>
-            <a id="grid"></a>
-            <h2>Grid</h2>
-            <h3>Current active breakpoint:</h3>
-            <p class="hide-small">(none)</p>
-            <p class="reveal-small hide-medium">small</p>
-            <p class="reveal-medium hide-big">medium</p>
-            <p class="reveal-big">big</p>
-            <h3>Susy</h3>
-            <p>
-                Responsive grid system.<br>
-                <a href="http://susy.oddbird.net/">http://susy.oddbird.net/</a>
-            </p>
-            <div class="example">
-                <h4 class="example-heading">Example</h4>
-                <div class="example-content">
-                    <div class="example-grid">
-                        <div class="example-col-1">
-                            <article class="example-module">
-                                <div class="hide-small">(none)</div>
-                                <div class="reveal-small hide-medium">@include bp(small) {   @include span(6);   }</div>
-                                <div class="reveal-medium">@include bp(medium) {   @include span(4);   }</div>
-                            </article>
+            <div class="main-content">
+                <a id="basic"></a>
+                <h1>Nebula - Frontend Pattern Library</h1>
+                <p>A collection of conventional frontend patterns, some selfmade, some taken from other sources. This page should give you a quick rundown of the included components and show you how to assemble them into your own projects.</p>
+                <hr>
+                <section>
+                    <h2>Basics</h2>
+                    <article>
+                        <h3>Headings and body copy</h3>
+                        <div class="example">
+                            <h4 class="example-heading">Example</h4>
+                            <div class="example-content">
+                                <h1>Heading 1 &lt;h1&gt;</h1>
+                                <h2>Heading 2 &lt;h2&gt;</h2>
+                                <h3>Heading 3 &lt;h3&gt;</h3>
+                                <h4>Heading 4 &lt;h4&gt;</h4>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum in posuere orci. Nam euismod gravida nunc. Ut accumsan vitae dolor interdum ullamcorper. Ut luctus, lacus quis finibus bibendum, tortor nisl tristique mauris, eu efficitur nisi felis sit amet lacus. Duis a euismod erat. Sed faucibus ultricies sem, varius fringilla velit ullamcorper sit amet.</p>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum in posuere orci. Nam euismod gravida nunc. Ut accumsan vitae dolor interdum ullamcorper. Ut luctus, lacus quis finibus bibendum, tortor nisl tristique mauris, eu efficitur nisi felis sit amet lacus. Duis a euismod erat. Sed faucibus ultricies sem, varius fringilla velit ullamcorper sit amet.</p>
+                            </div>
                         </div>
-                        <div class="example-col-2">
-                            <article class="example-module">
-                                <div class="hide-small">(none)</div>
-                                <div class="reveal-small hide-medium">@include bp(small) {   @include span(6);   }</div>
-                                <div class="reveal-medium">@include bp(medium) {   @include span(4);   }</div>
-                            </article>
+                    </article>
+                    <article>
+                        <h3>Lead body copy</h3>
+                        <p>Make a paragraph stand out by adding <code class="css">.lead</code>.</p>
+                        <div class="example">
+                            <h4 class="example-heading">Example</h4>
+                            <div class="example-content">
+                                <p class="lead">Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Duis mollis, est non commodo luctus. Ut luctus, lacus quis finibus bibendum, tortor nisl tristique mauris, eu efficitur nisi felis sit amet lacus. Duis a euismod erat.</p>
+                            </div>
                         </div>
-                        <div class="example-col-3 reveal-medium">
-                            <article class="example-module">
-                                <div class="reveal-medium">@include bp(medium) {   @include span(4);   }</div>
-                            </article>
+                    </article>
+                    <article>
+                        <h3>Unordered list</h3>
+                        <div class="example">
+                            <h4 class="example-heading">Example</h4>
+                            <div class="example-content">
+                                <ul>
+                                    <li>Eins
+                                        <ul>
+                                            <li>Eins.Eins</li>
+                                            <li>Eins.Zwei</li>
+                                        </ul>
+                                    </li>
+                                    <li>Zwei</li>
+                                    <li>Drei</li>
+                                    <li>Vier</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </article>
+                    <article>
+                        <h3>Ordered list</h3>
+                        <div class="example">
+                            <h4 class="example-heading">Example</h4>
+                            <div class="example-content">
+                                <ol>
+                                    <li>Eins
+                                        <ol>
+                                            <li>Eins.Eins</li>
+                                            <li>Eins.Zwei</li>
+                                        </ol>
+                                    </li>
+                                    <li>Zwei</li>
+                                    <li>Drei</li>
+                                    <li>Vier</li>
+                                </ol>
+                            </div>
+                        </div>
+                    </article>
+                    <article>
+                        <h3>Text-links</h3>
+                        <div class="example">
+                            <h4 class="example-heading">Example</h4>
+                            <div class="example-content">
+                                <p>Here you see an <a href="about.html">internal link</a>. Nothing special.</p>
+                                <p>An <a href="http://www.alistapart.com">external link</a> is marked with an appropriate icon. See "sass/misc/_example.scss" for more info.</p>
+                            </div>
+                        </div>
+                        <h3>Horizontal ruler</h3>
+                        <div class="example">
+                            <h4 class="example-heading">Example</h4>
+                            <div class="example-content">
+                                <hr>
+                            </div>
+                        </div>
+                    </article>
+                    <article>
+                        <h3>Files</h3>
+                        <ul class="files">
+                            <li>sass/base/_vars.scss</li>
+                            <li>sass/base/_base.scss</li>
+                        </ul>
+                    </article>
+                </section>
+                <hr>
+                <section>
+                    <a id="toolbelt"></a>
+                    <h2>Toolbelt</h2>
+                    <p>The file <code>base/_toolbelt.scss</code> contains a collection of useful helper mixins, placeholders and classes. To keep things short, I'm going to present here only those mixins and classes that help you building a responsive website.</p>
+                    <article>
+                        <h3>Global breakpoint configuration</h3>
+                        <p>If you are creating a responsive site, set your breakpoints first, by editing the Sass-variable <code class="css">$breakpoints</code> in <code>sass/base/_vars.scss</code>. The benefit of working with this variable is the ability to change your media queries globally without overlooking one. Add more breakpoints as you like.</p>
+                        <p>You may profit by the following mixins and classes that rely on this variable.</p>
+<pre>
+<h4 class="css">Example SCSS code</h4>
+<code class="css">$breakpoints: small 500px, medium 700px, big 900px;
+</code></pre>
+
+                    </article>
+                    <article>
+                        <h3>@mixin bp</h3>
+                        <p>Dynamic breakpoint mixin for responsive webdesign. Use it to create min-width media queries tied to your breakpoints.</p>
+
+<pre>
+<h4 class="css">SCSS</h4>
+<code class="css">// Min-width breakpoints
+@mixin bp($breakpoint) {
+    @if map-has-key($breakpoints, $breakpoint) {
+        @media (min-width: map-get($breakpoints, $breakpoint)) {
+            @content;
+        }
+    }
+    @else {
+        @warn "Unfortunately, no value could be retrieved from `#{$breakpoint}`. "
+            + "Available breakpoints are: #{map-keys($breakpoints)}.";
+    }
+}
+</code></pre>
+<pre>
+<h4 class="css">Example SCSS code</h4>
+<code class="css">$breakpoints: (
+    small:  500px,
+    medium: 700px,
+    big:    900px
+) !default;
+
+.wrapper {
+    width: 220px;
+    @include bp(small) {
+        width: 460px;
+    }
+    @include bp(medium) {
+        width: 660px;
+    }
+}
+</code></pre>
+                    </article>
+                    <article>
+                        <h3>@mixin bp-max</h3>
+                        <p>Another dynamic breakpoint mixin creating max-width media queries instead.</p>
+<pre>
+<h4 class="css">SCSS</h4>
+<code class="css">// Max-width breakpoints
+@mixin bp-max($breakpoint) {
+    @if map-has-key($breakpoints, $breakpoint) {
+        @media (max-width: map-get($breakpoints, $breakpoint)) {
+            @content;
+        }
+    }
+    @else {
+        @warn "Unfortunately, no value could be retrieved from `#{$breakpoint}`. "
+            + "Available breakpoints are: #{map-keys($breakpoints)}.";
+    }
+}
+</code></pre>
+                    </article>
+                    <article>
+                        <h3>@mixin hd</h3>
+                        <p>"Retina" breakpoint mixin.</p>
+<pre>
+<h4 class="css">SCSS</h4>
+<code class="css">@mixin hd($ratio: 2, $resolution: 192dpi) {
+    @media (-min-device-pixel-ratio: $ratio), (min-resolution: $resolution) {
+        @content;
+    }
+}
+</code></pre>
+                    </article>
+                    <article>
+                        <h3>Responsive helper classes</h3>
+                        <p>The following classes are generated according to your breakpoint configuation.</p>
+<pre>
+<h4 class="css">SCSS</h4>
+<code class="css">/*
+# Dynamic classes based on $breakpoints.
+
+Dont't show an element until or hide it starting at a specific breakpoint.
+
+$breakpoints: (
+    small:  500px,
+    medium: 700px,
+    big:    900px
+) !default;
+
+.reveal-small {}
+.reveal-medium {}
+.reveal-big {}
+.hide-small {}
+.hide-medium {}
+.hide-big {}
+*/
+@each $breakpoint in $breakpoints {
+    $name: nth($breakpoint, 1);
+    $width: nth($breakpoint, 2);
+    .hide-#{$name} {
+        @media (min-width: $width) {
+            display: none !important;
+        }
+    }
+    .reveal-#{$name} {
+        display: none !important;
+        @media (min-width: $width) {
+            display: block !important;
+        }
+    }
+}
+</code></pre>
+                    </article>
+                    <article>
+                        <h3>#responsive status</h3>
+                        <p>The HTML-code <code class="html">&lt;span id="responsive-status"&gt;&lt;/span&gt;</code> has to be placed inside the main layout file. Its css-attribute <code class="css">font-size</code> will be set to the name of the current active breakpoint (min-width). The reason behind this is to tell JavaScript the status of the layout of your website and to launch some JavaScript/jQuery functions according to your breakpoints.</p>
+                        <p>Last but not least, <code class="html">&lt;body&gt;</code> gets a class depending on the current breakpoint, prefixed with "responsive-". For example <code class="html">&lt;body class="responsive-medium"&gt;</code> when the medium breakpoint is active now.</p>
+
+<pre>
+<h4 class="css">SCSS</h4>
+<code class="css">#responsive-status {
+    display: none;
+    font-family: "mobile";
+}
+@each $breakpoint in $breakpoints {
+    $name: nth($breakpoint, 1);
+    $width: nth($breakpoint, 2);
+    @media (min-width: $width) {
+        #responsive-status {
+            font-family: "#{$name}";
+        }
+    }
+}
+</code></pre>
+<pre>
+<h4 class="js">jQuery</h4>
+<code class="js">function checkResponsiveStatus() {
+    var status = $('#responsive-status').css('font-family');
+
+    if (status != laststatus) {
+
+        // Set &lt;body&gt; classname to responsive-{name of current breakpoint}
+        $('body').removeClass (function (index, css) {
+            return (css.match (/(^|\s)responsive-\S+/g) || []).join(' ');
+        });
+        $('body').addClass("responsive-" + status);
+
+        // Call functions tied to current breakpoint
+        // Add your own cases if you like
+        switch(status) {
+            case "mobile":
+                console.log("JavaScript-Code for mobile resolution");
+                break;
+
+            case "small":
+                console.log("JavaScript-Code for small resolution");
+                break;
+
+            case "medium":
+                console.log("JavaScript-Code for medium resolution");
+                break;
+
+            case "big":
+                console.log("JavaScript-Code for big resolution");
+                break;
+        }
+    }
+    laststatus = status;
+}
+
+var laststatus = false;
+
+$(document).ready(function() {
+
+    $( window ).bind( "resize", function(){
+        checkResponsiveStatus();
+    });
+
+    checkResponsiveStatus();
+
+});
+</code></pre>
+                    </article>
+                    <article>
+                        <h3>Files</h3>
+                        <ul class="files">
+                            <li>sass/base/_vars.scss</li>
+                            <li>sass/base/_toolbelt.scss</li>
+                            <li>js/responsive.js</li>
+                        </ul>
+                    </article>
+                </section>
+                <hr>
+                <section>
+                    <a id="grid"></a>
+                    <h2>Grid</h2>
+                    <h3>Current active breakpoint:</h3>
+                    <p class="hide-small">(none)</p>
+                    <p class="reveal-small hide-medium">small</p>
+                    <p class="reveal-medium hide-big">medium</p>
+                    <p class="reveal-big">big</p>
+                    <h3>Susy</h3>
+                    <p>
+                        Responsive grid system.<br>
+                        <a href="http://susy.oddbird.net/">http://susy.oddbird.net/</a>
+                    </p>
+
+                    <div class="example">
+                        <h4 class="example-heading">Example</h4>
+                        <div class="example-content">
+                            <div class="example-grid">
+                                <div class="example-col-1">
+                                    <div class="example-module">
+                                        <div class="hide-small">(none)</div>
+                                        <div class="reveal-small hide-medium">@include bp(small) {   @include span(6);   }</div>
+                                        <div class="reveal-medium">@include bp(medium) {   @include span(4);   }</div>
+                                    </div>
+                                </div>
+                                <div class="example-col-2">
+                                    <div class="example-module">
+                                        <div class="hide-small">(none)</div>
+                                        <div class="reveal-small hide-medium">@include bp(small) {   @include span(6);   }</div>
+                                        <div class="reveal-medium">@include bp(medium) {   @include span(4);   }</div>
+                                    </div>
+                                </div>
+                                <div class="example-col-3 reveal-medium">
+                                    <div class="example-module">
+                                        <div class="reveal-medium">@include bp(medium) {   @include span(4);   }</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <br>
+                            <div class="example-grid">
+                                <div class="example-col-4">
+                                    <div class="example-module">
+                                        <div class="hide-small">(none)</div>
+                                        <div class="reveal-small hide-medium">@include bp(small) {    @include span(6);   }</div>
+                                        <div class="reveal-medium hide-big">@include bp(medium) {   @include span(4);   }</div>
+                                        <div class="reveal-big">@include bp(big) {      @include span(3);   }</div>
+                                    </div>
+                                </div>
+                                <div class="example-col-5">
+                                    <div class="example-module">
+                                        <div class="hide-small">(none)</div>
+                                        <div class="reveal-small hide-medium">@include bp(small) {    @include span(6 last);   }</div>
+                                        <div class="reveal-medium hide-big">@include bp(medium) {   @include span(8 last);   }</div>
+                                        <div class="reveal-big">@include bp(big) {      @include span(9 last);   }</div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    <br>
-                    <div class="example-grid">
-                        <div class="example-col-4">
-                            <article class="example-module">
-                                <div class="hide-small">(none)</div>
-                                <div class="reveal-small hide-medium">@include bp(small) {    @include span(6);   }</div>
-                                <div class="reveal-medium hide-big">@include bp(medium) {   @include span(4);   }</div>
-                                <div class="reveal-big">@include bp(big) {      @include span(3);   }</div>
-                            </article>
-                        </div>
-                        <div class="example-col-5">
-                            <article class="example-module">
-                                <div class="hide-small">(none)</div>
-                                <div class="reveal-small hide-medium">@include bp(small) {    @include span(6 last);   }</div>
-                                <div class="reveal-medium hide-big">@include bp(medium) {   @include span(8 last);   }</div>
-                                <div class="reveal-big">@include bp(big) {      @include span(9 last);   }</div>
-                            </article>
-                        </div>
-                    </div>
-                </div>
-            </div>
 <pre>
 <h4 class="html">HTML</h4>
 <code class="html">&lt;div class="container"&gt;
@@ -207,9 +426,23 @@ sass/base/_base.scss
         ...
     &lt;/div&gt;
 &lt;/div&gt;
-</code>
+</code></pre>
+<pre>
 <h4 class="css">SCSS</h4>
-<code class="css">.container {
+<code class="css">/*
+# Susy settings
+
+Global settings for susy grid system.
+http://susydocs.oddbird.net/en/latest/settings/
+*/
+$susy: (
+    columns:            12,
+    gutters:            1/3,
+    container:          $max-width,
+    global-box-sizing:  border-box
+);
+
+.container {
     @include container;
 }
 
@@ -229,72 +462,73 @@ sass/base/_base.scss
 <div class="files">bower_components/susy/
 </div>
 </pre>
-            <h3>Easy grid</h3>
-            <p>Light, selfmade grid. Classes mandatory for "form kitchen sink" (see below).</p>
-            <div class="example">
-                <h4 class="example-heading">Example</h4>
-                <div class="example-content">
-                    <div class="grid">
-                        <div class="col-1of4">
-                            <article class="example-module-2">.col-1of4</article>
-                        </div>
-                        <div class="col-1of4">
-                            <article class="example-module-2">.col-1of4</article>
-                        </div>
-                        <div class="col-1of4">
-                            <article class="example-module-2">.col-1of4</article>
-                        </div>
-                        <div class="col-1of4">
-                            <article class="example-module-2">.col-1of4</article>
+
+                    <h3>Easy grid</h3>
+                    <p>Light, selfmade grid. Classes mandatory for "form kitchen sink" (see below).</p>
+                    <div class="example">
+                        <h4 class="example-heading">Example</h4>
+                        <div class="example-content">
+                            <div class="grid">
+                                <div class="col-1of4">
+                                    <div class="example-module-2">.col-1of4</div>
+                                </div>
+                                <div class="col-1of4">
+                                    <div class="example-module-2">.col-1of4</div>
+                                </div>
+                                <div class="col-1of4">
+                                    <div class="example-module-2">.col-1of4</div>
+                                </div>
+                                <div class="col-1of4">
+                                    <div class="example-module-2">.col-1of4</div>
+                                </div>
+                            </div>
+                            <div class="grid">
+                                <div class="col-1of1">
+                                    <div class="example-module-2">.col-1of1</div>
+                                </div>
+                            </div>
+                            <div class="grid">
+                                <div class="col-1of2">
+                                    <div class="example-module-2">.col-1of2</div>
+                                </div>
+                                <div class="col-1of2">
+                                    <div class="example-module-2">.col-1of2</div>
+                                </div>
+                            </div>
+                            <div class="grid">
+                                <div class="col-1of3">
+                                    <div class="example-module-2">.col-1of3</div>
+                                </div>
+                                <div class="col-2of3">
+                                    <div class="example-module-2">.col-2of3</div>
+                                </div>
+                            </div>
+                            <div class="grid">
+                                <div class="col-1of4">
+                                    <div class="example-module-2">.col-1of4</div>
+                                </div>
+                                <div class="col-3of4">
+                                    <div class="example-module-2">.col-3of4</div>
+                                </div>
+                            </div>
+                            <div class="grid">
+                                <div class="col-2of5">
+                                    <div class="example-module-2">.col-2of5</div>
+                                </div>
+                                <div class="col-3of5">
+                                    <div class="example-module-2">.col-3of5</div>
+                                </div>
+                            </div>
+                            <div class="grid">
+                                <div class="col-1of5">
+                                    <div class="example-module-2">.col-1of5</div>
+                                </div>
+                                <div class="col-4of5">
+                                    <div class="example-module-2">.col-4of5</div>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    <div class="grid">
-                        <div class="col-1of1">
-                            <article class="example-module-2">.col-1of1</article>
-                        </div>
-                    </div>
-                    <div class="grid">
-                        <div class="col-1of2">
-                            <article class="example-module-2">.col-1of2</article>
-                        </div>
-                        <div class="col-1of2">
-                            <article class="example-module-2">.col-1of2</article>
-                        </div>
-                    </div>
-                    <div class="grid">
-                        <div class="col-1of3">
-                            <article class="example-module-2">.col-1of3</article>
-                        </div>
-                        <div class="col-2of3">
-                            <article class="example-module-2">.col-2of3</article>
-                        </div>
-                    </div>
-                    <div class="grid">
-                        <div class="col-1of4">
-                            <article class="example-module-2">.col-1of4</article>
-                        </div>
-                        <div class="col-3of4">
-                            <article class="example-module-2">.col-3of4</article>
-                        </div>
-                    </div>
-                    <div class="grid">
-                        <div class="col-2of5">
-                            <article class="example-module-2">.col-2of5</article>
-                        </div>
-                        <div class="col-3of5">
-                            <article class="example-module-2">.col-3of5</article>
-                        </div>
-                    </div>
-                    <div class="grid">
-                        <div class="col-1of5">
-                            <article class="example-module-2">.col-1of5</article>
-                        </div>
-                        <div class="col-4of5">
-                            <article class="example-module-2">.col-4of5</article>
-                        </div>
-                    </div>
-                </div>
-            </div>
 <pre>
 <h4 class="html">HTML</h4>
 <code class="html">&lt;div class="grid"&gt;
@@ -310,24 +544,25 @@ sass/base/_base.scss
 <div class="files">sass/base/_scaffold.scss
 </div>
 </pre>
-            <h3>Columns with synced heights</h3>
-            <p><a href="https://github.com/ginader/syncHeight">syncHeight Plugin for YAML</a></p>
-            <div class="example">
-                <h4 class="example-heading">Example</h4>
-                <div class="example-content">
+                    <h3>Columns with synced heights</h3>
+                    <p><a href="https://github.com/ginader/syncHeight">syncHeight Plugin for YAML</a></p>
+                    <div class="example">
+                        <h4 class="example-heading">Example</h4>
+                        <div class="example-content">
 
-                    <div class="example-grid sync-height">
-                        <div class="example-equal-1 example-module-2">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque a ligula vitae risus vulputate venenatis. Donec luctus, sapien non maximus interdum, risus elit condimentum enim, a commodo metus ipsum vel erat.
-                        </div>
-                        <div class="example-equal-2 example-module-2">
-                            Maecenas ac purus vitae leo pellentesque congue a id nisi. Phasellus ultrices interdum tellus eget auctor. Morbi tristique lectus sed mi malesuada, in sagittis massa consequat. Sed sed accumsan nisl. Sed bibendum gravida lorem eu tristique. Aliquam facilisis congue venenatis. Proin dui neque, commodo eget leo eget, pretium ornare lacus.
-                        </div>
-                        <div class="example-equal-3 example-module-2">
-                            Ut pretium orci arcu, vitae pharetra neque pharetra sed.
+                            <div class="example-grid sync-height">
+                                <div class="example-equal-1 example-module-2">
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque a ligula vitae risus vulputate venenatis. Donec luctus, sapien non maximus interdum, risus elit condimentum enim, a commodo metus ipsum vel erat.
+                                </div>
+                                <div class="example-equal-2 example-module-2">
+                                    Maecenas ac purus vitae leo pellentesque congue a id nisi. Phasellus ultrices interdum tellus eget auctor. Morbi tristique lectus sed mi malesuada, in sagittis massa consequat. Sed sed accumsan nisl. Sed bibendum gravida lorem eu tristique. Aliquam facilisis congue venenatis. Proin dui neque, commodo eget leo eget, pretium ornare lacus.
+                                </div>
+                                <div class="example-equal-3 example-module-2">
+                                    Ut pretium orci arcu, vitae pharetra neque pharetra sed.
+                                </div>
+                            </div>
                         </div>
                     </div>
-                </div>
 <pre>
 <h4 class="html">HTML</h4>
 <code class="html">&lt;div class="sync-height"&gt;
@@ -344,198 +579,228 @@ sass/base/_base.scss
 js/syncheight.js
 </div>
 </pre>
-            <hr>
-            <a id="forms"></a>
-            <h2>Forms</h2>
-            <h3><span>Best Practice</span> Forms</h3>
-            <p>Based on <a href="http://codepen.io/njsteele/pen/ajLpb">Form Kitchen Sink</a></p>
-            <h4>This example meets the following requirements:</h4>
-            <ul>
-              <li>Container independent, flexible widths in percent</li>
-              <li>Responsive, linearizable, mobile-ready</li>
-              <li>Browser support: IE9 and up, Chrome latest, Safari latest, Firefox latest, Opera latest, major mobile browsers</li>
-              <li>2 variants: labels left (for most forms) and labels above (small or narrow forms)</li>
-              <li>Doesn't break with multi-line labels</li>
-              <li>Client-side validation via HTML5 input types and JavaScript support</li>
-              <li>Inline error messages</li>
-              <li>Backend/templating friendly
-                <ul>
-                  <li>Suitable for using label/input/error includes/snippets</li>
-                  <li>Slim and flexible markup</li>
-                </ul>
-              </li>
-            </ul>
-            <form action="#" method="get">
-              <fieldset class="wideform">
-                <h3 class="legend">Form kitchen sink</h3>
-                <p><b>Labels left:</b> Suitable for most forms<br/>
-                  <b>Labels above:</b> Better for short or narrow forms</p>
-                <a href="javascript://" class="btn js_toggleLabelPosition">Switch label position</a>
+                </section>
+                <hr>
+                <section>
+                    <a id="forms"></a>
+                    <h2>Forms</h2>
+                    <h3><span>Best Practice</span> Forms</h3>
+                    <p>Based on <a href="http://codepen.io/njsteele/pen/ajLpb">Form Kitchen Sink</a></p>
+                    <h4>This example meets the following requirements:</h4>
+                    <ul>
+                        <li>Container independent, flexible widths in percent</li>
+                        <li>Responsive, linearizable, mobile-ready</li>
+                        <li>Browser support: IE9 and up, Chrome latest, Safari latest, Firefox latest, Opera latest, major mobile browsers</li>
+                        <li>2 variants: labels left (for most forms) and labels above (small or narrow forms)</li>
+                        <li>Doesn't break with multi-line labels</li>
+                        <li>Client-side validation via HTML5 input types and JavaScript support</li>
+                        <li>Inline error messages</li>
+                        <li>Backend/templating friendly
+                            <ul>
+                                <li>Suitable for using label/input/error includes/snippets</li>
+                                <li>Slim and flexible markup</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <form action="#" method="get">
+                        <fieldset class="wideform">
+                            <h3 class="legend">Form kitchen sink</h3>
+                            <p><b>Labels left:</b> Suitable for most forms<br/>
+                            <b>Labels above:</b> Better for short or narrow forms</p>
+                            <a href="javascript://" class="btn js_toggleLabelPosition">Switch label position</a>
 
-                <hr/>
+                            <hr>
 
-                <div class="formrow">
-                  <div class="formitem">
-                    <div class="label req">Salutation</div>
-                    <div class="ticks">
-                      <label>
-                        <input type="radio" name="salutation" value="mrs" required="required"/>
-                        <span>Mrs.</span>
-                      </label>
-                      <label>
-                        <input type="radio" name="salutation" value="mr" required="required"/>
-                        <span>Mr.</span>
-                      </label>
-                      <label>
-                        <input type="radio" name="salutation" value="miss" required="required"/>
-                        <span>Miss</span>
-                      </label>
-                      <label>
-                        <input type="radio" name="salutation" value="jack" required="required"/>
-                        <span>Jack</span>
-                      </label>
-                      <label>
-                        <input type="radio" name="salutation" value="queen" required="required"/>
-                        <span>Queen</span>
-                      </label>
-                      <label>
-                        <input type="radio" name="salutation" value="king" required="required"/>
-                        <span>King</span>
-                      </label>
-                      <label>
-                        <input type="radio" name="salutation" value="sir" required="required"/>
-                        <span>Sir</span>
-                      </label>
-                      <label>
-                        <input type="radio" name="salutation" value="lord" required="required"/>
-                        <span>Lord</span>
-                      </label>
-                      <label>
-                        <input type="radio" name="salutation" value="master" required="required"/>
-                        <span>Master</span>
-                      </label>
-                      <label>
-                        <input type="radio" name="salutation" value="president" required="required"/>
-                        <span>President</span>
-                      </label>
-                    </div>
-                  </div>
-                </div>
-                <div class="formrow">
-                  <label class="label req" for="firstname">First/last name</label>
-                  <div class="formitem col-1of2">
-                    <label class="label req" for="firstname">First name</label>
-                    <input type="text" name="firstname" id="firstname" placeholder="Placeholder" required="required" x-autocompletetype="given-name"/>
-                  </div>
-                  <div class="formitem col-1of2">
-                    <label class="label req" for="firstname">Last name</label>
-                    <input type="text" name="lastname" id="lastname" placeholder="... with polyfill" required="required" x-autocompletetype="family-name"/>
-                  </div>
-                </div>
-                <div class="formrow">
-                  <div class="formitem col-1of3">
-                    <label class="label" for="zip">Zip</label>
-                    <input type="text" name="zip" id="zip" pattern="[0-9]{5}" x-autocompletetype="postal-code"/>
-                  </div>
-                  <div class="formitem col-2of3">
-                    <label class="label" for="zip">City</label>
-                    <input type="text" name="city" id="city" x-autocompletetype="city"/>
-                  </div>
-                </div>
-                <div class="formrow">
-                  <div class="formitem col-1of2">
-                    <label class="label" for="email">Email</label>
-                    <input type="email" name="email" id="email" x-autocompletetype="email"/>
-                  </div>
-                  <div class="formitem col-1of2">
-                    <label class="label" for="phone">Phone... Some more text for testing super long labels. It will happen, clients will do that. Lorem ipsum dolor sit amet, consectetuer adipiscing elit...</label>
-                    <input type="tel" name="phone" id="phone" x-autocompletetype="tel"/>
-                  </div>
-                </div>
-                <div class="formrow">
-                  <div class="formitem col-1of2">
-                    <label class="label" for="website">Your website, blog, Ihr Google Plus, Twitter or Facebook profile, whatever. Lots of text for testing really long labels, you know...</label>
-                    <input type="url" name="website" id="website" x-autocompletetype="url"/>
-                  </div>
-                  <div class="formitem col-1of2">
-                    <a href="javascript://" class="btn">Link button</a>
-                    <button type="button" class="btn btn-disabled" disabled="disabled">Disabled button</button>
-                  </div>
-                </div>
-                <div class="formrow">
-                  <div class="formitem col-1of2">
-                    <label class="label" for="password">Password</label>
-                    <input type="password" placeholder="Password" name="password" id="password"/>
-                  </div>
-                  <div class="formitem col-1of2">
-                    <input type="password" placeholder="Password again" name="passwordagain" id="passwordagain"/>
-                  </div>
-                </div>
-                <div class="formrow">
-                  <div class="formitem">
-                    <label class="label req" for="message">Message</label>
-                    <textarea name="message" id="message" cols="40" rows="5" required="required"></textarea>
-                  </div>
-                </div>
-                <div class="formrow">
-                  <div class="formitem">
-                    <div class="label req">Your rating</div>
-                    <div class="rating">
-                      <input type="radio" name="rating" value="5" id="rating5" required="required"/>
-                      <label for="rating5" class="star">
-                        <span>5 stars</span>
-                      </label>
-                      <input type="radio" name="rating" value="4" id="rating4" required="required"/>
-                      <label for="rating4" class="star">
-                        <span>4 stars</span>
-                      </label>
-                      <input type="radio" name="rating" value="3" id="rating3" required="required"/>
-                      <label for="rating3" class="star">
-                        <span>3 stars</span>
-                      </label>
-                      <input type="radio" name="rating" value="2" id="rating2" required="required"/>
-                      <label for="rating2" class="star">
-                        <span>2 stars</span>
-                      </label>
-                      <input type="radio" name="rating" value="1" id="rating1" required="required"/>
-                      <label for="rating1" class="star">
-                        <span>1 star</span>
-                      </label>
-                    </div>
-                  </div>
-                </div>
-                <div class="formrow">
-                  <div class="formitem col-1of2">
-                    <label class="label" for="country">Country</label>
-                    <select name="country" id="country" x-autocompletetype="country-name">
-                      <option selected="selected">please choose</option>
-                      <option>U.S.A.</option>
-                      <option>France</option>
-                      <option>Italy</option>
-                      <option>Spain</option>
-                      <option>Germany</option>
-                    </select>
-                  </div>
-                </div>
-                <div class="formrow">
-                  <div class="formitem">
-                    <div class="ticks">
-                      <label>
-                        <input type="checkbox" name="terms" class="error" required="required"/>
-                        <span>Yes, of course I agree to your monstrous <a href="javascript://">terms and conditions</a> and I allow everything.</span>
-                      </label>
-                    </div>
-                    <label for="terms" class="error">Please agree to our terms of service to proceed.</label>
-                  </div>
-                </div>
-                <div class="formrow">
-                    <div class="formitem">
-                        <input type="reset" value="Reset" class="btn btn-decline"/>
-                        <button class="btn btn-primary">Submit</button>
-                    </div>
-                </div>
-              </fieldset>
-            </form>
+                            <div class="formrow">
+                                <div class="formitem">
+                                    <div class="label req">Salutation</div>
+                                    <div class="ticks">
+                                        <label>
+                                            <input type="radio" name="salutation" value="mrs" required="required"/>
+                                            <span>Mrs.</span>
+                                        </label>
+                                        <label>
+                                            <input type="radio" name="salutation" value="mr" required="required"/>
+                                            <span>Mr.</span>
+                                        </label>
+                                        <label>
+                                            <input type="radio" name="salutation" value="miss" required="required"/>
+                                            <span>Miss</span>
+                                        </label>
+                                        <label>
+                                            <input type="radio" name="salutation" value="jack" required="required"/>
+                                            <span>Jack</span>
+                                        </label>
+                                        <label>
+                                            <input type="radio" name="salutation" value="queen" required="required"/>
+                                            <span>Queen</span>
+                                        </label>
+                                        <label>
+                                            <input type="radio" name="salutation" value="king" required="required"/>
+                                            <span>King</span>
+                                        </label>
+                                        <label>
+                                            <input type="radio" name="salutation" value="sir" required="required"/>
+                                            <span>Sir</span>
+                                        </label>
+                                        <label>
+                                            <input type="radio" name="salutation" value="lord" required="required"/>
+                                            <span>Lord</span>
+                                        </label>
+                                        <label>
+                                            <input type="radio" name="salutation" value="master" required="required"/>
+                                            <span>Master</span>
+                                        </label>
+                                        <label>
+                                            <input type="radio" name="salutation" value="president" required="required"/>
+                                            <span>President</span>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="formrow">
+                                <label class="label req" for="firstname">First/last name</label>
+                                <div class="formitem col-1of2">
+                                    <label class="label req" for="firstname">First name</label>
+                                    <input type="text" name="firstname" id="firstname" placeholder="Placeholder" required="required" x-autocompletetype="given-name"/>
+                                </div>
+                                <div class="formitem col-1of2">
+                                    <label class="label req" for="firstname">Last name</label>
+                                    <input type="text" name="lastname" id="lastname" placeholder="... with polyfill" required="required" x-autocompletetype="family-name"/>
+                                </div>
+                            </div>
+                            <div class="formrow">
+                                <div class="formitem col-1of3">
+                                    <label class="label" for="zip">Zip</label>
+                                    <input type="text" name="zip" id="zip" pattern="[0-9]{5}" x-autocompletetype="postal-code"/>
+                                </div>
+                                <div class="formitem col-2of3">
+                                    <label class="label" for="zip">City</label>
+                                    <input type="text" name="city" id="city" x-autocompletetype="city"/>
+                                </div>
+                            </div>
+                            <div class="formrow">
+                                <div class="formitem col-1of2">
+                                    <label class="label" for="email">Email</label>
+                                    <input type="email" name="email" id="email" x-autocompletetype="email"/>
+                                </div>
+                                <div class="formitem col-1of2">
+                                    <label class="label" for="phone">Phone... Some more text for testing super long labels. It will happen, clients will do that. Lorem ipsum dolor sit amet, consectetuer adipiscing elit...</label>
+                                    <input type="tel" name="phone" id="phone" x-autocompletetype="tel"/>
+                                </div>
+                            </div>
+                            <div class="formrow">
+                                <div class="formitem col-1of2">
+                                    <label class="label" for="website">Your website, blog, Ihr Google Plus, Twitter or Facebook profile, whatever. Lots of text for testing really long labels, you know...</label>
+                                    <input type="url" name="website" id="website" x-autocompletetype="url"/>
+                                </div>
+                                <div class="formitem col-1of2">
+                                    <a href="javascript://" class="btn">Link button</a>
+                                    <button type="button" class="btn btn-disabled" disabled="disabled">Disabled button</button>
+                                </div>
+                            </div>
+                            <div class="formrow">
+                                <div class="formitem col-1of2">
+                                    <label class="label" for="password">Password</label>
+                                    <input type="password" placeholder="Password" name="password" id="password"/>
+                                </div>
+                                <div class="formitem col-1of2">
+                                    <input type="password" placeholder="Password again" name="passwordagain" id="passwordagain"/>
+                                </div>
+                            </div>
+                            <div class="formrow">
+                                <div class="formitem">
+                                    <label class="label req" for="message">Message</label>
+                                    <textarea name="message" id="message" cols="40" rows="5" required="required"></textarea>
+                                </div>
+                            </div>
+                            <div class="formrow">
+                                <div class="formitem">
+                                    <div class="label req">Your rating</div>
+                                    <div class="rating">
+                                        <input type="radio" name="rating" value="5" id="rating5" required="required"/>
+                                        <label for="rating5" class="star">
+                                            <span>5 stars</span>
+                                        </label>
+                                        <input type="radio" name="rating" value="4" id="rating4" required="required"/>
+                                        <label for="rating4" class="star">
+                                            <span>4 stars</span>
+                                        </label>
+                                        <input type="radio" name="rating" value="3" id="rating3" required="required"/>
+                                        <label for="rating3" class="star">
+                                            <span>3 stars</span>
+                                        </label>
+                                        <input type="radio" name="rating" value="2" id="rating2" required="required"/>
+                                        <label for="rating2" class="star">
+                                            <span>2 stars</span>
+                                        </label>
+                                        <input type="radio" name="rating" value="1" id="rating1" required="required"/>
+                                        <label for="rating1" class="star">
+                                            <span>1 star</span>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="formrow">
+                                <div class="formitem col-1of2">
+                                    <label class="label" for="country">Country</label>
+                                    <select name="country" id="country" x-autocompletetype="country-name">
+                                        <option selected="selected">please choose</option>
+                                        <option>U.S.A.</option>
+                                        <option>France</option>
+                                        <option>Italy</option>
+                                        <option>Spain</option>
+                                        <option>Germany</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="formrow">
+                                <div class="formitem">
+                                    <div class="ticks">
+                                        <label>
+                                            <input type="checkbox" name="terms" class="error" required="required"/>
+                                            <span>Yes, of course I agree to your monstrous <a href="javascript://">terms and conditions</a> and I allow everything.</span>
+                                        </label>
+                                    </div>
+                                    <label for="terms" class="error">Please agree to our terms of service to proceed.</label>
+                                </div>
+                            </div>
+                            <div class="formrow">
+                                <div class="formitem">
+                                    <input type="reset" value="Reset" class="btn btn-decline"/>
+                                    <button class="btn btn-primary">Submit</button>
+                                </div>
+                            </div>
+                        </fieldset>
+                    </form>
+<pre>
+<h4 class="html">HTML</h4>
+<code class="html">&lt;form&gt;
+    &lt;fieldset class="wideform"&gt;
+        &lt;div class="formrow"&gt;
+            &lt;label class="label req" for="firstname"&gt;First/last name&lt;/label&gt;
+            &lt;div class="formitem col-1of2"&gt;
+                &lt;label class="label req" for="firstname"&gt;First name&lt;/label&gt;
+                &lt;input type="text" name="firstname" id="firstname" placeholder="Placeholder" required="required" x-autocompletetype="given-name"/&gt;
+            &lt;/div&gt;
+            &lt;div class="formitem col-1of2"&gt;
+                &lt;label class="label req" for="firstname"&gt;Last name&lt;/label&gt;
+                &lt;input type="text" name="lastname" id="lastname" placeholder="... with polyfill" required="required" x-autocompletetype="family-name"/&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class="formrow"&gt;
+            &lt;div class="formitem col-1of3"&gt;
+                &lt;label class="label" for="zip"&gt;Zip&lt;/label&gt;
+                &lt;input type="text" name="zip" id="zip" pattern="[0-9]{5}" x-autocompletetype="postal-code"/&gt;
+            &lt;/div&gt;
+            &lt;div class="formitem col-2of3"&gt;
+                &lt;label class="label" for="zip"&gt;City&lt;/label&gt;
+                &lt;input type="text" name="city" id="city" x-autocompletetype="city"/&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/fieldset&gt;
+&lt;/form&gt;
+</code></pre>
 <pre><h4 class="files">Files</h4>
 <div class="files">sass/base/_vars.scss
 sass/elements/_forms.scss
@@ -544,30 +809,32 @@ bower_components/jquery-validation/src/localization/messages_de.js
 js/forms.js
 </div>
 </pre>
-            <hr>
-            <a id="buttons"></a>
-            <h2>Buttons</h2>
-            <p>Create a button by using the class <code class="css">.btn</code>.</p>
-            <div class="example">
-                <h4 class="example-heading">Example</h4>
-                <div class="example-content">
-                    <a class="btn">I am a button</a>
-                </div>
-            </div>
+                </section>
+                <hr>
+                <section>
+                    <a id="buttons"></a>
+                    <h2>Buttons</h2>
+                    <p>Create a button by using the class <code class="css">.btn</code>.</p>
+                    <div class="example">
+                        <h4 class="example-heading">Example</h4>
+                        <div class="example-content">
+                            <a class="btn">I am a button</a>
+                        </div>
+                    </div>
 <pre><h4 class="html">HTML</h4><code class="html">&lt;a class="btn"&gt;I am a button&lt;/a&gt;</code></pre>
 
-            <h3>Colors</h3>
-            <p>Use <code class="css">.btn-primary</code>, <code class="css">.btn-disabled</code>, <code class="css">.btn-decline</code> or <code class="css">.btn-accept</code> to give your button its purpose.</p>
-            <div class="example">
-                <h4 class="example-heading">Example</h4>
-                <div class="example-content">
-                    <a class="btn">Normal button</a>
-                    <a class="btn btn-primary">Primary button</a>
-                    <a class="btn btn-disabled">Disabled button</a>
-                    <a class="btn btn-decline">Decline button</a>
-                    <a class="btn btn-accept">Accept button</a>
-                </div>
-            </div>
+                    <h3>Colors</h3>
+                    <p>Use <code class="css">.btn-primary</code>, <code class="css">.btn-disabled</code>, <code class="css">.btn-decline</code> or <code class="css">.btn-accept</code> to give your button its purpose.</p>
+                    <div class="example">
+                        <h4 class="example-heading">Example</h4>
+                        <div class="example-content">
+                            <a class="btn">Normal button</a>
+                            <a class="btn btn-primary">Primary button</a>
+                            <a class="btn btn-disabled">Disabled button</a>
+                            <a class="btn btn-decline">Decline button</a>
+                            <a class="btn btn-accept">Accept button</a>
+                        </div>
+                    </div>
 
 <pre><h4 class="html">HTML</h4>
 <code class="html">&lt;a class="btn"&gt;Normal button&lt;/a&gt;
@@ -577,63 +844,63 @@ js/forms.js
 &lt;a class="btn btn-accept"&gt;Accept button&lt;/a&gt;
 </code></pre>
 
-            <h3>Size Variations</h3>
-            <p>You may alter its size with <code class="css">.btn-sm</code> or <code class="css">.btn-big</code>.</p>
-            <div class="example">
-                <h4 class="example-heading">Example</h4>
-                <div class="example-content">
-                    <a class="btn btn-sm">Small button</a>
-                    <a class="btn btn-big">Big button</a>
-                </div>
-            </div>
+                    <h3>Size Variations</h3>
+                    <p>You may alter its size with <code class="css">.btn-sm</code> or <code class="css">.btn-big</code>.</p>
+                    <div class="example">
+                        <h4 class="example-heading">Example</h4>
+                        <div class="example-content">
+                            <a class="btn btn-sm">Small button</a>
+                            <a class="btn btn-big">Big button</a>
+                        </div>
+                    </div>
 <pre><h4 class="html">HTML</h4>
 <code class="html">&lt;a class="btn btn-sm"&gt;Small button&lt;/a&gt;
 &lt;a class="btn btn-big"&gt;Big button&lt;/a&gt;
 </code></pre>
 
-            <h3>Round Buttons</h3>
-            <p>Add shapes with <code class="css">.btn-prev</code>, <code class="css">.btn-next</code> or <code class="css">.btn-round</code>.</p>
-            <div class="example">
-                <h4 class="example-heading">Example</h4>
-                <div class="example-content">
+                    <h3>Round Buttons</h3>
+                    <p>Add shapes with <code class="css">.btn-prev</code>, <code class="css">.btn-next</code> or <code class="css">.btn-round</code>.</p>
+                    <div class="example">
+                        <h4 class="example-heading">Example</h4>
+                        <div class="example-content">
 
-                    <a class="btn btn-prev">Prev button</a>
-                    <a class="btn btn-next">Next button</a>
-                    <a class="btn btn-round">Round button</a>
-                </div>
-            </div>
+                            <a class="btn btn-prev">Prev button</a>
+                            <a class="btn btn-next">Next button</a>
+                            <a class="btn btn-round">Round button</a>
+                        </div>
+                    </div>
 <pre><h4 class="html">HTML</h4>
 <code class="html">&lt;a class="btn btn-prev"&gt;Prev button&lt;/a&gt;
 &lt;a class="btn btn-next"&gt;Next button&lt;/a&gt;
 &lt;a class="btn btn-round"&gt;Round button&lt;/a&gt;
 </code></pre>
 
-            <h3>Full Button</h3>
-            <p>A <code class="css">.btn-full</code> spans the available horizontal space.</p>
-            <div class="example">
-                <h4 class="example-heading">Example</h4>
-                <div class="example-content">
-                    <a class="btn btn-full">Full button</a>
-                </div>
-            </div>
+                    <h3>Full Button</h3>
+                    <p>A <code class="css">.btn-full</code> spans the available horizontal space.</p>
+                    <div class="example">
+                        <h4 class="example-heading">Example</h4>
+                        <div class="example-content">
+                            <a class="btn btn-full">Full button</a>
+                        </div>
+                    </div>
 
 <pre><h4 class="html">HTML</h4>
 <code class="html">&lt;a class="btn btn-full"&gt;Full button&lt;/a&gt;
 </code></pre>
 
-            <h3>Button Group</h3>
-            <p>Setup a button group by wrapping your buttons with <code class="css">.btn-group</code>.</p>
-            <div class="example">
-                <h4 class="example-heading">Example</h4>
-                <div class="example-content">
-                    <div class="btn-group">
-                        <a class="btn">Grouped</a>
-                        <a class="btn">buttons</a>
-                        <a class="btn">Grouped</a>
-                        <a class="btn">buttons</a>
+                    <h3>Button Group</h3>
+                    <p>Setup a button group by wrapping your buttons with <code class="css">.btn-group</code>.</p>
+                    <div class="example">
+                        <h4 class="example-heading">Example</h4>
+                        <div class="example-content">
+                            <div class="btn-group">
+                                <a class="btn">Grouped</a>
+                                <a class="btn">buttons</a>
+                                <a class="btn">Grouped</a>
+                                <a class="btn">buttons</a>
+                            </div>
+                        </div>
                     </div>
-                </div>
-            </div>
 <pre><h4 class="html">HTML</h4>
 <code class="html">&lt;div class="btn-group"&gt;
     &lt;a class="btn"&gt;Grouped&lt;/a&gt;
@@ -642,57 +909,59 @@ js/forms.js
 &lt;/div&gt;
 </code></pre>
 
-            <h3>Combinations</h3>
-            <p>You may combine every colour with every size and every shape.</p>
-            <div class="example">
-                <h4 class="example-heading">Example</h4>
-                <div class="example-content">
-                    <a class="btn btn-sm btn-round">Small and round button</a>
-                    <br>
-                    <div class="btn-group">
-                        <a class="btn btn-decline btn-prev">Abort</a>
-                        <a class="btn btn-accept btn-next">Okay</a>
+                    <h3>Combinations</h3>
+                    <p>You may combine every colour with every size and every shape.</p>
+                    <div class="example">
+                        <h4 class="example-heading">Example</h4>
+                        <div class="example-content">
+                            <a class="btn btn-sm btn-round">Small and round button</a>
+                            <br>
+                            <div class="btn-group">
+                                <a class="btn btn-decline btn-prev">Abort</a>
+                                <a class="btn btn-accept btn-next">Okay</a>
+                            </div>
+                            <a class="btn btn-big btn-primary btn-full">Big, primary and full button</a>
+                        </div>
                     </div>
-                    <a class="btn btn-big btn-primary btn-full">Big, primary and full button</a>
-                </div>
-            </div>
 <pre><h4 class="files">Files</h4>
 <div class="files">sass/base/_vars.scss
 sass/elements/_buttons.scss
 </div>
 </pre>
-            <hr>
-            <a id="tabs"></a>
-            <h2>Tabs</h2>
-            <p>Create a tabbed section by adding a <code class="css">.tabs-container</code>. Place your tabs into <code class="css">ul.tabs</code> and add the correspoding content panes having <code class="css">.tab-content</code> and an <code class="html">id</code> corresponding to the <code class="html">href</code>-Attribute of the tab-links.</p>
-            <div class="example">
-                <h4 class="example-heading">Example</h4>
-                <div class="example-content">
+                </section>
+                <hr>
+                <section>
+                    <a id="tabs"></a>
+                    <h2>Tabs</h2>
+                    <p>Create a tabbed section by adding a <code class="css">.tabs-container</code>. Place your tabs into <code class="css">ul.tabs</code> and add the correspoding content panes having <code class="css">.tab-content</code> and an <code class="html">id</code> corresponding to the <code class="html">href</code>-Attribute of the tab-links.</p>
+                    <div class="example">
+                        <h4 class="example-heading">Example</h4>
+                        <div class="example-content">
 
-                    <div class="tabs-container">
-                        <ul class="tabs">
-                            <li><a href="#tab1">Tab 1</a></li>
-                            <li><a href="#tab2">Tab 2</a></li>
-                            <li><a href="#tab3">Tab 3</a></li>
-                        </ul>
-                        <div id="tab1" class="tab-content">
-                            <p>
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam malesuada fermentum mi. Integer ut massa dignissim, fermentum odio a, scelerisque sem. Cras ut mi sed mi iaculis tempor ac ut est. Nulla iaculis eu lectus in luctus. Ut pretium felis sit amet quam rutrum malesuada. Phasellus gravida quam nunc, nec faucibus turpis feugiat et. Sed nec sem a nunc pellentesque volutpat. Duis pharetra varius blandit. Nulla posuere lorem dui, vel suscipit mauris tincidunt eget. Proin sed finibus justo. Integer vel aliquet nulla, a fermentum ex.
-                            </p>
-                        </div>
-                        <div id="tab2" class="tab-content">
-                            <p>
-                                Vivamus sed aliquet nisl, sit amet mollis leo. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Nam tempor orci id lectus condimentum feugiat. In eleifend urna elit, et semper odio dapibus eu. Fusce imperdiet faucibus lectus. Donec lobortis tempus arcu, in lacinia purus. Curabitur placerat elementum porta.
-                            </p>
-                        </div>
-                        <div id="tab3" class="tab-content">
-                            <p>
-                                Phasellus rhoncus ipsum in nulla mattis hendrerit. Vestibulum magna nunc, luctus at luctus a, sodales eget ligula. Vivamus eget massa ac dolor vehicula gravida eu ac quam. Ut eu ante bibendum, facilisis lectus eu, imperdiet felis. In nec nibh et nunc tincidunt malesuada. Duis a porta ligula, sit amet scelerisque purus. Etiam scelerisque sed lectus nec dictum. Duis at justo nunc. Ut justo est, eleifend eu libero vitae, gravida congue lacus. Cras nec neque id nisl dapibus tincidunt. Etiam id vehicula nisi, ut rutrum mauris. In sollicitudin non ex sit amet facilisis. Cras mauris arcu, sagittis vel bibendum eu, ornare sit amet felis. Phasellus accumsan enim ligula, vitae suscipit mi blandit sed. Ut lobortis risus non aliquet venenatis. Etiam eros mauris, eleifend non leo nec, dictum mollis magna.
-                            </p>
+                            <div class="tabs-container">
+                                <ul class="tabs">
+                                    <li><a href="#tab1">Tab 1</a></li>
+                                    <li><a href="#tab2">Tab 2</a></li>
+                                    <li><a href="#tab3">Tab 3</a></li>
+                                </ul>
+                                <div id="tab1" class="tab-content">
+                                    <p>
+                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam malesuada fermentum mi. Integer ut massa dignissim, fermentum odio a, scelerisque sem. Cras ut mi sed mi iaculis tempor ac ut est. Nulla iaculis eu lectus in luctus. Ut pretium felis sit amet quam rutrum malesuada. Phasellus gravida quam nunc, nec faucibus turpis feugiat et. Sed nec sem a nunc pellentesque volutpat. Duis pharetra varius blandit. Nulla posuere lorem dui, vel suscipit mauris tincidunt eget. Proin sed finibus justo. Integer vel aliquet nulla, a fermentum ex.
+                                    </p>
+                                </div>
+                                <div id="tab2" class="tab-content">
+                                    <p>
+                                        Vivamus sed aliquet nisl, sit amet mollis leo. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Nam tempor orci id lectus condimentum feugiat. In eleifend urna elit, et semper odio dapibus eu. Fusce imperdiet faucibus lectus. Donec lobortis tempus arcu, in lacinia purus. Curabitur placerat elementum porta.
+                                    </p>
+                                </div>
+                                <div id="tab3" class="tab-content">
+                                    <p>
+                                        Phasellus rhoncus ipsum in nulla mattis hendrerit. Vestibulum magna nunc, luctus at luctus a, sodales eget ligula. Vivamus eget massa ac dolor vehicula gravida eu ac quam. Ut eu ante bibendum, facilisis lectus eu, imperdiet felis. In nec nibh et nunc tincidunt malesuada. Duis a porta ligula, sit amet scelerisque purus. Etiam scelerisque sed lectus nec dictum. Duis at justo nunc. Ut justo est, eleifend eu libero vitae, gravida congue lacus. Cras nec neque id nisl dapibus tincidunt. Etiam id vehicula nisi, ut rutrum mauris. In sollicitudin non ex sit amet facilisis. Cras mauris arcu, sagittis vel bibendum eu, ornare sit amet felis. Phasellus accumsan enim ligula, vitae suscipit mi blandit sed. Ut lobortis risus non aliquet venenatis. Etiam eros mauris, eleifend non leo nec, dictum mollis magna.
+                                    </p>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                </div>
-            </div>
 <pre><h4 class="html">HTML</h4>
 <code class="html">&lt;div class="tabs-container"&gt;
     &lt;ul class="tabs"&gt;
@@ -711,33 +980,34 @@ sass/elements/_tabs.scss
 js/tabs.js
 </div>
 </pre>
+                </section>
+                <hr>
+                <section>
+                    <a id="collapse"></a>
+                    <h2>Collapse</h2>
+                    <p>Place at least one combination of <code class="css">.collapse-toggle</code> and <code class="css">.collapse-content</code> into a <code class="css">.collapse-container</code> to make one or more collapsables. Use padding instead of margin for each the toggle and the container to ensure a soft animation.</p>
+                    <h3>Initially closed collapsable</h3>
 
-            <hr>
-            <a id="collapse"></a>
-            <h2>Collapse</h2>
-            <p>Place at least one combination of <code class="css">.collapse-toggle</code> and <code class="css">.collapse-content</code> into a <code class="css">.collapse-container</code> to make one or more collapsables. Use padding instead of margin for each the toggle and the container to ensure a soft animation.</p>
-            <h3>Initially closed collapsable</h3>
+                    <div class="example">
+                        <h4 class="example-heading">Example</h4>
+                        <div class="example-content">
 
-            <div class="example">
-                <h4 class="example-heading">Example</h4>
-                <div class="example-content">
-
-                    <div class="collapse-container">
-                        <h4 class="collapse-toggle">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit
-                        </h4>
-                        <p class="collapse-content">
-                            Phasellus finibus maximus libero, eget tincidunt nisl dapibus vitae. Vestibulum sem purus, sollicitudin ut consectetur eget, dignissim eget mi. Curabitur scelerisque dui non tellus auctor, sed euismod sapien molestie. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Etiam nec ornare sapien. Etiam eu dolor aliquam, sollicitudin nibh quis, tempor nisl. Quisque eget turpis suscipit, imperdiet nisi eget, elementum lorem. Aliquam ultrices, metus in egestas elementum, purus sapien elementum tortor, vitae tempus nulla quam in purus.
-                        </p>
-                        <h4 class="collapse-toggle">
-                            Ut a molestie tellus
-                        </h4>
-                        <p class="collapse-content">
-                            Phasellus sit amet accumsan massa. Aliquam erat volutpat. Ut iaculis posuere mattis. Sed porttitor pellentesque sapien, eu bibendum arcu sagittis nec. Donec auctor justo ut rhoncus suscipit. Ut laoreet finibus felis non molestie. Donec dapibus orci in erat interdum auctor. Maecenas vulputate nisl nec blandit accumsan. Praesent vitae ultrices tellus. Nullam ultricies neque et urna placerat rhoncus.
-                        </p>
+                            <div class="collapse-container">
+                                <h4 class="collapse-toggle">
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit
+                                </h4>
+                                <p class="collapse-content">
+                                    Phasellus finibus maximus libero, eget tincidunt nisl dapibus vitae. Vestibulum sem purus, sollicitudin ut consectetur eget, dignissim eget mi. Curabitur scelerisque dui non tellus auctor, sed euismod sapien molestie. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Etiam nec ornare sapien. Etiam eu dolor aliquam, sollicitudin nibh quis, tempor nisl. Quisque eget turpis suscipit, imperdiet nisi eget, elementum lorem. Aliquam ultrices, metus in egestas elementum, purus sapien elementum tortor, vitae tempus nulla quam in purus.
+                                </p>
+                                <h4 class="collapse-toggle">
+                                    Ut a molestie tellus
+                                </h4>
+                                <p class="collapse-content">
+                                    Phasellus sit amet accumsan massa. Aliquam erat volutpat. Ut iaculis posuere mattis. Sed porttitor pellentesque sapien, eu bibendum arcu sagittis nec. Donec auctor justo ut rhoncus suscipit. Ut laoreet finibus felis non molestie. Donec dapibus orci in erat interdum auctor. Maecenas vulputate nisl nec blandit accumsan. Praesent vitae ultrices tellus. Nullam ultricies neque et urna placerat rhoncus.
+                                </p>
+                            </div>
+                        </div>
                     </div>
-                </div>
-            </div>
 <pre><h4 class="html">HTML</h4>
 <code class="html">&lt;div class="collapse-container"&gt;
     &lt;h4 class="collapse-toggle"&gt;
@@ -749,29 +1019,29 @@ js/tabs.js
     ...
 &lt;/div&gt;
 </code></pre>
-            <h3>Initially open collapsable</h3>
-            <p>Add class <code class="css">.collapse-open</code> to a <code class="css">.collapse-toggle</code> to have its <code class="css">.collapse-content</code> initially opened at page load.</p>
+                    <h3>Initially open collapsable</h3>
+                    <p>Add class <code class="css">.collapse-open</code> to a <code class="css">.collapse-toggle</code> to have its <code class="css">.collapse-content</code> initially opened at page load.</p>
 
-            <div class="example">
-                <h4 class="example-heading">Example</h4>
-                <div class="example-content">
+                    <div class="example">
+                        <h4 class="example-heading">Example</h4>
+                        <div class="example-content">
 
-                    <div class="collapse-container">
-                        <h4 class="collapse-toggle collapse-open">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                        </h4>
-                        <p class="collapse-content">
-                            Phasellus finibus maximus libero, eget tincidunt nisl dapibus vitae. Vestibulum sem purus, sollicitudin ut consectetur eget, dignissim eget mi. Curabitur scelerisque dui non tellus auctor, sed euismod sapien molestie. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Etiam nec ornare sapien. Etiam eu dolor aliquam, sollicitudin nibh quis, tempor nisl. Quisque eget turpis suscipit, imperdiet nisi eget, elementum lorem. Aliquam ultrices, metus in egestas elementum, purus sapien elementum tortor, vitae tempus nulla quam in purus.
-                        </p>
-                        <h4 class="collapse-toggle collapse-open">
-                            Ut a molestie tellus
-                        </h4>
-                        <p class="collapse-content">
-                            Phasellus sit amet accumsan massa. Aliquam erat volutpat. Ut iaculis posuere mattis. Sed porttitor pellentesque sapien, eu bibendum arcu sagittis nec. Donec auctor justo ut rhoncus suscipit. Ut laoreet finibus felis non molestie. Donec dapibus orci in erat interdum auctor. Maecenas vulputate nisl nec blandit accumsan. Praesent vitae ultrices tellus. Nullam ultricies neque et urna placerat rhoncus.
-                        </p>
+                            <div class="collapse-container">
+                                <h4 class="collapse-toggle collapse-open">
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                </h4>
+                                <p class="collapse-content">
+                                    Phasellus finibus maximus libero, eget tincidunt nisl dapibus vitae. Vestibulum sem purus, sollicitudin ut consectetur eget, dignissim eget mi. Curabitur scelerisque dui non tellus auctor, sed euismod sapien molestie. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Etiam nec ornare sapien. Etiam eu dolor aliquam, sollicitudin nibh quis, tempor nisl. Quisque eget turpis suscipit, imperdiet nisi eget, elementum lorem. Aliquam ultrices, metus in egestas elementum, purus sapien elementum tortor, vitae tempus nulla quam in purus.
+                                </p>
+                                <h4 class="collapse-toggle collapse-open">
+                                    Ut a molestie tellus
+                                </h4>
+                                <p class="collapse-content">
+                                    Phasellus sit amet accumsan massa. Aliquam erat volutpat. Ut iaculis posuere mattis. Sed porttitor pellentesque sapien, eu bibendum arcu sagittis nec. Donec auctor justo ut rhoncus suscipit. Ut laoreet finibus felis non molestie. Donec dapibus orci in erat interdum auctor. Maecenas vulputate nisl nec blandit accumsan. Praesent vitae ultrices tellus. Nullam ultricies neque et urna placerat rhoncus.
+                                </p>
+                            </div>
+                        </div>
                     </div>
-                </div>
-            </div>
 
 <pre><h4 class="html">HTML</h4>
 <code class="html">&lt;div class="collapse-container"&gt;
@@ -784,35 +1054,35 @@ js/tabs.js
     ...
 &lt;/div&gt;
 </code></pre>
-            <h3>Accordion</h3>
-            <p>Add class <code class="css">.collapse-accordion</code> to the <code class="css">.collapse-container</code> to create an accordion.</p>
+                    <h3>Accordion</h3>
+                    <p>Add class <code class="css">.collapse-accordion</code> to the <code class="css">.collapse-container</code> to create an accordion.</p>
 
-            <div class="example">
-                <h4 class="example-heading">Example</h4>
-                <div class="example-content">
+                    <div class="example">
+                        <h4 class="example-heading">Example</h4>
+                        <div class="example-content">
 
-                    <div class="collapse-container collapse-accordion">
-                        <h4 class="collapse-toggle collapse-open">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit
-                        </h4>
-                        <p class="collapse-content">
-                            Phasellus finibus maximus libero, eget tincidunt nisl dapibus vitae. Vestibulum sem purus, sollicitudin ut consectetur eget, dignissim eget mi. Curabitur scelerisque dui non tellus auctor, sed euismod sapien molestie. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Etiam nec ornare sapien. Etiam eu dolor aliquam, sollicitudin nibh quis, tempor nisl. Quisque eget turpis suscipit, imperdiet nisi eget, elementum lorem. Aliquam ultrices, metus in egestas elementum, purus sapien elementum tortor, vitae tempus nulla quam in purus.
-                        </p>
-                        <h4 class="collapse-toggle">
-                            Ut a molestie tellus
-                        </h4>
-                        <p class="collapse-content">
-                            Phasellus sit amet accumsan massa. Aliquam erat volutpat. Ut iaculis posuere mattis. Sed porttitor pellentesque sapien, eu bibendum arcu sagittis nec. Donec auctor justo ut rhoncus suscipit. Ut laoreet finibus felis non molestie. Donec dapibus orci in erat interdum auctor. Maecenas vulputate nisl nec blandit accumsan. Praesent vitae ultrices tellus. Nullam ultricies neque et urna placerat rhoncus.
-                        </p>
-                        <h4 class="collapse-toggle">
-                            Nam ut gravida purus, vitae ullamcorper leo
-                        </h4>
-                        <p class="collapse-content">
-                            Proin urna risus, rutrum vitae sem condimentum, elementum gravida nisi. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Vivamus elementum euismod sodales. Sed sodales aliquam velit sed cursus. Praesent venenatis faucibus turpis vitae eleifend. Pellentesque lacinia in lectus id pulvinar. Vestibulum euismod nulla quis nulla semper, at pellentesque augue congue. Vestibulum sed sodales odio. Vivamus vitae feugiat nibh. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nullam eu est vitae nulla aliquam varius. Mauris lectus dui, fermentum sit amet mi sed, volutpat commodo nisi. Vivamus aliquam semper nibh, faucibus tempus lectus egestas in.
-                        </p>
+                            <div class="collapse-container collapse-accordion">
+                                <h4 class="collapse-toggle collapse-open">
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit
+                                </h4>
+                                <p class="collapse-content">
+                                    Phasellus finibus maximus libero, eget tincidunt nisl dapibus vitae. Vestibulum sem purus, sollicitudin ut consectetur eget, dignissim eget mi. Curabitur scelerisque dui non tellus auctor, sed euismod sapien molestie. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Etiam nec ornare sapien. Etiam eu dolor aliquam, sollicitudin nibh quis, tempor nisl. Quisque eget turpis suscipit, imperdiet nisi eget, elementum lorem. Aliquam ultrices, metus in egestas elementum, purus sapien elementum tortor, vitae tempus nulla quam in purus.
+                                </p>
+                                <h4 class="collapse-toggle">
+                                    Ut a molestie tellus
+                                </h4>
+                                <p class="collapse-content">
+                                    Phasellus sit amet accumsan massa. Aliquam erat volutpat. Ut iaculis posuere mattis. Sed porttitor pellentesque sapien, eu bibendum arcu sagittis nec. Donec auctor justo ut rhoncus suscipit. Ut laoreet finibus felis non molestie. Donec dapibus orci in erat interdum auctor. Maecenas vulputate nisl nec blandit accumsan. Praesent vitae ultrices tellus. Nullam ultricies neque et urna placerat rhoncus.
+                                </p>
+                                <h4 class="collapse-toggle">
+                                    Nam ut gravida purus, vitae ullamcorper leo
+                                </h4>
+                                <p class="collapse-content">
+                                    Proin urna risus, rutrum vitae sem condimentum, elementum gravida nisi. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Vivamus elementum euismod sodales. Sed sodales aliquam velit sed cursus. Praesent venenatis faucibus turpis vitae eleifend. Pellentesque lacinia in lectus id pulvinar. Vestibulum euismod nulla quis nulla semper, at pellentesque augue congue. Vestibulum sed sodales odio. Vivamus vitae feugiat nibh. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nullam eu est vitae nulla aliquam varius. Mauris lectus dui, fermentum sit amet mi sed, volutpat commodo nisi. Vivamus aliquam semper nibh, faucibus tempus lectus egestas in.
+                                </p>
+                            </div>
+                        </div>
                     </div>
-                </div>
-            </div>
 <pre><h4 class="html">HTML</h4>
 <code class="html">&lt;div class="collapse-container collapse-accordion"&gt;
     &lt;h4 class="collapse-toggle"&gt;
@@ -835,165 +1105,165 @@ js/tabs.js
 js/collapse.js
 </div>
 </pre>
+                </section>
+                <hr>
+                <section>
+                    <a id="tables"></a>
+                    <h2>Tables</h2>
+                    <p>Based on <a href="http://getbootstrap.com/css/#tables">Bootstrap</a>.</p>
+                    <div class="reveal-small">
+                    <h3>Regular Table</h3>
+                    <p>Create a <code class="html">&lt;table&gt;</code>. Use class <code class="css">.table</code> to apply some nice styles.</p>
+                    <div class="example">
+                        <h4 class="example-heading">Example</h4>
+                        <div class="example-content">
 
-            <hr>
-            <a id="tables"></a>
-            <h2>Tables</h2>
-            <p>Based on <a href="http://getbootstrap.com/css/#tables">Bootstrap</a>.</p>
-            <div class="reveal-small">
-            <h3>Regular Table</h3>
-            <p>Create a <code class="html">&lt;table&gt;</code>. Use class <code class="css">.table</code> to apply some nice styles.</p>
-            <div class="example">
-                <h4 class="example-heading">Example</h4>
-                <div class="example-content">
-
-                    <table class="table">
-                        <thead>
-                            <tr>
-                                <th>Lorem ipsum</th>
-                                <th>dolor sit</th>
-                                <th>amet consectetur</th>
-                                <th>adipiscing elit</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <th>1st</th>
-                                <td>Vestibulum in</td>
-                                <td>posuere orci</td>
-                                <td>Nam euismod</td>
-                            </tr>
-                            <tr>
-                                <th>2nd</th>
-                                <td>Vestibulum in</td>
-                                <td>posuere orci</td>
-                                <td>Nam euismod</td>
-                            </tr>
-                            <tr>
-                                <th>3rd</th>
-                                <td>Vestibulum in</td>
-                                <td>posuere orci</td>
-                                <td>Nam euismod</td>
-                            </tr>
-                        </tbody>
-                        <tfoot>
-                            <tr>
-                                <td>tfoot</td>
-                                <td>tfoot</td>
-                                <td>tfoot</td>
-                                <td>tfoot</td>
-                            </tr>
-                        </tfoot>
-                    </table>
-                </div>
-            </div>
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th>Lorem ipsum</th>
+                                        <th>dolor sit</th>
+                                        <th>amet consectetur</th>
+                                        <th>adipiscing elit</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <th>1st</th>
+                                        <td>Vestibulum in</td>
+                                        <td>posuere orci</td>
+                                        <td>Nam euismod</td>
+                                    </tr>
+                                    <tr>
+                                        <th>2nd</th>
+                                        <td>Vestibulum in</td>
+                                        <td>posuere orci</td>
+                                        <td>Nam euismod</td>
+                                    </tr>
+                                    <tr>
+                                        <th>3rd</th>
+                                        <td>Vestibulum in</td>
+                                        <td>posuere orci</td>
+                                        <td>Nam euismod</td>
+                                    </tr>
+                                </tbody>
+                                <tfoot>
+                                    <tr>
+                                        <td>tfoot</td>
+                                        <td>tfoot</td>
+                                        <td>tfoot</td>
+                                        <td>tfoot</td>
+                                    </tr>
+                                </tfoot>
+                            </table>
+                        </div>
+                    </div>
 
 <pre><h4 class="html">HTML</h4>
 <code class="html">&lt;table class="table"&gt;
     ...
 &lt;/table&gt;
 </code></pre>
-            <h3>Table variations</h3>
-            <p>Apply some more borders by adding the class <code class="css">.table-bordered</code>. Add zebra-striping to any row within tbody with the class <code class="css">.table-striped</code>. Or enable a hover state on table rows with with <code class="css">.table-hover</code>.</p>
-            <div class="example">
-                <h4 class="example-heading">Example</h4>
-                <div class="example-content">
+                    <h3>Table variations</h3>
+                    <p>Apply some more borders by adding the class <code class="css">.table-bordered</code>. Add zebra-striping to any row within tbody with the class <code class="css">.table-striped</code>. Or enable a hover state on table rows with with <code class="css">.table-hover</code>.</p>
+                    <div class="example">
+                        <h4 class="example-heading">Example</h4>
+                        <div class="example-content">
 
-                    <table class="table table-bordered table-striped table-hover">
-                        <thead>
-                            <tr>
-                                <th>Lorem ipsum</th>
-                                <th>dolor sit</th>
-                                <th>amet consectetur</th>
-                                <th>adipiscing elit</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <th>1st</th>
-                                <td>Vestibulum in</td>
-                                <td>posuere orci</td>
-                                <td>Nam euismod</td>
-                            </tr>
-                            <tr>
-                                <th>2nd</th>
-                                <td>Vestibulum in</td>
-                                <td>posuere orci</td>
-                                <td>Nam euismod</td>
-                            </tr>
-                            <tr>
-                                <th>3rd</th>
-                                <td>Vestibulum in</td>
-                                <td>posuere orci</td>
-                                <td>Nam euismod</td>
-                            </tr>
-                        </tbody>
-                        <tfoot>
-                            <tr>
-                                <td>tfoot</td>
-                                <td>tfoot</td>
-                                <td>tfoot</td>
-                                <td>tfoot</td>
-                            </tr>
-                        </tfoot>
-                    </table>
-                </div>
-            </div>
+                            <table class="table table-bordered table-striped table-hover">
+                                <thead>
+                                    <tr>
+                                        <th>Lorem ipsum</th>
+                                        <th>dolor sit</th>
+                                        <th>amet consectetur</th>
+                                        <th>adipiscing elit</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <th>1st</th>
+                                        <td>Vestibulum in</td>
+                                        <td>posuere orci</td>
+                                        <td>Nam euismod</td>
+                                    </tr>
+                                    <tr>
+                                        <th>2nd</th>
+                                        <td>Vestibulum in</td>
+                                        <td>posuere orci</td>
+                                        <td>Nam euismod</td>
+                                    </tr>
+                                    <tr>
+                                        <th>3rd</th>
+                                        <td>Vestibulum in</td>
+                                        <td>posuere orci</td>
+                                        <td>Nam euismod</td>
+                                    </tr>
+                                </tbody>
+                                <tfoot>
+                                    <tr>
+                                        <td>tfoot</td>
+                                        <td>tfoot</td>
+                                        <td>tfoot</td>
+                                        <td>tfoot</td>
+                                    </tr>
+                                </tfoot>
+                            </table>
+                        </div>
+                    </div>
 
 <pre><h4 class="html">HTML</h4>
 <code class="html">&lt;table class="table table-bordered table-striped table-hover"&gt;
     ...
 &lt;/table&gt;
 </code></pre>
-            </div>
-            <h3>Responsive Tables</h3>
-            <p>Create responsive tables by wrapping any <code class="css">.table</code> in <code class="css">.table-responsive</code> to make them scroll horizontally on small devices (change the appropriate max-width media query by editing the Sass-variable <code class="css">$table-brakepoint</code>). You will not see any difference in these tables on any larger screen.</p>
-            <div class="example">
-                <h4 class="example-heading">Example</h4>
-                <div class="example-content">
+                    <h3>Responsive Tables</h3>
+                    <p>Create responsive tables by wrapping any <code class="css">.table</code> in <code class="css">.table-responsive</code> to make them scroll horizontally on small devices (change the appropriate max-width media query by editing the Sass-variable <code class="css">$table-breakpoint</code>). You will not see any difference in these tables on any larger screen.</p>
+                    <div class="example">
+                        <h4 class="example-heading">Example</h4>
+                        <div class="example-content">
 
-                    <div class="table-responsive">
-                        <table class="table">
-                            <thead>
-                                <tr>
-                                    <th>Lorem ipsum ----------</th>
-                                    <th>dolor sit ----------</th>
-                                    <th>amet consectetur ----------</th>
-                                    <th>adipiscing elit ----------</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <th>1st</th>
-                                    <td>Vestibulum in</td>
-                                    <td>posuere orci</td>
-                                    <td>Nam euismod</td>
-                                </tr>
-                                <tr>
-                                    <th>2nd</th>
-                                    <td>Vestibulum in</td>
-                                    <td>posuere orci</td>
-                                    <td>Nam euismod</td>
-                                </tr>
-                                <tr>
-                                    <th>3rd</th>
-                                    <td>Vestibulum in</td>
-                                    <td>posuere orci</td>
-                                    <td>Nam euismod</td>
-                                </tr>
-                            </tbody>
-                            <tfoot>
-                                <tr>
-                                    <td>tfoot</td>
-                                    <td>tfoot</td>
-                                    <td>tfoot</td>
-                                    <td>tfoot</td>
-                                </tr>
-                            </tfoot>
-                        </table>
+                            <div class="table-responsive">
+                                <table class="table">
+                                    <thead>
+                                        <tr>
+                                            <th>Lorem ipsum ----------</th>
+                                            <th>dolor sit ----------</th>
+                                            <th>amet consectetur ----------</th>
+                                            <th>adipiscing elit ----------</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <th>1st</th>
+                                            <td>Vestibulum in</td>
+                                            <td>posuere orci</td>
+                                            <td>Nam euismod</td>
+                                        </tr>
+                                        <tr>
+                                            <th>2nd</th>
+                                            <td>Vestibulum in</td>
+                                            <td>posuere orci</td>
+                                            <td>Nam euismod</td>
+                                        </tr>
+                                        <tr>
+                                            <th>3rd</th>
+                                            <td>Vestibulum in</td>
+                                            <td>posuere orci</td>
+                                            <td>Nam euismod</td>
+                                        </tr>
+                                    </tbody>
+                                    <tfoot>
+                                        <tr>
+                                            <td>tfoot</td>
+                                            <td>tfoot</td>
+                                            <td>tfoot</td>
+                                            <td>tfoot</td>
+                                        </tr>
+                                    </tfoot>
+                                </table>
+                            </div>
+                        </div>
                     </div>
-                </div>
-            </div>
 
 <pre><h4 class="html">HTML</h4>
 <code class="html">&lt;div class="table-responsive"&gt;
@@ -1007,29 +1277,31 @@ js/collapse.js
 sass/elements/_tables.scss
 </div>
 </pre>
-            <hr>
-            <a id="alerts"></a>
-            <h2>Alerts</h2>
-            <p>
-                These colourful message-elements will surely grab the attention of your site's visitors. Use the basic class <code class="css">.alert-message</code> in combination with either <code class="css">.alert-info</code>, <code class="css">.alert-danger</code>, <code class="css">.alert-error</code> or <code class="css">.alert-success</code> to create your desired alert-message.
-            </p>
-            <div class="example">
-                <h4 class="example-heading">Example</h4>
-                <div class="example-content">
-                    <div class="alert-message alert-info">
-                        <p>This is an info-text.</p>
+                </section>
+                <hr>
+                <section>
+                    <a id="alerts"></a>
+                    <h2>Alerts</h2>
+                    <p>
+                        These colourful message-elements will surely grab the attention of your site's visitors. Use the basic class <code class="css">.alert-message</code> in combination with either <code class="css">.alert-info</code>, <code class="css">.alert-danger</code>, <code class="css">.alert-error</code> or <code class="css">.alert-success</code> to create your desired alert-message.
+                    </p>
+                    <div class="example">
+                        <h4 class="example-heading">Example</h4>
+                        <div class="example-content">
+                            <div class="alert-message alert-info">
+                                <p>This is an info-text.</p>
+                            </div>
+                            <div class="alert-message alert-danger">
+                                <p>Warning!</p>
+                            </div>
+                            <div class="alert-message alert-error">
+                                <p>Something went wrong...</p>
+                            </div>
+                            <div class="alert-message alert-success">
+                                <p>Entry successfully created!</p>
+                            </div>
+                        </div>
                     </div>
-                    <div class="alert-message alert-danger">
-                        <p>Warning!</p>
-                    </div>
-                    <div class="alert-message alert-error">
-                        <p>Something went wrong...</p>
-                    </div>
-                    <div class="alert-message alert-success">
-                        <p>Entry successfully created!</p>
-                    </div>
-                </div>
-            </div>
 
 <pre><h4 class="html">HTML</h4>
 <code class="html">&lt;div class="alert-message alert-info"&gt;
@@ -1051,32 +1323,34 @@ sass/elements/_alerts.scss
 js/alerts.js
 </div>
 </pre>
-            <hr>
-            <a id="dropdowns"></a>
-            <h2>Dropdowns</h2>
-            <p>Inspired by <a href="http://getbootstrap.com/">Bootstrap</a>.</p>
-            <p>A dropdown-menu is always wrapped in <code class="css">.dropdown</code>. Inside, a <code class="css">.dropdown-toggle</code> will function as toggle for the menu, followed by a <code class="html">&lt;ul&gt;</code> that contains the menu itself.</p>
-            <div class="example">
-                <h4 class="example-heading">Example</h4>
-                <div class="example-content">
-                    <div class="dropdown">
-                        <button class="btn dropdown-toggle">
-                            Open dropdown
-                            <span class="caret"></span>
-                        </button>
-                        <ul>
-                            <li><a href="javascript://">Option 1</a></li>
-                            <li><a href="javascript://">Option 2</a></li>
-                            <li><a href="javascript://">Option 3</a></li>
-                            <li class="divider"></li>
-                            <li><a href="javascript://">Seperated option 4</a></li>
-                        </ul>
-                    </div>
+                </section>
+                <hr>
+                <section>
+                    <a id="dropdowns"></a>
+                    <h2>Dropdowns</h2>
+                    <p>Inspired by <a href="http://getbootstrap.com/">Bootstrap</a>.</p>
+                    <p>A dropdown-menu is always wrapped in <code class="css">.dropdown</code>. Inside, a <code class="css">.dropdown-toggle</code> will function as toggle for the menu, followed by a <code class="html">&lt;ul&gt;</code> that contains the menu itself.</p>
+                    <div class="example">
+                        <h4 class="example-heading">Example</h4>
+                        <div class="example-content">
+                            <div class="dropdown">
+                                <button class="btn dropdown-toggle">
+                                    Open dropdown
+                                    <span class="caret"></span>
+                                </button>
+                                <ul>
+                                    <li><a href="javascript://">Option 1</a></li>
+                                    <li><a href="javascript://">Option 2</a></li>
+                                    <li><a href="javascript://">Option 3</a></li>
+                                    <li class="divider"></li>
+                                    <li><a href="javascript://">Seperated option 4</a></li>
+                                </ul>
+                            </div>
 
-                    <br><br><br><br><br><br><br>
-                </div>
-            </div>
-            <pre><h4 class="html">HTML</h4>
+                            <br><br><br><br><br><br><br>
+                        </div>
+                    </div>
+<pre><h4 class="html">HTML</h4>
 <code class="html">&lt;div class="dropdown"&gt;
     &lt;button class="btn dropdown-toggle"&gt;
         Open dropdown
@@ -1091,29 +1365,29 @@ js/alerts.js
     &lt;/ul&gt;
 &lt;/div&gt;
 </code></pre>
-            <h3>Dropup</h3>
-            <p>Add the class <code class="css">.dropup</code> instead of <code class="css">.dropdown</code>
-            to the parent to let the menu expand upwards.</p>
-            <div class="example">
-                <h4 class="example-heading">Example</h4>
-                <div class="example-content">
-                    <br><br><br><br><br><br><br>
-                    <div class="dropup">
-                        <button class="btn dropdown-toggle">
-                            Open dropup
-                            <span class="caret"></span>
-                        </button>
-                        <ul>
-                            <li><a href="javascript://">Option 1</a></li>
-                            <li><a href="javascript://">Option 2</a></li>
-                            <li><a href="javascript://">Option 3</a></li>
-                            <li class="divider"></li>
-                            <li><a href="javascript://">Seperated option 4</a></li>
-                        </ul>
+                    <h3>Dropup</h3>
+                    <p>Add the class <code class="css">.dropup</code> instead of <code class="css">.dropdown</code>
+                    to the parent to let the menu expand upwards.</p>
+                    <div class="example">
+                        <h4 class="example-heading">Example</h4>
+                        <div class="example-content">
+                            <br><br><br><br><br><br><br>
+                            <div class="dropup">
+                                <button class="btn dropdown-toggle">
+                                    Open dropup
+                                    <span class="caret"></span>
+                                </button>
+                                <ul>
+                                    <li><a href="javascript://">Option 1</a></li>
+                                    <li><a href="javascript://">Option 2</a></li>
+                                    <li><a href="javascript://">Option 3</a></li>
+                                    <li class="divider"></li>
+                                    <li><a href="javascript://">Seperated option 4</a></li>
+                                </ul>
+                            </div>
+                        </div>
                     </div>
-                </div>
-            </div>
-            <pre><h4 class="html">HTML</h4>
+<pre><h4 class="html">HTML</h4>
 <code class="html">&lt;div class="dropup"&gt;
     &lt;button class="btn dropdown-toggle"&gt;
         Open dropup
@@ -1128,14 +1402,15 @@ js/alerts.js
     &lt;/ul&gt;
 &lt;/div&gt;
 </code></pre><pre><h4 class="files">Files</h4>
-<div class="files">
-sass/base/_vars.scss
+<div class="files">sass/base/_vars.scss
 sass/elements/_dropdowns.scss
 js/dropdowns.js
 </div>
 </pre>
 
-
+                </section>
+            </div>
+            <aside class="semantic"></aside>
         </div>
     </main>
     <footer class="site-footer">

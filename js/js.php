@@ -23,6 +23,7 @@
                     'example-parallax.js',
                     'example-scroll.js',
                     'example-navigation.js',
+                    //'semantic.js',
                     'layout.js'
                 ) ;
 

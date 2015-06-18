@@ -5,6 +5,7 @@
 .dropdown,
 .dropup {
     position: relative;
+    @include inline-block;
 
     ul {
         list-style: none;
