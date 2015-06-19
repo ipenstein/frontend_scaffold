@@ -2472,13 +2472,13 @@ p {
   padding: 0;
   margin: 0 0 24px 0; }
 
-h1, h2, h3, h4 {
+h1, h2, h3, h4, .h1, .h2, .h3, .h4 {
   font-family: "Oswald", Arial, sans-serif;
   font-weight: normal;
   padding: 0;
   margin: 48px 0 24px 0; }
 
-h1 {
+h1, .h1 {
   font-size: 48px;
   line-height: 72px;
   font-size: 4.8rem;
@@ -2486,19 +2486,19 @@ h1 {
   border-bottom: 2px dashed #333;
   margin-bottom: 48px; }
 
-h2 {
+h2, .h2 {
   font-size: 32px;
   line-height: 40px;
   font-size: 3.2rem;
   line-height: 4rem; }
 
-h3 {
+h3, .h3 {
   font-size: 24px;
   line-height: 32px;
   font-size: 2.4rem;
   line-height: 3.2rem; }
 
-h4 {
+h4, .h4 {
   font-size: 16px;
   line-height: 24px;
   font-size: 1.6rem;
@@ -2736,7 +2736,7 @@ Wrap your tables in `.table-responsive` and we'll make them mobile friendly
 by enabling horizontal scrolling. Only applies up to the $table-breakpoint.
 Everything above that will display normally.
 */
-@media (max-width: 699px) {
+@media (max-width: 700px) {
   .table-responsive {
     width: 100%;
     margin-bottom: 24px;
