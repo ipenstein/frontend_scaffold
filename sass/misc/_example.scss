@@ -85,7 +85,7 @@ a[href^="http"] {
 }
 
 .hljs {
-    font-size: 14px;
+    @include font-size(13,18);
 }
 
 .example {  background: $white; }
@@ -118,14 +118,20 @@ pre h4,
     &.js {      border-bottom-color: #F6E6F2;   }
 }
 
-.container {
-    //@include container;
-}
+// Carets
 
-.main-content {
-    //@include span(8);
-}
-
-.semantic {
-    //@include span(4 last);
+.caret01 {
+    @include inline-block;
+    position: relative;
+    padding: 10px;
+    background-color: $blue1;
+    color: $white;
+    &:before {
+        position: absolute;
+        bottom: -10px;
+        left: 50%;
+        @include translate(-50%, 0);
+        content: "";
+        @include caret(bottom, 10px, $blue1);
+    }
 }

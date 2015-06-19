@@ -41,7 +41,6 @@
                 <button class="dropdown-toggle"><i class="fa fa-bars"></i></button>
                 <ul>
                     <li id="nav-basic"><a href="#basic">Basics</a></li>
-                    <li id="nav-toolbelt"><a href="#toolbelt">Toolbelt</a></li>
                     <li id="nav-grid"><a href="#grid">Grid</a></li>
                     <li id="nav-forms"><a href="#forms">Forms</a></li>
                     <li id="nav-buttons"><a href="#buttons">Buttons</a></li>
@@ -50,6 +49,7 @@
                     <li id="nav-tables"><a href="#tables">Tables</a></li>
                     <li id="nav-alerts"><a href="#alerts">Alerts</a></li>
                     <li id="nav-dropdowns"><a href="#dropdowns">Dropdowns</a></li>
+                    <li id="nav-toolbelt"><a href="#toolbelt">Toolbelt</a></li>
                 </ul>
             </nav>
         </div>
@@ -150,209 +150,6 @@
                         <ul class="files">
                             <li>sass/base/_vars.scss</li>
                             <li>sass/base/_base.scss</li>
-                        </ul>
-                    </article>
-                </section>
-                <hr>
-                <section>
-                    <a id="toolbelt"></a>
-                    <h2>Toolbelt</h2>
-                    <p>The file <code>base/_toolbelt.scss</code> contains a collection of useful helper mixins, placeholders and classes. To keep things short, I'm going to present here only those mixins and classes that help you building a responsive website.</p>
-                    <article>
-                        <h3>Global breakpoint configuration</h3>
-                        <p>If you are creating a responsive site, set your breakpoints first, by editing the Sass-variable <code class="css">$breakpoints</code> in <code>sass/base/_vars.scss</code>. The benefit of working with this variable is the ability to change your media queries globally without overlooking one. Add more breakpoints as you like.</p>
-                        <p>You may profit by the following mixins and classes that rely on this variable.</p>
-<pre>
-<h4 class="css">Example SCSS code</h4>
-<code class="css">$breakpoints: small 500px, medium 700px, big 900px;
-</code></pre>
-
-                    </article>
-                    <article>
-                        <h3>@mixin bp</h3>
-                        <p>Dynamic breakpoint mixin for responsive webdesign. Use it to create min-width media queries tied to your breakpoints.</p>
-
-<pre>
-<h4 class="css">SCSS</h4>
-<code class="css">// Min-width breakpoints
-@mixin bp($breakpoint) {
-    @if map-has-key($breakpoints, $breakpoint) {
-        @media (min-width: map-get($breakpoints, $breakpoint)) {
-            @content;
-        }
-    }
-    @else {
-        @warn "Unfortunately, no value could be retrieved from `#{$breakpoint}`. "
-            + "Available breakpoints are: #{map-keys($breakpoints)}.";
-    }
-}
-</code></pre>
-<pre>
-<h4 class="css">Example SCSS code</h4>
-<code class="css">$breakpoints: (
-    small:  500px,
-    medium: 700px,
-    big:    900px
-) !default;
-
-.wrapper {
-    width: 220px;
-    @include bp(small) {
-        width: 460px;
-    }
-    @include bp(medium) {
-        width: 660px;
-    }
-}
-</code></pre>
-                    </article>
-                    <article>
-                        <h3>@mixin bp-max</h3>
-                        <p>Another dynamic breakpoint mixin creating max-width media queries instead.</p>
-<pre>
-<h4 class="css">SCSS</h4>
-<code class="css">// Max-width breakpoints
-@mixin bp-max($breakpoint) {
-    @if map-has-key($breakpoints, $breakpoint) {
-        @media (max-width: map-get($breakpoints, $breakpoint)) {
-            @content;
-        }
-    }
-    @else {
-        @warn "Unfortunately, no value could be retrieved from `#{$breakpoint}`. "
-            + "Available breakpoints are: #{map-keys($breakpoints)}.";
-    }
-}
-</code></pre>
-                    </article>
-                    <article>
-                        <h3>@mixin hd</h3>
-                        <p>"Retina" breakpoint mixin.</p>
-<pre>
-<h4 class="css">SCSS</h4>
-<code class="css">@mixin hd($ratio: 2, $resolution: 192dpi) {
-    @media (-min-device-pixel-ratio: $ratio), (min-resolution: $resolution) {
-        @content;
-    }
-}
-</code></pre>
-                    </article>
-                    <article>
-                        <h3>Responsive helper classes</h3>
-                        <p>The following classes are generated according to your breakpoint configuation.</p>
-<pre>
-<h4 class="css">SCSS</h4>
-<code class="css">/*
-# Dynamic classes based on $breakpoints.
-
-Dont't show an element until or hide it starting at a specific breakpoint.
-
-$breakpoints: (
-    small:  500px,
-    medium: 700px,
-    big:    900px
-) !default;
-
-.reveal-small {}
-.reveal-medium {}
-.reveal-big {}
-.hide-small {}
-.hide-medium {}
-.hide-big {}
-*/
-@each $breakpoint in $breakpoints {
-    $name: nth($breakpoint, 1);
-    $width: nth($breakpoint, 2);
-    .hide-#{$name} {
-        @media (min-width: $width) {
-            display: none !important;
-        }
-    }
-    .reveal-#{$name} {
-        display: none !important;
-        @media (min-width: $width) {
-            display: block !important;
-        }
-    }
-}
-</code></pre>
-                    </article>
-                    <article>
-                        <h3>#responsive status</h3>
-                        <p>The HTML-code <code class="html">&lt;span id="responsive-status"&gt;&lt;/span&gt;</code> has to be placed inside the main layout file. Its css-attribute <code class="css">font-size</code> will be set to the name of the current active breakpoint (min-width). The reason behind this is to tell JavaScript the status of the layout of your website and to launch some JavaScript/jQuery functions according to your breakpoints.</p>
-                        <p>Last but not least, <code class="html">&lt;body&gt;</code> gets a class depending on the current breakpoint, prefixed with "responsive-". For example <code class="html">&lt;body class="responsive-medium"&gt;</code> when the medium breakpoint is active now.</p>
-
-<pre>
-<h4 class="css">SCSS</h4>
-<code class="css">#responsive-status {
-    display: none;
-    font-family: "mobile";
-}
-@each $breakpoint in $breakpoints {
-    $name: nth($breakpoint, 1);
-    $width: nth($breakpoint, 2);
-    @media (min-width: $width) {
-        #responsive-status {
-            font-family: "#{$name}";
-        }
-    }
-}
-</code></pre>
-<pre>
-<h4 class="js">jQuery</h4>
-<code class="js">function checkResponsiveStatus() {
-    var status = $('#responsive-status').css('font-family');
-
-    if (status != laststatus) {
-
-        // Set &lt;body&gt; classname to responsive-{name of current breakpoint}
-        $('body').removeClass (function (index, css) {
-            return (css.match (/(^|\s)responsive-\S+/g) || []).join(' ');
-        });
-        $('body').addClass("responsive-" + status);
-
-        // Call functions tied to current breakpoint
-        // Add your own cases if you like
-        switch(status) {
-            case "mobile":
-                console.log("JavaScript-Code for mobile resolution");
-                break;
-
-            case "small":
-                console.log("JavaScript-Code for small resolution");
-                break;
-
-            case "medium":
-                console.log("JavaScript-Code for medium resolution");
-                break;
-
-            case "big":
-                console.log("JavaScript-Code for big resolution");
-                break;
-        }
-    }
-    laststatus = status;
-}
-
-var laststatus = false;
-
-$(document).ready(function() {
-
-    $( window ).bind( "resize", function(){
-        checkResponsiveStatus();
-    });
-
-    checkResponsiveStatus();
-
-});
-</code></pre>
-                    </article>
-                    <article>
-                        <h3>Files</h3>
-                        <ul class="files">
-                            <li>sass/base/_vars.scss</li>
-                            <li>sass/base/_toolbelt.scss</li>
-                            <li>js/responsive.js</li>
                         </ul>
                     </article>
                 </section>
@@ -1403,6 +1200,346 @@ $susy: (
 </ul>
 
                 </section>
+                <hr>
+                <section>
+                    <a id="toolbelt"></a>
+                    <h2>Toolbelt</h2>
+                    <p>The file <code>base/_toolbelt.scss</code> contains a collection of useful helper mixins, placeholders and classes.</p>
+                    <article>
+                        <h3>Global breakpoint configuration</h3>
+                        <p>If you are creating a responsive site, set your breakpoints first, by editing the Sass-variable <code class="css">$breakpoints</code> in <code>sass/base/_vars.scss</code>. The benefit of working with this variable is the ability to change your media queries globally without overlooking one. Add more breakpoints as you like.</p>
+                        <p>You may profit by the following mixins and classes that rely on this variable.</p>
+<pre>
+<h4 class="css">Example SCSS code</h4>
+<code class="css">$breakpoints: small 500px, medium 700px, big 900px;
+</code></pre>
+
+                    </article>
+                    <article>
+                        <h3>@mixin bp</h3>
+                        <p>Dynamic breakpoint mixin for responsive webdesign. Use it to create min-width media queries tied to your breakpoints.</p>
+
+<pre>
+<h4 class="css">SCSS</h4>
+<code class="css">// Min-width breakpoints
+@mixin bp($breakpoint) {
+    @if map-has-key($breakpoints, $breakpoint) {
+        @media (min-width: map-get($breakpoints, $breakpoint)) {
+            @content;
+        }
+    }
+    @else {
+        @warn "Unfortunately, no value could be retrieved from `#{$breakpoint}`. "
+            + "Available breakpoints are: #{map-keys($breakpoints)}.";
+    }
+}
+</code></pre>
+<pre>
+<h4 class="css">Example SCSS code</h4>
+<code class="css">$breakpoints: (
+    small:  500px,
+    medium: 700px,
+    big:    900px
+) !default;
+
+.wrapper {
+    width: 220px;
+    @include bp(small) {
+        width: 460px;
+    }
+    @include bp(medium) {
+        width: 660px;
+    }
+}
+</code></pre>
+                    </article>
+                    <article>
+                        <h3>@mixin bp-max</h3>
+                        <p>Another dynamic breakpoint mixin creating max-width media queries instead.</p>
+<pre>
+<h4 class="css">SCSS</h4>
+<code class="css">// Max-width breakpoints
+@mixin bp-max($breakpoint) {
+    @if map-has-key($breakpoints, $breakpoint) {
+        @media (max-width: map-get($breakpoints, $breakpoint)) {
+            @content;
+        }
+    }
+    @else {
+        @warn "Unfortunately, no value could be retrieved from `#{$breakpoint}`. "
+            + "Available breakpoints are: #{map-keys($breakpoints)}.";
+    }
+}
+</code></pre>
+                    </article>
+                    <article>
+                        <h3>@mixin hd</h3>
+                        <p>"Retina" breakpoint mixin.</p>
+<pre>
+<h4 class="css">SCSS</h4>
+<code class="css">@mixin hd($ratio: 2, $resolution: 192dpi) {
+    @media (-min-device-pixel-ratio: $ratio), (min-resolution: $resolution) {
+        @content;
+    }
+}
+</code></pre>
+                    </article>
+                    <article>
+                        <h3>Responsive helper classes</h3>
+                        <p>The following classes are generated according to your breakpoint configuation.</p>
+<pre>
+<h4 class="css">SCSS</h4>
+<code class="css">/*
+# Dynamic classes based on $breakpoints.
+
+Dont't show an element until or hide it starting at a specific breakpoint.
+
+$breakpoints: (
+    small:  500px,
+    medium: 700px,
+    big:    900px
+) !default;
+
+.reveal-small {}
+.reveal-medium {}
+.reveal-big {}
+.hide-small {}
+.hide-medium {}
+.hide-big {}
+*/
+@each $breakpoint in $breakpoints {
+    $name: nth($breakpoint, 1);
+    $width: nth($breakpoint, 2);
+    .hide-#{$name} {
+        @media (min-width: $width) {
+            display: none !important;
+        }
+    }
+    .reveal-#{$name} {
+        display: none !important;
+        @media (min-width: $width) {
+            display: block !important;
+        }
+    }
+}
+</code></pre>
+                    </article>
+                    <article>
+                        <h3>#responsive status</h3>
+                        <p>The HTML-code <code class="html">&lt;span id="responsive-status"&gt;&lt;/span&gt;</code> has to be placed inside the main layout file. Its css-attribute <code class="css">font-size</code> will be set to the name of the current active breakpoint (min-width). The reason behind this is to tell JavaScript the status of the layout of your website and to launch some JavaScript/jQuery functions according to your breakpoints.</p>
+                        <p>Last but not least, <code class="html">&lt;body&gt;</code> gets a class depending on the current breakpoint, prefixed with "responsive-". For example <code class="html">&lt;body class="responsive-medium"&gt;</code> when the medium breakpoint is active now.</p>
+
+<pre>
+<h4 class="css">SCSS</h4>
+<code class="css">#responsive-status {
+    display: none;
+    font-family: "mobile";
+}
+@each $breakpoint in $breakpoints {
+    $name: nth($breakpoint, 1);
+    $width: nth($breakpoint, 2);
+    @media (min-width: $width) {
+        #responsive-status {
+            font-family: "#{$name}";
+        }
+    }
+}
+</code></pre>
+<pre>
+<h4 class="js">jQuery</h4>
+<code class="js">function checkResponsiveStatus() {
+    var status = $('#responsive-status').css('font-family');
+
+    if (status != laststatus) {
+
+        // Set &lt;body&gt; classname to responsive-{name of current breakpoint}
+        $('body').removeClass (function (index, css) {
+            return (css.match (/(^|\s)responsive-\S+/g) || []).join(' ');
+        });
+        $('body').addClass("responsive-" + status);
+
+        // Call functions tied to current breakpoint
+        // Add your own cases if you like
+        switch(status) {
+            case "mobile":
+                console.log("JavaScript-Code for mobile resolution");
+                break;
+
+            case "small":
+                console.log("JavaScript-Code for small resolution");
+                break;
+
+            case "medium":
+                console.log("JavaScript-Code for medium resolution");
+                break;
+
+            case "big":
+                console.log("JavaScript-Code for big resolution");
+                break;
+        }
+    }
+    laststatus = status;
+}
+
+var laststatus = false;
+
+$(document).ready(function() {
+
+    $( window ).bind( "resize", function(){
+        checkResponsiveStatus();
+    });
+
+    checkResponsiveStatus();
+
+});
+</code></pre>
+                    </article>
+                    <article>
+                        <h3>z-index Management</h3>
+                        <p>Gather all z-indexes into a single map, and stick to them. Then you know how many layers the application uses, making it easy to understand what’s going on (and, sooner or later, to debug).</p>
+<pre>
+<h4 class="css">SCSS</h4>
+<code class="css">/*
+# @function z
+
+@param {String} $z - layer name
+@require $z-layers
+*/
+@function z($key) {
+    @if map-has-key($z-layers, $key) {
+        @return map-get($z-layers, $key);
+    }
+
+    @warn "Unknown `#{$key}` in $z-layers.";
+    @return null;
+}
+</code></pre>
+<pre>
+<h4 class="css">Example SCSS-Code</h4>
+<code class="css">$z-layers: (
+    header:    30,
+    content:   10,
+    footer:    20
+);
+
+.header {
+    z-index: z(header);
+}
+</code></pre>
+
+                    </article>
+                    <article>
+                        <h3>REM font-size and line-height</h3>
+                        <p>
+                            With px-fallback.<br>
+                            <a href="http://css-tricks.com/snippets/css/less-mixin-for-rem-font-sizing/">http://css-tricks.com/snippets/css/less-mixin-for-rem-font-sizing/</a>
+                        </p>
+<pre>
+<h4 class="css">SCSS</h4>
+<code class="css">@mixin font-size($sizeValue: 16, $line: $sizeValue * 1.5) {
+    font-size: ($sizeValue) + px;
+    line-height: ($line) + px;
+    font-size: ($sizeValue / 10) + rem;
+    line-height: ($line / 10) + rem;
+}
+</code></pre>
+<pre>
+<h4 class="css">Example SCSS-Code</h4>
+<code class="css">p {
+    @include font-size(16, 24);
+}
+</code></pre>
+                    </article>
+                    <article>
+                        <h3>Truncate Text</h3>
+                        <p>
+                            Ensuring that your text element doesn’t overflow its container and breaks nicely. It takes one parameter, which is any of the valid text-overflow values.
+                            <br>
+                            <a href="http://hackingui.com/front-end/10-best-scss-utilities/">http://hackingui.com/front-end/10-best-scss-utilities/</a>
+                        </p>
+<pre>
+<h4 class="css">SCSS</h4>
+<code class="css">@mixin truncate-text( $overflow: ellipsis ) {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: $overflow; // values are: clip, ellipsis, or a string
+}
+</code></pre>
+
+                    </article>
+                    <article>
+                        <h3>Vertical Centering</h3>
+                        <p>
+                            For vertically centering elements with a dynamic size. Works beautifully and doesn’t require an extra, non-semantic HTML element.
+                            <br>
+                            <a href="http://hackingui.com/front-end/10-best-scss-utilities/">http://hackingui.com/front-end/10-best-scss-utilities/</a>
+                        </p>
+<pre>
+<h4 class="css">SCSS</h4>
+<code class="css">@mixin center-vertical {
+    &:before {
+        content: '';
+        @include inline-block;
+        height: 100%; width: .1px;
+    }
+}
+</code></pre>
+                    </article>
+                    <article>
+                        <h3>Perfect Centering</h3>
+                        <p>
+                            Horizontally and vertically center elements with a dynamic size. Works only in modern Browsers.
+                        </p>
+<pre>
+<h4 class="css">SCSS</h4>
+<code class="css">@mixin center-both {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    @include translate(-50%, -50%);
+}
+</code></pre>
+                    </article>
+                    <article>
+                        <h3>Caret</h3>
+                        <p>
+                            Creates a right angled triangle pointing to a direction specified by <code class="css">$direction</code>.
+                        </p>
+                        <div class="example">
+                            <h4 class="example-heading">Example</h4>
+                            <div class="example-content">
+                                <span class="caret01">Me haz caret</span>
+                            </div>
+                        </div>
+<pre>
+<h4 class="css">SCSS</h4>
+<code class="css">/*
+# @mixin caret
+
+$direction: top, right, bottom or left
+$size: px-value
+$color: color-value
+*/
+@mixin caret($direction: top, $size: 10px, $color: #333) {
+    $opposite: opposite-position($direction);
+    border: $size solid transparent;
+    border-#{$opposite}: $size solid $color;
+    border-#{$direction}: 0;
+    height: 0;
+    width: 0;
+}
+</code></pre>
+                    </article>
+                    <article>
+                        <h3>Files</h3>
+                        <ul class="files">
+                            <li>sass/base/_vars.scss</li>
+                            <li>sass/base/_toolbelt.scss</li>
+                            <li>js/responsive.js</li>
+                        </ul>
+                    </article>
+                </section>
+                <hr>
             </div>
             <aside class="semantic"></aside>
         </div>
