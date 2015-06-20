@@ -5,17 +5,32 @@ A collection of helper mixins, placeholders and classes.
 */
 
 /*
-# .clearfix helper class
+# .clearfix mixin and helper class
 
-Don't use clearfix-mixin from compass as it isn't considered a best practice.
-Use HTML5-Boilerplate's @mixin micro-clearfix instead.
+On a large-scale project, it’s best to use the @extend directive instead of a
+mixin, as it will output less CSS.
+
+    .main-header {
+        ...
+        @extend .clearfix;
+    }
 */
+@mixin clearfix {
+    &:after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+}
+
 .clearfix {
-    @include micro-clearfix;
+    @include clearfix;
 }
 
 /*
 # box-sizing mixin with prefixes
+
+@param {String} $value - box-sizing value
 */
 @mixin box-sizing($value) {
     -moz-box-sizing: $value;
@@ -28,10 +43,6 @@ Use HTML5-Boilerplate's @mixin micro-clearfix instead.
 Mixin to manage responsive breakpoints.
 Feel free to add more breakpoints in "base/_vars.scss".
 
-@author Hugo Giraudel
-@param {String} $breakpoint - Breakpoint name
-@require $breakpoints
-
     $breakpoints: small 500px, medium 700px, big 900px;
     .wrapper {
         width: 220px;
@@ -40,9 +51,9 @@ Feel free to add more breakpoints in "base/_vars.scss".
         }
     }
 
+@param {String} $breakpoint - breakpoint name
+@require $breakpoints
 */
-
-// Min-width breakpoints
 @mixin bp($breakpoint) {
     @if map-has-key($breakpoints, $breakpoint) {
         @media (min-width: map-get($breakpoints, $breakpoint)) {
@@ -55,7 +66,12 @@ Feel free to add more breakpoints in "base/_vars.scss".
     }
 }
 
-// Max-width breakpoints
+/*
+# Max-width breakpoints
+
+@param {String} $breakpoint - breakpoint name
+@require $breakpoints
+*/
 @mixin bp-max($breakpoint) {
     @if map-has-key($breakpoints, $breakpoint) {
         @media (max-width: map-get($breakpoints, $breakpoint)) {
@@ -72,6 +88,9 @@ Feel free to add more breakpoints in "base/_vars.scss".
 # @mixin hd
 
 Retina breakpoint.
+
+@param {Integer} $ratio - device pixel ratio
+@param {String} $resolution - dpi-resolution
 */
 @mixin hd($ratio: 2, $resolution: 192dpi) {
     @media (-min-device-pixel-ratio: $ratio), (min-resolution: $resolution) {
@@ -91,6 +110,8 @@ $breakpoints: small 500px, medium 700px, big 900px;
 .hide-small {}
 .hide-medium {}
 .hide-big {}
+
+@require $breakpoints
 */
 @each $breakpoint in $breakpoints {
     $name: nth($breakpoint, 1);
@@ -131,11 +152,14 @@ many layers the application uses, making it easy to understand what’s going on
 # REM font-size and line-height with px-fallback
 
 http://css-tricks.com/snippets/css/less-mixin-for-rem-font-sizing/
+
+@param {Integer} $size - font-size (without px)
+@param {Integer} $line - line-height (without px)
 */
-@mixin font-size($sizeValue: 16, $line: $sizeValue * 1.5) {
-    font-size: ($sizeValue) + px;
+@mixin font-size($size: 16, $line: $size * 1.5) {
+    font-size: ($size) + px;
     line-height: ($line) + px;
-    font-size: ($sizeValue / 10) + rem;
+    font-size: ($size / 10) + rem;
     line-height: ($line / 10) + rem;
 }
 
@@ -156,6 +180,8 @@ Ensuring that your text element doesn’t overflow its container and breaks
 nicely. It takes one parameter, which is any of the valid text-overflow values.
 
 http://hackingui.com/front-end/10-best-scss-utilities/
+
+@param {String} $overflow - text-overflow value
 */
 @mixin truncate-text( $overflow: ellipsis ) {
     overflow: hidden;
@@ -250,9 +276,9 @@ http://hackingui.com/front-end/10-best-scss-utilities/
 
 Creates a right angled triangle pointing to a direction specified by $direction.
 
-$direction: top, right, bottom or left
-$size: px-value
-$color: color-value
+@param {String} $direction - top, right, bottom or left
+@param {String} $size - px-value
+@param {String} $color - color-value
 */
 @mixin caret($direction: top, $size: 10px, $color: #333) {
     $opposite: opposite-position($direction);
@@ -268,10 +294,9 @@ $color: color-value
 
 Creates a :hover-transition-effect with a gradient.
 
-$start: color-value
-$end: color-value
-$time: transition duration
-
+@param {String} $start: color-value
+@param {String} $end: color-value
+@param {String} $duration: transition duration
 */
 @mixin gradient-transition( $start, $end, $duration ){
     background-size: 100%;
@@ -288,7 +313,8 @@ $time: transition duration
         opacity: 0;
         width: 100%;
         z-index: -100;
-        transition: opacity $duration;
+        @include transition-property(opacity);
+        @include transition-duration($duration);
     }
     &:hover {
         &:before {

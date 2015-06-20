@@ -167,6 +167,7 @@
                         Responsive grid system.<br>
                         <a href="http://susy.oddbird.net/">http://susy.oddbird.net/</a>
                     </p>
+                    <p>The <code class="css">@mixin bp</code> <a href="#toolbelt">is described here.</a></p>
 
                     <div class="example">
                         <h4 class="example-heading">Example</h4>
@@ -1221,7 +1222,12 @@ $susy: (
 
 <pre>
 <h4 class="css">SCSS</h4>
-<code class="css">// Min-width breakpoints
+<code class="css">/*
+# @mixin bp
+
+@param {String} $breakpoint - breakpoint name
+@require $breakpoints
+*/
 @mixin bp($breakpoint) {
     @if map-has-key($breakpoints, $breakpoint) {
         @media (min-width: map-get($breakpoints, $breakpoint)) {
@@ -1258,7 +1264,12 @@ $susy: (
                         <p>Another dynamic breakpoint mixin creating max-width media queries instead.</p>
 <pre>
 <h4 class="css">SCSS</h4>
-<code class="css">// Max-width breakpoints
+<code class="css">/*
+# @mixin bp-max
+
+@param {String} $breakpoint - breakpoint name
+@require $breakpoints
+*/
 @mixin bp-max($breakpoint) {
     @if map-has-key($breakpoints, $breakpoint) {
         @media (max-width: map-get($breakpoints, $breakpoint)) {
@@ -1277,7 +1288,13 @@ $susy: (
                         <p>"Retina" breakpoint mixin.</p>
 <pre>
 <h4 class="css">SCSS</h4>
-<code class="css">@mixin hd($ratio: 2, $resolution: 192dpi) {
+<code class="css">/*
+# @mixin hd
+
+@param {Integer} $ratio - device pixel ratio
+@param {String} $resolution - dpi-resolution
+*/
+@mixin hd($ratio: 2, $resolution: 192dpi) {
     @media (-min-device-pixel-ratio: $ratio), (min-resolution: $resolution) {
         @content;
     }
@@ -1436,7 +1453,13 @@ $(document).ready(function() {
                         </p>
 <pre>
 <h4 class="css">SCSS</h4>
-<code class="css">@mixin font-size($sizeValue: 16, $line: $sizeValue * 1.5) {
+<code class="css">/*
+# REM font-size and line-height with px-fallback
+
+@param {Integer} $size - font-size (without px)
+@param {Integer} $line - line-height (without px)
+*/
+@mixin font-size($sizeValue: 16, $line: $sizeValue * 1.5) {
     font-size: ($sizeValue) + px;
     line-height: ($line) + px;
     font-size: ($sizeValue / 10) + rem;
@@ -1459,7 +1482,12 @@ $(document).ready(function() {
                         </p>
 <pre>
 <h4 class="css">SCSS</h4>
-<code class="css">@mixin truncate-text( $overflow: ellipsis ) {
+<code class="css">/*
+# @mixin truncate-text
+
+@param {String} $overflow - text-overflow value
+*/
+@mixin truncate-text( $overflow: ellipsis ) {
     overflow: hidden;
     white-space: nowrap;
     text-overflow: $overflow; // values are: clip, ellipsis, or a string
@@ -1476,7 +1504,10 @@ $(document).ready(function() {
                         </p>
 <pre>
 <h4 class="css">SCSS</h4>
-<code class="css">@mixin center-vertical {
+<code class="css">/*
+# @mixin center-vertical
+*/
+@mixin center-vertical {
     &:before {
         content: '';
         @include inline-block;
@@ -1492,7 +1523,10 @@ $(document).ready(function() {
                         </p>
 <pre>
 <h4 class="css">SCSS</h4>
-<code class="css">@mixin center-both {
+<code class="css">/*
+# @mixin center-both
+*/
+@mixin center-both {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -1516,9 +1550,9 @@ $(document).ready(function() {
 <code class="css">/*
 # @mixin caret
 
-$direction: top, right, bottom or left
-$size: px-value
-$color: color-value
+@param {String} $direction - top, right, bottom or left
+@param {String} $size - px-value
+@param {String} $color - color-value
 */
 @mixin caret($direction: top, $size: 10px, $color: #333) {
     $opposite: opposite-position($direction);
@@ -1527,6 +1561,80 @@ $color: color-value
     border-#{$direction}: 0;
     height: 0;
     width: 0;
+}
+</code></pre>
+<pre>
+<h4 class="css">Example SCSS-Code</h4>
+<code class="css">.caret01 {
+    @include inline-block;
+    position: relative;
+    padding: 10px;
+    background-color: $blue1;
+    color: $white;
+    &:before {
+        position: absolute;
+        bottom: -10px;
+        left: 50%;
+        @include translate(-50%, 0);
+        content: "";
+        @include caret(bottom, 10px, $blue1);
+    }
+}
+</code></pre>
+                    </article>
+                    <article>
+                        <h3>Gradient Transition</h3>
+                        <p>
+                            <code class="css">@mixin gradient-transition</code> creates a :hover-transition-effect with a gradient.
+                        </p>
+                        <div class="example">
+                            <h4 class="example-heading">Example</h4>
+                            <div class="example-content">
+                                <a class="transition1" href="javascript://">Me haz transition</a>
+                            </div>
+                        </div>
+<pre>
+<h4 class="css">SCSS</h4>
+<code class="css">/*
+# @mixin gradient-transition
+
+@param {String} $start: color-value
+@param {String} $end: color-value
+@param {String} $duration: transition duration
+*/
+@mixin gradient-transition( $start, $end, $duration ){
+    background-size: 100%;
+    background-image: linear-gradient($start, $end);
+    position: relative;
+    z-index: 100;
+    &:before {
+        background-image: linear-gradient($end, $start);
+        content: '';
+        display: block;
+        height: 100%;
+        position: absolute;
+        top: 0; left: 0;
+        opacity: 0;
+        width: 100%;
+        z-index: -100;
+        @include transition-property(opacity);
+        @include transition-duration($duration);
+    }
+    &:hover {
+        &:before {
+            opacity: 1;
+        }
+    }
+}
+</code></pre>
+<pre>
+<h4 class="css">Example SCSS-Code</h4>
+<code class="css">.transition1 {
+    @include inline-block;
+    padding: 10px;
+    border: 1px solid $grey4;
+    color: $text-color;
+    @include gradient-transition($grey5, $grey4, 0.25s);
 }
 </code></pre>
                     </article>

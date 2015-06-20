@@ -2242,31 +2242,31 @@ many layers the application uses, making it easy to understand whatÔÇÖs going
 A collection of helper mixins, placeholders and classes.
 */
 /*
-# .clearfix helper class
+# .clearfix mixin and helper class
 
-Don't use clearfix-mixin from compass as it isn't considered a best practice.
-Use HTML5-Boilerplate's @mixin micro-clearfix instead.
+On a large-scale project, itÔÇÖs best to use the @extend directive instead of a
+mixin, as it will output less CSS.
+
+    .main-header {
+        ...
+        @extend .clearfix;
+    }
 */
-.clearfix:before, .clearfix:after {
-  content: " ";
-  display: table; }
 .clearfix:after {
+  content: "";
+  display: table;
   clear: both; }
-.clearfix {
-  *zoom: 1; }
 
 /*
 # box-sizing mixin with prefixes
+
+@param {String} $value - box-sizing value
 */
 /*
 # @mixin bp
 
 Mixin to manage responsive breakpoints.
 Feel free to add more breakpoints in "base/_vars.scss".
-
-@author Hugo Giraudel
-@param {String} $breakpoint - Breakpoint name
-@require $breakpoints
 
     $breakpoints: small 500px, medium 700px, big 900px;
     .wrapper {
@@ -2276,11 +2276,22 @@ Feel free to add more breakpoints in "base/_vars.scss".
         }
     }
 
+@param {String} $breakpoint - breakpoint name
+@require $breakpoints
+*/
+/*
+# Max-width breakpoints
+
+@param {String} $breakpoint - breakpoint name
+@require $breakpoints
 */
 /*
 # @mixin hd
 
 Retina breakpoint.
+
+@param {Integer} $ratio - device pixel ratio
+@param {String} $resolution - dpi-resolution
 */
 /*
 # Dynamic classes based on $breakpoints.
@@ -2294,6 +2305,8 @@ $breakpoints: small 500px, medium 700px, big 900px;
 .hide-small {}
 .hide-medium {}
 .hide-big {}
+
+@require $breakpoints
 */
 @media (min-width: 500px) {
   .hide-small {
@@ -2339,6 +2352,9 @@ many layers the application uses, making it easy to understand whatÔÇÖs going
 # REM font-size and line-height with px-fallback
 
 http://css-tricks.com/snippets/css/less-mixin-for-rem-font-sizing/
+
+@param {Integer} $size - font-size (without px)
+@param {Integer} $line - line-height (without px)
 */
 /*
 # @mixin word-wrap
@@ -2350,6 +2366,8 @@ Ensuring that your text element doesnÔÇÖt overflow its container and breaks
 nicely. It takes one parameter, which is any of the valid text-overflow values.
 
 http://hackingui.com/front-end/10-best-scss-utilities/
+
+@param {String} $overflow - text-overflow value
 */
 /*
 # @mixin cover everything
@@ -2393,19 +2411,18 @@ http://hackingui.com/front-end/10-best-scss-utilities/
 
 Creates a right angled triangle pointing to a direction specified by $direction.
 
-$direction: top, right, bottom or left
-$size: px-value
-$color: color-value
+@param {String} $direction - top, right, bottom or left
+@param {String} $size - px-value
+@param {String} $color - color-value
 */
 /*
 # @mixin gradient-transition
 
 Creates a :hover-transition-effect with a gradient.
 
-$start: color-value
-$end: color-value
-$time: transition duration
-
+@param {String} $start: color-value
+@param {String} $end: color-value
+@param {String} $duration: transition duration
 */
 /*
 # Webkit Scrollbar Styling
@@ -4009,3 +4026,52 @@ pre h4,
     border-bottom: 0;
     height: 0;
     width: 0; }
+
+.transition1 {
+  display: inline-block;
+  vertical-align: middle;
+  *vertical-align: auto;
+  *zoom: 1;
+  *display: inline;
+  padding: 10px;
+  border: 1px solid #ccc;
+  color: #333;
+  background-size: 100%;
+  background-image: linear-gradient(#eeeeee, #cccccc);
+  position: relative;
+  z-index: 100; }
+  .transition1:before {
+    background-image: linear-gradient(#cccccc, #eeeeee);
+    content: '';
+    display: block;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    width: 100%;
+    z-index: -100;
+    -moz-transition-property: opacity;
+    -o-transition-property: opacity;
+    -webkit-transition-property: opacity;
+    transition-property: opacity;
+    -moz-transition-duration: 0.25s;
+    -o-transition-duration: 0.25s;
+    -webkit-transition-duration: 0.25s;
+    transition-duration: 0.25s; }
+  .transition1:hover:before {
+    opacity: 1; }
+
+::-webkit-scrollbar {
+  width: 20px;
+  height: 20px; }
+
+::-webkit-scrollbar-thumb {
+  background: #109acc; }
+
+::-webkit-scrollbar-track {
+  background: transparent; }
+
+body {
+  scrollbar-face-color: #109acc;
+  scrollbar-track-color: transparent; }

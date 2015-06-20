@@ -135,3 +135,16 @@ pre h4,
         @include caret(bottom, 10px, $blue1);
     }
 }
+
+// Transition
+
+.transition1 {
+    @include inline-block;
+    padding: 10px;
+    border: 1px solid $grey4;
+    color: $text-color;
+    @include gradient-transition($grey5, $grey4, 0.25s);
+}
+
+// Scrollbar-Styling
+@include scrollbar (20px, $blue1, transparent);
