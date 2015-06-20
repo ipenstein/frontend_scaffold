@@ -12,7 +12,7 @@ function scrollSpy() {
             if ($(window).scrollTop() >= triggerPos[i]) {
                 $('.main-nav li').removeClass('active');
                 $('#nav-' + i.substr(1)).addClass('active');
-                self.document.location.hash = '#nav-' + i.substr(1);
+                //self.document.location.hash = '#nav-' + i.substr(1);
             }
         }
     });
