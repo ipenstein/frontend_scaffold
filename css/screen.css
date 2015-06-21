@@ -3874,16 +3874,16 @@ ol.files,
   background: #eee !important; }
 
 .html {
-  background: #ffe0e0 !important; }
+  background: #f9d8d6 !important; }
 
 .css {
-  background: #e0e0ff !important; }
+  background: #cfeaf4 !important; }
 
 .js {
-  background: #ffffc9 !important; }
+  background: #faeecc !important; }
 
 .tabs-container .files {
-  background: #e0ffe0 !important; }
+  background: #e2edd7 !important; }
 
 html.js {
   background: transparent !important; }
@@ -3919,22 +3919,54 @@ pre h4,
 .example-tabs .tabs a {
   border-color: #fff;
   color: #999;
+  color: rgba(51, 51, 51, 0.6);
   font-family: "Oswald", Arial, sans-serif; }
-.example-tabs .tabs .active a,
 .example-tabs .tabs a:hover {
-  color: #333; }
-.example-tabs .tabs .active a {
+  color: #fff; }
+  .example-tabs .tabs a:hover.html {
+    background-color: #e53f32 !important; }
+  .example-tabs .tabs a:hover.css {
+    background-color: #109acc !important; }
+  .example-tabs .tabs a:hover.js {
+    background-color: #e9ac00 !important; }
+  .example-tabs .tabs a:hover.example {
+    background-color: #999 !important; }
+  .example-tabs .tabs a:hover.files {
+    background-color: #6fa938 !important; }
+.example-tabs .tabs .active a,
+.example-tabs .tabs .active a:hover {
+  color: #333 !important;
   border-bottom-color: #eee; }
-  .example-tabs .tabs .active a.html {
-    border-bottom-color: #ffe0e0 !important; }
-  .example-tabs .tabs .active a.css {
-    border-bottom-color: #e0e0ff !important; }
-  .example-tabs .tabs .active a.js {
-    border-bottom-color: #ffffc9 !important; }
-  .example-tabs .tabs .active a.example {
+  .example-tabs .tabs .active a.html,
+  .example-tabs .tabs .active a:hover.html {
+    border-bottom-color: #f9d8d6 !important; }
+  .example-tabs .tabs .active a.css,
+  .example-tabs .tabs .active a:hover.css {
+    border-bottom-color: #cfeaf4 !important; }
+  .example-tabs .tabs .active a.js,
+  .example-tabs .tabs .active a:hover.js {
+    border-bottom-color: #faeecc !important; }
+  .example-tabs .tabs .active a.example,
+  .example-tabs .tabs .active a:hover.example {
     border-bottom-color: #eee !important; }
-  .example-tabs .tabs .active a.files {
-    border-bottom-color: #e0ffe0 !important; }
+  .example-tabs .tabs .active a.files,
+  .example-tabs .tabs .active a:hover.files {
+    border-bottom-color: #e2edd7 !important; }
+  .example-tabs .tabs .active a.html,
+  .example-tabs .tabs .active a:hover.html {
+    background-color: #f9d8d6 !important; }
+  .example-tabs .tabs .active a.css,
+  .example-tabs .tabs .active a:hover.css {
+    background-color: #cfeaf4 !important; }
+  .example-tabs .tabs .active a.js,
+  .example-tabs .tabs .active a:hover.js {
+    background-color: #faeecc !important; }
+  .example-tabs .tabs .active a.example,
+  .example-tabs .tabs .active a:hover.example {
+    background-color: #eee !important; }
+  .example-tabs .tabs .active a.files,
+  .example-tabs .tabs .active a:hover.files {
+    background-color: #e2edd7 !important; }
 .example-tabs pre {
   margin-top: 0; }
 .example-tabs ul.files,
