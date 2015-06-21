@@ -35,7 +35,9 @@
     li:last-child a {
         @include border-radius(0 3px 0 0);
     }
-    a:hover,
+    li:first-child:last-child a {
+        @include border-radius(3px 3px 0 0);
+    }
     a:focus,
     a:active {
         z-index: 20;

@@ -3096,7 +3096,7 @@ textarea {
   line-height: normal;
   outline: none;
   box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.1);
-  background: #fff; }
+  background: #eee; }
   input[type="text"]:hover,
   input[type="password"]:hover,
   input[type="number"]:hover,
@@ -3154,7 +3154,7 @@ fieldset {
   margin: 20px -20px;
   border: 1px solid #ccc;
   padding: 15px 20px;
-  background: #eee; }
+  background: #fff; }
   fieldset .legend {
     margin-top: 0; }
 
@@ -3379,7 +3379,10 @@ fieldset {
     -moz-border-radius: 0 3px 0 0;
     -webkit-border-radius: 0;
     border-radius: 0 3px 0 0; }
-  .tabs a:hover,
+  .tabs li:first-child:last-child a {
+    -moz-border-radius: 3px 3px 0 0;
+    -webkit-border-radius: 3px;
+    border-radius: 3px 3px 0 0; }
   .tabs a:focus,
   .tabs a:active {
     z-index: 20;
@@ -3859,6 +3862,8 @@ pre,
 .files {
   font-family: "Roboto Mono", "Consolas", "Source Code Pro", "Courier New", Courier, monospace; }
 
+ul.files,
+ol.files,
 .hljs {
   font-size: 14px;
   line-height: 24px;
@@ -3866,7 +3871,7 @@ pre,
   line-height: 2.4rem; }
 
 .example, .example-heading {
-  background: #eee; }
+  background: #eee !important; }
 
 .html {
   background: #ffe0e0 !important; }
@@ -3876,6 +3881,9 @@ pre,
 
 .js {
   background: #ffffc9 !important; }
+
+.tabs-container .files {
+  background: #e0ffe0 !important; }
 
 html.js {
   background: transparent !important; }
@@ -3890,7 +3898,10 @@ pre h4,
   display: inline-block;
   position: relative;
   color: #666;
-  padding: 5px 20px;
+  padding: 10px 20px;
+  -moz-border-radius: 3px 3px 0 0;
+  -webkit-border-radius: 3px;
+  border-radius: 3px 3px 0 0;
   margin-bottom: -1px;
   /*
   &.html {    border-bottom-color: #DBF0F8;   }
@@ -3898,6 +3909,45 @@ pre h4,
   &.js {      border-bottom-color: #F6E6F2;   }
   */ }
 
+/*
+# Example Tabs
+*/
+.example-tabs .tabs {
+  margin-left: -1px;
+  margin-bottom: 0;
+  border-color: #fff; }
+.example-tabs .tabs a {
+  border-color: #fff;
+  color: #999;
+  font-family: "Oswald", Arial, sans-serif; }
+.example-tabs .tabs .active a,
+.example-tabs .tabs a:hover {
+  color: #333; }
+.example-tabs .tabs .active a {
+  border-bottom-color: #eee; }
+  .example-tabs .tabs .active a.html {
+    border-bottom-color: #ffe0e0 !important; }
+  .example-tabs .tabs .active a.css {
+    border-bottom-color: #e0e0ff !important; }
+  .example-tabs .tabs .active a.js {
+    border-bottom-color: #ffffc9 !important; }
+  .example-tabs .tabs .active a.example {
+    border-bottom-color: #eee !important; }
+  .example-tabs .tabs .active a.files {
+    border-bottom-color: #e0ffe0 !important; }
+.example-tabs pre {
+  margin-top: 0; }
+.example-tabs ul.files,
+.example-tabs ol.files {
+  margin-top: 0;
+  padding-top: 20px;
+  padding-bottom: 20px; }
+.example-tabs div.example {
+  padding: 20px; }
+
+/*
+# Examples Code
+*/
 .example-tooltip1 {
   position: relative; }
   .example-tooltip1:before, .example-tooltip1:after {
