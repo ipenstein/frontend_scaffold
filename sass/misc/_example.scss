@@ -3,6 +3,69 @@
 */
 
 /*
+# Code coloring style-overrides
+*/
+.hljs,
+.example-content {
+    //border: 1px dotted $grey2 !important;
+    padding: 10px !important;
+    position: relative;
+    @include bp(small) {
+        padding: 20px !important;
+    }
+    z-index: 2;
+}
+
+pre,
+.hljs,
+.files {
+    font-family: "Roboto Mono", "Consolas", "Source Code Pro", "Courier New", Courier, monospace;
+}
+
+.hljs {
+    @include font-size(14,24);
+}
+
+.example, .example-heading {
+            background: $grey5; }
+.html {     background: #ffe0e0 !important; }
+.css {      background: #e0e0ff !important; }
+.js {       background: #ffffc9 !important; }
+
+html.js {
+    background: transparent !important;
+}
+
+pre {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+pre h4,
+.example-heading {
+    margin: 0;
+    display: inline-block;
+    position: relative;
+    color: $grey2;
+    padding: 5px 20px;
+    margin-bottom: -1px;
+    /*
+    &.html {    border-bottom-color: #DBF0F8;   }
+    &.css {     border-bottom-color: #FAEBC0;   }
+    &.js {      border-bottom-color: #F6E6F2;   }
+    */
+}
+
+// Tooltips
+.example-tooltip1 {
+    @include tooltip;
+}
+
+.example-tooltip2 {
+    @include tooltip(attr(data-tooltip), bottom);
+}
+
+/*
 # Grid presentation
 */
 .example-grid {
@@ -38,7 +101,7 @@
 .example-module,
 .example-module-2 {
     border: 1px dotted $grey3;
-    background-color: $grey5;
+    background-color: $white;
     padding: 20px;
     font-family: "Consolas", "Source Code Pro", "Courier New", Courier, monospace;
     font-size: 14px;
@@ -66,84 +129,73 @@ a[href^="http"] {
 }
 
 /*
-# Code coloring style-overrides
+# Alerts
 */
-.hljs,
-.example-content {
-    border: 1px dotted $grey2 !important;
-    padding: 10px !important;
-    position: relative;
-    @include bp(small) {
-        padding: 20px !important;
-    }
-    z-index: 2;
+.example-alerts {
+    background-color: $white;
+    padding: 20px;
 }
 
-.hljs,
-.files {
-    font-family: "Consolas", "Source Code Pro", "Courier New", Courier, monospace;
-}
-
-.hljs {
-    @include font-size(13,18);
-}
-
-.example {  background: $white; }
-.html {     background: #DBF0F8 !important; }
-.css {      background: #FAEBC0 !important; }
-.js {       background: #F6E6F2 !important; }
-
-html.js {
-    background: transparent !important;
-}
-
-pre {
-    margin-top: 20px;
-    margin-bottom: 20px;
-}
-
-pre h4,
-.example-heading {
-    margin: 0;
-    display: inline-block;
-    position: relative;
-    color: $grey2;
-    border: 1px dotted $grey2;
-    border-bottom: 1px solid #fff;
-    padding: 5px 20px;
-    z-index: 3;
-    margin-bottom: -1px;
-    &.html {    border-bottom-color: #DBF0F8;   }
-    &.css {     border-bottom-color: #FAEBC0;   }
-    &.js {      border-bottom-color: #F6E6F2;   }
-}
-
-// Carets
-
-.caret01 {
+// Triangles
+.triangle01 {
     @include inline-block;
     position: relative;
     padding: 10px;
     background-color: $blue1;
     color: $white;
     &:before {
-        position: absolute;
         bottom: -10px;
         left: 50%;
         @include translate(-50%, 0);
-        content: "";
-        @include caret(bottom, 10px, $blue1);
+        @include triangle-absolute(bottom, 10px, $blue1);
     }
 }
 
 // Transition
-
 .transition1 {
     @include inline-block;
     padding: 10px;
     border: 1px solid $grey4;
     color: $text-color;
     @include gradient-transition($grey5, $grey4, 0.25s);
+}
+
+// Center
+.example-center-vert,
+.example-center-both {
+    max-width: 600px;
+    height: 250px;
+    background-color: $white;
+}
+
+.example-center-vert-item,
+.example-center-both-item {
+    padding: 20px;
+    background-color: $grey4;
+    width: 75%;
+}
+
+// Center vertical
+.example-center-vert {
+    @include center-vertical;
+}
+
+.example-center-vert-item {
+    @include inline-block;
+}
+
+// Center both
+.example-center-both {
+    position: relative;
+}
+
+.example-center-both-item {
+    @include center-both;
+}
+
+// Truncate Text
+.example-truncate {
+    @include truncate-text;
 }
 
 // Scrollbar-Styling

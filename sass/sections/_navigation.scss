@@ -12,7 +12,7 @@
         background: none;
     }
     @include bp(big) {
-        right: 10px;
+        right: 13px;
         left: auto;
     }
 }
@@ -81,9 +81,10 @@
         @include transition-timing-function(ease-in);
         border-top: none;
         width: auto;
-        margin: 0 10px;
+        margin: 0 7px;
         padding: 10px 0;
         background-color: transparent;
+        @include font-size(15, 20);
         &:hover {
             background-color: transparent;
             color: $grey4;

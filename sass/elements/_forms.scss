@@ -91,9 +91,9 @@ textarea {
 }
 fieldset {
     margin: 20px -20px;
-    border: 1px solid $grey4;
+    border: $form-fieldset-border;
     padding: 15px 20px;
-    background: $white;
+    background: $form-fieldset-bg-color;
     .legend { // use with headlines; legend element is a bitch to style
         margin-top: 0;
     }

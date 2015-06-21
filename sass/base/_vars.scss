@@ -50,7 +50,8 @@ $z-layers: (
 
     logo:           30,
     main-nav:       20,
-    hero:           10
+    hero:           10,
+    tooltips:       20
 );
 
 
@@ -119,7 +120,7 @@ $form-placeholder-color:        $grey3;
 $form-input-margin:             4px 0;
 $form-input-padding:            6px;
 $form-input-border:             1px solid $grey4; //#d9d9d9;
-$form-input-bg-color:           $grey5; //#fafafa
+$form-input-bg-color:           $white; //#fafafa
 $form-input-hover-border-color: darken($grey4, 10%);
 $form-input-focus-border-color: $blue1;
 $form-error-color:              $red1;
@@ -127,6 +128,9 @@ $form-error-font-size:          12px;
 $form-select-padding:           5px;
 $form-label-font-size:          14px;
 $form-gutter-width:             10px;
+$form-fieldset-bg-color:        $grey5;
+$form-fieldset-border:          1px solid $grey4;
+
 
 /*
 # Buttons
@@ -140,9 +144,9 @@ $btn-margin:                    4px 0;
 
 // Color variants
 $btn-color:                     $grey1;
-$btn-bg-color:                  $grey5;
-$btn-hover-bg-color:            darken($grey5, 2%);
-$btn-active-bg-color:           darken($grey5, 10%);
+$btn-bg-color:                  $white;
+$btn-hover-bg-color:            darken($white, 2%);
+$btn-active-bg-color:           darken($white, 10%);
 
 $btn-primary-color:             $white;
 $btn-primary-bg-color:          $blue1;
@@ -181,25 +185,38 @@ $btn-big-next-border-radius:    23px;
 # Tables
 */
 $table-breakpoint:      medium;         // max-brakepoint where responsive tables will become scrollable
-$table-bg-color:        $white;
-$table-bg-accent-color: $grey5;
+$table-bg-color:        transparent;
+$table-bg-accent-color: $white;
 $table-bg-hover-color:  $turquise1;
 $table-border-color:    $grey4;
 $table-cell-padding:    10px;
+
+/*
+# Tooltips
+*/
+$tooltip-color:         $white;
+$tooltip-bg-color:      $blue1;
+$tooltip-font-size:     14px;
+$tooltip-line-height:   22px;
+$tooltip-height:        22px;
+$tooltip-padding:       6px 10px;
+$tooltip-bubble-pos:    -40px;
+$tooltip-triangle-pos:  -6px;
+$tooltip-triangle-size: 6px;
 
 /*
 # Tabs
 */
 $tab-padding:                   10px 20px;
 $tab-color:                     $grey3;
-$tab-border-color:              $grey4;
-$tab-bg-color:                  $grey5;
+$tab-border-color:              $grey2;
+$tab-bg-color:                  $white;
 $tab-hover-color:               $grey1;
 $tab-hover-border-color:        darken($turquise1, 40%);
 $tab-hover-bg-color:            $turquise1;
 $tab-active-color:              $grey2;
 $tab-active-border-color:       $grey2;
-$tab-active-bg-color:           $white;
+$tab-active-bg-color:           $grey5;
 
 /*
 # Alerts
@@ -212,19 +229,19 @@ $alert-margin:                  0 0 $base-line-height-px 0;
 $alert-border:                  1px solid;
 
 $alert-info-color:              $grey1;
-$alert-info-bg-color:           rgba($blue1, 0.1);
+$alert-info-bg-color:           tint($blue1, 90);
 $alert-info-border-color:       $blue1;
 
 $alert-danger-color:            $grey1;
-$alert-danger-bg-color:         rgba($danger-color, 0.1);
+$alert-danger-bg-color:         tint($danger-color, 90);
 $alert-danger-border-color:     $danger-color;
 
 $alert-error-color:             $grey1;
-$alert-error-bg-color:          rgba($error-color, 0.1);
+$alert-error-bg-color:          tint($error-color, 90);
 $alert-error-border-color:      $error-color;
 
 $alert-success-color:           $grey1;
-$alert-success-bg-color:        rgba($success-color, 0.1);
+$alert-success-bg-color:        tint($success-color, 90);
 $alert-success-border-color:    $success-color;
 
 /*

@@ -25,10 +25,15 @@
         background-color: $tab-bg-color;
         border: 1px solid $tab-border-color;
         border-bottom: 1px solid $tab-active-border-color;
-        @include border-radius(3px 3px 0 0);
         @include transition-property(all);
         @include transition-duration(0.2s);
         @include transition-timing-function(ease-out);
+    }
+    li:first-child a {
+        @include border-radius(3px 0 0 0);
+    }
+    li:last-child a {
+        @include border-radius(0 3px 0 0);
     }
     a:hover,
     a:focus,
@@ -44,6 +49,6 @@
         color: $tab-active-color;
         background-color: $tab-active-bg-color;
         border-color: $tab-active-border-color;
-        border-bottom: 1px solid $body-bg-color;
+        border-bottom: 1px solid $tab-active-bg-color;
     }
 }

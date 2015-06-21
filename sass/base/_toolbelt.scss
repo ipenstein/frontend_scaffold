@@ -212,7 +212,8 @@ http://hackingui.com/front-end/10-best-scss-utilities/
     &:before {
         content: '';
         @include inline-block;
-        height: 100%; width: .1px;
+        height: 100%;
+        width: .1px;
     }
 }
 
@@ -272,7 +273,7 @@ http://hackingui.com/front-end/10-best-scss-utilities/
 .GBP %currency:before { content: '\00A3'; }
 
 /*
-# @mixin caret
+# @mixin triangle
 
 Creates a right angled triangle pointing to a direction specified by $direction.
 
@@ -280,13 +281,20 @@ Creates a right angled triangle pointing to a direction specified by $direction.
 @param {String} $size - px-value
 @param {String} $color - color-value
 */
-@mixin caret($direction: top, $size: 10px, $color: #333) {
+@mixin triangle($direction: top, $size: 10px, $color: #333) {
     $opposite: opposite-position($direction);
     border: $size solid transparent;
     border-#{$opposite}: $size solid $color;
     border-#{$direction}: 0;
     height: 0;
     width: 0;
+}
+
+@mixin triangle-absolute($direction: top, $size: 10px, $color: #333) {
+    content: '';
+    display: block;
+    position: absolute;
+    @include triangle($direction, $size, $color);
 }
 
 /*

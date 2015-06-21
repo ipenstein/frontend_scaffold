@@ -49,10 +49,10 @@
 
 .caret {
     @include inline-block;
-    @include caret(bottom, 5px, #333);
+    @include triangle(bottom, 5px, #333);
     margin-left: 2px;
 }
 
 .dropup .caret {
-    @include caret(top, 5px, #333);
+    @include triangle(top, 5px, #333);
 }
