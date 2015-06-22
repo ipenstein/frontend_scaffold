@@ -1613,8 +1613,6 @@ $susy: (
                                     <div class="reveal-small">.reveal-small</div>
                                     <div class="reveal-medium">.reveal-medium</div>
                                     <div class="reveal-big">.reveal-big</div>
-                                    <div class="reveal-small hide-medium">.reveal-small .hide-medium</div>
-                                    <div class="reveal-medium hide-big">.reveal-medium .hide-big</div>
                                 </div>
                             </div>
                             <div id="rhc-scss" class="tab-content">
@@ -1625,8 +1623,7 @@ breakpoint configuation
 $breakpoints: (
     small:  500px,
     medium: 700px,
-    big:    900px,
-    foo:    1200px
+    big:    900px
 ) !default;
 
 /*
@@ -1635,11 +1632,9 @@ The following classes are generated according to the breakpoint configuation abo
 .reveal-small {...}
 .reveal-medium {...}
 .reveal-big {...}
-.reveal-foo {...}
 .hide-small {...}
 .hide-medium {...}
 .hide-big {...}
-.hide-foo {...}
 </code></pre>
                             </div>
                         </div>
