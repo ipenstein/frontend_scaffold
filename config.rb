@@ -11,7 +11,7 @@ javascripts_dir = "js"
 
 # Set up enviroment
 project_type = :stand_alone
-output_style = :nested
+output_style = :compressed
 line_comments = false
 relative_assets = true
 

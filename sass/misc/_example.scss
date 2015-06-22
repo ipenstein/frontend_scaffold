@@ -58,18 +58,18 @@ pre h4,
 # Example tabs
 */
 .example-tabs {
-    .tabs {
+    > .tabs {
         margin-left: -1px;
         margin-bottom: 0;
         border-color: $white;
     }
-    .tabs a {
+    > .tabs > li > a {
         border-color: $white;
         color: $grey3;
         color: rgba($grey1, 0.6);
         font-family: $font-family-2;
     }
-    .tabs a:hover {
+    > .tabs > li > a:hover {
         color: $white;
         &.html {    background-color: $red1 !important; }
         &.css {     background-color: $blue1 !important; }
@@ -77,8 +77,8 @@ pre h4,
         &.example { background-color: $grey3 !important; }
         &.files {   background-color: $green1 !important; }
     }
-    .tabs .active a,
-    .tabs .active a:hover {
+    > .tabs > .active > a,
+    > .tabs > .active > a:hover {
         color: $grey1 !important;
         border-bottom-color: $grey5;
         &.html {    border-bottom-color: tint($red1, 80) !important; }
@@ -188,6 +188,42 @@ a[href^="http"] {
         font-size: 85%;
         content: "\f08e";
         margin-right: 3px;
+    }
+}
+
+a[href^="mailto"] {
+    &:before {
+        font-family: "FontAwesome";
+        //font-size: 85%;
+        content: "\f0e0";
+        margin-right: 3px;
+    }
+}
+
+section > h2 {
+    display: block;
+    position: relative;
+    background: $grey5;
+    padding: 20px 20px 20px 100px;
+    margin-bottom: 48px;
+    &:before {
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        width: 60px;
+        padding: 20px 10px;
+        color: $white;
+        background: $blue1;
+        font-family: "FontAwesome";
+        content: "\f135";
+        margin-right: 5px;
+        color: $white;
+        font-size: 1.75em;
+    }
+    &:after {
+        content: "";
+        clear: both;
     }
 }
 
