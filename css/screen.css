@@ -3383,6 +3383,7 @@ fieldset {
     -moz-border-radius: 3px 3px 0 0;
     -webkit-border-radius: 3px;
     border-radius: 3px 3px 0 0; }
+  .tabs a:hover,
   .tabs a:focus,
   .tabs a:active {
     z-index: 20;
@@ -3392,7 +3393,7 @@ fieldset {
     border-bottom: 1px solid #666; }
   .tabs .active a {
     z-index: 30;
-    color: #666;
+    color: #333;
     background-color: #eee;
     border-color: #666;
     border-bottom: 1px solid #eee; }
