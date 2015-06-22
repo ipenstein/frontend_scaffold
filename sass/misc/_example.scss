@@ -7,7 +7,6 @@
 */
 .hljs,
 .example-content {
-    //border: 1px dotted $grey2 !important;
     padding: 10px !important;
     position: relative;
     @include bp(small) {
@@ -19,7 +18,7 @@
 pre,
 .hljs,
 .files {
-    font-family: "Roboto Mono", "Consolas", "Source Code Pro", "Courier New", Courier, monospace;
+    font-family: $font-family-3;
 }
 
 ul.files,
@@ -53,11 +52,6 @@ pre h4,
     padding: $tab-padding;
     @include border-radius(3px 3px 0 0);
     margin-bottom: -1px;
-    /*
-    &.html {    border-bottom-color: #DBF0F8;   }
-    &.css {     border-bottom-color: #FAEBC0;   }
-    &.js {      border-bottom-color: #F6E6F2;   }
-    */
 }
 
 /*
@@ -166,7 +160,7 @@ pre h4,
     border: 1px dotted $grey3;
     background-color: $white;
     padding: 20px;
-    font-family: "Consolas", "Source Code Pro", "Courier New", Courier, monospace;
+    font-family: $font-family-3;
     font-size: 14px;
 }
 
