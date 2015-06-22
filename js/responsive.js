@@ -13,6 +13,9 @@ function checkResponsiveStatus() {
         });
         $('body').addClass("responsive-" + status);
 
+        // Just for presentation (may be deleted)
+        $('.example-rs').html(status);
+
         // Call functions tied to current breakpoint
         // Add your own cases if you like
         switch(status) {

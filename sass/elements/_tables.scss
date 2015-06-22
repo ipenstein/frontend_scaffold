@@ -31,6 +31,17 @@ th {
                 border-top: 1px solid $table-border-color;
             }
         }
+        > tr > td.active, tr > th.active,
+        > tr.active { > td, > th {  background-color: $table-active-bg-color;   }}
+        > tr > td.info, tr > th.info,
+        > tr.info { > td, > th {    background-color: $table-info-bg-color;     }}
+        > tr > td.success, tr > th.success,
+        > tr.success { > td, > th { background-color: $table-success-bg-color;  }}
+        > tr > td.warning, tr > th.warning,
+        > tr.warning { > td, > th { background-color: $table-warning-bg-color;  }}
+        > tr > td.error, tr > th.error,
+        > tr.error { > td, > th {   background-color: $table-error-bg-color;    }}
+
     }
     // Bottom align for column headings
     > thead > tr > th {

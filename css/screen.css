@@ -2213,7 +2213,7 @@ many layers the application uses, making it easy to understand whatÔÇÖs going
 # Basic color palette
 */
 /*
-# basic site colors
+# Basic site colors
 */
 /*
 # Basic typography
@@ -2228,10 +2228,10 @@ many layers the application uses, making it easy to understand whatÔÇÖs going
 # Tables
 */
 /*
-# Tooltips
+# Tabs
 */
 /*
-# Tabs
+# Tooltips
 */
 /*
 # Alerts
@@ -2713,10 +2713,90 @@ th {
     padding: 10px;
     line-height: 24px;
     vertical-align: top;
-    border-top: 1px solid #ccc; }
+    border-top: 1px solid #999; }
+  .table > thead > tr > td.active > td, .table > thead > tr > td.active > th, .table > thead tr > th.active > td, .table > thead tr > th.active > th,
+  .table > thead > tr.active > td,
+  .table > thead > tr.active > th,
+  .table > tbody > tr > td.active > td,
+  .table > tbody > tr > td.active > th,
+  .table > tbody tr > th.active > td,
+  .table > tbody tr > th.active > th,
+  .table > tbody > tr.active > td,
+  .table > tbody > tr.active > th,
+  .table > tfoot > tr > td.active > td,
+  .table > tfoot > tr > td.active > th,
+  .table > tfoot tr > th.active > td,
+  .table > tfoot tr > th.active > th,
+  .table > tfoot > tr.active > td,
+  .table > tfoot > tr.active > th {
+    background-color: #ccc; }
+  .table > thead > tr > td.info > td, .table > thead > tr > td.info > th, .table > thead tr > th.info > td, .table > thead tr > th.info > th,
+  .table > thead > tr.info > td,
+  .table > thead > tr.info > th,
+  .table > tbody > tr > td.info > td,
+  .table > tbody > tr > td.info > th,
+  .table > tbody tr > th.info > td,
+  .table > tbody tr > th.info > th,
+  .table > tbody > tr.info > td,
+  .table > tbody > tr.info > th,
+  .table > tfoot > tr > td.info > td,
+  .table > tfoot > tr > td.info > th,
+  .table > tfoot tr > th.info > td,
+  .table > tfoot tr > th.info > th,
+  .table > tfoot > tr.info > td,
+  .table > tfoot > tr.info > th {
+    background-color: #cfeaf4; }
+  .table > thead > tr > td.success > td, .table > thead > tr > td.success > th, .table > thead tr > th.success > td, .table > thead tr > th.success > th,
+  .table > thead > tr.success > td,
+  .table > thead > tr.success > th,
+  .table > tbody > tr > td.success > td,
+  .table > tbody > tr > td.success > th,
+  .table > tbody tr > th.success > td,
+  .table > tbody tr > th.success > th,
+  .table > tbody > tr.success > td,
+  .table > tbody > tr.success > th,
+  .table > tfoot > tr > td.success > td,
+  .table > tfoot > tr > td.success > th,
+  .table > tfoot tr > th.success > td,
+  .table > tfoot tr > th.success > th,
+  .table > tfoot > tr.success > td,
+  .table > tfoot > tr.success > th {
+    background-color: #e2edd7; }
+  .table > thead > tr > td.warning > td, .table > thead > tr > td.warning > th, .table > thead tr > th.warning > td, .table > thead tr > th.warning > th,
+  .table > thead > tr.warning > td,
+  .table > thead > tr.warning > th,
+  .table > tbody > tr > td.warning > td,
+  .table > tbody > tr > td.warning > th,
+  .table > tbody tr > th.warning > td,
+  .table > tbody tr > th.warning > th,
+  .table > tbody > tr.warning > td,
+  .table > tbody > tr.warning > th,
+  .table > tfoot > tr > td.warning > td,
+  .table > tfoot > tr > td.warning > th,
+  .table > tfoot tr > th.warning > td,
+  .table > tfoot tr > th.warning > th,
+  .table > tfoot > tr.warning > td,
+  .table > tfoot > tr.warning > th {
+    background-color: #faeecc; }
+  .table > thead > tr > td.error > td, .table > thead > tr > td.error > th, .table > thead tr > th.error > td, .table > thead tr > th.error > th,
+  .table > thead > tr.error > td,
+  .table > thead > tr.error > th,
+  .table > tbody > tr > td.error > td,
+  .table > tbody > tr > td.error > th,
+  .table > tbody tr > th.error > td,
+  .table > tbody tr > th.error > th,
+  .table > tbody > tr.error > td,
+  .table > tbody > tr.error > th,
+  .table > tfoot > tr > td.error > td,
+  .table > tfoot > tr > td.error > th,
+  .table > tfoot tr > th.error > td,
+  .table > tfoot tr > th.error > th,
+  .table > tfoot > tr.error > td,
+  .table > tfoot > tr.error > th {
+    background-color: #f9d8d6; }
   .table > thead > tr > th {
     vertical-align: bottom;
-    border-bottom: 2px solid #ccc; }
+    border-bottom: 2px solid #999; }
   .table > caption + thead > tr:first-child > th,
   .table > caption + thead > tr:first-child > td,
   .table > colgroup + thead > tr:first-child > th,
@@ -2725,7 +2805,7 @@ th {
   .table > thead:first-child > tr:first-child > td {
     border-top: 0; }
   .table > tbody + tbody {
-    border-top: 2px solid #ccc; }
+    border-top: 2px solid #999; }
   .table .table {
     background-color: #fff; }
 
@@ -2735,14 +2815,14 @@ th {
 Add borders all around the table and between all the columns.
 */
 .table-bordered {
-  border: 1px solid #ccc; }
+  border: 1px solid #999; }
   .table-bordered > thead > tr > th,
   .table-bordered > thead > tr > td,
   .table-bordered > tbody > tr > th,
   .table-bordered > tbody > tr > td,
   .table-bordered > tfoot > tr > th,
   .table-bordered > tfoot > tr > td {
-    border: 1px solid #ccc; }
+    border: 1px solid #999; }
   .table-bordered > thead > tr > th,
   .table-bordered > thead > tr > td {
     border-bottom-width: 2px; }
@@ -2763,7 +2843,7 @@ Placed here since it has to come after the potential zebra striping
 */
 .table-hover > tbody > tr:hover > td,
 .table-hover > tbody > tr:hover > th {
-  background-color: #86cee0; }
+  background-color: #ccc; }
 
 /*
 # Responsive tables
@@ -2779,7 +2859,7 @@ Everything above that will display normally.
     overflow-y: hidden;
     overflow-x: scroll;
     -ms-overflow-style: -ms-autohiding-scrollbar;
-    border: 1px solid #ccc;
+    border: 1px solid #999;
     -webkit-overflow-scrolling: touch; }
     .table-responsive > .table {
       margin-bottom: 0; }
@@ -3496,13 +3576,13 @@ Alert messages
       opacity: 0.75; }
 
 .alert-message.alert-info {
-  background-color: #e7f4f9;
+  background-color: #cfeaf4;
   border-color: #109acc; }
   .alert-message.alert-info, .alert-message.alert-info p, .alert-message.alert-info a {
     color: #333; }
 
 .alert-message.alert-danger {
-  background-color: #fcf6e5;
+  background-color: #faeecc;
   border-color: #e9ac00; }
   .alert-message.alert-danger, .alert-message.alert-danger p, .alert-message.alert-danger a {
     color: #333; }
@@ -3510,7 +3590,7 @@ Alert messages
     content: "\f071"; }
 
 .alert-message.alert-error {
-  background-color: #fcebea;
+  background-color: #f9d8d6;
   border-color: #e53f32; }
   .alert-message.alert-error, .alert-message.alert-error p, .alert-message.alert-error a {
     color: #333; }
@@ -3518,7 +3598,7 @@ Alert messages
     content: "\f05e"; }
 
 .alert-message.alert-success {
-  background-color: #f0f6eb;
+  background-color: #e2edd7;
   border-color: #6fa938; }
   .alert-message.alert-success, .alert-message.alert-success p, .alert-message.alert-success a {
     color: #333; }
@@ -3922,7 +4002,7 @@ pre h4,
   margin-bottom: -1px; }
 
 /*
-# Example Tabs
+# Example tabs
 */
 .example-tabs .tabs {
   margin-left: -1px;
@@ -3985,12 +4065,13 @@ pre h4,
 .example-tabs ol.files {
   margin-top: 0;
   padding-top: 20px;
-  padding-bottom: 20px; }
+  padding-bottom: 20px;
+  padding-right: 20px; }
 .example-tabs div.example {
   padding: 20px; }
 
 /*
-# Examples Code
+# Example code
 */
 .example-tooltip1 {
   position: relative; }
@@ -4189,6 +4270,9 @@ a[href^="http"]:before {
   background-color: #fff;
   padding: 20px; }
 
+/*
+# Toolbelt
+*/
 .triangle01 {
   display: inline-block;
   vertical-align: middle;

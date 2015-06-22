@@ -58,23 +58,30 @@ $z-layers: (
 /*
 # Basic color palette
 */
-$black:                 #000;
-$grey1:                 #333;
-$grey2:                 #666;
-$grey3:                 #999;
-$grey4:                 #ccc;
-$grey5:                 #eee;
-$white:                 #fff;
+$black:     #000;
+$grey1:     #333;
+$grey2:     #666;
+$grey3:     #999;
+$grey4:     #ccc;
+$grey5:     #eee;
+$white:     #fff;
 
-$violet1:               #a5037c;
-$green1:                #6fa938;
-$blue1:                 #109acc;
-$red1:                  #e53f32;
-$yellow1:               #e9ac00;
-$turquise1:             #86cee0;
+$violet1:   #a5037c;
+$green1:    #6fa938;
+$blue1:     #109acc;
+$red1:      #e53f32;
+$yellow1:   #e9ac00;
+$turquise1: #86cee0;
+
+$violet2:   tint($violet1, 80%);
+$blue2:     tint($blue1, 80%);
+$green2:    tint($green1, 80%);
+$red2:      tint($red1, 80%);
+$yellow2:   tint($yellow1, 80%);
+$turquise2:  tint($turquise1, 80%);
 
 /*
-# basic site colors
+# Basic site colors
 */
 $text-color:            $grey1;
 
@@ -86,19 +93,12 @@ $hr-color:              $grey1;
 
 $body-bg-color:         $white;
 
-$primary-color:         $blue1;
-$info-color:            $turquise1;
-$error-color:           $red1;
-$danger-color:          $yellow1;
-$success-color:         $green1;
-
 /*
 # Basic typography
 */
 $font-family-1:         "Roboto", "Helvetica-Neue", Helvetica, Arial, sans-serif;
 $font-family-2:         "Oswald", Arial, sans-serif;
 $font-family-3:         "Roboto Mono", "Consolas", "Source Code Pro", "Courier New", Courier, monospace;
-
 
 $base-font-size:        16;             //in px without unit
 $base-line-height:      24;             //in px without unit
@@ -183,25 +183,17 @@ $btn-big-next-border-radius:    23px;
 /*
 # Tables
 */
-$table-breakpoint:      medium;         // max-brakepoint where responsive tables will become scrollable
-$table-bg-color:        transparent;
-$table-bg-accent-color: $white;
-$table-bg-hover-color:  $turquise1;
-$table-border-color:    $grey4;
-$table-cell-padding:    10px;
-
-/*
-# Tooltips
-*/
-$tooltip-color:         $white;
-$tooltip-bg-color:      $blue1;
-$tooltip-font-size:     14px;
-$tooltip-line-height:   22px;
-$tooltip-height:        22px;
-$tooltip-padding:       6px 10px;
-$tooltip-bubble-pos:    -40px;
-$tooltip-triangle-pos:  -6px;
-$tooltip-triangle-size: 6px;
+$table-breakpoint:          medium;         // max-brakepoint where responsive tables will become scrollable
+$table-bg-color:            transparent;
+$table-bg-accent-color:     $white;
+$table-bg-hover-color:      $grey4;
+$table-border-color:        $grey3;
+$table-cell-padding:        10px;
+$table-active-bg-color:     $grey4;
+$table-info-bg-color:       $blue2;
+$table-success-bg-color:    $green2;
+$table-warning-bg-color:    $yellow2;
+$table-error-bg-color:      $red2;
 
 /*
 # Tabs
@@ -218,6 +210,19 @@ $tab-active-border-color:       $grey2;
 $tab-active-bg-color:           $grey5;
 
 /*
+# Tooltips
+*/
+$tooltip-color:         $white;
+$tooltip-bg-color:      $blue1;
+$tooltip-font-size:     14px;
+$tooltip-line-height:   22px;
+$tooltip-height:        22px;
+$tooltip-padding:       6px 10px;
+$tooltip-bubble-pos:    -40px;
+$tooltip-triangle-pos:  -6px;
+$tooltip-triangle-size: 6px;
+
+/*
 # Alerts
 */
 $alert-font-family:             $font-family-1;
@@ -228,20 +233,20 @@ $alert-margin:                  0 0 $base-line-height-px 0;
 $alert-border:                  1px solid;
 
 $alert-info-color:              $grey1;
-$alert-info-bg-color:           tint($blue1, 90);
+$alert-info-bg-color:           $blue2;
 $alert-info-border-color:       $blue1;
 
 $alert-danger-color:            $grey1;
-$alert-danger-bg-color:         tint($danger-color, 90);
-$alert-danger-border-color:     $danger-color;
+$alert-danger-bg-color:         $yellow2;
+$alert-danger-border-color:     $yellow1;
 
 $alert-error-color:             $grey1;
-$alert-error-bg-color:          tint($error-color, 90);
-$alert-error-border-color:      $error-color;
+$alert-error-bg-color:          $red2;
+$alert-error-border-color:      $red1;
 
 $alert-success-color:           $grey1;
-$alert-success-bg-color:        tint($success-color, 90);
-$alert-success-border-color:    $success-color;
+$alert-success-bg-color:        $green2;
+$alert-success-border-color:    $green1;
 
 /*
 # Dropdowns
