@@ -9,7 +9,7 @@ Based on http://codepen.io/njsteele/pen/ajLpb
 @mixin remove-whitespace {
     font-size: .1%; // 0 doesn't always work, e.g. Safari 5/win
     line-height: 0;
-    //word-spacing: -.3em; // needed by browser with min font-size > 0, e.g. Opera
+    word-spacing: -.3em; // needed by browser with min font-size > 0, e.g. Opera
 }
 
 @mixin starOn() {
@@ -103,6 +103,7 @@ fieldset {
 .formrow {
     .label {
         font-size: $form-label-font-size;
+        word-spacing: normal;
         &.req:after {
             content: "*";
             color: $form-error-color;
@@ -113,6 +114,7 @@ fieldset {
     }
     .formitem {
         display: inline-block;
+        word-spacing: normal;
         vertical-align: baseline;
         width: 100%;
         padding: 0 0 15px;
