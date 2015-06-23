@@ -6,7 +6,8 @@
 # Code coloring style-overrides
 */
 .hljs,
-.example-content {
+.example-content,
+div.example {
     padding: 10px !important;
     position: relative;
     @include bp(small) {
@@ -48,9 +49,12 @@ pre h4,
     display: inline-block;
     position: relative;
     color: $grey2;
-    padding: $tab-padding;
+    padding: 10px;
     @include border-radius(3px 3px 0 0);
     margin-bottom: -1px;
+    @include bp(small) {
+        padding: $tab-padding;
+    }
 }
 
 /*
@@ -67,6 +71,10 @@ pre h4,
         color: $grey3;
         color: rgba($grey1, 0.6);
         font-family: $font-family-2;
+        padding: 10px;
+        @include bp(small) {
+            padding: $tab-padding;
+        }
     }
     > .tabs > li > a:hover {
         color: $white;
