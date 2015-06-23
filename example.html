@@ -71,6 +71,7 @@
                 <button class="dropdown-toggle"><i class="fa fa-bars"></i></button>
                 <ul>
                     <li id="nav-basic"><a href="#basic">Basics</a></li>
+                    <li id="nav-toolbelt"><a href="#toolbelt">Toolbelt</a></li>
                     <li id="nav-grid"><a href="#grid">Grid</a></li>
                     <li id="nav-forms"><a href="#forms">Forms</a></li>
                     <li id="nav-buttons"><a href="#buttons">Buttons</a></li>
@@ -80,7 +81,6 @@
                     <li id="nav-tooltips"><a href="#tooltips">Tooltips</a></li>
                     <li id="nav-alerts"><a href="#alerts">Alerts</a></li>
                     <li id="nav-dropdowns"><a href="#dropdowns">Dropdowns</a></li>
-                    <li id="nav-toolbelt"><a href="#toolbelt">Toolbelt</a></li>
                 </ul>
             </nav>
         </div>
@@ -406,14 +406,668 @@
                 </section>
                 <hr>
                 <section>
+                    <a id="toolbelt"></a>
+                    <h2>Toolbelt</h2>
+                    <p>The file <code class="files">base/_toolbelt.scss</code> contains a collection of useful helper mixins, placeholders and classes.</p>
+                    <article>
+                        <h3>Global breakpoint configuration</h3>
+                        <p>When creating a responsive site, use the Sass-map <code class="css">$breakpoints</code> in <code class="files">sass/base/_vars.scss</code> to map names to the values, making breakpoint management easier. By sticking to this map you are able to keep track of your breakpoint values and to change your media queries globally without accidently overlooking one.</p>
+                        <p>Add more breakpoints as you like or change the names and values entirely. But make sure to order the values in an upward direction, starting with the smallest one, followed by the second smallest one and so on. You may profit by the following mixins and classes that rely on <code class="css">$breakpoints</code>.</p>
+
+                        <div class="example-tabs tabs-container">
+                            <ul class="tabs">
+                                <li><a class="css" href="#gbc-scss">SCSS</a></li>
+                                <li><a class="files" href="#gbc-files">Files</a></li>
+                            </ul>
+                            <div id="gbc-scss" class="tab-content">
+<pre>
+<code class="css">$breakpoints: (
+    small:  500px,
+    medium: 700px,
+    big:    900px
+);
+</code></pre>
+                            </div>
+                            <div id="gbc-files" class="tab-content">
+                                <ul class="files">
+                                    <li>sass/base/_vars.scss</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </article>
+                    <article>
+                        <h3>@mixin bp</h3>
+                        <p>Dynamic breakpoint mixin for responsive webdesign. Use it to create min-width media queries tied to your <code class="css">$breakpoints</code>.</p>
+                        <div class="example-tabs tabs-container">
+                            <ul class="tabs">
+                                <li><a class="css" href="#bp-scss">SCSS</a></li>
+                                <li><a class="css" href="#bp-css">Generated CSS</a></li>
+                                <li><a class="files" href="#bp-files">Files</a></li>
+                            </ul>
+                            <div id="bp-scss" class="tab-content">
+
+<pre>
+<code class="css">$breakpoints: (
+    small:  500px,
+    medium: 700px,
+    big:    900px
+);
+
+.wrapper {
+    /* Styles for mobile resolution */
+
+    @include bp(small) {
+        /* Styles for small resolution */
+    }
+
+    @include bp(medium) {
+        /* Styles for medium resolution */
+    }
+
+    @include bp(big) {
+        /* Styles for big resolution */
+    }
+}
+</code></pre>
+                            </div>
+                            <div id="bp-css" class="tab-content">
+<pre>
+<code class="css">.wrapper {
+    /* Styles for mobile resolution */
+}
+
+@media (min-width: 500px) {
+    .wrapper {
+        /* Styles for small resolution */
+    }
+}
+
+@media (min-width: 700px) {
+    .wrapper {
+        /* Styles for medium resolution */
+    }
+}
+
+@media (min-width: 900px) {
+    .wrapper {
+        /* Styles for big resolution */
+    }
+}
+</code></pre>
+                            </div>
+                            <div id="bp-files" class="tab-content">
+                                <ul class="files">
+                                    <li>sass/base/_vars.scss (breakpoint configuration)</li>
+                                    <li>sass/base/_toolbelt.scss (the mixin)</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </article>
+                    <article>
+                        <h3>@mixin bp-max</h3>
+                        <p>Another dynamic breakpoint mixin creating max-width media queries instead. Please keep in mind that this mixin substracts 1px from all values of <code class="css">$breakpoints</code> since they are considered to be min-width breakpoints in the proper sense.</p>
+                        <div class="example-tabs tabs-container">
+                            <ul class="tabs">
+                                <li><a class="css" href="#bp-max-scss">SCSS</a></li>
+                                <li><a class="css" href="#bp-max-css">Generated CSS</a></li>
+                                <li><a class="files" href="#bp-max-files">Files</a></li>
+                            </ul>
+                            <div id="bp-max-scss" class="tab-content">
+<pre>
+<code class="css">$breakpoints: (
+    small:  500px,
+    medium: 700px,
+    big:    900px
+);
+
+.wrapper {
+    /* Styles for desktop resolution */
+
+    @include bp-max(big) {
+        /* Styles for medium resolution */
+    }
+
+    @include bp-max(medium) {
+        /* Styles for small resolution */
+    }
+
+    @include bp-max(small) {
+        /* Styles for mobile resolution */
+    }
+}
+</code></pre>
+                            </div>
+                            <div id="bp-max-css" class="tab-content">
+                            <pre>
+<code class="css">.wrapper {
+    /* Styles for big resolution */
+}
+
+@media (max-width: 499px) {
+    .wrapper {
+        /* Styles for mobile resolution */
+    }
+}
+
+@media (max-width: 699px) {
+    .wrapper {
+        /* Styles for small resolution */
+    }
+}
+
+@media (max-width: 899px) {
+    .wrapper {
+        /* Styles for medium resolution */
+    }
+}
+</code></pre>
+                            </div>
+                            <div id="bp-max-files" class="tab-content">
+                                <ul class="files">
+                                    <li>sass/base/_vars.scss (breakpoint configuration)</li>
+                                    <li>sass/base/_toolbelt.scss (the mixin)</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </article>
+                    <article>
+                        <h3>@mixin hd</h3>
+                        <p>"Retina" breakpoint mixin.</p>
+                        <div class="example-tabs tabs-container">
+                            <ul class="tabs">
+                                <li><a class="css" href="#hd-scss">SCSS</a></li>
+                                <li><a class="css" href="#hd-css">Generated CSS</a></li>
+                                <li><a class="files" href="#hd-files">Files</a></li>
+                            </ul>
+                            <div id="hd-scss" class="tab-content">
+<pre>
+<code class="css">.logo {
+    background: url("logo-100x50.png");
+}
+
+    @include hd {
+        background: url("logo-200x100.png");
+        background-size: 100px 50px;
+    }
+}
+</code></pre>
+                            </div>
+                            <div id="hd-css" class="tab-content">
+<pre>
+<code class="css">.logo {
+    background: url("logo-100x50.png");
+}
+
+@media (-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    .logo {
+        background: url("logo-200x100.png");
+        background-size: 100px 50px;
+    }
+}
+</code></pre>
+                            </div>
+                            <div id="hd-files" class="tab-content">
+                                <ul class="files">
+                                    <li>sass/base/_toolbelt.scss</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </article>
+                    <article>
+                        <h3>Responsive helper classes</h3>
+                        <p>Based on the names and values of your <code class="css">$breakpoints</code>-map, helper classes are generated that help you letting block-level-elements appear or vanish at specific min-width breakpoints.</p>
+                        <div class="example-tabs tabs-container">
+                            <ul class="tabs">
+                                <li><a class="example" href="#rhc-example">Example</a></li>
+                                <li><a class="css" href="#rhc-scss">SCSS</a></li>
+                                <li><a class="files" href="#rhc-files">Files</a></li>
+                            </ul>
+                            <div id="rhc-example" class="tab-content">
+                                <div class="example">
+                                    <p>Currently visible:</p>
+                                    <div class="hide-small">.hide-small</div>
+                                    <div class="hide-medium">.hide-medium</div>
+                                    <div class="hide-big">.hide-big</div>
+                                    <div class="reveal-small">.reveal-small</div>
+                                    <div class="reveal-medium">.reveal-medium</div>
+                                    <div class="reveal-big">.reveal-big</div>
+                                    <br>
+                                    <p>(Resize browser window to change values)</p>
+                                </div>
+                            </div>
+                            <div id="rhc-scss" class="tab-content">
+<pre>
+<code class="css">/*
+breakpoint configuation
+*/
+$breakpoints: (
+    small:  500px,
+    medium: 700px,
+    big:    900px
+);
+
+/*
+The following classes are generated according to the breakpoint configuation above:
+*/
+.reveal-small {...}
+.reveal-medium {...}
+.reveal-big {...}
+.hide-small {...}
+.hide-medium {...}
+.hide-big {...}
+</code></pre>
+                            </div>
+                            <div id="rhc-files" class="tab-content">
+                                <ul class="files">
+                                    <li>sass/base/_vars.scss (breakpoint configuration)</li>
+                                    <li>sass/base/_toolbelt.scss (the generator)</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </article>
+                    <article>
+                        <h3>#responsive status</h3>
+                        <p>This feature allows you to add jQuery code to your responsive web design, such as - for example - programming a menu that not only looks and but also behaves differently in various screen resolutions. Once again the editable Sass-map <code class="css">$breakpoints</code> is the starting point for this feature.</p>
+                        <p> The HTML-element <code class="html">&lt;span id="responsive-status"&gt;&lt;/span&gt;</code> has to be placed inside your main layout file. Its css-attribute <code class="css">font-family</code> will be set to the name of the currently active min-width breakpoint. This attribute can be read via JavaScript-Code, so your scripts can react to specific screen resolutions. The jQuery-Code below is located in the file <code class="files">js/responsive.js</code>. You may have to change the function <code class="js">checkResponsiveStatus</code> or more specifically the <code class="js">switch(status)</code>-expression so that the cases match the names of your breakpoints in <code class="css">$breakpoints</code> which your jQuery code should react to.</p>
+                        <p>As an additional gimmick, the class-attribute of the <code class="html">&lt;body&gt;</code>-tag will be set to a value being the name of the currently active min-width breakpoint, prefixed with "responsive-". For example it says <code class="html">&lt;body class="responsive-medium"&gt;</code> for the breakpoint called "medium". This helps you to make your responsive site compatible to legacy browsers if necessary.</p>
+                        <div class="example-tabs tabs-container">
+                            <ul class="tabs">
+                                <li><a class="example" href="#rs-example">Example</a></li>
+                                <li><a class="html" href="#rs-html">HTML</a></li>
+                                <li><a class="css" href="#rs-scss">SCSS</a></li>
+                                <li><a class="js" href="#rs-js">jQuery</a></li>
+                                <li><a class="files" href="#rs-files">Files</a></li>
+                            </ul>
+                            <div id="rs-example" class="tab-content">
+                                <div class="example">
+                                    <p>
+                                        <b>Current status:</b> <span class="example-rs"></span><br>
+                                        <b>&lt;body&gt;-classname:</b> responsive-<span class="example-rs"></span>
+                                    </p>
+                                    <p>(Resize browser window to change values)</p>
+                                </div>
+                            </div>
+                            <div id="rs-html" class="tab-content">
+<pre><code class="html">&lt;span id="responsive-status"&gt;&lt;/span&gt;</code></pre>
+                            </div>
+                            <div id="rs-scss" class="tab-content">
+<pre><code class="css">$breakpoints: (
+    small:  500px,
+    medium: 700px,
+    big:    900px
+);
+
+#responsive-status {
+    display: none;
+    font-family: "mobile";
+}
+@each $breakpoint in $breakpoints {
+    $name: nth($breakpoint, 1);
+    $width: nth($breakpoint, 2);
+    @media (min-width: $width) {
+        #responsive-status {
+            font-family: "#{$name}";
+        }
+    }
+}
+</code></pre>
+                            </div>
+                            <div id="rs-js" class="tab-content">
+<pre>
+<code class="js">function checkResponsiveStatus() {
+    var status = $('#responsive-status').css('font-family');
+
+    if (status != laststatus) {
+
+        // Set &lt;body&gt; classname to responsive-{name of current breakpoint}
+        $('body').removeClass (function (index, css) {
+            return (css.match (/(^|\s)responsive-\S+/g) || []).join(' ');
+        });
+        $('body').addClass("responsive-" + status);
+
+        // Call functions tied to current breakpoint
+        // Add your own cases if you like
+        switch(status) {
+            case "mobile":
+                console.log("JavaScript-Code for mobile resolution");
+                break;
+
+            case "small":
+                console.log("JavaScript-Code for small resolution");
+                break;
+
+            case "medium":
+                console.log("JavaScript-Code for medium resolution");
+                break;
+
+            case "big":
+                console.log("JavaScript-Code for big resolution");
+                break;
+        }
+    }
+    laststatus = status;
+}
+
+var laststatus = false;
+
+$(document).ready(function() {
+
+    $( window ).bind( "resize", function(){
+        checkResponsiveStatus();
+    });
+
+    checkResponsiveStatus();
+
+});
+</code></pre>
+                            </div>
+                            <div id="rs-files" class="tab-content">
+                                <ul class="files">
+                                    <li>sass/base/_vars.scss (breakpoint configuration)</li>
+                                    <li>sass/base/_toolbelt.scss (SCSS-code)</li>
+                                    <li>example.html (HTML-code)</li>
+                                    <li>js/responsive.js (jQuery-Code)</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </article>
+                    <article>
+                        <h3>z-index Management</h3>
+                        <p>Like managing responsive breakpoints, keeping track of your website's z-layers can be far easier and much more convenient if you gather all z-indexes into a single map. Instead of assigning the z-index values directly, write <code class="css">z-index: z({layer-name})</code>. This is especially helpful when you need to debug your code.</p>
+                        <div class="example-tabs tabs-container">
+                            <ul class="tabs">
+                                <li><a class="css" href="#z-scss">SCSS</a></li>
+                                <li><a class="files" href="#z-files">Files</a></li>
+                            </ul>
+                            <div id="z-scss" class="tab-content">
+<pre>
+<code class="css">$z-layers: (
+    header:    30,
+    content:   10,
+    footer:    20
+);
+
+.header {   z-index: z(header);   }
+.content {  z-index: z(content);  }
+.footer  {  z-index: z(footer);   }
+</code></pre>
+                            </div>
+                            <div id="z-files" class="tab-content">
+                                <ul class="files">
+                                    <li>sass/base/_vars.scss (z-index configuration)</li>
+                                    <li>sass/base/_toolbelt.scss (the function)</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                    </article>
+                    <article>
+                        <h3>REM font-size and line-height</h3>
+                        <p>
+                            Especially when dealing with responsive web design, it is recommended using relative values like <b>em</b> or <b>rem</b> for your <code class="css">font size</code>-allocations. By sticking to this principle you are able to change the size of your entire website's typography by editing only the <code class="css">font-size</code> value of the <code class="html">&lt;html&gt;</code>-Element. While <b>em</b> is relative to the font-size of its direct or nearest parent, <b>rem</b> is only relative to the html (root) font-size, making using the latter easier to scale type across the entire page.
+                        </p>
+                        <p>
+                            <code class="css">html { font-size: 62.5%; }</code> sets up a base font-size of 10px. Therefore 10px equals 1rem, 15px equals 1.5rem, 24px equals 2.4rem and so on. With this prerequisite you can use this mixin to set your font-sizes and line-heights the old way - with pixel values (without the "px"-units however) - and still write code that is fit for responsive web design.
+                        </p>
+                        <p>
+                            Of course this mixin has a px-fallback or legacy browsers.
+                        </p>
+                            <a href="http://css-tricks.com/snippets/css/less-mixin-for-rem-font-sizing/">http://css-tricks.com/snippets/css/less-mixin-for-rem-font-sizing/</a>
+                        </p>
+                        <div class="example-tabs tabs-container">
+                            <ul class="tabs">
+                                <li><a class="css" href="#rem-scss">SCSS</a></li>
+                                <li><a class="css" href="#rem-css">Generated CSS</a></li>
+                                <li><a class="files" href="#rem-files">Files</a></li>
+                            </ul>
+                            <div id="rem-scss" class="tab-content">
+<pre>
+<code class="css">p {
+    @include font-size(16, 24);
+}
+</code></pre>
+                            </div>
+                            <div id="rem-css" class="tab-content">
+<pre>
+<code class="css">p {
+    font-size: 16px;
+    line-height: 24px;
+    font-size: 1.6rem;
+    line-height: 2.4rem;
+}
+</code></pre>
+                            </div>
+                            <div id="rem-files" class="tab-content">
+                                <ul class="files">
+                                    <li>sass/base/_toolbelt.scss</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                    </article>
+                    <article>
+                        <h3>Truncate Text</h3>
+                        <p>
+                            A small mixin ensuring that your text element doesn’t overflow its container and breaks nicely. It takes one parameter, which is any of the valid text-overflow values (the default value "ellipsis", "clip", or a string).
+                        </p>
+                        <p>
+                            <a href="http://hackingui.com/front-end/10-best-scss-utilities/">http://hackingui.com/front-end/10-best-scss-utilities/</a>
+                        </p>
+                        <div class="example-tabs tabs-container">
+                            <ul class="tabs">
+                                <li><a class="example" href="#truncate-example">Example</a></li>
+                                <li><a class="css" href="#truncate-scss">SCSS</a></li>
+                                <li><a class="files" href="#truncate-files">Files</a></li>
+                            </ul>
+                            <div id="truncate-example" class="tab-content">
+                                <div class="example">
+                                    <p class="example-truncate">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum in posuere orci. Nam euismod gravida nunc. Ut accumsan vitae dolor interdum ullamcorper. Ut luctus, lacus quis finibus bibendum, tortor nisl tristique mauris, eu efficitur nisi felis sit amet lacus. </p>
+                                </div>
+                            </div>
+                            <div id="truncate-scss" class="tab-content">
+<pre>
+<code class="css">.example-truncate {
+    @include truncate-text; // parameter is optional
+}
+</code></pre>
+                            </div>
+                            <div id="truncate-files" class="tab-content">
+                                <ul class="files">
+                                    <li>sass/base/_toolbelt.scss</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                    </article>
+                    <article>
+                        <h3>@mixin center-vertical</h3>
+                        <p>
+                            For vertically centering inline-block-elements with a dynamic size. Doesn’t require an extra, non-semantic HTML element.
+                        </p>
+                        <p>
+                            <a href="http://hackingui.com/front-end/10-best-scss-utilities/">http://hackingui.com/front-end/10-best-scss-utilities/</a>
+                        </p>
+                        <div class="example-tabs tabs-container">
+                            <ul class="tabs">
+                                <li><a class="example" href="#center-v-example">Example</a></li>
+                                <li><a class="html" href="#center-v-html">HTML</a></li>
+                                <li><a class="css" href="#center-v-scss">SCSS</a></li>
+                                <li><a class="files" href="#center-v-files">Files</a></li>
+                            </ul>
+                            <div id="center-v-example" class="tab-content">
+                                <div class="example">
+                                    <div class="example-center-vert">
+                                        <div class="example-center-vert-item">I am a lonely div inside another lonely div. But at least I am a vertically centered div!</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="center-v-html" class="tab-content">
+<pre>
+<code class="html">&lt;div class="example-center-vert"&gt;
+    &lt;div class="example-center-vert-item"&gt;
+        I am a lonely div inside another lonely div. But at least I am a vertically centered div!
+    &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+                            </div>
+                            <div id="center-v-scss" class="tab-content">
+<pre>
+<code class="css">.example-center-vert {
+    @include center-vertical;
+    [...]
+}
+
+.example-center-vert-item {
+    @include inline-block;
+    [...]
+}
+</code></pre>
+                            </div>
+                            <div id="center-v-files" class="tab-content">
+                                <ul class="files">
+                                    <li>sass/base/_toolbelt.scss</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </article>
+                    <article>
+                        <h3>@mixin center-both</h3>
+                        <p>
+                            Horizontally and vertically center elements with a dynamic size. Works only in modern Browsers.
+                        </p>
+                        <div class="example-tabs tabs-container">
+                            <ul class="tabs">
+                                <li><a class="example" href="#center-b-example">Example</a></li>
+                                <li><a class="html" href="#center-b-html">HTML</a></li>
+                                <li><a class="css" href="#center-b-scss">SCSS</a></li>
+                                <li><a class="files" href="#center-b-files">Files</a></li>
+                            </ul>
+                            <div id="center-b-example" class="tab-content">
+                                <div class="example">
+                                    <div class="example-center-both">
+                                        <div class="example-center-both-item">I am a lonely div inside another lonely div. But at least I am a perfectly centered div!</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="center-b-html" class="tab-content">
+<pre>
+<code class="html">&lt;div class="example-center-both"&gt;
+    &lt;div class="example-center-both-item"&gt;
+        I am a lonely div inside another lonely div. But at least I am a perfectly centered div!
+    &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+                            </div>
+                            <div id="center-b-scss" class="tab-content">
+<pre>
+<code class="css">.example-center-both {
+    position: relative;
+    [...]
+}
+
+.example-center-both-item {
+    @include center-both;
+    [...]
+}
+</code></pre>
+                            </div>
+                            <div id="center-b-files" class="tab-content">
+                                <ul class="files">
+                                    <li>sass/base/_toolbelt.scss</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </article>
+                    <article>
+                        <h3>Triangle</h3>
+                        <p>
+                            <code class="css">@mixin triangle</code> creates a right angled triangle pointing to a direction specified by <code class="css">$direction</code>. <code class="css">@mixin triangle-absolute</code> further provides styles for absolute positioning of pseudo-elements.
+                        </p>
+                        <div class="example-tabs tabs-container">
+                            <ul class="tabs">
+                                <li><a class="example" href="#triangle-example">Example</a></li>
+                                <li><a class="html" href="#triangle-html">HTML</a></li>
+                                <li><a class="css" href="#triangle-scss">SCSS</a></li>
+                                <li><a class="files" href="#triangle-files">Files</a></li>
+                            </ul>
+                            <div id="triangle-example" class="tab-content">
+                                <div class="example">
+                                    <span class="triangle01">Me haz triangle</span>
+                                </div>
+                            </div>
+                            <div id="triangle-html" class="tab-content">
+<pre>
+<code class="html">&lt;span class="tooltip"&gt;Me haz triangle&lt;/span&gt;
+</code></pre>
+                            </div>
+                            <div id="triangle-scss" class="tab-content">
+<pre>
+<code class="css">.tooltip {
+    position: relative;
+    [...]
+    &:before {
+        @include triangle-absolute(bottom, 10px, $blue1);
+        bottom: -10px;
+        left: 50%;
+        @include translate(-50%, 0);
+    }
+}
+</code></pre>
+                            </div>
+                            <div id="triangle-files" class="tab-content">
+                                <ul class="files">
+                                    <li>sass/base/_toolbelt.scss</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </article>
+                    <article>
+                        <h3>Gradient Transition</h3>
+                        <p>
+                            <code class="css">@mixin gradient-transition</code> creates a :hover-transition-effect with a gradient.
+                        </p>
+                        <div class="example-tabs tabs-container">
+                            <ul class="tabs">
+                                <li><a class="example" href="#gtrans-example">Example</a></li>
+                                <li><a class="css" href="#gtrans-scss">SCSS</a></li>
+                                <li><a class="files" href="#gtrans-files">Files</a></li>
+                            </ul>
+                            <div id="gtrans-example" class="tab-content">
+                                <div class="example">
+                                    <a class="transition1" href="javascript://">Me haz transition</a>
+                                </div>
+                            </div>
+                            <div id="gtrans-scss" class="tab-content">
+<pre>
+<code class="css">.button {
+    @include gradient-transition($grey5, $grey4, 0.25s);
+    [...]
+}
+</code></pre>
+                            </div>
+                            <div id="gtrans-files" class="tab-content">
+                                <ul class="files">
+                                    <li>sass/base/_toolbelt.scss</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </article>
+                </section>
+                <hr>
+
+                <section>
                     <a id="grid"></a>
                     <h2>Grid</h2>
+                    <p>
+                        When building a responsive website, I recommend using the Sass-map <code class="css">$breakpoints</code> to keep track of your responsive breakpoints. Also, use the mixin <code class="css">@mixin bp</code> to write your @media-queries. Both are described in the <a href="#toolbelt">toolbelt section</a>.
+                    </p>
                     <h3>Susy</h3>
                     <p>
-                        Responsive grid system.<br>
+                        Responsive grid system.
+                    </p>
+                    <p>
                         <a href="http://susy.oddbird.net/">http://susy.oddbird.net/</a>
                     </p>
-                    <p>The Sass-<code class="css">@mixin bp</code> <a href="#toolbelt">is described here.</a></p>
 
                     <div class="example-tabs tabs-container">
                         <ul class="tabs">
@@ -510,7 +1164,10 @@ $susy: (
 
                         </div>
                         <div id="cols-s-files" class="tab-content">
-                            <ul class="files"><li>bower_components/susy/</li></ul>
+                            <ul class="files">
+                                <li>sass/base/_vars.scss</li>
+                                <li>bower_components/susy/</li>
+                            </ul>
                         </div>
                     </div>
 
@@ -1643,7 +2300,7 @@ $susy: (
                     <a id="tooltips"></a>
                     <h2>Tooltips</h2>
                     <p>
-                        These pure CSS tooltips are easy to implement and still allow you to place the content in the HTML. They require the triangle mixin from <code>sass/base/_toolbelt.scss</code>, and grab their text content from an HTML5 data-tooltip property on the element (although this can be changed to any other attribute you prefer, including the standard <code class="html">title</code>).
+                        These pure CSS tooltips are easy to implement and still allow you to place the content in the HTML. They require the triangle mixin from <code class="files">sass/base/_toolbelt.scss</code>, and grab their text content from an HTML5 data-tooltip property on the element (although this can be changed to any other attribute you prefer, including the standard <code class="html">title</code>).
                     </p>
                     <p>Based on <a href="http://hackingui.com/front-end/10-best-scss-utilities/">http://hackingui.com/front-end/10-best-scss-utilities/</a>.</p>
                     <div class="example-tabs tabs-container">
@@ -1752,7 +2409,7 @@ $susy: (
                     <h2>Dropdowns</h2>
                     <p>Inspired by <a href="http://getbootstrap.com/">Bootstrap</a>.</p>
                     <h3>Dropdown</h3>
-                    <p>A dropdown-menu is always wrapped in <code class="css">.dropdown</code>. Inside, a <code class="css">.dropdown-toggle</code> will function as toggle for the menu, followed by a <code class="html">&lt;ul&gt;</code> that contains the menu itself. Dropdowns require the triangle mixin from <code>sass/base/_toolbelt.scss</code>.</p>
+                    <p>A dropdown-menu is always wrapped in <code class="css">.dropdown</code>. Inside, a <code class="css">.dropdown-toggle</code> will function as toggle for the menu, followed by a <code class="html">&lt;ul&gt;</code> that contains the menu itself. Dropdowns require the triangle mixin from <code class="files">sass/base/_toolbelt.scss</code>.</p>
                     <div class="example-tabs tabs-container">
                         <ul class="tabs">
                             <li><a class="example" href="#dropdown-example">Example</a></li>
@@ -1854,635 +2511,6 @@ $susy: (
                             </ul>
                         </div>
                     </div>
-                </section>
-                <hr>
-                <section>
-                    <a id="toolbelt"></a>
-                    <h2>Toolbelt</h2>
-                    <p>The file <code>base/_toolbelt.scss</code> contains a collection of useful helper mixins, placeholders and classes.</p>
-                    <article>
-                        <h3>Global breakpoint configuration</h3>
-                        <p>If you are creating a responsive site, set your breakpoints first, by editing the Sass-variable <code class="css">$breakpoints</code> in <code>sass/base/_vars.scss</code>. The benefit of working with this variable is the ability to change your media queries globally without overlooking one. Add more breakpoints as you like.</p>
-                        <p>You may profit by the following mixins and classes that rely on this variable.</p>
-
-                        <div class="example-tabs tabs-container">
-                            <ul class="tabs">
-                                <li><a class="css" href="#gbc-scss">SCSS</a></li>
-                                <li><a class="files" href="#gbc-files">Files</a></li>
-                            </ul>
-                            <div id="gbc-scss" class="tab-content">
-<pre>
-<code class="css">$breakpoints: (
-    small:  500px,
-    medium: 700px,
-    big:    900px
-);
-</code></pre>
-                            </div>
-                            <div id="gbc-files" class="tab-content">
-                                <ul class="files">
-                                    <li>sass/base/_vars.scss</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </article>
-                    <article>
-                        <h3>@mixin bp</h3>
-                        <p>Dynamic breakpoint mixin for responsive webdesign. Use it to create min-width media queries tied to your breakpoints.</p>
-                        <div class="example-tabs tabs-container">
-                            <ul class="tabs">
-                                <li><a class="css" href="#bp-scss">SCSS</a></li>
-                                <li><a class="css" href="#bp-css">Generated CSS</a></li>
-                                <li><a class="files" href="#bp-files">Files</a></li>
-                            </ul>
-                            <div id="bp-scss" class="tab-content">
-
-<pre>
-<code class="css">$breakpoints: (
-    small:  500px,
-    medium: 700px,
-    big:    900px
-);
-
-.wrapper {
-    /* Styles for mobile resolution */
-
-    @include bp(small) {
-        /* Styles for small resolution */
-    }
-
-    @include bp(medium) {
-        /* Styles for medium resolution */
-    }
-
-    @include bp(big) {
-        /* Styles for big resolution */
-    }
-}
-</code></pre>
-                            </div>
-                            <div id="bp-css" class="tab-content">
-<pre>
-<code class="css">.wrapper {
-    /* Styles for mobile resolution */
-}
-
-@media (min-width: 500px) {
-    .wrapper {
-        /* Styles for small resolution */
-    }
-}
-
-@media (min-width: 700px) {
-    .wrapper {
-        /* Styles for medium resolution */
-    }
-}
-
-@media (min-width: 900px) {
-    .wrapper {
-        /* Styles for big resolution */
-    }
-}
-</code></pre>
-                            </div>
-                            <div id="bp-files" class="tab-content">
-                                <ul class="files">
-                                    <li>sass/base/_vars.scss (breakpoint configuration)</li>
-                                    <li>sass/base/_toolbelt.scss (the mixin)</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </article>
-                    <article>
-                        <h3>@mixin bp-max</h3>
-                        <p>Another dynamic breakpoint mixin creating max-width media queries instead.</p>
-                        <div class="example-tabs tabs-container">
-                            <ul class="tabs">
-                                <li><a class="css" href="#bp-max-scss">SCSS</a></li>
-                                <li><a class="css" href="#bp-max-css">Generated CSS</a></li>
-                                <li><a class="files" href="#bp-max-files">Files</a></li>
-                            </ul>
-                            <div id="bp-max-scss" class="tab-content">
-<pre>
-<code class="css">$breakpoints: (
-    small:  500px,
-    medium: 700px,
-    big:    900px
-);
-
-.wrapper {
-    /* Styles for desktop resolution */
-
-    @include bp-max(big) {
-        /* Styles for medium resolution */
-    }
-
-    @include bp-max(medium) {
-        /* Styles for small resolution */
-    }
-
-    @include bp-max(small) {
-        /* Styles for mobile resolution */
-    }
-}
-</code></pre>
-                            </div>
-                            <div id="bp-max-css" class="tab-content">
-                            <pre>
-<code class="css">.wrapper {
-    /* Styles for big resolution */
-}
-
-@media (max-width: 499px) {
-    .wrapper {
-        /* Styles for mobile resolution */
-    }
-}
-
-@media (max-width: 699px) {
-    .wrapper {
-        /* Styles for small resolution */
-    }
-}
-
-@media (max-width: 899px) {
-    .wrapper {
-        /* Styles for medium resolution */
-    }
-}
-</code></pre>
-                            </div>
-                            <div id="bp-max-files" class="tab-content">
-                                <ul class="files">
-                                    <li>sass/base/_vars.scss (breakpoint configuration)</li>
-                                    <li>sass/base/_toolbelt.scss (the mixin)</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </article>
-                    <article>
-                        <h3>@mixin hd</h3>
-                        <p>"Retina" breakpoint mixin.</p>
-                        <div class="example-tabs tabs-container">
-                            <ul class="tabs">
-                                <li><a class="css" href="#hd-scss">SCSS</a></li>
-                                <li><a class="css" href="#hd-css">Generated CSS</a></li>
-                                <li><a class="files" href="#hd-files">Files</a></li>
-                            </ul>
-                            <div id="hd-scss" class="tab-content">
-<pre>
-<code class="css">.logo {
-    background: url("logo-100x50.png");
-}
-
-    @include hd {
-        background: url("logo-200x100.png");
-        background-size: 100px 50px;
-    }
-}
-</code></pre>
-                            </div>
-                            <div id="hd-css" class="tab-content">
-<pre>
-<code class="css">.logo {
-    background: url("logo-100x50.png");
-}
-
-@media (-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
-    .logo {
-        background: url("logo-200x100.png");
-        background-size: 100px 50px;
-    }
-}
-</code></pre>
-                            </div>
-                            <div id="hd-files" class="tab-content">
-                                <ul class="files">
-                                    <li>sass/base/_toolbelt.scss</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </article>
-                    <article>
-                        <h3>Responsive helper classes</h3>
-                        <p>Based on your own breakpoint configuration helper classed are generated that help you showing or hiding specific block-level-elements at specific breakpoints.</p>
-                        <div class="example-tabs tabs-container">
-                            <ul class="tabs">
-                                <li><a class="example" href="#rhc-example">Example</a></li>
-                                <li><a class="css" href="#rhc-scss">SCSS</a></li>
-                                <li><a class="files" href="#rhc-files">Files</a></li>
-                            </ul>
-                            <div id="rhc-example" class="tab-content">
-                                <div class="example">
-                                    <p>Currently visible:</p>
-                                    <div class="hide-small">.hide-small</div>
-                                    <div class="hide-medium">.hide-medium</div>
-                                    <div class="hide-big">.hide-big</div>
-                                    <div class="reveal-small">.reveal-small</div>
-                                    <div class="reveal-medium">.reveal-medium</div>
-                                    <div class="reveal-big">.reveal-big</div>
-                                    <br>
-                                    <p>(Resize browser window to change values)</p>
-                                </div>
-                            </div>
-                            <div id="rhc-scss" class="tab-content">
-<pre>
-<code class="css">/*
-breakpoint configuation
-*/
-$breakpoints: (
-    small:  500px,
-    medium: 700px,
-    big:    900px
-);
-
-/*
-The following classes are generated according to the breakpoint configuation above:
-*/
-.reveal-small {...}
-.reveal-medium {...}
-.reveal-big {...}
-.hide-small {...}
-.hide-medium {...}
-.hide-big {...}
-</code></pre>
-                            </div>
-                            <div id="rhc-files" class="tab-content">
-                                <ul class="files">
-                                    <li>sass/base/_vars.scss (breakpoint configuration)</li>
-                                    <li>sass/base/_toolbelt.scss (the generator)</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </article>
-                    <article>
-                        <h3>#responsive status</h3>
-                        <p>Nebula enables you to write jQuery code tied to specific breakpoints, such as - for example - adding or removing additional functionality to a menu that is displayed horizontally on desktop but must be shown as a dropdown menu in tablet- or smartphone-resolutions.</p>
-                        <p>The HTML-code <code class="html">&lt;span id="responsive-status"&gt;&lt;/span&gt;</code> has to be placed inside the main layout file. Its css-attribute <code class="css">font-family</code> will be set to the name of the currently active breakpoint. This attribute can be read via JavaScript-Code, so your scripts can react to specific screen resolutions. The jQuery-Code below can be found in <code class="js">js/responsive.js</code> and can be edited by placing your code the switch-statement.</p>
-                        <p>Last but not least, <code class="html">&lt;body&gt;</code> gets a class depending on the current breakpoint, prefixed with "responsive-". For example <code class="html">&lt;body class="responsive-medium"&gt;</code> if the medium breakpoint is currently active. This helps you to make your responsive site compatible to legacy browsers if you need to.</p>
-                        <div class="example-tabs tabs-container">
-                            <ul class="tabs">
-                                <li><a class="example" href="#rs-example">Example</a></li>
-                                <li><a class="html" href="#rs-html">HTML</a></li>
-                                <li><a class="css" href="#rs-scss">SCSS</a></li>
-                                <li><a class="js" href="#rs-js">jQuery</a></li>
-                                <li><a class="files" href="#rs-files">Files</a></li>
-                            </ul>
-                            <div id="rs-example" class="tab-content">
-                                <div class="example">
-                                    <p>
-                                        <b>Current status:</b> <span class="example-rs"></span><br>
-                                        <b>&lt;body&gt;-classname:</b> responsive-<span class="example-rs"></span>
-                                    </p>
-                                    <p>(Resize browser window to change values)</p>
-                                </div>
-                            </div>
-                            <div id="rs-html" class="tab-content">
-<pre><code class="html">&lt;span id="responsive-status"&gt;&lt;/span&gt;</code></pre>
-                            </div>
-                            <div id="rs-scss" class="tab-content">
-<pre><code class="css">$breakpoints: (
-    small:  500px,
-    medium: 700px,
-    big:    900px
-);
-
-#responsive-status {
-    display: none;
-    font-family: "mobile";
-}
-@each $breakpoint in $breakpoints {
-    $name: nth($breakpoint, 1);
-    $width: nth($breakpoint, 2);
-    @media (min-width: $width) {
-        #responsive-status {
-            font-family: "#{$name}";
-        }
-    }
-}
-</code></pre>
-                            </div>
-                            <div id="rs-js" class="tab-content">
-<pre>
-<code class="js">function checkResponsiveStatus() {
-    var status = $('#responsive-status').css('font-family');
-
-    if (status != laststatus) {
-
-        // Set &lt;body&gt; classname to responsive-{name of current breakpoint}
-        $('body').removeClass (function (index, css) {
-            return (css.match (/(^|\s)responsive-\S+/g) || []).join(' ');
-        });
-        $('body').addClass("responsive-" + status);
-
-        // Call functions tied to current breakpoint
-        // Add your own cases if you like
-        switch(status) {
-            case "mobile":
-                console.log("JavaScript-Code for mobile resolution");
-                break;
-
-            case "small":
-                console.log("JavaScript-Code for small resolution");
-                break;
-
-            case "medium":
-                console.log("JavaScript-Code for medium resolution");
-                break;
-
-            case "big":
-                console.log("JavaScript-Code for big resolution");
-                break;
-        }
-    }
-    laststatus = status;
-}
-
-var laststatus = false;
-
-$(document).ready(function() {
-
-    $( window ).bind( "resize", function(){
-        checkResponsiveStatus();
-    });
-
-    checkResponsiveStatus();
-
-});
-</code></pre>
-                            </div>
-                            <div id="rs-files" class="tab-content">
-                                <ul class="files">
-                                    <li>sass/base/_vars.scss (breakpoint configuration)</li>
-                                    <li>sass/base/_toolbelt.scss (SCSS-code)</li>
-                                    <li>example.html (HTML-code)</li>
-                                    <li>js/responsive.js (jQuery-Code)</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </article>
-                    <article>
-                        <h3>z-index Management</h3>
-                        <p>Gather all z-indexes into a single map, and stick to them. Then you know how many layers the application uses, making it easy to understand what’s going on (and, sooner or later, to debug).</p>
-                        <div class="example-tabs tabs-container">
-                            <ul class="tabs">
-                                <li><a class="css" href="#z-scss">SCSS</a></li>
-                                <li><a class="files" href="#z-files">Files</a></li>
-                            </ul>
-                            <div id="z-scss" class="tab-content">
-<pre>
-<code class="css">$z-layers: (
-    header:    30,
-    content:   10,
-    footer:    20
-);
-
-.header {   z-index: z(header);   }
-.content {  z-index: z(content);  }
-.footer  {  z-index: z(footer);   }
-</code></pre>
-                            </div>
-                            <div id="z-files" class="tab-content">
-                                <ul class="files">
-                                    <li>sass/base/_vars.scss (z-index configuration)</li>
-                                    <li>sass/base/_toolbelt.scss (the function)</li>
-                                </ul>
-                            </div>
-                        </div>
-
-                    </article>
-                    <article>
-                        <h3>REM font-size and line-height</h3>
-                        <p>
-                            With px-fallback.<br>
-                            <a href="http://css-tricks.com/snippets/css/less-mixin-for-rem-font-sizing/">http://css-tricks.com/snippets/css/less-mixin-for-rem-font-sizing/</a>
-                        </p>
-                        <div class="example-tabs tabs-container">
-                            <ul class="tabs">
-                                <li><a class="css" href="#rem-scss">SCSS</a></li>
-                                <li><a class="files" href="#rem-files">Files</a></li>
-                            </ul>
-                            <div id="rem-scss" class="tab-content">
-<pre>
-<code class="css">p {
-    @include font-size(16, 24);
-}
-</code></pre>
-                            </div>
-                            <div id="rem-files" class="tab-content">
-                                <ul class="files">
-                                    <li>sass/base/_toolbelt.scss</li>
-                                </ul>
-                            </div>
-                        </div>
-
-                    </article>
-                    <article>
-                        <h3>Truncate Text</h3>
-                        <p>
-                            Ensuring that your text element doesn’t overflow its container and breaks nicely. It takes one parameter, which is any of the valid text-overflow values.
-                            <br>
-                            <a href="http://hackingui.com/front-end/10-best-scss-utilities/">http://hackingui.com/front-end/10-best-scss-utilities/</a>
-                        </p>
-                        <div class="example-tabs tabs-container">
-                            <ul class="tabs">
-                                <li><a class="example" href="#truncate-example">Example</a></li>
-                                <li><a class="css" href="#truncate-scss">SCSS</a></li>
-                                <li><a class="files" href="#truncate-files">Files</a></li>
-                            </ul>
-                            <div id="truncate-example" class="tab-content">
-                                <div class="example">
-                                    <p class="example-truncate">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum in posuere orci. Nam euismod gravida nunc. Ut accumsan vitae dolor interdum ullamcorper. Ut luctus, lacus quis finibus bibendum, tortor nisl tristique mauris, eu efficitur nisi felis sit amet lacus. </p>
-                                </div>
-                            </div>
-                            <div id="truncate-scss" class="tab-content">
-<pre>
-<code class="css">.example-truncate {
-    @include truncate-text; // parameter is optional
-}
-</code></pre>
-                            </div>
-                            <div id="truncate-files" class="tab-content">
-                                <ul class="files">
-                                    <li>sass/base/_toolbelt.scss</li>
-                                </ul>
-                            </div>
-                        </div>
-
-                    </article>
-                    <article>
-                        <h3>@mixin center-vertical</h3>
-                        <p>
-                            For vertically centering inline-block-elements with a dynamic size. Works beautifully and doesn’t require an extra, non-semantic HTML element.
-                            <br>
-                            <a href="http://hackingui.com/front-end/10-best-scss-utilities/">http://hackingui.com/front-end/10-best-scss-utilities/</a>
-                        </p>
-                        <div class="example-tabs tabs-container">
-                            <ul class="tabs">
-                                <li><a class="example" href="#center-v-example">Example</a></li>
-                                <li><a class="html" href="#center-v-html">HTML</a></li>
-                                <li><a class="css" href="#center-v-scss">SCSS</a></li>
-                                <li><a class="files" href="#center-v-files">Files</a></li>
-                            </ul>
-                            <div id="center-v-example" class="tab-content">
-                                <div class="example">
-                                    <div class="example-center-vert">
-                                        <div class="example-center-vert-item">I am a lonely div inside another lonely div. But at least I am a vertically centered div!</div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div id="center-v-html" class="tab-content">
-<pre>
-<code class="html">&lt;div class="example-center-vert"&gt;
-    &lt;div class="example-center-vert-item"&gt;
-        I am a lonely div inside another lonely div. But at least I am a vertically centered div!
-    &lt;/div&gt;
-&lt;/div&gt;
-</code></pre>
-                            </div>
-                            <div id="center-v-scss" class="tab-content">
-<pre>
-<code class="css">.example-center-vert {
-    @include center-vertical;
-    [...]
-}
-
-.example-center-vert-item {
-    @include inline-block;
-    [...]
-}
-</code></pre>
-                            </div>
-                            <div id="center-v-files" class="tab-content">
-                                <ul class="files">
-                                    <li>sass/base/_toolbelt.scss</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </article>
-                    <article>
-                        <h3>@mixin center-both</h3>
-                        <p>
-                            Horizontally and vertically center elements with a dynamic size. Works only in modern Browsers.
-                        </p>
-                        <div class="example-tabs tabs-container">
-                            <ul class="tabs">
-                                <li><a class="example" href="#center-b-example">Example</a></li>
-                                <li><a class="html" href="#center-b-html">HTML</a></li>
-                                <li><a class="css" href="#center-b-scss">SCSS</a></li>
-                                <li><a class="files" href="#center-b-files">Files</a></li>
-                            </ul>
-                            <div id="center-b-example" class="tab-content">
-                                <div class="example">
-                                    <div class="example-center-both">
-                                        <div class="example-center-both-item">I am a lonely div inside another lonely div. But at least I am a perfectly centered div!</div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div id="center-b-html" class="tab-content">
-<pre>
-<code class="html">&lt;div class="example-center-both"&gt;
-    &lt;div class="example-center-both-item"&gt;
-        I am a lonely div inside another lonely div. But at least I am a perfectly centered div!
-    &lt;/div&gt;
-&lt;/div&gt;
-</code></pre>
-                            </div>
-                            <div id="center-b-scss" class="tab-content">
-<pre>
-<code class="css">.example-center-both {
-    position: relative;
-    [...]
-}
-
-.example-center-both-item {
-    @include center-both;
-    [...]
-}
-</code></pre>
-                            </div>
-                            <div id="center-b-files" class="tab-content">
-                                <ul class="files">
-                                    <li>sass/base/_toolbelt.scss</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </article>
-                    <article>
-                        <h3>Triangle</h3>
-                        <p>
-                            <code class="css">@mixin triangle</code> creates a right angled triangle pointing to a direction specified by <code class="css">$direction</code>. <code class="css">@mixin triangle-absolute</code> further provides styles for absolute positioning of pseudo-elements.
-                        </p>
-                        <div class="example-tabs tabs-container">
-                            <ul class="tabs">
-                                <li><a class="example" href="#triangle-example">Example</a></li>
-                                <li><a class="html" href="#triangle-html">HTML</a></li>
-                                <li><a class="css" href="#triangle-scss">SCSS</a></li>
-                                <li><a class="files" href="#triangle-files">Files</a></li>
-                            </ul>
-                            <div id="triangle-example" class="tab-content">
-                                <div class="example">
-                                    <span class="triangle01">Me haz triangle</span>
-                                </div>
-                            </div>
-                            <div id="triangle-html" class="tab-content">
-<pre>
-<code class="html">&lt;span class="tooltip"&gt;Me haz triangle&lt;/span&gt;
-</code></pre>
-                            </div>
-                            <div id="triangle-scss" class="tab-content">
-<pre>
-<code class="css">.tooltip {
-    position: relative;
-    [...]
-    &:before {
-        @include triangle-absolute(bottom, 10px, $blue1);
-        bottom: -10px;
-        left: 50%;
-        @include translate(-50%, 0);
-    }
-}
-</code></pre>
-                            </div>
-                            <div id="triangle-files" class="tab-content">
-                                <ul class="files">
-                                    <li>sass/base/_toolbelt.scss</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </article>
-                    <article>
-                        <h3>Gradient Transition</h3>
-                        <p>
-                            <code class="css">@mixin gradient-transition</code> creates a :hover-transition-effect with a gradient.
-                        </p>
-                        <div class="example-tabs tabs-container">
-                            <ul class="tabs">
-                                <li><a class="example" href="#gtrans-example">Example</a></li>
-                                <li><a class="css" href="#gtrans-scss">SCSS</a></li>
-                                <li><a class="files" href="#gtrans-files">Files</a></li>
-                            </ul>
-                            <div id="gtrans-example" class="tab-content">
-                                <div class="example">
-                                    <a class="transition1" href="javascript://">Me haz transition</a>
-                                </div>
-                            </div>
-                            <div id="gtrans-scss" class="tab-content">
-<pre>
-<code class="css">.button {
-    @include gradient-transition($grey5, $grey4, 0.25s);
-    [...]
-}
-</code></pre>
-                            </div>
-                            <div id="gtrans-files" class="tab-content">
-                                <ul class="files">
-                                    <li>sass/base/_toolbelt.scss</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </article>
                 </section>
                 <hr>
             </div>

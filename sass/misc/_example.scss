@@ -27,13 +27,6 @@ ol.files,
     @include font-size(14,24);
 }
 
-.example, .example-heading {
-            background: $grey5 !important; }
-.html {     background: tint($red1, 80) !important; }
-.css {      background: tint($blue1, 80) !important; }
-.js {       background: tint($yellow1, 80) !important; }
-.tabs-container .files {    background: tint($green1, 80) !important; }
-
 html.js {
     background: transparent !important;
 }
@@ -56,6 +49,13 @@ pre h4,
         padding: $tab-padding;
     }
 }
+
+.example,
+.example-heading {  background: $grey5 !important; }
+.html {             background: $red2 !important; }
+.css {              background: $blue2 !important; }
+.js {               background: $yellow2 !important; }
+.files {            background: $green2 !important; }
 
 /*
 # Example tabs
@@ -88,16 +88,16 @@ pre h4,
     > .tabs > .active > a:hover {
         color: $grey1 !important;
         border-bottom-color: $grey5;
-        &.html {    border-bottom-color: tint($red1, 80) !important; }
-        &.css {     border-bottom-color: tint($blue1, 80) !important; }
-        &.js {      border-bottom-color: tint($yellow1, 80) !important; }
+        &.html {    border-bottom-color: $red2 !important; }
+        &.css {     border-bottom-color: $blue2 !important; }
+        &.js {      border-bottom-color: $yellow2 !important; }
         &.example { border-bottom-color: $grey5 !important; }
-        &.files {   border-bottom-color: tint($green1, 80) !important; }
-        &.html {    background-color: tint($red1, 80) !important; }
-        &.css {     background-color: tint($blue1, 80) !important; }
-        &.js {      background-color: tint($yellow1, 80) !important; }
+        &.files {   border-bottom-color: $green2 !important; }
+        &.html {    background-color: $red2 !important; }
+        &.css {     background-color: $blue2 !important; }
+        &.js {      background-color: $yellow2 !important; }
         &.example { background-color: $grey5 !important; }
-        &.files {   background-color: tint($green1, 80) !important; }
+        &.files {   background-color: $green2 !important; }
     }
 
     pre {

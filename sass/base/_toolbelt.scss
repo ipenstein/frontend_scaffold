@@ -74,7 +74,7 @@ Feel free to add more breakpoints in "base/_vars.scss".
 */
 @mixin bp-max($breakpoint) {
     @if map-has-key($breakpoints, $breakpoint) {
-        @media (max-width: map-get($breakpoints, $breakpoint)) {
+        @media (max-width: map-get($breakpoints, $breakpoint) - 1px) {
             @content;
         }
     }
