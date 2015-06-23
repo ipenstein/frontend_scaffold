@@ -78,7 +78,7 @@ $blue2:     tint($blue1, 80%);
 $green2:    tint($green1, 80%);
 $red2:      tint($red1, 80%);
 $yellow2:   tint($yellow1, 80%);
-$turquise2:  tint($turquise1, 80%);
+$turquise2: tint($turquise1, 80%);
 
 /*
 # Basic site colors
@@ -86,7 +86,7 @@ $turquise2:  tint($turquise1, 80%);
 $text-color:            $grey1;
 
 $link-color:            $blue1;
-$link-hover-color:      $grey3;
+$link-hover-color:      $black;
 $link-visited-color:    darken($blue1, 10%);
 
 $hr-color:              $grey1;
