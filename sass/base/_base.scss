@@ -51,7 +51,7 @@ a,
 button,
 input[type="button"],
 input[type="submit"] {
-    outline: none;
+    outline: 0;
 }
 
 a {
@@ -84,6 +84,10 @@ ol {
         margin-top: 0;
         margin-bottom: 0;
     }
+}
+
+ol {
+    list-style-type: decimal-leading-zero;
 }
 
 pre,

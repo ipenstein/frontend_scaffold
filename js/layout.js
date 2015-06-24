@@ -2,11 +2,9 @@
 
 $(document).ready(function() {
 
-    $("a").focus(function() {
-        this.blur();
-    });
-
-    //$(".navigation li").rollover();
+    $("a:not(.btn)").focus (function () {
+        this.blur() ;
+    }) ;
 
     $('#preloader').fadeOut(
         'slow',

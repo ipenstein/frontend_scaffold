@@ -53,21 +53,25 @@ Button styles
     $hover-bgcolor: $btn-hover-bg-color,
     $active-bgcolor: $btn-active-bg-color
 ) {
+    &,
+    &:visited {
     color: $color;
-    background-color: $bgcolor;
-    &:hover,
-    &.hover {
-        color: $color;
-        background-color: $hover-bgcolor;
-    }
-    &:active,
-    &.active {
-        color: $color;
-        background-color: $active-bgcolor;
+        background-color: $bgcolor;
+        &:hover,
+        &.hover {
+            color: $color;
+            background-color: $hover-bgcolor;
+        }
+        &:active,
+        &.active {
+            color: $color;
+            background-color: $active-bgcolor;
+        }
     }
 }
 
-.btn {
+.btn,
+.btn-default {
     @include btn-color;
 }
 .btn-primary {
