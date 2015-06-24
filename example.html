@@ -71,7 +71,7 @@
                 <button class="dropdown-toggle"><i class="fa fa-bars"></i></button>
                 <ul>
                     <li id="nav-basic"><a href="#basic">Basics</a></li>
-                    <li id="nav-toolbelt"><a href="#toolbelt">Toolbelt</a></li>
+                    <li id="nav-tools"><a href="#tools">Tools</a></li>
                     <li id="nav-grid"><a href="#grid">Grid</a></li>
                     <li id="nav-forms"><a href="#forms">Forms</a></li>
                     <li id="nav-buttons"><a href="#buttons">Buttons</a></li>
@@ -406,9 +406,9 @@
                 </section>
                 <hr>
                 <section>
-                    <a id="toolbelt"></a>
-                    <h2>Toolbelt</h2>
-                    <p>The file <code class="files">base/_toolbelt.scss</code> contains a collection of useful helper mixins, placeholders and classes.</p>
+                    <a id="tools"></a>
+                    <h2>Tools</h2>
+                    <p>The files <code class="files">tools/_responsive.scss</code> and <code class="files">tools/_utilities.scss</code> contain a collection of useful helper mixins, functions and classes.</p>
                     <article>
                         <h3>Global breakpoint configuration</h3>
                         <p>When creating a responsive site, use the Sass-map <code class="css">$breakpoints</code> in <code class="files">sass/base/_vars.scss</code> to map names to the values, making breakpoint management easier. By sticking to this map you are able to keep track of your breakpoint values and to change your media queries globally without accidently overlooking one.</p>
@@ -498,7 +498,7 @@
                             <div id="bp-files" class="tab-content">
                                 <ul class="files">
                                     <li>sass/base/_vars.scss (breakpoint configuration)</li>
-                                    <li>sass/base/_toolbelt.scss (the mixin)</li>
+                                    <li>sass/tools/_responsive.scss (the mixin)</li>
                                 </ul>
                             </div>
                         </div>
@@ -565,7 +565,7 @@
                             <div id="bp-max-files" class="tab-content">
                                 <ul class="files">
                                     <li>sass/base/_vars.scss (breakpoint configuration)</li>
-                                    <li>sass/base/_toolbelt.scss (the mixin)</li>
+                                    <li>sass/tools/_responsive.scss (the mixin)</li>
                                 </ul>
                             </div>
                         </div>
@@ -608,7 +608,7 @@
                             </div>
                             <div id="hd-files" class="tab-content">
                                 <ul class="files">
-                                    <li>sass/base/_toolbelt.scss</li>
+                                    <li>sass/tools/_responsive.scss</li>
                                 </ul>
                             </div>
                         </div>
@@ -660,7 +660,7 @@ The following classes are generated according to the breakpoint configuation abo
                             <div id="rhc-files" class="tab-content">
                                 <ul class="files">
                                     <li>sass/base/_vars.scss (breakpoint configuration)</li>
-                                    <li>sass/base/_toolbelt.scss (the generator)</li>
+                                    <li>sass/tools/_responsive.scss (the generator)</li>
                                 </ul>
                             </div>
                         </div>
@@ -764,7 +764,7 @@ $(document).ready(function() {
                             <div id="rs-files" class="tab-content">
                                 <ul class="files">
                                     <li>sass/base/_vars.scss (breakpoint configuration)</li>
-                                    <li>sass/base/_toolbelt.scss (SCSS-code)</li>
+                                    <li>sass/tools/_responsive.scss (SCSS-code)</li>
                                     <li>example.html (HTML-code)</li>
                                     <li>js/responsive.js (jQuery-Code)</li>
                                 </ul>
@@ -795,7 +795,7 @@ $(document).ready(function() {
                             <div id="z-files" class="tab-content">
                                 <ul class="files">
                                     <li>sass/base/_vars.scss (z-index configuration)</li>
-                                    <li>sass/base/_toolbelt.scss (the function)</li>
+                                    <li>sass/tools/_utilities.scss (the function)</li>
                                 </ul>
                             </div>
                         </div>
@@ -839,7 +839,7 @@ $(document).ready(function() {
                             </div>
                             <div id="rem-files" class="tab-content">
                                 <ul class="files">
-                                    <li>sass/base/_toolbelt.scss</li>
+                                    <li>sass/tools/_utilities.scss</li>
                                 </ul>
                             </div>
                         </div>
@@ -873,7 +873,7 @@ $(document).ready(function() {
                             </div>
                             <div id="truncate-files" class="tab-content">
                                 <ul class="files">
-                                    <li>sass/base/_toolbelt.scss</li>
+                                    <li>sass/tools/_utilities.scss</li>
                                 </ul>
                             </div>
                         </div>
@@ -925,7 +925,7 @@ $(document).ready(function() {
                             </div>
                             <div id="center-v-files" class="tab-content">
                                 <ul class="files">
-                                    <li>sass/base/_toolbelt.scss</li>
+                                    <li>sass/tools/_utilities.scss</li>
                                 </ul>
                             </div>
                         </div>
@@ -973,7 +973,7 @@ $(document).ready(function() {
                             </div>
                             <div id="center-b-files" class="tab-content">
                                 <ul class="files">
-                                    <li>sass/base/_toolbelt.scss</li>
+                                    <li>sass/tools/_utilities.scss</li>
                                 </ul>
                             </div>
                         </div>
@@ -1016,7 +1016,7 @@ $(document).ready(function() {
                             </div>
                             <div id="triangle-files" class="tab-content">
                                 <ul class="files">
-                                    <li>sass/base/_toolbelt.scss</li>
+                                    <li>sass/tools/_utilities.scss</li>
                                 </ul>
                             </div>
                         </div>
@@ -1047,7 +1047,7 @@ $(document).ready(function() {
                             </div>
                             <div id="gtrans-files" class="tab-content">
                                 <ul class="files">
-                                    <li>sass/base/_toolbelt.scss</li>
+                                    <li>sass/tools/_utilities.scss</li>
                                 </ul>
                             </div>
                         </div>
@@ -1059,7 +1059,7 @@ $(document).ready(function() {
                     <a id="grid"></a>
                     <h2>Grid</h2>
                     <p>
-                        When building a responsive website, I recommend using the Sass-map <code class="css">$breakpoints</code> to keep track of your responsive breakpoints. Also, use the mixin <code class="css">@mixin bp</code> to write your @media-queries. Both are described in the <a href="#toolbelt">toolbelt section</a>.
+                        When building a responsive website, I recommend using the Sass-map <code class="css">$breakpoints</code> to keep track of your responsive breakpoints. Also, use the mixin <code class="css">@mixin bp</code> to write your @media-queries. Both are described in the <a href="#tools">tools section</a>.
                     </p>
                     <h3>Susy</h3>
                     <p>
@@ -1171,8 +1171,8 @@ $susy: (
                         </div>
                     </div>
 
-                    <h3>Easy grid</h3>
-                    <p>Light, selfmade grid. Classes mandatory for "form kitchen sink" (see below).</p>
+                    <h3>Easygrid</h3>
+                    <p>Very basic, selfmade grid. Classes are mandatory for "form kitchen sink" (see below).</p>
                     <div class="example-tabs tabs-container">
                         <ul class="tabs">
                             <li><a class="example" href="#cols-e-example">Example</a></li>
@@ -1255,7 +1255,10 @@ $susy: (
 </code></pre>
                         </div>
                         <div id="cols-e-files" class="tab-content">
-                            <ul class="files"><li>sass/base/_scaffold.scss</li></ul>
+                            <ul class="files">
+                                <li>sass/base/_vars.scss</li>
+                                <li>sass/tools/_easygrid.scss</li>
+                            </ul>
                         </div>
                     </div>
                     <h3>Columns with synced heights</h3>
@@ -1537,6 +1540,7 @@ $susy: (
                         </div>
                         <div id="form-files" class="tab-content">
                             <ul class="files"><li>sass/base/_vars.scss</li>
+                            <li>sass/base/_easygrid.scss</li>
                             <li>sass/elements/_forms.scss</li>
                             <li>bower_components/jquery-validation/dist/jquery.validate.min.js</li>
                             <li>bower_components/jquery-validation/src/localization/messages_de.js</li>
@@ -2300,7 +2304,7 @@ $susy: (
                     <a id="tooltips"></a>
                     <h2>Tooltips</h2>
                     <p>
-                        These pure CSS tooltips are easy to implement and still allow you to place the content in the HTML. They require the triangle mixin from <code class="files">sass/base/_toolbelt.scss</code>, and grab their text content from an HTML5 data-tooltip property on the element (although this can be changed to any other attribute you prefer, including the standard <code class="html">title</code>).
+                        These pure CSS tooltips are easy to implement and still allow you to place the content in the HTML. They require the triangle mixin from <code class="files">sass/tools/_utilities.scss</code>, and grab their text content from an HTML5 data-tooltip property on the element (although this can be changed to any other attribute you prefer, including the standard <code class="html">title</code>).
                     </p>
                     <p>Based on <a href="http://hackingui.com/front-end/10-best-scss-utilities/">http://hackingui.com/front-end/10-best-scss-utilities/</a>.</p>
                     <div class="example-tabs tabs-container">
@@ -2341,7 +2345,7 @@ $susy: (
                         </div>
                         <div id="tooltips-files" class="tab-content">
                             <ul class="files"><li>sass/base/_vars.scss</li>
-                            <li>sass/elements/_toolbelt.scss</li>
+                            <li>sass/tools/_utilities.scss</li>
                             <li>sass/elements/_tooltips.scss</li>
                             </ul>
                         </div>
@@ -2409,7 +2413,7 @@ $susy: (
                     <h2>Dropdowns</h2>
                     <p>Inspired by <a href="http://getbootstrap.com/">Bootstrap</a>.</p>
                     <h3>Dropdown</h3>
-                    <p>A dropdown-menu is always wrapped in <code class="css">.dropdown</code>. Inside, a <code class="css">.dropdown-toggle</code> will function as toggle for the menu, followed by a <code class="html">&lt;ul&gt;</code> that contains the menu itself. Dropdowns require the triangle mixin from <code class="files">sass/base/_toolbelt.scss</code>.</p>
+                    <p>A dropdown-menu is always wrapped in <code class="css">.dropdown</code>. Inside, a <code class="css">.dropdown-toggle</code> will function as toggle for the menu, followed by a <code class="html">&lt;ul&gt;</code> that contains the menu itself. Dropdowns require the triangle mixin from <code class="files">sass/tools/_utilities.scss</code>.</p>
                     <div class="example-tabs tabs-container">
                         <ul class="tabs">
                             <li><a class="example" href="#dropdown-example">Example</a></li>
@@ -2454,7 +2458,7 @@ $susy: (
                         </div>
                         <div id="dropdown-files" class="tab-content">
                             <ul class="files"><li>sass/base/_vars.scss</li>
-                            <li>sass/base/_toolbelt.scss</li>
+                            <li>sass/tools/_utilities.scss</li>
                             <li>sass/elements/_dropdowns.scss</li>
                             <li>js/dropdowns.js</li>
                             </ul>
@@ -2505,7 +2509,7 @@ $susy: (
                         </div>
                         <div id="dropup-files" class="tab-content">
                             <ul class="files"><li>sass/base/_vars.scss</li>
-                            <li>sass/base/_toolbelt.scss</li>
+                            <li>sass/tools/_utilities.scss</li>
                             <li>sass/elements/_dropdowns.scss</li>
                             <li>js/dropdowns.js</li>
                             </ul>

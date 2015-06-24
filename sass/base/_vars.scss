@@ -7,8 +7,8 @@ Make your changes here.
 /*
 # Basic layout
 */
-$max-width:             1200px;
-$min-width:             320px;
+$max-width: 1200px;
+$min-width: 320px;
 
 // Breakpoint configuration
 // Feel free to add more breakpoints!
@@ -18,7 +18,12 @@ $breakpoints: (
     big:    900px
 ) !default;
 
-$grid-brakepoint:       small;          // min-brakepoint where easy grid will become active
+/*
+# Easygrid settings
+
+tools/_easygrid.scss
+*/
+$grid-brakepoint:       small;          // min-brakepoint where easygrid will become active
 $grid-gutter:           20px;           // horizontal gap between grid columns
 
 /*
@@ -28,11 +33,11 @@ Global settings for susy grid system.
 http://susydocs.oddbird.net/en/latest/settings/
 */
 $susy: (
-    //debug:              (image: show),
+    //debug:            (image: show),
     columns:            12,
     gutters:            1/3,
     container:          $max-width,
-    //gutter-position:    inside,
+    //gutter-position:  inside,
     global-box-sizing:  border-box
 );
 
@@ -54,32 +59,30 @@ $z-layers: (
     tooltips:       20
 );
 
-
 /*
 # Basic color palette
 */
-$black:     #000;
-$grey1:     #333;
-$grey2:     #666;
-$grey3:     #999;
-$grey4:     #ccc;
-$grey5:     #eee;
-$white:     #fff;
+$black:             #000;
+$grey1:             #333;
+$grey2:             #666;
+$grey3:             #999;
+$grey4:             #ccc;
+$grey5:             #eee;
+$white:             #fff;
 
-$violet1:   #a5037c;
-$green1:    #6fa938;
-$blue1:     #109acc;
-$red1:      #e53f32;
-$yellow1:   #e9ac00;
-$turquise1: #86cee0;
+$violet1:           #a5037c;
+$green1:            #6fa938;
+$blue1:             #109acc;
+$red1:              #e53f32;
+$yellow1:           #e9ac00;
+$turquise1:         #86cee0;
 
-// Addional Colors
-$violet2:   tint($violet1, 80%);
-$blue2:     tint($blue1, 80%);
-$green2:    tint($green1, 70%);
-$red2:      tint($red1, 80%);
-$yellow2:   tint($yellow1, 80%);
-$turquise2: tint($turquise1, 80%);
+$violet2:           tint($violet1, 80%);
+$blue2:             tint($blue1, 80%);
+$green2:            tint($green1, 70%);
+$red2:              tint($red1, 80%);
+$yellow2:           tint($yellow1, 80%);
+$turquise2:         tint($turquise1, 80%);
 
 /*
 # Basic site colors
@@ -88,6 +91,7 @@ $text-color:            $grey1;
 
 $link-color:            $blue1;
 $link-hover-color:      $black;
+$link-active-color:     $black;
 $link-visited-color:    darken($blue1, 10%);
 
 $hr-color:              $grey1;
@@ -184,17 +188,17 @@ $btn-big-next-border-radius:    23px;
 /*
 # Tables
 */
-$table-breakpoint:          medium;         // max-brakepoint where responsive tables will become scrollable
-$table-bg-color:            transparent;
-$table-bg-accent-color:     $white;
-$table-bg-hover-color:      $grey4;
-$table-border-color:        $grey3;
-$table-cell-padding:        10px;
-$table-active-bg-color:     $grey4;
-$table-info-bg-color:       $blue2;
-$table-success-bg-color:    $green2;
-$table-warning-bg-color:    $yellow2;
-$table-error-bg-color:      $red2;
+$table-breakpoint:              medium;         // max-brakepoint where responsive tables will become scrollable
+$table-bg-color:                transparent;
+$table-bg-accent-color:         $white;
+$table-bg-hover-color:          $grey4;
+$table-border-color:            $grey3;
+$table-cell-padding:            10px;
+$table-active-bg-color:         $grey4;
+$table-info-bg-color:           $blue2;
+$table-success-bg-color:        $green2;
+$table-warning-bg-color:        $yellow2;
+$table-error-bg-color:          $red2;
 
 /*
 # Tabs
@@ -213,15 +217,15 @@ $tab-active-bg-color:           $grey5;
 /*
 # Tooltips
 */
-$tooltip-color:         $white;
-$tooltip-bg-color:      $blue1;
-$tooltip-font-size:     14px;
-$tooltip-line-height:   22px;
-$tooltip-height:        22px;
-$tooltip-padding:       6px 10px;
-$tooltip-bubble-pos:    -40px;
-$tooltip-triangle-pos:  -6px;
-$tooltip-triangle-size: 6px;
+$tooltip-color:                 $white;
+$tooltip-bg-color:              $blue1;
+$tooltip-font-size:             14px;
+$tooltip-line-height:           22px;
+$tooltip-height:                22px;
+$tooltip-padding:               6px 10px;
+$tooltip-bubble-pos:            -40px;
+$tooltip-triangle-pos:          -6px;
+$tooltip-triangle-size:         6px;
 
 /*
 # Alerts

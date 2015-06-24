@@ -60,10 +60,12 @@ a {
     &:visited {
         color: $link-visited-color;
     }
-    &:hover,
-    &:active {
+    &:hover {
         color: $link-hover-color;
         text-decoration: none;
+    }
+    &:active {
+        color: $link-active-color;
     }
 }
 

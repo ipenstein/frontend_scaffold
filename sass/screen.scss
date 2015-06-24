@@ -34,12 +34,23 @@ $fa-font-path: "../bower_components/font-awesome/fonts/";
 @import "../bower_components/font-awesome/scss/font-awesome";
 
 /*
-# Basic styles
+# Settings
 */
 @import "base/webfonts";                // Local webfonts
 @import "base/vars";                    // Variables
-@import "base/toolbelt";                // Helpful classes and mixins
-@import "base/animations";              // CSS3-Animation mixins
+
+/*
+# Tools
+*/
+@import "tools/utilities";              // Other helpful classes and mixins
+@import "tools/responsive";             // Helpful classes and mixins for responsive web design
+@import "tools/easygrid";               // Basic grid system
+@import "tools/animations";             // CSS3 Animations
+//@import "tools/flexbox";              // Flexbox styles
+
+/*
+# Basic Styles
+*/
 @import "base/base";                    // HTML-elements and basic classes
 @import "base/scaffold";                // Basic site scaffold
 
