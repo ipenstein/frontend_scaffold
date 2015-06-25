@@ -8,3 +8,7 @@
     z-index: z(site-footer);
     color: $grey4;
 }
+
+.site-footer a:hover {
+    color: $white;
+}

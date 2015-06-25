@@ -4029,6 +4029,9 @@ Styles for specific sections of the page (i.E. Header, Footer etc.).
   z-index: 20;
   color: #ccc; }
 
+.site-footer a:hover {
+  color: #fff; }
+
 /*
 # Pages
 
