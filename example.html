@@ -392,14 +392,14 @@
                             <div id="embed-example" class="tab-content">
                                 <div class="example">
                                     <div class="embed-container">
-                                        <iframe src="https://player.vimeo.com/video/59361603" width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+                                        <iframe src="https://player.vimeo.com/video/59361603" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
                                     </div>
                                     <a href="https://vimeo.com/59361603">JAMES BLAKE - RETROGRADE</a> from <a href="https://vimeo.com/martindethurah">martin de thurah</a> on <a href="https://vimeo.com">Vimeo</a>.
                                 </div>
                             </div>
                             <div id="embed-html" class="tab-content">
 <pre><code class="html">&lt;div class="embed-container"&gt;
-    &lt;iframe src="http://www.youtube.com/embed/G8CeP15EAS8" frameborder="0" allowfullscreen&gt;&lt;/iframe&gt;
+    &lt;iframe src="https://player.vimeo.com/video/59361603" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen&gt;&lt;/iframe&gt;
 &lt;/div&gt;
 </code></pre>
                             </div>
@@ -817,7 +817,7 @@ $(document).ready(function() {
                             <code class="css">html { font-size: 62.5%; }</code> sets up a base font-size of 10px. Therefore 10px equals 1rem, 15px equals 1.5rem, 24px equals 2.4rem and so on. With this prerequisite you can use this mixin to set your font-sizes and line-heights the old way - with pixel values (without the "px"-units however) - and still write code that is fit for responsive web design.
                         </p>
                         <p>
-                            Of course this mixin has a px-fallback or legacy browsers.
+                            Of course this mixin has a px-fallback for legacy browsers.
                         </p>
                             <a href="http://css-tricks.com/snippets/css/less-mixin-for-rem-font-sizing/">http://css-tricks.com/snippets/css/less-mixin-for-rem-font-sizing/</a>
                         </p>
@@ -1070,10 +1070,10 @@ $(document).ready(function() {
                             <div id="ol-c-example" class="tab-content">
                                 <div class="example">
                                     <ol class="custom-counter">
-                                        <li>Eins</li>
-                                        <li>Zwei</li>
-                                        <li>Drei</li>
-                                        <li>Vier</li>
+                                        <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce turpis lectus, gravida sed rutrum sit amet, lobortis at sem. Donec nec egestas tortor. Vestibulum eget purus ac lorem pellentesque elementum ac ac sapien.</li>
+                                        <li>Praesent iaculis faucibus gravida. Donec rutrum lorem enim, eu ultricies lorem porttitor sed. Nullam ut auctor turpis. Donec quis sollicitudin lacus. Vivamus vel tortor molestie, volutpat erat a, varius massa.</li>
+                                        <li>Integer sed feugiat libero, non egestas nisi. Fusce at arcu bibendum risus ullamcorper faucibus nec sed felis.</li>
+                                        <li>Aenean placerat viverra libero non luctus. Sed blandit ligula scelerisque nisl gravida, hendrerit pulvinar urna vestibulum. In posuere sapien sit amet augue bibendum, eget accumsan leo sollicitudin. Nam dictum vehicula massa ac finibus. Ut pretium mauris ut volutpat dapibus.</li>
                                     </ol>
                                 </div>
                             </div>
@@ -1094,6 +1094,103 @@ $(document).ready(function() {
                         </div>
 
                     </article>
+                <article>
+                    <h3>Positioning mixins</h3>
+                    <p>By Oliver Lohkemper.</p>
+                    <p>The Sass-mixins <code class="css">@mixin absolute</code>, <code class="css">@mixin fixed</code> and <code class="css">@mixin relative</code> offer a convenient way to position your website's elements by shorthand. Each mixin takes one argument consisting of up to four values that match the four offset properties. If you want to leave out a property, just use the value <code class="css">null</code>.</p>
+                    <div class="example-tabs tabs-container">
+                        <ul class="tabs">
+                            <li><a class="example" href="#pos-example">Example</a></li>
+                            <li><a class="css" href="#pos-scss">SCSS</a></li>
+                            <li><a class="css" href="#pos-css">Generated CSS</a></li>
+                            <li><a class="files" href="#pos-files">Files</a></li>
+                        </ul>
+                        <div id="pos-example" class="tab-content">
+                            <div class="example">
+                                <div class="example-pos-wrapper">
+                                    <div class="example-pos example-pos1">.example-pos1</div>
+                                    <div class="example-pos example-pos2">.example-pos2</div>
+                                    <div class="example-pos example-pos3">.example-pos3</div>
+                                    <div class="example-pos example-pos4">.example-pos4</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="pos-scss" class="tab-content">
+<pre><code class="css">.example-pos1 {
+    /*
+        top: 10px
+        right: 20px
+        bottom: null
+        left: 40px
+    */
+    @include absolute(10px 20px null 40px);
+}
+
+.example-pos2 {
+    /*
+        top: null
+        right & left: 50px
+        bottom: 20px
+    */
+    @include absolute(null 50px 20px);
+}
+
+.example-pos3 {
+    /*
+        top & bottom: 120px
+        right & left: 0
+    */
+    @include absolute(120px 0);
+}
+
+.example-pos4 {
+    /*
+        top & bottom & right & left: 70px
+    */
+    @include absolute(70px);
+}
+</code></pre>
+                        </div>
+                        <div id="pos-css" class="tab-content">
+<pre><code class="css">.example-pos1 {
+    top: 10px;
+    right: 20px;
+    left: 40px;
+    position: absolute;
+}
+
+.example-pos2 {
+    right: 50px;
+    bottom: 20px;
+    left: 50px;
+    position: absolute;
+}
+
+.example-pos3 {
+    top: 120px;
+    right: 0;
+    bottom: 120;
+    left: 0;
+    position: absolute;
+}
+
+.example-pos4 {
+    top: 70px;
+    right: 70px;
+    bottom: 70px;
+    left: 70px;
+    position: absolute;
+}
+</code></pre>
+                        </div>
+                        <div id="pos-files" class="tab-content">
+                            <ul class="files">
+                                <li>sass/tools/_utilities.scss</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </article>
                 </section>
                 <hr>
 

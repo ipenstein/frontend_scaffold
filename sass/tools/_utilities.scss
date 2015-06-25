@@ -281,7 +281,6 @@ http://codepen.io/HugoGiraudel/details/KFDuB
 /*
 # Custom ol counter
 */
-
 @mixin custom-counter {
     &,
     & ol {
@@ -290,18 +289,27 @@ http://codepen.io/HugoGiraudel/details/KFDuB
         list-style-type: none;
     }
 
+    & ol {
+        counter-reset: step-counter;
+    }
+
     & li {
         counter-increment: step-counter;
+        position: relative;
+        padding-left: 2em;
+        margin-top: 0.5em;
     }
 
     & li:before {
+        position: absolute;
+        top: 0;
+        left: 0;
         content: counter(step-counter);
-        margin-right: 10px;
         font-size: 80%;
         background-color: $blue1;
         color: $white;
         font-weight: bold;
-        padding: 3px 8px;
+        padding: 0px 8px;
         @include border-radius(3px);
     }
 }
@@ -309,3 +317,45 @@ http://codepen.io/HugoGiraudel/details/KFDuB
 .custom-counter {
     @include custom-counter;
 }
+
+/*
+# Positioning mixin by Oliver Lohkemper
+*/
+@mixin position($position, $args) {
+
+    position: $position;
+
+    $offsets: top right bottom left;
+    $default: null null null null;
+
+    @if length($args) == 1 {
+        $default: set-nth($default, 1, nth($args, 1));
+        $default: set-nth($default, 2, nth($args, 1));
+        $default: set-nth($default, 3, nth($args, 1));
+        $default: set-nth($default, 4, nth($args, 1));
+    }
+    @if length($args) == 2 {
+        $default: set-nth($default, 1, nth($args, 1));
+        $default: set-nth($default, 2, nth($args, 2));
+        $default: set-nth($default, 3, nth($args, 1));
+        $default: set-nth($default, 4, nth($args, 2));
+    }
+    @if length($args) == 3 {
+        $default: set-nth($default, 1, nth($args, 1) );
+        $default: set-nth($default, 2, nth($args, 2) );
+        $default: set-nth($default, 3, nth($args, 3) );
+        $default: set-nth($default, 4, nth($args, 2) );
+    }
+    @if length($args) == 4 {
+        $default: $args;
+    }
+
+    @each $o in $offsets {
+        $i: index($offsets, $o);
+        #{$o}: nth($default, $i);
+    }
+}
+// shorthand
+@mixin absolute($args) {    @include position(absolute, $args); }
+@mixin fixed($args) {       @include position(fixed, $args); }
+@mixin relative($args) {    @include position(relative, $args); }

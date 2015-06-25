@@ -219,9 +219,9 @@ section > h2 {
     margin-bottom: 48px;
     &:before {
         position: absolute;
-        top: 0;
-        left: 0;
-        bottom: 0;
+        top: 1px;
+        left: 1px;
+        bottom: 1px;
         width: 60px;
         padding: 20px 10px;
         color: $white;
@@ -306,3 +306,18 @@ section > h2 {
 
 // Scrollbar-Styling
 @include scrollbar (20px, $blue1, transparent);
+
+// Positioning mixin
+.example-pos-wrapper {
+    position: relative;
+    height: 300px;
+}
+
+.example-pos {
+    background: $red1;
+}
+
+.example-pos1 { @include absolute(10px 20px null 40px); background: rgba($red1, 0.5); }
+.example-pos2 { @include absolute(null 50px 20px); background: rgba($green1, 0.5); }
+.example-pos3 { @include absolute(120px 0); background: rgba($blue1, 0.5); }
+.example-pos4 { @include absolute(70px); background: rgba($yellow1, 0.5); }
