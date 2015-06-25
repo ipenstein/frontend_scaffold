@@ -16,6 +16,14 @@ body {
     @include font-size($base-font-size, $base-line-height);
 }
 
+html,
+button,
+input,
+select,
+textarea {
+    color: $text-color;
+}
+
 p {
    padding: 0;
    margin: 0 0 $base-line-height-px 0;
@@ -48,6 +56,7 @@ h4, .h4 {
 }
 
 a,
+a:focus,
 button,
 input[type="button"],
 input[type="submit"] {
@@ -64,8 +73,10 @@ a {
         color: $link-hover-color;
         text-decoration: none;
     }
-    &:active {
+    &:active,
+    &:focus {
         color: $link-active-color;
+        background-color: $link-active-bg-color;
     }
 }
 

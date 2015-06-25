@@ -90,9 +90,10 @@ $turquise2:         tint($turquise1, 70%);
 $text-color:            $grey1;
 
 $link-color:            $blue1;
-$link-hover-color:      $black;
-$link-active-color:     $black;
-$link-visited-color:    darken($blue1, 10%);
+$link-hover-color:      darken($blue1, 30%);
+$link-active-color:     $white;
+$link-active-bg-color:  $blue1;
+$link-visited-color:    $violet1;
 
 $hr-color:              $grey1;
 

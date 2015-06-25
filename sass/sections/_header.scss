@@ -28,6 +28,10 @@
         color: $white;
     }
 
+    &:focus {
+        background-color: transparent;
+    }
+
     i {
         color: $blue1;
         @include font-size(45,30);

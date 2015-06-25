@@ -21,8 +21,9 @@
     z-index: z(hero);
     @include animation('blink 2.5s');
     @include animation-property('iteration-count', 'infinite');
-    :hover {
-        $color: white;
+
+    &:focus {
+        background-color: transparent;
     }
 }
 

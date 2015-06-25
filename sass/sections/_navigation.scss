@@ -43,6 +43,11 @@
         background-color: $blue1;
         color: $grey1;
     }
+
+    &:active,
+    &:focus {
+        color: $grey1;
+    }
 }
 
 .main-nav ul {
@@ -75,6 +80,7 @@
         background-color: $blue1;
         color: $grey1;
     }
+
     @include bp(big) {
         @include transition-property(color);
         @include transition-duration(0.2s);
@@ -100,5 +106,9 @@
 }
 
 .main-nav li.active a {
+    color: $white;
+}
+
+.main-nav li a:focus {
     color: $white;
 }
