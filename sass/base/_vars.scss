@@ -7,7 +7,7 @@ Make your changes here.
 /*
 # Basic layout
 */
-$max-width: 1200px;
+$max-width: 1050px;
 $min-width: 320px;
 
 // Breakpoint configuration
@@ -77,12 +77,12 @@ $red1:              #e53f32;
 $yellow1:           #e9ac00;
 $turquise1:         #86cee0;
 
-$violet2:           tint($violet1, 80%);
-$blue2:             tint($blue1, 80%);
+$violet2:           tint($violet1, 70%);
+$blue2:             tint($blue1, 70%);
 $green2:            tint($green1, 70%);
-$red2:              tint($red1, 80%);
-$yellow2:           tint($yellow1, 80%);
-$turquise2:         tint($turquise1, 80%);
+$red2:              tint($red1, 70%);
+$yellow2:           tint($yellow1, 70%);
+$turquise2:         tint($turquise1, 70%);
 
 /*
 # Basic site colors
@@ -96,7 +96,7 @@ $link-visited-color:    darken($blue1, 10%);
 
 $hr-color:              $grey1;
 
-$body-bg-color:         $white;
+$body-bg-color:         $grey5;
 
 /*
 # Basic typography
@@ -148,9 +148,9 @@ $btn-margin:                    4px 0;
 
 // Color variants
 $btn-color:                     $grey1;
-$btn-bg-color:                  $white;
-$btn-hover-bg-color:            darken($white, 2%);
-$btn-active-bg-color:           darken($white, 10%);
+$btn-bg-color:                  $grey5;
+$btn-hover-bg-color:            darken($grey5, 2%);
+$btn-active-bg-color:           darken($grey5, 10%);
 
 $btn-primary-color:             $white;
 $btn-primary-bg-color:          $blue1;
@@ -190,7 +190,7 @@ $btn-big-next-border-radius:    23px;
 */
 $table-breakpoint:              medium;         // max-brakepoint where responsive tables will become scrollable
 $table-bg-color:                transparent;
-$table-bg-accent-color:         $white;
+$table-bg-accent-color:         $grey5;
 $table-bg-hover-color:          $grey4;
 $table-border-color:            $grey3;
 $table-cell-padding:            10px;
@@ -206,13 +206,13 @@ $table-error-bg-color:          $red2;
 $tab-padding:                   10px 20px;
 $tab-color:                     $grey3;
 $tab-border-color:              $grey2;
-$tab-bg-color:                  $white;
+$tab-bg-color:                  $grey5;
 $tab-hover-color:               $grey1;
 $tab-hover-border-color:        darken($turquise1, 40%);
 $tab-hover-bg-color:            $turquise1;
 $tab-active-color:              $grey1;
 $tab-active-border-color:       $grey2;
-$tab-active-bg-color:           $grey5;
+$tab-active-bg-color:           $white;
 
 /*
 # Tooltips
