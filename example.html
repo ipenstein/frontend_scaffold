@@ -71,7 +71,8 @@
                 <button class="dropdown-toggle"><i class="fa fa-bars"></i></button>
                 <ul>
                     <li id="nav-basic"><a href="#basic">Basics</a></li>
-                    <li id="nav-tools"><a href="#tools">Tools</a></li>
+                    <li id="nav-utilities"><a href="#utilities">Utilities</a></li>
+                    <li id="nav-rwd"><a href="#rwd">RWD</a></li>
                     <li id="nav-grid"><a href="#grid">Grid</a></li>
                     <li id="nav-forms"><a href="#forms">Forms</a></li>
                     <li id="nav-buttons"><a href="#buttons">Buttons</a></li>
@@ -413,9 +414,474 @@
                 </section>
                 <hr>
                 <section>
-                    <a id="tools"></a>
-                    <h2>Tools</h2>
-                    <p>The files <code class="files">tools/_responsive.scss</code> and <code class="files">tools/_utilities.scss</code> contain a collection of useful helper mixins, functions and classes.</p>
+                    <a id="utilities"></a>
+                    <h2>Utilities</h2>
+                    <p><code class="files">tools/_utilities.scss</code> contains a collection of useful helper mixins, functions and classes for many areas of application.</p>
+
+                    <article>
+                        <h3>z-index Management</h3>
+                        <p>Like managing responsive breakpoints, keeping track of your website's z-layers can be far easier and much more convenient if you gather all z-indexes into a single map. Instead of assigning the z-index values directly, write <code class="css">z-index: z({layer-name})</code>. This is especially helpful when you need to debug your code.</p>
+                        <div class="example-tabs tabs-container">
+                            <ul class="tabs">
+                                <li><a class="css" href="#z-scss">SCSS</a></li>
+                                <li><a class="files" href="#z-files">Files</a></li>
+                            </ul>
+                            <div id="z-scss" class="tab-content">
+<pre>
+<code class="css">$z-layers: (
+    header:    30,
+    content:   10,
+    footer:    20
+);
+
+.header {   z-index: z(header);   }
+.content {  z-index: z(content);  }
+.footer  {  z-index: z(footer);   }
+</code></pre>
+                            </div>
+                            <div id="z-files" class="tab-content">
+                                <ul class="files">
+                                    <li>sass/base/_vars.scss (z-index configuration)</li>
+                                    <li>sass/tools/_utilities.scss (the function)</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                    </article>
+                    <article>
+                        <h3>REM font-size and line-height</h3>
+                        <p>
+                            Especially when dealing with responsive web design, it is recommended using relative values like <b>em</b> or <b>rem</b> for your <code class="css">font size</code>-allocations. By sticking to this principle you are able to change the size of your entire website's typography by editing only the <code class="css">font-size</code> value of the <code class="html">&lt;html&gt;</code>-Element. While <b>em</b> is relative to the font-size of its direct or nearest parent, <b>rem</b> is only relative to the html (root) font-size, making using the latter easier to scale type across the entire page.
+                        </p>
+                        <p>
+                            <code class="css">html { font-size: 62.5%; }</code> sets up a base font-size of 10px. Therefore 10px equals 1rem, 15px equals 1.5rem, 24px equals 2.4rem and so on. With this prerequisite you can use this mixin to set your font-sizes and line-heights the old way - with pixel values (without the "px"-units however) - and still write code that is fit for responsive web design.
+                        </p>
+                        <p>
+                            Of course this mixin has a px-fallback for legacy browsers.
+                        </p>
+                            <a href="http://css-tricks.com/snippets/css/less-mixin-for-rem-font-sizing/">http://css-tricks.com/snippets/css/less-mixin-for-rem-font-sizing/</a>
+                        </p>
+                        <div class="example-tabs tabs-container">
+                            <ul class="tabs">
+                                <li><a class="css" href="#rem-scss">SCSS</a></li>
+                                <li><a class="css" href="#rem-css">Generated CSS</a></li>
+                                <li><a class="files" href="#rem-files">Files</a></li>
+                            </ul>
+                            <div id="rem-scss" class="tab-content">
+<pre>
+<code class="css">p {
+    @include font-size(16, 24);
+}
+</code></pre>
+                            </div>
+                            <div id="rem-css" class="tab-content">
+<pre>
+<code class="css">p {
+    font-size: 16px;
+    line-height: 24px;
+    font-size: 1.6rem;
+    line-height: 2.4rem;
+}
+</code></pre>
+                            </div>
+                            <div id="rem-files" class="tab-content">
+                                <ul class="files">
+                                    <li>sass/tools/_utilities.scss</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                    </article>
+                    <article>
+                        <h3>Truncate Text</h3>
+                        <p>
+                            A small mixin ensuring that your text element doesn’t overflow its container and breaks nicely. It takes one parameter, which is any of the valid text-overflow values (the default value "ellipsis", "clip", or a string).
+                        </p>
+                        <p>
+                            <a href="http://hackingui.com/front-end/10-best-scss-utilities/">http://hackingui.com/front-end/10-best-scss-utilities/</a>
+                        </p>
+                        <div class="example-tabs tabs-container">
+                            <ul class="tabs">
+                                <li><a class="example" href="#truncate-example">Example</a></li>
+                                <li><a class="css" href="#truncate-scss">SCSS</a></li>
+                                <li><a class="files" href="#truncate-files">Files</a></li>
+                            </ul>
+                            <div id="truncate-example" class="tab-content">
+                                <div class="example">
+                                    <p class="example-truncate">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum in posuere orci. Nam euismod gravida nunc. Ut accumsan vitae dolor interdum ullamcorper. Ut luctus, lacus quis finibus bibendum, tortor nisl tristique mauris, eu efficitur nisi felis sit amet lacus. </p>
+                                </div>
+                            </div>
+                            <div id="truncate-scss" class="tab-content">
+<pre>
+<code class="css">.example-truncate {
+    @include truncate-text; // parameter is optional
+}
+</code></pre>
+                            </div>
+                            <div id="truncate-files" class="tab-content">
+                                <ul class="files">
+                                    <li>sass/tools/_utilities.scss</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                    </article>
+                    <article>
+                        <h3>@mixin center-vertical</h3>
+                        <p>
+                            For vertically centering inline-block-elements with a dynamic size. Doesn’t require an extra, non-semantic HTML element.
+                        </p>
+                        <p>
+                            <a href="http://hackingui.com/front-end/10-best-scss-utilities/">http://hackingui.com/front-end/10-best-scss-utilities/</a>
+                        </p>
+                        <div class="example-tabs tabs-container">
+                            <ul class="tabs">
+                                <li><a class="example" href="#center-v-example">Example</a></li>
+                                <li><a class="html" href="#center-v-html">HTML</a></li>
+                                <li><a class="css" href="#center-v-scss">SCSS</a></li>
+                                <li><a class="files" href="#center-v-files">Files</a></li>
+                            </ul>
+                            <div id="center-v-example" class="tab-content">
+                                <div class="example">
+                                    <div class="example-center-vert">
+                                        <div class="example-center-vert-item">I am a lonely div inside another lonely div. But at least I am a vertically centered div!</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="center-v-html" class="tab-content">
+<pre>
+<code class="html">&lt;div class="example-center-vert"&gt;
+    &lt;div class="example-center-vert-item"&gt;
+        I am a lonely div inside another lonely div. But at least I am a vertically centered div!
+    &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+                            </div>
+                            <div id="center-v-scss" class="tab-content">
+<pre>
+<code class="css">.example-center-vert {
+    @include center-vertical;
+    [...]
+}
+
+.example-center-vert-item {
+    @include inline-block;
+    [...]
+}
+</code></pre>
+                            </div>
+                            <div id="center-v-files" class="tab-content">
+                                <ul class="files">
+                                    <li>sass/tools/_utilities.scss</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </article>
+                    <article>
+                        <h3>@mixin center-both</h3>
+                        <p>
+                            Horizontally and vertically center elements with a dynamic size. Works only in modern Browsers.
+                        </p>
+                        <div class="example-tabs tabs-container">
+                            <ul class="tabs">
+                                <li><a class="example" href="#center-b-example">Example</a></li>
+                                <li><a class="html" href="#center-b-html">HTML</a></li>
+                                <li><a class="css" href="#center-b-scss">SCSS</a></li>
+                                <li><a class="files" href="#center-b-files">Files</a></li>
+                            </ul>
+                            <div id="center-b-example" class="tab-content">
+                                <div class="example">
+                                    <div class="example-center-both">
+                                        <div class="example-center-both-item">I am a lonely div inside another lonely div. But at least I am a perfectly centered div!</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="center-b-html" class="tab-content">
+<pre>
+<code class="html">&lt;div class="example-center-both"&gt;
+    &lt;div class="example-center-both-item"&gt;
+        I am a lonely div inside another lonely div. But at least I am a perfectly centered div!
+    &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+                            </div>
+                            <div id="center-b-scss" class="tab-content">
+<pre>
+<code class="css">.example-center-both {
+    position: relative;
+    [...]
+}
+
+.example-center-both-item {
+    @include center-both;
+    [...]
+}
+</code></pre>
+                            </div>
+                            <div id="center-b-files" class="tab-content">
+                                <ul class="files">
+                                    <li>sass/tools/_utilities.scss</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </article>
+                    <article>
+                        <h3>Triangle</h3>
+                        <p>
+                            <code class="css">@mixin triangle</code> creates a right angled triangle pointing to a direction specified by <code class="css">$direction</code>. <code class="css">@mixin triangle-absolute</code> further provides styles for absolute positioning of pseudo-elements.
+                        </p>
+                        <div class="example-tabs tabs-container">
+                            <ul class="tabs">
+                                <li><a class="example" href="#triangle-example">Example</a></li>
+                                <li><a class="html" href="#triangle-html">HTML</a></li>
+                                <li><a class="css" href="#triangle-scss">SCSS</a></li>
+                                <li><a class="files" href="#triangle-files">Files</a></li>
+                            </ul>
+                            <div id="triangle-example" class="tab-content">
+                                <div class="example">
+                                    <span class="triangle01">Me haz triangle</span>
+                                </div>
+                            </div>
+                            <div id="triangle-html" class="tab-content">
+<pre>
+<code class="html">&lt;span class="tooltip"&gt;Me haz triangle&lt;/span&gt;
+</code></pre>
+                            </div>
+                            <div id="triangle-scss" class="tab-content">
+<pre>
+<code class="css">.tooltip {
+    position: relative;
+    [...]
+    &:before {
+        @include triangle-absolute(bottom, 10px, $blue1);
+        bottom: -10px;
+        left: 50%;
+        @include translate(-50%, 0);
+    }
+}
+</code></pre>
+                            </div>
+                            <div id="triangle-files" class="tab-content">
+                                <ul class="files">
+                                    <li>sass/tools/_utilities.scss</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </article>
+                    <article>
+                        <h3>Gradient Transition</h3>
+                        <p>
+                            <code class="css">@mixin gradient-transition</code> creates a :hover-transition-effect with a gradient.
+                        </p>
+                        <div class="example-tabs tabs-container">
+                            <ul class="tabs">
+                                <li><a class="example" href="#gtrans-example">Example</a></li>
+                                <li><a class="css" href="#gtrans-scss">SCSS</a></li>
+                                <li><a class="files" href="#gtrans-files">Files</a></li>
+                            </ul>
+                            <div id="gtrans-example" class="tab-content">
+                                <div class="example">
+                                    <a class="transition1" href="javascript://">Me haz transition</a>
+                                </div>
+                            </div>
+                            <div id="gtrans-scss" class="tab-content">
+<pre>
+<code class="css">.button {
+    @include gradient-transition($grey5, $grey4, 0.25s);
+    [...]
+}
+</code></pre>
+                            </div>
+                            <div id="gtrans-files" class="tab-content">
+                                <ul class="files">
+                                    <li>sass/tools/_utilities.scss</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </article>
+                    <article>
+                        <h3>Ordered list with custom counters</h3>
+                        <div class="example-tabs tabs-container">
+                            <ul class="tabs">
+                                <li><a class="example" href="#ol-c-example">Example</a></li>
+                                <li><a class="html" href="#ol-c-html">HTML</a></li>
+                                <li><a class="files" href="#ol-c-files">Files</a></li>
+                            </ul>
+                            <div id="ol-c-example" class="tab-content">
+                                <div class="example">
+                                    <ol class="custom-counter">
+                                        <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce turpis lectus, gravida sed rutrum sit amet, lobortis at sem. Donec nec egestas tortor. Vestibulum eget purus ac lorem pellentesque elementum ac ac sapien.</li>
+                                        <li>Praesent iaculis faucibus gravida. Donec rutrum lorem enim, eu ultricies lorem porttitor sed. Nullam ut auctor turpis. Donec quis sollicitudin lacus. Vivamus vel tortor molestie, volutpat erat a, varius massa.</li>
+                                        <li>Integer sed feugiat libero, non egestas nisi. Fusce at arcu bibendum risus ullamcorper faucibus nec sed felis.</li>
+                                        <li>Aenean placerat viverra libero non luctus. Sed blandit ligula scelerisque nisl gravida, hendrerit pulvinar urna vestibulum. In posuere sapien sit amet augue bibendum, eget accumsan leo sollicitudin. Nam dictum vehicula massa ac finibus. Ut pretium mauris ut volutpat dapibus.</li>
+                                    </ol>
+                                </div>
+                            </div>
+                            <div id="ol-c-html" class="tab-content">
+<pre><code class="html">&lt;ol class="custom-counter"&gt;
+    &lt;li&gt;Eins&lt;/li&gt;
+    &lt;li&gt;Zwei&lt;/li&gt;
+    &lt;li&gt;Drei&lt;/li&gt;
+    &lt;li&gt;Vier&lt;/li&gt;
+&lt;/ol&gt;
+</code></pre>
+                            </div>
+                            <div id="ol-c-files" class="tab-content">
+                                <ul class="files">
+                                    <li>sass/tools/_utilities.scss</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                    </article>
+                    <article>
+                        <h3>Positioning mixins</h3>
+                        <p>By Oliver Lohkemper.</p>
+                        <p>The Sass-mixins <code class="css">@mixin absolute</code>, <code class="css">@mixin fixed</code> and <code class="css">@mixin relative</code> offer a convenient way to position your website's elements by shorthand. Each mixin takes one argument consisting of up to four values that match the four offset properties. If you want to leave out a property, just use the value <code class="css">null</code>.</p>
+                        <div class="example-tabs tabs-container">
+                            <ul class="tabs">
+                                <li><a class="example" href="#pos-example">Example</a></li>
+                                <li><a class="css" href="#pos-scss">SCSS</a></li>
+                                <li><a class="css" href="#pos-css">Generated CSS</a></li>
+                                <li><a class="files" href="#pos-files">Files</a></li>
+                            </ul>
+                            <div id="pos-example" class="tab-content">
+                                <div class="example">
+                                    <div class="example-pos-wrapper">
+                                        <div class="example-pos example-pos1">.example-pos1</div>
+                                        <div class="example-pos example-pos2">.example-pos2</div>
+                                        <div class="example-pos example-pos3">.example-pos3</div>
+                                        <div class="example-pos example-pos4">.example-pos4</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="pos-scss" class="tab-content">
+<pre><code class="css">.example-pos1 {
+    /*
+        top: 10px
+        right: 20px
+        bottom: null
+        left: 40px
+    */
+    @include absolute(10px 20px null 40px);
+}
+
+.example-pos2 {
+    /*
+        top: null
+        right & left: 50px
+        bottom: 20px
+    */
+    @include absolute(null 50px 20px);
+}
+
+.example-pos3 {
+    /*
+        top & bottom: 120px
+        right & left: 0
+    */
+    @include absolute(120px 0);
+}
+
+.example-pos4 {
+    /*
+        top & bottom & right & left: 70px
+    */
+    @include absolute(70px);
+}
+</code></pre>
+                            </div>
+                            <div id="pos-css" class="tab-content">
+<pre><code class="css">.example-pos1 {
+    top: 10px;
+    right: 20px;
+    left: 40px;
+    position: absolute;
+}
+
+.example-pos2 {
+    right: 50px;
+    bottom: 20px;
+    left: 50px;
+    position: absolute;
+}
+
+.example-pos3 {
+    top: 120px;
+    right: 0;
+    bottom: 120;
+    left: 0;
+    position: absolute;
+}
+
+.example-pos4 {
+    top: 70px;
+    right: 70px;
+    bottom: 70px;
+    left: 70px;
+    position: absolute;
+}
+</code></pre>
+                            </div>
+                            <div id="pos-files" class="tab-content">
+                                <ul class="files">
+                                    <li>sass/tools/_utilities.scss</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                    </article>
+                    <article>
+                        <h3>Columns with synced heights</h3>
+                        <p><a href="https://github.com/ginader/syncHeight">syncHeight Plugin for YAML</a></p>
+                        <div class="example-tabs tabs-container">
+                            <ul class="tabs">
+                                <li><a class="example" href="#cols-h-example">Example</a></li>
+                                <li><a class="html" href="#cols-h-html">HTML</a></li>
+                                <li><a class="files" href="#cols-h-files">Files</a></li>
+                            </ul>
+                            <div id="cols-h-example" class="tab-content">
+                                <div class="example">
+
+                                    <div class="example-grid sync-height">
+                                        <div class="example-equal-1 example-module-2">
+                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque a ligula vitae risus vulputate venenatis. Donec luctus, sapien non maximus interdum, risus elit condimentum enim, a commodo metus ipsum vel erat.
+                                        </div>
+                                        <div class="example-equal-2 example-module-2">
+                                            Maecenas ac purus vitae leo pellentesque congue a id nisi. Phasellus ultrices interdum tellus eget auctor. Morbi tristique lectus sed mi malesuada, in sagittis massa consequat. Sed sed accumsan nisl. Sed bibendum gravida lorem eu tristique. Aliquam facilisis congue venenatis. Proin dui neque, commodo eget leo eget, pretium ornare lacus.
+                                        </div>
+                                        <div class="example-equal-3 example-module-2">
+                                            Ut pretium orci arcu, vitae pharetra neque pharetra sed.
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="cols-h-html" class="tab-content">
+<pre><code class="html">&lt;div class="sync-height"&gt;
+    &lt;div&gt;
+        ...
+    &lt;/div&gt;
+    &lt;div&gt;
+        ...
+    &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+
+                            </div>
+                            <div id="cols-h-files" class="tab-content">
+                                <ul class="files"><li>js/lib/jquery.syncheight.js</li>
+                                <li>js/syncheight.js</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </article>
+                </section>
+                <hr>
+
+                <section>
+                    <a id="rwd"></a>
+                    <h2>Responsive Web Design</h2>
+                    <p>Mixins, functions and classes that may help you building a responsive website can be found in <code class="files">tools/_responsive.scss</code>.</p>
                     <article>
                         <h3>Global breakpoint configuration</h3>
                         <p>When creating a responsive site, use the Sass-map <code class="css">$breakpoints</code> in <code class="files">sass/base/_vars.scss</code> to map names to the values, making breakpoint management easier. By sticking to this map you are able to keep track of your breakpoint values and to change your media queries globally without accidently overlooking one.</p>
@@ -778,419 +1244,6 @@ $(document).ready(function() {
                             </div>
                         </div>
                     </article>
-                    <article>
-                        <h3>z-index Management</h3>
-                        <p>Like managing responsive breakpoints, keeping track of your website's z-layers can be far easier and much more convenient if you gather all z-indexes into a single map. Instead of assigning the z-index values directly, write <code class="css">z-index: z({layer-name})</code>. This is especially helpful when you need to debug your code.</p>
-                        <div class="example-tabs tabs-container">
-                            <ul class="tabs">
-                                <li><a class="css" href="#z-scss">SCSS</a></li>
-                                <li><a class="files" href="#z-files">Files</a></li>
-                            </ul>
-                            <div id="z-scss" class="tab-content">
-<pre>
-<code class="css">$z-layers: (
-    header:    30,
-    content:   10,
-    footer:    20
-);
-
-.header {   z-index: z(header);   }
-.content {  z-index: z(content);  }
-.footer  {  z-index: z(footer);   }
-</code></pre>
-                            </div>
-                            <div id="z-files" class="tab-content">
-                                <ul class="files">
-                                    <li>sass/base/_vars.scss (z-index configuration)</li>
-                                    <li>sass/tools/_utilities.scss (the function)</li>
-                                </ul>
-                            </div>
-                        </div>
-
-                    </article>
-                    <article>
-                        <h3>REM font-size and line-height</h3>
-                        <p>
-                            Especially when dealing with responsive web design, it is recommended using relative values like <b>em</b> or <b>rem</b> for your <code class="css">font size</code>-allocations. By sticking to this principle you are able to change the size of your entire website's typography by editing only the <code class="css">font-size</code> value of the <code class="html">&lt;html&gt;</code>-Element. While <b>em</b> is relative to the font-size of its direct or nearest parent, <b>rem</b> is only relative to the html (root) font-size, making using the latter easier to scale type across the entire page.
-                        </p>
-                        <p>
-                            <code class="css">html { font-size: 62.5%; }</code> sets up a base font-size of 10px. Therefore 10px equals 1rem, 15px equals 1.5rem, 24px equals 2.4rem and so on. With this prerequisite you can use this mixin to set your font-sizes and line-heights the old way - with pixel values (without the "px"-units however) - and still write code that is fit for responsive web design.
-                        </p>
-                        <p>
-                            Of course this mixin has a px-fallback for legacy browsers.
-                        </p>
-                            <a href="http://css-tricks.com/snippets/css/less-mixin-for-rem-font-sizing/">http://css-tricks.com/snippets/css/less-mixin-for-rem-font-sizing/</a>
-                        </p>
-                        <div class="example-tabs tabs-container">
-                            <ul class="tabs">
-                                <li><a class="css" href="#rem-scss">SCSS</a></li>
-                                <li><a class="css" href="#rem-css">Generated CSS</a></li>
-                                <li><a class="files" href="#rem-files">Files</a></li>
-                            </ul>
-                            <div id="rem-scss" class="tab-content">
-<pre>
-<code class="css">p {
-    @include font-size(16, 24);
-}
-</code></pre>
-                            </div>
-                            <div id="rem-css" class="tab-content">
-<pre>
-<code class="css">p {
-    font-size: 16px;
-    line-height: 24px;
-    font-size: 1.6rem;
-    line-height: 2.4rem;
-}
-</code></pre>
-                            </div>
-                            <div id="rem-files" class="tab-content">
-                                <ul class="files">
-                                    <li>sass/tools/_utilities.scss</li>
-                                </ul>
-                            </div>
-                        </div>
-
-                    </article>
-                    <article>
-                        <h3>Truncate Text</h3>
-                        <p>
-                            A small mixin ensuring that your text element doesn’t overflow its container and breaks nicely. It takes one parameter, which is any of the valid text-overflow values (the default value "ellipsis", "clip", or a string).
-                        </p>
-                        <p>
-                            <a href="http://hackingui.com/front-end/10-best-scss-utilities/">http://hackingui.com/front-end/10-best-scss-utilities/</a>
-                        </p>
-                        <div class="example-tabs tabs-container">
-                            <ul class="tabs">
-                                <li><a class="example" href="#truncate-example">Example</a></li>
-                                <li><a class="css" href="#truncate-scss">SCSS</a></li>
-                                <li><a class="files" href="#truncate-files">Files</a></li>
-                            </ul>
-                            <div id="truncate-example" class="tab-content">
-                                <div class="example">
-                                    <p class="example-truncate">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum in posuere orci. Nam euismod gravida nunc. Ut accumsan vitae dolor interdum ullamcorper. Ut luctus, lacus quis finibus bibendum, tortor nisl tristique mauris, eu efficitur nisi felis sit amet lacus. </p>
-                                </div>
-                            </div>
-                            <div id="truncate-scss" class="tab-content">
-<pre>
-<code class="css">.example-truncate {
-    @include truncate-text; // parameter is optional
-}
-</code></pre>
-                            </div>
-                            <div id="truncate-files" class="tab-content">
-                                <ul class="files">
-                                    <li>sass/tools/_utilities.scss</li>
-                                </ul>
-                            </div>
-                        </div>
-
-                    </article>
-                    <article>
-                        <h3>@mixin center-vertical</h3>
-                        <p>
-                            For vertically centering inline-block-elements with a dynamic size. Doesn’t require an extra, non-semantic HTML element.
-                        </p>
-                        <p>
-                            <a href="http://hackingui.com/front-end/10-best-scss-utilities/">http://hackingui.com/front-end/10-best-scss-utilities/</a>
-                        </p>
-                        <div class="example-tabs tabs-container">
-                            <ul class="tabs">
-                                <li><a class="example" href="#center-v-example">Example</a></li>
-                                <li><a class="html" href="#center-v-html">HTML</a></li>
-                                <li><a class="css" href="#center-v-scss">SCSS</a></li>
-                                <li><a class="files" href="#center-v-files">Files</a></li>
-                            </ul>
-                            <div id="center-v-example" class="tab-content">
-                                <div class="example">
-                                    <div class="example-center-vert">
-                                        <div class="example-center-vert-item">I am a lonely div inside another lonely div. But at least I am a vertically centered div!</div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div id="center-v-html" class="tab-content">
-<pre>
-<code class="html">&lt;div class="example-center-vert"&gt;
-    &lt;div class="example-center-vert-item"&gt;
-        I am a lonely div inside another lonely div. But at least I am a vertically centered div!
-    &lt;/div&gt;
-&lt;/div&gt;
-</code></pre>
-                            </div>
-                            <div id="center-v-scss" class="tab-content">
-<pre>
-<code class="css">.example-center-vert {
-    @include center-vertical;
-    [...]
-}
-
-.example-center-vert-item {
-    @include inline-block;
-    [...]
-}
-</code></pre>
-                            </div>
-                            <div id="center-v-files" class="tab-content">
-                                <ul class="files">
-                                    <li>sass/tools/_utilities.scss</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </article>
-                    <article>
-                        <h3>@mixin center-both</h3>
-                        <p>
-                            Horizontally and vertically center elements with a dynamic size. Works only in modern Browsers.
-                        </p>
-                        <div class="example-tabs tabs-container">
-                            <ul class="tabs">
-                                <li><a class="example" href="#center-b-example">Example</a></li>
-                                <li><a class="html" href="#center-b-html">HTML</a></li>
-                                <li><a class="css" href="#center-b-scss">SCSS</a></li>
-                                <li><a class="files" href="#center-b-files">Files</a></li>
-                            </ul>
-                            <div id="center-b-example" class="tab-content">
-                                <div class="example">
-                                    <div class="example-center-both">
-                                        <div class="example-center-both-item">I am a lonely div inside another lonely div. But at least I am a perfectly centered div!</div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div id="center-b-html" class="tab-content">
-<pre>
-<code class="html">&lt;div class="example-center-both"&gt;
-    &lt;div class="example-center-both-item"&gt;
-        I am a lonely div inside another lonely div. But at least I am a perfectly centered div!
-    &lt;/div&gt;
-&lt;/div&gt;
-</code></pre>
-                            </div>
-                            <div id="center-b-scss" class="tab-content">
-<pre>
-<code class="css">.example-center-both {
-    position: relative;
-    [...]
-}
-
-.example-center-both-item {
-    @include center-both;
-    [...]
-}
-</code></pre>
-                            </div>
-                            <div id="center-b-files" class="tab-content">
-                                <ul class="files">
-                                    <li>sass/tools/_utilities.scss</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </article>
-                    <article>
-                        <h3>Triangle</h3>
-                        <p>
-                            <code class="css">@mixin triangle</code> creates a right angled triangle pointing to a direction specified by <code class="css">$direction</code>. <code class="css">@mixin triangle-absolute</code> further provides styles for absolute positioning of pseudo-elements.
-                        </p>
-                        <div class="example-tabs tabs-container">
-                            <ul class="tabs">
-                                <li><a class="example" href="#triangle-example">Example</a></li>
-                                <li><a class="html" href="#triangle-html">HTML</a></li>
-                                <li><a class="css" href="#triangle-scss">SCSS</a></li>
-                                <li><a class="files" href="#triangle-files">Files</a></li>
-                            </ul>
-                            <div id="triangle-example" class="tab-content">
-                                <div class="example">
-                                    <span class="triangle01">Me haz triangle</span>
-                                </div>
-                            </div>
-                            <div id="triangle-html" class="tab-content">
-<pre>
-<code class="html">&lt;span class="tooltip"&gt;Me haz triangle&lt;/span&gt;
-</code></pre>
-                            </div>
-                            <div id="triangle-scss" class="tab-content">
-<pre>
-<code class="css">.tooltip {
-    position: relative;
-    [...]
-    &:before {
-        @include triangle-absolute(bottom, 10px, $blue1);
-        bottom: -10px;
-        left: 50%;
-        @include translate(-50%, 0);
-    }
-}
-</code></pre>
-                            </div>
-                            <div id="triangle-files" class="tab-content">
-                                <ul class="files">
-                                    <li>sass/tools/_utilities.scss</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </article>
-                    <article>
-                        <h3>Gradient Transition</h3>
-                        <p>
-                            <code class="css">@mixin gradient-transition</code> creates a :hover-transition-effect with a gradient.
-                        </p>
-                        <div class="example-tabs tabs-container">
-                            <ul class="tabs">
-                                <li><a class="example" href="#gtrans-example">Example</a></li>
-                                <li><a class="css" href="#gtrans-scss">SCSS</a></li>
-                                <li><a class="files" href="#gtrans-files">Files</a></li>
-                            </ul>
-                            <div id="gtrans-example" class="tab-content">
-                                <div class="example">
-                                    <a class="transition1" href="javascript://">Me haz transition</a>
-                                </div>
-                            </div>
-                            <div id="gtrans-scss" class="tab-content">
-<pre>
-<code class="css">.button {
-    @include gradient-transition($grey5, $grey4, 0.25s);
-    [...]
-}
-</code></pre>
-                            </div>
-                            <div id="gtrans-files" class="tab-content">
-                                <ul class="files">
-                                    <li>sass/tools/_utilities.scss</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </article>
-                    <article>
-                        <h3>Ordered list with custom counters</h3>
-                        <div class="example-tabs tabs-container">
-                            <ul class="tabs">
-                                <li><a class="example" href="#ol-c-example">Example</a></li>
-                                <li><a class="html" href="#ol-c-html">HTML</a></li>
-                                <li><a class="files" href="#ol-c-files">Files</a></li>
-                            </ul>
-                            <div id="ol-c-example" class="tab-content">
-                                <div class="example">
-                                    <ol class="custom-counter">
-                                        <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce turpis lectus, gravida sed rutrum sit amet, lobortis at sem. Donec nec egestas tortor. Vestibulum eget purus ac lorem pellentesque elementum ac ac sapien.</li>
-                                        <li>Praesent iaculis faucibus gravida. Donec rutrum lorem enim, eu ultricies lorem porttitor sed. Nullam ut auctor turpis. Donec quis sollicitudin lacus. Vivamus vel tortor molestie, volutpat erat a, varius massa.</li>
-                                        <li>Integer sed feugiat libero, non egestas nisi. Fusce at arcu bibendum risus ullamcorper faucibus nec sed felis.</li>
-                                        <li>Aenean placerat viverra libero non luctus. Sed blandit ligula scelerisque nisl gravida, hendrerit pulvinar urna vestibulum. In posuere sapien sit amet augue bibendum, eget accumsan leo sollicitudin. Nam dictum vehicula massa ac finibus. Ut pretium mauris ut volutpat dapibus.</li>
-                                    </ol>
-                                </div>
-                            </div>
-                            <div id="ol-c-html" class="tab-content">
-<pre><code class="html">&lt;ol class="custom-counter"&gt;
-    &lt;li&gt;Eins&lt;/li&gt;
-    &lt;li&gt;Zwei&lt;/li&gt;
-    &lt;li&gt;Drei&lt;/li&gt;
-    &lt;li&gt;Vier&lt;/li&gt;
-&lt;/ol&gt;
-</code></pre>
-                            </div>
-                            <div id="ol-c-files" class="tab-content">
-                                <ul class="files">
-                                    <li>sass/tools/_utilities.scss</li>
-                                </ul>
-                            </div>
-                        </div>
-
-                    </article>
-                <article>
-                    <h3>Positioning mixins</h3>
-                    <p>By Oliver Lohkemper.</p>
-                    <p>The Sass-mixins <code class="css">@mixin absolute</code>, <code class="css">@mixin fixed</code> and <code class="css">@mixin relative</code> offer a convenient way to position your website's elements by shorthand. Each mixin takes one argument consisting of up to four values that match the four offset properties. If you want to leave out a property, just use the value <code class="css">null</code>.</p>
-                    <div class="example-tabs tabs-container">
-                        <ul class="tabs">
-                            <li><a class="example" href="#pos-example">Example</a></li>
-                            <li><a class="css" href="#pos-scss">SCSS</a></li>
-                            <li><a class="css" href="#pos-css">Generated CSS</a></li>
-                            <li><a class="files" href="#pos-files">Files</a></li>
-                        </ul>
-                        <div id="pos-example" class="tab-content">
-                            <div class="example">
-                                <div class="example-pos-wrapper">
-                                    <div class="example-pos example-pos1">.example-pos1</div>
-                                    <div class="example-pos example-pos2">.example-pos2</div>
-                                    <div class="example-pos example-pos3">.example-pos3</div>
-                                    <div class="example-pos example-pos4">.example-pos4</div>
-                                </div>
-                            </div>
-                        </div>
-                        <div id="pos-scss" class="tab-content">
-<pre><code class="css">.example-pos1 {
-    /*
-        top: 10px
-        right: 20px
-        bottom: null
-        left: 40px
-    */
-    @include absolute(10px 20px null 40px);
-}
-
-.example-pos2 {
-    /*
-        top: null
-        right & left: 50px
-        bottom: 20px
-    */
-    @include absolute(null 50px 20px);
-}
-
-.example-pos3 {
-    /*
-        top & bottom: 120px
-        right & left: 0
-    */
-    @include absolute(120px 0);
-}
-
-.example-pos4 {
-    /*
-        top & bottom & right & left: 70px
-    */
-    @include absolute(70px);
-}
-</code></pre>
-                        </div>
-                        <div id="pos-css" class="tab-content">
-<pre><code class="css">.example-pos1 {
-    top: 10px;
-    right: 20px;
-    left: 40px;
-    position: absolute;
-}
-
-.example-pos2 {
-    right: 50px;
-    bottom: 20px;
-    left: 50px;
-    position: absolute;
-}
-
-.example-pos3 {
-    top: 120px;
-    right: 0;
-    bottom: 120;
-    left: 0;
-    position: absolute;
-}
-
-.example-pos4 {
-    top: 70px;
-    right: 70px;
-    bottom: 70px;
-    left: 70px;
-    position: absolute;
-}
-</code></pre>
-                        </div>
-                        <div id="pos-files" class="tab-content">
-                            <ul class="files">
-                                <li>sass/tools/_utilities.scss</li>
-                            </ul>
-                        </div>
-                    </div>
-
-                </article>
                 </section>
                 <hr>
 
@@ -1400,48 +1453,7 @@ $susy: (
                             </ul>
                         </div>
                     </div>
-                    <h3>Columns with synced heights</h3>
-                    <p><a href="https://github.com/ginader/syncHeight">syncHeight Plugin for YAML</a></p>
-                    <div class="example-tabs tabs-container">
-                        <ul class="tabs">
-                            <li><a class="example" href="#cols-h-example">Example</a></li>
-                            <li><a class="html" href="#cols-h-html">HTML</a></li>
-                            <li><a class="files" href="#cols-h-files">Files</a></li>
-                        </ul>
-                        <div id="cols-h-example" class="tab-content">
-                            <div class="example">
 
-                                <div class="example-grid sync-height">
-                                    <div class="example-equal-1 example-module-2">
-                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque a ligula vitae risus vulputate venenatis. Donec luctus, sapien non maximus interdum, risus elit condimentum enim, a commodo metus ipsum vel erat.
-                                    </div>
-                                    <div class="example-equal-2 example-module-2">
-                                        Maecenas ac purus vitae leo pellentesque congue a id nisi. Phasellus ultrices interdum tellus eget auctor. Morbi tristique lectus sed mi malesuada, in sagittis massa consequat. Sed sed accumsan nisl. Sed bibendum gravida lorem eu tristique. Aliquam facilisis congue venenatis. Proin dui neque, commodo eget leo eget, pretium ornare lacus.
-                                    </div>
-                                    <div class="example-equal-3 example-module-2">
-                                        Ut pretium orci arcu, vitae pharetra neque pharetra sed.
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div id="cols-h-html" class="tab-content">
-<pre><code class="html">&lt;div class="sync-height"&gt;
-    &lt;div&gt;
-        ...
-    &lt;/div&gt;
-    &lt;div&gt;
-        ...
-    &lt;/div&gt;
-&lt;/div&gt;
-</code></pre>
-
-                        </div>
-                        <div id="cols-h-files" class="tab-content">
-                            <ul class="files"><li>js/lib/jquery.syncheight.js</li>
-                            <li>js/syncheight.js</li>
-                            </ul>
-                        </div>
-                    </div>
 
                 </section>
                 <hr>
