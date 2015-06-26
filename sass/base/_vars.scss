@@ -150,12 +150,12 @@ $btn-margin:                    4px 0;
 // Color variants
 $btn-color:                     $grey1;
 $btn-bg-color:                  $grey5;
-$btn-hover-bg-color:            darken($grey5, 2%);
+$btn-hover-bg-color:            darken($grey5, 5%);
 $btn-active-bg-color:           darken($grey5, 10%);
 
 $btn-primary-color:             $white;
 $btn-primary-bg-color:          $blue1;
-$btn-primary-hover-bg-color:    darken($blue1, 2%);
+$btn-primary-hover-bg-color:    darken($blue1, 5%);
 $btn-primary-active-bg-color:   darken($blue1, 10%);
 
 $btn-disabled-color:            $grey4;
@@ -165,7 +165,7 @@ $btn-disabled-active-bg-color:  darken($white, 5%);
 
 $btn-accept-color:              $white;
 $btn-accept-bg-color:           $green1;
-$btn-accept-hover-bg-color:     darken($green1, 2%);
+$btn-accept-hover-bg-color:     darken($green1, 5%);
 $btn-accept-active-bg-color:    darken($green1, 10%);
 
 $btn-decline-color:             $white;
@@ -189,13 +189,13 @@ $btn-big-next-border-radius:    23px;
 /*
 # Tables
 */
-$table-breakpoint:              medium;         // max-brakepoint where responsive tables will become scrollable
+$table-breakpoint:              medium;         // max-brakepoint at which responsive tables will become scrollable
 $table-bg-color:                transparent;
 $table-bg-accent-color:         $grey5;
-$table-bg-hover-color:          $grey4;
-$table-border-color:            $grey3;
+$table-bg-hover-color:          $blue2;
+$table-border-color:            $grey4;
 $table-cell-padding:            10px;
-$table-active-bg-color:         $grey4;
+$table-active-bg-color:         $turquise2;
 $table-info-bg-color:           $blue2;
 $table-success-bg-color:        $green2;
 $table-warning-bg-color:        $yellow2;

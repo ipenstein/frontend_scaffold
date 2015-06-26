@@ -2644,8 +2644,7 @@ a {
   a:visited {
     color: #a5037c; }
   a:hover {
-    color: #052f3e;
-    text-decoration: none; }
+    color: #052f3e; }
   a:active, a:focus {
     color: #fff;
     background-color: #109acc; }
@@ -2753,496 +2752,6 @@ body {
 
 Styles for gui-elements.
 */
-/*
-# elements/_tables.scss
-
-Styles mostly taken from bootstrap
-*/
-table {
-  max-width: 100%;
-  background-color: transparent; }
-
-th {
-  text-align: left; }
-
-/*
-# Basic table
-*/
-.table {
-  width: 100%;
-  margin-bottom: 20px; }
-  .table > thead > tr > th,
-  .table > thead > tr > td,
-  .table > tbody > tr > th,
-  .table > tbody > tr > td,
-  .table > tfoot > tr > th,
-  .table > tfoot > tr > td {
-    padding: 10px;
-    line-height: 24px;
-    vertical-align: top;
-    border-top: 1px solid #999; }
-  .table > thead > tr > td.active > td, .table > thead > tr > td.active > th, .table > thead tr > th.active > td, .table > thead tr > th.active > th,
-  .table > thead > tr.active > td,
-  .table > thead > tr.active > th,
-  .table > tbody > tr > td.active > td,
-  .table > tbody > tr > td.active > th,
-  .table > tbody tr > th.active > td,
-  .table > tbody tr > th.active > th,
-  .table > tbody > tr.active > td,
-  .table > tbody > tr.active > th,
-  .table > tfoot > tr > td.active > td,
-  .table > tfoot > tr > td.active > th,
-  .table > tfoot tr > th.active > td,
-  .table > tfoot tr > th.active > th,
-  .table > tfoot > tr.active > td,
-  .table > tfoot > tr.active > th {
-    background-color: #ccc; }
-  .table > thead > tr > td.info > td, .table > thead > tr > td.info > th, .table > thead tr > th.info > td, .table > thead tr > th.info > th,
-  .table > thead > tr.info > td,
-  .table > thead > tr.info > th,
-  .table > tbody > tr > td.info > td,
-  .table > tbody > tr > td.info > th,
-  .table > tbody tr > th.info > td,
-  .table > tbody tr > th.info > th,
-  .table > tbody > tr.info > td,
-  .table > tbody > tr.info > th,
-  .table > tfoot > tr > td.info > td,
-  .table > tfoot > tr > td.info > th,
-  .table > tfoot tr > th.info > td,
-  .table > tfoot tr > th.info > th,
-  .table > tfoot > tr.info > td,
-  .table > tfoot > tr.info > th {
-    background-color: #b7e0ef; }
-  .table > thead > tr > td.success > td, .table > thead > tr > td.success > th, .table > thead tr > th.success > td, .table > thead tr > th.success > th,
-  .table > thead > tr.success > td,
-  .table > thead > tr.success > th,
-  .table > tbody > tr > td.success > td,
-  .table > tbody > tr > td.success > th,
-  .table > tbody tr > th.success > td,
-  .table > tbody tr > th.success > th,
-  .table > tbody > tr.success > td,
-  .table > tbody > tr.success > th,
-  .table > tfoot > tr > td.success > td,
-  .table > tfoot > tr > td.success > th,
-  .table > tfoot tr > th.success > td,
-  .table > tfoot tr > th.success > th,
-  .table > tfoot > tr.success > td,
-  .table > tfoot > tr.success > th {
-    background-color: #d3e5c3; }
-  .table > thead > tr > td.warning > td, .table > thead > tr > td.warning > th, .table > thead tr > th.warning > td, .table > thead tr > th.warning > th,
-  .table > thead > tr.warning > td,
-  .table > thead > tr.warning > th,
-  .table > tbody > tr > td.warning > td,
-  .table > tbody > tr > td.warning > th,
-  .table > tbody tr > th.warning > td,
-  .table > tbody tr > th.warning > th,
-  .table > tbody > tr.warning > td,
-  .table > tbody > tr.warning > th,
-  .table > tfoot > tr > td.warning > td,
-  .table > tfoot > tr > td.warning > th,
-  .table > tfoot tr > th.warning > td,
-  .table > tfoot tr > th.warning > th,
-  .table > tfoot > tr.warning > td,
-  .table > tfoot > tr.warning > th {
-    background-color: #f8e6b2; }
-  .table > thead > tr > td.error > td, .table > thead > tr > td.error > th, .table > thead tr > th.error > td, .table > thead tr > th.error > th,
-  .table > thead > tr.error > td,
-  .table > thead > tr.error > th,
-  .table > tbody > tr > td.error > td,
-  .table > tbody > tr > td.error > th,
-  .table > tbody tr > th.error > td,
-  .table > tbody tr > th.error > th,
-  .table > tbody > tr.error > td,
-  .table > tbody > tr.error > th,
-  .table > tfoot > tr > td.error > td,
-  .table > tfoot > tr > td.error > th,
-  .table > tfoot tr > th.error > td,
-  .table > tfoot tr > th.error > th,
-  .table > tfoot > tr.error > td,
-  .table > tfoot > tr.error > th {
-    background-color: #f7c5c1; }
-  .table > thead > tr > th {
-    vertical-align: bottom;
-    border-bottom: 2px solid #999; }
-  .table > caption + thead > tr:first-child > th,
-  .table > caption + thead > tr:first-child > td,
-  .table > colgroup + thead > tr:first-child > th,
-  .table > colgroup + thead > tr:first-child > td,
-  .table > thead:first-child > tr:first-child > th,
-  .table > thead:first-child > tr:first-child > td {
-    border-top: 0; }
-  .table > tbody + tbody {
-    border-top: 2px solid #999; }
-  .table .table {
-    background-color: #eee; }
-
-/*
-# Bordered version
-
-Add borders all around the table and between all the columns.
-*/
-.table-bordered {
-  border: 1px solid #999; }
-  .table-bordered > thead > tr > th,
-  .table-bordered > thead > tr > td,
-  .table-bordered > tbody > tr > th,
-  .table-bordered > tbody > tr > td,
-  .table-bordered > tfoot > tr > th,
-  .table-bordered > tfoot > tr > td {
-    border: 1px solid #999; }
-  .table-bordered > thead > tr > th,
-  .table-bordered > thead > tr > td {
-    border-bottom-width: 2px; }
-
-/*
-# Zebra-striping
-
-Default zebra-stripe styles (alternating gray and transparent backgrounds)
-*/
-.table-striped > tbody > tr:nth-child(odd) > td,
-.table-striped > tbody > tr:nth-child(odd) > th {
-  background-color: #eee; }
-
-/*
-# Hover effect
-
-Placed here since it has to come after the potential zebra striping
-*/
-.table-hover > tbody > tr:hover > td,
-.table-hover > tbody > tr:hover > th {
-  background-color: #ccc; }
-
-/*
-# Responsive tables
-
-Wrap your tables in `.table-responsive` and we'll make them mobile friendly
-by enabling horizontal scrolling. Only applies up to the $table-breakpoint.
-Everything above that will display normally.
-*/
-@media (max-width: 699px) {
-  .table-responsive {
-    width: 100%;
-    margin-bottom: 24px;
-    overflow-y: hidden;
-    overflow-x: scroll;
-    -ms-overflow-style: -ms-autohiding-scrollbar;
-    border: 1px solid #999;
-    -webkit-overflow-scrolling: touch; }
-    .table-responsive > .table {
-      margin-bottom: 0; }
-      .table-responsive > .table > thead > tr > th,
-      .table-responsive > .table > thead > tr > td,
-      .table-responsive > .table > tbody > tr > th,
-      .table-responsive > .table > tbody > tr > td,
-      .table-responsive > .table > tfoot > tr > th,
-      .table-responsive > .table > tfoot > tr > td {
-        white-space: nowrap; }
-    .table-responsive > .table-bordered {
-      border: 0; }
-      .table-responsive > .table-bordered > thead > tr > th:first-child,
-      .table-responsive > .table-bordered > thead > tr > td:first-child,
-      .table-responsive > .table-bordered > tbody > tr > th:first-child,
-      .table-responsive > .table-bordered > tbody > tr > td:first-child,
-      .table-responsive > .table-bordered > tfoot > tr > th:first-child,
-      .table-responsive > .table-bordered > tfoot > tr > td:first-child {
-        border-left: 0; }
-      .table-responsive > .table-bordered > thead > tr > th:last-child,
-      .table-responsive > .table-bordered > thead > tr > td:last-child,
-      .table-responsive > .table-bordered > tbody > tr > th:last-child,
-      .table-responsive > .table-bordered > tbody > tr > td:last-child,
-      .table-responsive > .table-bordered > tfoot > tr > th:last-child,
-      .table-responsive > .table-bordered > tfoot > tr > td:last-child {
-        border-right: 0; }
-      .table-responsive > .table-bordered > tbody > tr:last-child > th,
-      .table-responsive > .table-bordered > tbody > tr:last-child > td,
-      .table-responsive > .table-bordered > tfoot > tr:last-child > th,
-      .table-responsive > .table-bordered > tfoot > tr:last-child > td {
-        border-bottom: 0; } }
-
-/*
-# elements/_buttons.scss
-*/
-/*
-# elements/_buttons.scss
-
-Button styles
-*/
-.btn {
-  display: inline-block;
-  vertical-align: middle;
-  *vertical-align: auto;
-  *zoom: 1;
-  *display: inline;
-  font-family: "Roboto", "Helvetica-Neue", Helvetica, Arial, sans-serif;
-  font-weight: 400;
-  font-size: 16px;
-  line-height: normal;
-  border: 1px solid transparent;
-  border: 1px solid rgba(0, 0, 0, 0.15);
-  text-align: center;
-  text-decoration: none;
-  white-space: nowrap;
-  vertical-align: middle;
-  margin: 4px 0;
-  cursor: pointer;
-  background-image: none;
-  padding: 6px 20px;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  -moz-box-shadow: 0 1px 0 rgba(0, 0, 0, 0.075);
-  -webkit-box-shadow: 0 1px 0 rgba(0, 0, 0, 0.075);
-  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.075); }
-  .btn:hover, .btn.hover {
-    text-decoration: none; }
-  .btn:active, .btn.active {
-    background-image: none;
-    text-decoration: none;
-    -moz-box-shadow: inset 0 2px 3px rgba(0, 0, 0, 0.175);
-    -webkit-box-shadow: inset 0 2px 3px rgba(0, 0, 0, 0.175);
-    box-shadow: inset 0 2px 3px rgba(0, 0, 0, 0.175); }
-  .btn:focus {
-    border-color: rgba(0, 0, 0, 0.4); }
-
-/*
-# Button colors
-
-    <a class="btn btn-default">Default button</a>
-    <a class="btn btn-accept">Green button</a>
-    <a class="btn btn-decline">Red button</a>
-*/
-.btn, .btn:visited, .btn:focus,
-.btn-default,
-.btn-default:visited,
-.btn-default:focus {
-  color: #333;
-  background-color: #eee; }
-  .btn:hover, .btn.hover, .btn:visited:hover, .btn:visited.hover, .btn:focus:hover, .btn:focus.hover,
-  .btn-default:hover,
-  .btn-default.hover,
-  .btn-default:visited:hover,
-  .btn-default:visited.hover,
-  .btn-default:focus:hover,
-  .btn-default:focus.hover {
-    color: #333;
-    background-color: #e9e9e9; }
-  .btn:active, .btn.active, .btn:visited:active, .btn:visited.active, .btn:focus:active, .btn:focus.active,
-  .btn-default:active,
-  .btn-default.active,
-  .btn-default:visited:active,
-  .btn-default:visited.active,
-  .btn-default:focus:active,
-  .btn-default:focus.active {
-    color: #333;
-    background-color: #d4d4d4; }
-
-.btn-primary, .btn-primary:visited, .btn-primary:focus {
-  color: #fff;
-  background-color: #109acc; }
-  .btn-primary:hover, .btn-primary.hover, .btn-primary:visited:hover, .btn-primary:visited.hover, .btn-primary:focus:hover, .btn-primary:focus.hover {
-    color: #fff;
-    background-color: #0f93c3; }
-  .btn-primary:active, .btn-primary.active, .btn-primary:visited:active, .btn-primary:visited.active, .btn-primary:focus:active, .btn-primary:focus.active {
-    color: #fff;
-    background-color: #0c769d; }
-
-button[disabled].btn-disabled,
-.btn-disabled {
-  cursor: not-allowed; }
-  button[disabled].btn-disabled, button[disabled].btn-disabled:visited, button[disabled].btn-disabled:focus,
-  .btn-disabled,
-  .btn-disabled:visited,
-  .btn-disabled:focus {
-    color: #ccc;
-    background-color: #f2f2f2; }
-    button[disabled].btn-disabled:hover, button[disabled].btn-disabled.hover, button[disabled].btn-disabled:visited:hover, button[disabled].btn-disabled:visited.hover, button[disabled].btn-disabled:focus:hover, button[disabled].btn-disabled:focus.hover,
-    .btn-disabled:hover,
-    .btn-disabled.hover,
-    .btn-disabled:visited:hover,
-    .btn-disabled:visited.hover,
-    .btn-disabled:focus:hover,
-    .btn-disabled:focus.hover {
-      color: #ccc;
-      background-color: #f2f2f2; }
-    button[disabled].btn-disabled:active, button[disabled].btn-disabled.active, button[disabled].btn-disabled:visited:active, button[disabled].btn-disabled:visited.active, button[disabled].btn-disabled:focus:active, button[disabled].btn-disabled:focus.active,
-    .btn-disabled:active,
-    .btn-disabled.active,
-    .btn-disabled:visited:active,
-    .btn-disabled:visited.active,
-    .btn-disabled:focus:active,
-    .btn-disabled:focus.active {
-      color: #ccc;
-      background-color: #f2f2f2; }
-  button[disabled].btn-disabled:active, button[disabled].btn-disabled.active,
-  .btn-disabled:active,
-  .btn-disabled.active {
-    -moz-box-shadow: 0 1px 0 rgba(0, 0, 0, 0.075);
-    -webkit-box-shadow: 0 1px 0 rgba(0, 0, 0, 0.075);
-    box-shadow: 0 1px 0 rgba(0, 0, 0, 0.075); }
-
-.btn-accept, .btn-accept:visited, .btn-accept:focus {
-  color: #fff;
-  background-color: #6fa938; }
-  .btn-accept:hover, .btn-accept.hover, .btn-accept:visited:hover, .btn-accept:visited.hover, .btn-accept:focus:hover, .btn-accept:focus.hover {
-    color: #fff;
-    background-color: #6aa135; }
-  .btn-accept:active, .btn-accept.active, .btn-accept:visited:active, .btn-accept:visited.active, .btn-accept:focus:active, .btn-accept:focus.active {
-    color: #fff;
-    background-color: #56832b; }
-
-.btn-decline, .btn-decline:visited, .btn-decline:focus {
-  color: #fff;
-  background-color: #e53f32; }
-  .btn-decline:hover, .btn-decline.hover, .btn-decline:visited:hover, .btn-decline:visited.hover, .btn-decline:focus:hover, .btn-decline:focus.hover {
-    color: #fff;
-    background-color: #e12b1d; }
-  .btn-decline:active, .btn-decline.active, .btn-decline:visited:active, .btn-decline:visited.active, .btn-decline:focus:active, .btn-decline:focus.active {
-    color: #fff;
-    background-color: #ca261a; }
-
-/*
-# Button sizes
-
-    <a class="btn btn-sm btn-default">Small button</a>
-    <a class="btn btn-big btn-default">Big button</a>
-*/
-.btn-sm,
-.btn-group-sm > .btn {
-  font-size: 14px;
-  padding: 5px 12px; }
-
-.btn-big,
-.btn-group-big > .btn {
-  font-size: 20px;
-  padding: 10px 30px; }
-
-/*
-# Variants
-
-    <a class="btn btn-default btn-return">Return</a>
-    <a class="btn btn-default btn-proceed">Proceed</a>
-*/
-.btn-next {
-  -moz-border-radius-topright: 17px;
-  -webkit-border-top-right-radius: 17px;
-  border-top-right-radius: 17px;
-  -moz-border-radius-bottomright: 17px;
-  -webkit-border-bottom-right-radius: 17px;
-  border-bottom-right-radius: 17px; }
-
-.btn-sm.btn-next {
-  -moz-border-radius-topright: 14px;
-  -webkit-border-top-right-radius: 14px;
-  border-top-right-radius: 14px;
-  -moz-border-radius-bottomright: 14px;
-  -webkit-border-bottom-right-radius: 14px;
-  border-bottom-right-radius: 14px; }
-
-.btn-big.btn-next {
-  -moz-border-radius-topright: 23px;
-  -webkit-border-top-right-radius: 23px;
-  border-top-right-radius: 23px;
-  -moz-border-radius-bottomright: 23px;
-  -webkit-border-bottom-right-radius: 23px;
-  border-bottom-right-radius: 23px; }
-
-.btn-prev {
-  -moz-border-radius-topleft: 17px;
-  -webkit-border-top-left-radius: 17px;
-  border-top-left-radius: 17px;
-  -moz-border-radius-bottomleft: 17px;
-  -webkit-border-bottom-left-radius: 17px;
-  border-bottom-left-radius: 17px; }
-
-.btn-sm.btn-prev {
-  -moz-border-radius-topleft: 14px;
-  -webkit-border-top-left-radius: 14px;
-  border-top-left-radius: 14px;
-  -moz-border-radius-bottomleft: 14px;
-  -webkit-border-bottom-left-radius: 14px;
-  border-bottom-left-radius: 14px; }
-
-.btn-big.btn-prev {
-  -moz-border-radius-topleft: 23px;
-  -webkit-border-top-left-radius: 23px;
-  border-top-left-radius: 23px;
-  -moz-border-radius-bottomleft: 23px;
-  -webkit-border-bottom-left-radius: 23px;
-  border-bottom-left-radius: 23px; }
-
-.btn-round {
-  -moz-border-radius: 17px;
-  -webkit-border-radius: 17px;
-  border-radius: 17px; }
-
-.btn-sm.btn-round {
-  -moz-border-radius: 14px;
-  -webkit-border-radius: 14px;
-  border-radius: 14px; }
-
-.btn-big.btn-round {
-  -moz-border-radius: 23px;
-  -webkit-border-radius: 23px;
-  border-radius: 23px; }
-
-.btn-full {
-  width: 100%; }
-
-/*
-# Button group
-
-    <div class="btn-group">
-        <a class="btn btn-default">Default button</a>
-        <a class="btn btn-primary">Primary button</a>
-        <a class="btn btn-green">Green button</a>
-    </div>
-*/
-.btn-group {
-  position: relative;
-  display: inline-block;
-  vertical-align: middle;
-  *vertical-align: auto;
-  *zoom: 1;
-  *display: inline;
-  vertical-align: middle; }
-
-.btn-group > .btn {
-  position: relative;
-  float: left; }
-
-.btn-group > .btn:not(:first-child):not(:last-child) {
-  -moz-border-radius: 0;
-  -webkit-border-radius: 0;
-  border-radius: 0; }
-
-.btn-group > .btn:first-child:not(:last-child) {
-  -moz-border-radius-bottomright: 0;
-  -webkit-border-bottom-right-radius: 0;
-  border-bottom-right-radius: 0;
-  -moz-border-radius-topright: 0;
-  -webkit-border-top-right-radius: 0;
-  border-top-right-radius: 0; }
-
-.btn-group > .btn:last-child:not(:first-child) {
-  -moz-border-radius-bottomleft: 0;
-  -webkit-border-bottom-left-radius: 0;
-  border-bottom-left-radius: 0;
-  -moz-border-radius-topleft: 0;
-  -webkit-border-top-left-radius: 0;
-  border-top-left-radius: 0; }
-
-.btn-group .btn + .btn,
-.btn-group .btn + .btn-group,
-.btn-group .btn-group + .btn,
-.btn-group .btn-group + .btn-group {
-  margin-left: -1px; }
-
-.btn-group > .btn:hover,
-.btn-group > .btn:active,
-.btn-group > .btn.active {
-  z-index: 2; }
-
 /*
 # elements/_forms.scss
 
@@ -3520,6 +3029,290 @@ fieldset {
   margin-right: 10px; }
 
 /*
+# elements/_buttons.scss
+*/
+/*
+# elements/_buttons.scss
+
+Button styles
+*/
+.btn {
+  display: inline-block;
+  vertical-align: middle;
+  *vertical-align: auto;
+  *zoom: 1;
+  *display: inline;
+  font-family: "Roboto", "Helvetica-Neue", Helvetica, Arial, sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: normal;
+  border: 1px solid transparent;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  text-align: center;
+  text-decoration: none;
+  white-space: nowrap;
+  vertical-align: middle;
+  margin: 4px 0;
+  cursor: pointer;
+  background-image: none;
+  padding: 6px 20px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -moz-box-shadow: 0 1px 0 rgba(0, 0, 0, 0.075);
+  -webkit-box-shadow: 0 1px 0 rgba(0, 0, 0, 0.075);
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.075); }
+  .btn:hover, .btn.hover {
+    text-decoration: none; }
+  .btn:active, .btn.active {
+    background-image: none;
+    text-decoration: none;
+    -moz-box-shadow: inset 0 2px 3px rgba(0, 0, 0, 0.175);
+    -webkit-box-shadow: inset 0 2px 3px rgba(0, 0, 0, 0.175);
+    box-shadow: inset 0 2px 3px rgba(0, 0, 0, 0.175); }
+  .btn:focus {
+    border-color: rgba(0, 0, 0, 0.4); }
+
+/*
+# Button colors
+
+    <a class="btn btn-default">Default button</a>
+    <a class="btn btn-accept">Green button</a>
+    <a class="btn btn-decline">Red button</a>
+*/
+.btn, .btn:visited, .btn:focus,
+.btn-default,
+.btn-default:visited,
+.btn-default:focus {
+  color: #333;
+  background-color: #eee; }
+  .btn:hover, .btn.hover, .btn:visited:hover, .btn:visited.hover, .btn:focus:hover, .btn:focus.hover,
+  .btn-default:hover,
+  .btn-default.hover,
+  .btn-default:visited:hover,
+  .btn-default:visited.hover,
+  .btn-default:focus:hover,
+  .btn-default:focus.hover {
+    color: #333;
+    background-color: #e1e1e1; }
+  .btn:active, .btn.active, .btn:visited:active, .btn:visited.active, .btn:focus:active, .btn:focus.active,
+  .btn-default:active,
+  .btn-default.active,
+  .btn-default:visited:active,
+  .btn-default:visited.active,
+  .btn-default:focus:active,
+  .btn-default:focus.active {
+    color: #333;
+    background-color: #d4d4d4; }
+
+.btn-primary, .btn-primary:visited, .btn-primary:focus {
+  color: #fff;
+  background-color: #109acc; }
+  .btn-primary:hover, .btn-primary.hover, .btn-primary:visited:hover, .btn-primary:visited.hover, .btn-primary:focus:hover, .btn-primary:focus.hover {
+    color: #fff;
+    background-color: #0e88b4; }
+  .btn-primary:active, .btn-primary.active, .btn-primary:visited:active, .btn-primary:visited.active, .btn-primary:focus:active, .btn-primary:focus.active {
+    color: #fff;
+    background-color: #0c769d; }
+
+button[disabled].btn-disabled,
+.btn-disabled {
+  cursor: not-allowed; }
+  button[disabled].btn-disabled, button[disabled].btn-disabled:visited, button[disabled].btn-disabled:focus,
+  .btn-disabled,
+  .btn-disabled:visited,
+  .btn-disabled:focus {
+    color: #ccc;
+    background-color: #f2f2f2; }
+    button[disabled].btn-disabled:hover, button[disabled].btn-disabled.hover, button[disabled].btn-disabled:visited:hover, button[disabled].btn-disabled:visited.hover, button[disabled].btn-disabled:focus:hover, button[disabled].btn-disabled:focus.hover,
+    .btn-disabled:hover,
+    .btn-disabled.hover,
+    .btn-disabled:visited:hover,
+    .btn-disabled:visited.hover,
+    .btn-disabled:focus:hover,
+    .btn-disabled:focus.hover {
+      color: #ccc;
+      background-color: #f2f2f2; }
+    button[disabled].btn-disabled:active, button[disabled].btn-disabled.active, button[disabled].btn-disabled:visited:active, button[disabled].btn-disabled:visited.active, button[disabled].btn-disabled:focus:active, button[disabled].btn-disabled:focus.active,
+    .btn-disabled:active,
+    .btn-disabled.active,
+    .btn-disabled:visited:active,
+    .btn-disabled:visited.active,
+    .btn-disabled:focus:active,
+    .btn-disabled:focus.active {
+      color: #ccc;
+      background-color: #f2f2f2; }
+  button[disabled].btn-disabled:active, button[disabled].btn-disabled.active,
+  .btn-disabled:active,
+  .btn-disabled.active {
+    -moz-box-shadow: 0 1px 0 rgba(0, 0, 0, 0.075);
+    -webkit-box-shadow: 0 1px 0 rgba(0, 0, 0, 0.075);
+    box-shadow: 0 1px 0 rgba(0, 0, 0, 0.075); }
+
+.btn-accept, .btn-accept:visited, .btn-accept:focus {
+  color: #fff;
+  background-color: #6fa938; }
+  .btn-accept:hover, .btn-accept.hover, .btn-accept:visited:hover, .btn-accept:visited.hover, .btn-accept:focus:hover, .btn-accept:focus.hover {
+    color: #fff;
+    background-color: #629632; }
+  .btn-accept:active, .btn-accept.active, .btn-accept:visited:active, .btn-accept:visited.active, .btn-accept:focus:active, .btn-accept:focus.active {
+    color: #fff;
+    background-color: #56832b; }
+
+.btn-decline, .btn-decline:visited, .btn-decline:focus {
+  color: #fff;
+  background-color: #e53f32; }
+  .btn-decline:hover, .btn-decline.hover, .btn-decline:visited:hover, .btn-decline:visited.hover, .btn-decline:focus:hover, .btn-decline:focus.hover {
+    color: #fff;
+    background-color: #e12b1d; }
+  .btn-decline:active, .btn-decline.active, .btn-decline:visited:active, .btn-decline:visited.active, .btn-decline:focus:active, .btn-decline:focus.active {
+    color: #fff;
+    background-color: #ca261a; }
+
+/*
+# Button sizes
+
+    <a class="btn btn-sm btn-default">Small button</a>
+    <a class="btn btn-big btn-default">Big button</a>
+*/
+.btn-sm,
+.btn-group-sm > .btn {
+  font-size: 14px;
+  padding: 5px 12px; }
+
+.btn-big,
+.btn-group-big > .btn {
+  font-size: 20px;
+  padding: 10px 30px; }
+
+/*
+# Variants
+
+    <a class="btn btn-default btn-return">Return</a>
+    <a class="btn btn-default btn-proceed">Proceed</a>
+*/
+.btn-next {
+  -moz-border-radius-topright: 17px;
+  -webkit-border-top-right-radius: 17px;
+  border-top-right-radius: 17px;
+  -moz-border-radius-bottomright: 17px;
+  -webkit-border-bottom-right-radius: 17px;
+  border-bottom-right-radius: 17px; }
+
+.btn-sm.btn-next {
+  -moz-border-radius-topright: 14px;
+  -webkit-border-top-right-radius: 14px;
+  border-top-right-radius: 14px;
+  -moz-border-radius-bottomright: 14px;
+  -webkit-border-bottom-right-radius: 14px;
+  border-bottom-right-radius: 14px; }
+
+.btn-big.btn-next {
+  -moz-border-radius-topright: 23px;
+  -webkit-border-top-right-radius: 23px;
+  border-top-right-radius: 23px;
+  -moz-border-radius-bottomright: 23px;
+  -webkit-border-bottom-right-radius: 23px;
+  border-bottom-right-radius: 23px; }
+
+.btn-prev {
+  -moz-border-radius-topleft: 17px;
+  -webkit-border-top-left-radius: 17px;
+  border-top-left-radius: 17px;
+  -moz-border-radius-bottomleft: 17px;
+  -webkit-border-bottom-left-radius: 17px;
+  border-bottom-left-radius: 17px; }
+
+.btn-sm.btn-prev {
+  -moz-border-radius-topleft: 14px;
+  -webkit-border-top-left-radius: 14px;
+  border-top-left-radius: 14px;
+  -moz-border-radius-bottomleft: 14px;
+  -webkit-border-bottom-left-radius: 14px;
+  border-bottom-left-radius: 14px; }
+
+.btn-big.btn-prev {
+  -moz-border-radius-topleft: 23px;
+  -webkit-border-top-left-radius: 23px;
+  border-top-left-radius: 23px;
+  -moz-border-radius-bottomleft: 23px;
+  -webkit-border-bottom-left-radius: 23px;
+  border-bottom-left-radius: 23px; }
+
+.btn-round {
+  -moz-border-radius: 17px;
+  -webkit-border-radius: 17px;
+  border-radius: 17px; }
+
+.btn-sm.btn-round {
+  -moz-border-radius: 14px;
+  -webkit-border-radius: 14px;
+  border-radius: 14px; }
+
+.btn-big.btn-round {
+  -moz-border-radius: 23px;
+  -webkit-border-radius: 23px;
+  border-radius: 23px; }
+
+.btn-full {
+  width: 100%; }
+
+/*
+# Button group
+
+    <div class="btn-group">
+        <a class="btn btn-default">Default button</a>
+        <a class="btn btn-primary">Primary button</a>
+        <a class="btn btn-green">Green button</a>
+    </div>
+*/
+.btn-group {
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+  *vertical-align: auto;
+  *zoom: 1;
+  *display: inline;
+  vertical-align: middle; }
+
+.btn-group > .btn {
+  position: relative;
+  float: left; }
+
+.btn-group > .btn:not(:first-child):not(:last-child) {
+  -moz-border-radius: 0;
+  -webkit-border-radius: 0;
+  border-radius: 0; }
+
+.btn-group > .btn:first-child:not(:last-child) {
+  -moz-border-radius-bottomright: 0;
+  -webkit-border-bottom-right-radius: 0;
+  border-bottom-right-radius: 0;
+  -moz-border-radius-topright: 0;
+  -webkit-border-top-right-radius: 0;
+  border-top-right-radius: 0; }
+
+.btn-group > .btn:last-child:not(:first-child) {
+  -moz-border-radius-bottomleft: 0;
+  -webkit-border-bottom-left-radius: 0;
+  border-bottom-left-radius: 0;
+  -moz-border-radius-topleft: 0;
+  -webkit-border-top-left-radius: 0;
+  border-top-left-radius: 0; }
+
+.btn-group .btn + .btn,
+.btn-group .btn + .btn-group,
+.btn-group .btn-group + .btn,
+.btn-group .btn-group + .btn-group {
+  margin-left: -1px; }
+
+.btn-group > .btn:hover,
+.btn-group > .btn:active,
+.btn-group > .btn.active {
+  z-index: 2; }
+
+/*
 # elements/_tabs.scss
 */
 .tabs {
@@ -3619,6 +3412,212 @@ fieldset {
   display: none;
   margin: 0;
   padding: 24px 0 0; }
+
+/*
+# elements/_tables.scss
+
+Styles mostly taken from bootstrap
+*/
+table {
+  max-width: 100%;
+  background-color: transparent; }
+
+th {
+  text-align: left; }
+
+/*
+# Basic table
+*/
+.table {
+  width: 100%;
+  margin-bottom: 20px; }
+  .table > thead > tr > th,
+  .table > thead > tr > td,
+  .table > tbody > tr > th,
+  .table > tbody > tr > td,
+  .table > tfoot > tr > th,
+  .table > tfoot > tr > td {
+    padding: 10px;
+    line-height: 24px;
+    vertical-align: top;
+    border-top: 1px solid #ccc; }
+  .table > thead > tr > td.active > td, .table > thead > tr > td.active > th, .table > thead tr > th.active > td, .table > thead tr > th.active > th,
+  .table > thead > tr.active > td,
+  .table > thead > tr.active > th,
+  .table > tbody > tr > td.active > td,
+  .table > tbody > tr > td.active > th,
+  .table > tbody tr > th.active > td,
+  .table > tbody tr > th.active > th,
+  .table > tbody > tr.active > td,
+  .table > tbody > tr.active > th,
+  .table > tfoot > tr > td.active > td,
+  .table > tfoot > tr > td.active > th,
+  .table > tfoot tr > th.active > td,
+  .table > tfoot tr > th.active > th,
+  .table > tfoot > tr.active > td,
+  .table > tfoot > tr.active > th {
+    background-color: #daf0f5; }
+  .table > thead > tr > td.info > td, .table > thead > tr > td.info > th, .table > thead tr > th.info > td, .table > thead tr > th.info > th,
+  .table > thead > tr.info > td,
+  .table > thead > tr.info > th,
+  .table > tbody > tr > td.info > td,
+  .table > tbody > tr > td.info > th,
+  .table > tbody tr > th.info > td,
+  .table > tbody tr > th.info > th,
+  .table > tbody > tr.info > td,
+  .table > tbody > tr.info > th,
+  .table > tfoot > tr > td.info > td,
+  .table > tfoot > tr > td.info > th,
+  .table > tfoot tr > th.info > td,
+  .table > tfoot tr > th.info > th,
+  .table > tfoot > tr.info > td,
+  .table > tfoot > tr.info > th {
+    background-color: #b7e0ef; }
+  .table > thead > tr > td.success > td, .table > thead > tr > td.success > th, .table > thead tr > th.success > td, .table > thead tr > th.success > th,
+  .table > thead > tr.success > td,
+  .table > thead > tr.success > th,
+  .table > tbody > tr > td.success > td,
+  .table > tbody > tr > td.success > th,
+  .table > tbody tr > th.success > td,
+  .table > tbody tr > th.success > th,
+  .table > tbody > tr.success > td,
+  .table > tbody > tr.success > th,
+  .table > tfoot > tr > td.success > td,
+  .table > tfoot > tr > td.success > th,
+  .table > tfoot tr > th.success > td,
+  .table > tfoot tr > th.success > th,
+  .table > tfoot > tr.success > td,
+  .table > tfoot > tr.success > th {
+    background-color: #d3e5c3; }
+  .table > thead > tr > td.warning > td, .table > thead > tr > td.warning > th, .table > thead tr > th.warning > td, .table > thead tr > th.warning > th,
+  .table > thead > tr.warning > td,
+  .table > thead > tr.warning > th,
+  .table > tbody > tr > td.warning > td,
+  .table > tbody > tr > td.warning > th,
+  .table > tbody tr > th.warning > td,
+  .table > tbody tr > th.warning > th,
+  .table > tbody > tr.warning > td,
+  .table > tbody > tr.warning > th,
+  .table > tfoot > tr > td.warning > td,
+  .table > tfoot > tr > td.warning > th,
+  .table > tfoot tr > th.warning > td,
+  .table > tfoot tr > th.warning > th,
+  .table > tfoot > tr.warning > td,
+  .table > tfoot > tr.warning > th {
+    background-color: #f8e6b2; }
+  .table > thead > tr > td.error > td, .table > thead > tr > td.error > th, .table > thead tr > th.error > td, .table > thead tr > th.error > th,
+  .table > thead > tr.error > td,
+  .table > thead > tr.error > th,
+  .table > tbody > tr > td.error > td,
+  .table > tbody > tr > td.error > th,
+  .table > tbody tr > th.error > td,
+  .table > tbody tr > th.error > th,
+  .table > tbody > tr.error > td,
+  .table > tbody > tr.error > th,
+  .table > tfoot > tr > td.error > td,
+  .table > tfoot > tr > td.error > th,
+  .table > tfoot tr > th.error > td,
+  .table > tfoot tr > th.error > th,
+  .table > tfoot > tr.error > td,
+  .table > tfoot > tr.error > th {
+    background-color: #f7c5c1; }
+  .table > thead > tr > th {
+    vertical-align: bottom;
+    border-bottom: 2px solid #ccc; }
+  .table > caption + thead > tr:first-child > th,
+  .table > caption + thead > tr:first-child > td,
+  .table > colgroup + thead > tr:first-child > th,
+  .table > colgroup + thead > tr:first-child > td,
+  .table > thead:first-child > tr:first-child > th,
+  .table > thead:first-child > tr:first-child > td {
+    border-top: 0; }
+  .table > tbody + tbody {
+    border-top: 2px solid #ccc; }
+  .table .table {
+    background-color: #eee; }
+
+/*
+# Bordered version
+
+Add borders all around the table and between all the columns.
+*/
+.table-bordered {
+  border: 1px solid #ccc; }
+  .table-bordered > thead > tr > th,
+  .table-bordered > thead > tr > td,
+  .table-bordered > tbody > tr > th,
+  .table-bordered > tbody > tr > td,
+  .table-bordered > tfoot > tr > th,
+  .table-bordered > tfoot > tr > td {
+    border: 1px solid #ccc; }
+  .table-bordered > thead > tr > th,
+  .table-bordered > thead > tr > td {
+    border-bottom-width: 2px; }
+
+/*
+# Zebra-striping
+
+Default zebra-stripe styles (alternating gray and transparent backgrounds)
+*/
+.table-striped > tbody > tr:nth-child(odd) > td,
+.table-striped > tbody > tr:nth-child(odd) > th {
+  background-color: #eee; }
+
+/*
+# Hover effect
+
+Placed here since it has to come after the potential zebra striping
+*/
+.table-hover > tbody > tr:hover > td,
+.table-hover > tbody > tr:hover > th {
+  background-color: #b7e0ef; }
+
+/*
+# Responsive tables
+
+Wrap your tables in `.table-responsive` and we'll make them mobile friendly
+by enabling horizontal scrolling. Only applies up to the $table-breakpoint.
+Everything above that will display normally.
+*/
+@media (max-width: 699px) {
+  .table-responsive {
+    width: 100%;
+    margin-bottom: 24px;
+    overflow-y: hidden;
+    overflow-x: scroll;
+    -ms-overflow-style: -ms-autohiding-scrollbar;
+    border: 1px solid #ccc;
+    -webkit-overflow-scrolling: touch; }
+    .table-responsive > .table {
+      margin-bottom: 0; }
+      .table-responsive > .table > thead > tr > th,
+      .table-responsive > .table > thead > tr > td,
+      .table-responsive > .table > tbody > tr > th,
+      .table-responsive > .table > tbody > tr > td,
+      .table-responsive > .table > tfoot > tr > th,
+      .table-responsive > .table > tfoot > tr > td {
+        white-space: nowrap; }
+    .table-responsive > .table-bordered {
+      border: 0; }
+      .table-responsive > .table-bordered > thead > tr > th:first-child,
+      .table-responsive > .table-bordered > thead > tr > td:first-child,
+      .table-responsive > .table-bordered > tbody > tr > th:first-child,
+      .table-responsive > .table-bordered > tbody > tr > td:first-child,
+      .table-responsive > .table-bordered > tfoot > tr > th:first-child,
+      .table-responsive > .table-bordered > tfoot > tr > td:first-child {
+        border-left: 0; }
+      .table-responsive > .table-bordered > thead > tr > th:last-child,
+      .table-responsive > .table-bordered > thead > tr > td:last-child,
+      .table-responsive > .table-bordered > tbody > tr > th:last-child,
+      .table-responsive > .table-bordered > tbody > tr > td:last-child,
+      .table-responsive > .table-bordered > tfoot > tr > th:last-child,
+      .table-responsive > .table-bordered > tfoot > tr > td:last-child {
+        border-right: 0; }
+      .table-responsive > .table-bordered > tbody > tr:last-child > th,
+      .table-responsive > .table-bordered > tbody > tr:last-child > td,
+      .table-responsive > .table-bordered > tfoot > tr:last-child > th,
+      .table-responsive > .table-bordered > tfoot > tr:last-child > td {
+        border-bottom: 0; } }
 
 /*
 # elements/_alerts.scss
@@ -4044,13 +4043,50 @@ Styles for specific pages.
 # Misc
 */
 /*
-# misc/_shame.scss
-
-Place your shameless hacks here
-*/
-/*
 # misc/_example.scss
 */
+/*
+# section headings
+*/
+section > h2 {
+  display: block;
+  position: relative;
+  padding: 20px 20px 20px 100px;
+  margin-bottom: 48px;
+  margin-bottom: 4.8rem;
+  color: #333;
+  background: #fff; }
+  section > h2:before {
+    position: absolute;
+    top: 1px;
+    left: 1px;
+    bottom: 1px;
+    width: 60px;
+    padding: 20px 10px;
+    margin-right: 5px;
+    color: #fff;
+    background: #109acc;
+    font-family: "FontAwesome";
+    font-size: 1.75em;
+    content: "\f135"; }
+
+/*
+# External links
+*/
+a[href^="http"]:before {
+  font-family: "FontAwesome";
+  font-size: 85%;
+  content: "\f08e";
+  margin-right: 3px; }
+
+/*
+# E-mail-links
+*/
+a[href^="mailto"]:before {
+  font-family: "FontAwesome";
+  content: "\f0e0";
+  margin-right: 3px; }
+
 /*
 # Code coloring style-overrides
 */
@@ -4197,90 +4233,6 @@ pre h4,
 /*
 # Example code
 */
-.example-tooltip1 {
-  position: relative; }
-  .example-tooltip1:before, .example-tooltip1:after {
-    display: none;
-    z-index: 20; }
-  .example-tooltip1:hover:after {
-    content: attr(data-tooltip);
-    display: block;
-    position: absolute;
-    height: 22px;
-    padding: 6px 10px;
-    font-size: 14px;
-    line-height: 22px;
-    white-space: nowrap;
-    color: #fff;
-    background-color: #109acc; }
-  .example-tooltip1:hover:before {
-    content: '';
-    display: block;
-    position: absolute;
-    border: 6px solid transparent;
-    border-top: 6px solid #109acc;
-    border-bottom: 0;
-    height: 0;
-    width: 0;
-    top: -6px;
-    margin-top: 0;
-    left: 50%;
-    -moz-transform: translate(-50%, 0);
-    -ms-transform: translate(-50%, 0);
-    -webkit-transform: translate(-50%, 0);
-    transform: translate(-50%, 0); }
-  .example-tooltip1:hover:after {
-    top: -40px;
-    left: 50%;
-    -moz-transform: translate(-50%, 0);
-    -ms-transform: translate(-50%, 0);
-    -webkit-transform: translate(-50%, 0);
-    transform: translate(-50%, 0); }
-
-.example-tooltip2 {
-  position: relative; }
-  .example-tooltip2:before, .example-tooltip2:after {
-    display: none;
-    z-index: 20; }
-  .example-tooltip2:hover:after {
-    content: attr(data-tooltip);
-    display: block;
-    position: absolute;
-    height: 22px;
-    padding: 6px 10px;
-    font-size: 14px;
-    line-height: 22px;
-    white-space: nowrap;
-    color: #fff;
-    background-color: #109acc; }
-  .example-tooltip2:hover:before {
-    content: '';
-    display: block;
-    position: absolute;
-    border: 6px solid transparent;
-    border-bottom: 6px solid #109acc;
-    border-top: 0;
-    height: 0;
-    width: 0;
-    top: auto;
-    margin-top: 0;
-    bottom: -6px;
-    left: 50%;
-    -moz-transform: translate(-50%, 0);
-    -ms-transform: translate(-50%, 0);
-    -webkit-transform: translate(-50%, 0);
-    transform: translate(-50%, 0); }
-  .example-tooltip2:hover:after {
-    bottom: -40px;
-    left: 50%;
-    -moz-transform: translate(-50%, 0);
-    -ms-transform: translate(-50%, 0);
-    -webkit-transform: translate(-50%, 0);
-    transform: translate(-50%, 0); }
-
-/*
-# Grid presentation
-*/
 .example-grid {
   max-width: 1050px;
   margin-left: auto;
@@ -4378,43 +4330,86 @@ pre h4,
     float: right;
     margin-right: 0; } }
 
-/*
-# CSS selector example for external links
-*/
-a[href^="http"]:before {
-  font-family: "FontAwesome";
-  font-size: 85%;
-  content: "\f08e";
-  margin-right: 3px; }
-
-a[href^="mailto"]:before {
-  font-family: "FontAwesome";
-  content: "\f0e0";
-  margin-right: 3px; }
-
-section > h2 {
-  display: block;
-  position: relative;
-  background: #fff;
-  padding: 20px 20px 20px 100px;
-  margin-bottom: 48px; }
-  section > h2:before {
+.example-tooltip1 {
+  position: relative; }
+  .example-tooltip1:before, .example-tooltip1:after {
+    display: none;
+    z-index: 20; }
+  .example-tooltip1:hover:after {
+    content: attr(data-tooltip);
+    display: block;
     position: absolute;
-    top: 1px;
-    left: 1px;
-    bottom: 1px;
-    width: 60px;
-    padding: 20px 10px;
+    height: 22px;
+    padding: 6px 10px;
+    font-size: 14px;
+    line-height: 22px;
+    white-space: nowrap;
     color: #fff;
-    background: #109acc;
-    font-family: "FontAwesome";
-    content: "\f135";
-    margin-right: 5px;
+    background-color: #109acc; }
+  .example-tooltip1:hover:before {
+    content: '';
+    display: block;
+    position: absolute;
+    border: 6px solid transparent;
+    border-top: 6px solid #109acc;
+    border-bottom: 0;
+    height: 0;
+    width: 0;
+    top: -6px;
+    margin-top: 0;
+    left: 50%;
+    -moz-transform: translate(-50%, 0);
+    -ms-transform: translate(-50%, 0);
+    -webkit-transform: translate(-50%, 0);
+    transform: translate(-50%, 0); }
+  .example-tooltip1:hover:after {
+    top: -40px;
+    left: 50%;
+    -moz-transform: translate(-50%, 0);
+    -ms-transform: translate(-50%, 0);
+    -webkit-transform: translate(-50%, 0);
+    transform: translate(-50%, 0); }
+
+.example-tooltip2 {
+  position: relative; }
+  .example-tooltip2:before, .example-tooltip2:after {
+    display: none;
+    z-index: 20; }
+  .example-tooltip2:hover:after {
+    content: attr(data-tooltip);
+    display: block;
+    position: absolute;
+    height: 22px;
+    padding: 6px 10px;
+    font-size: 14px;
+    line-height: 22px;
+    white-space: nowrap;
     color: #fff;
-    font-size: 1.75em; }
-  section > h2:after {
-    content: "";
-    clear: both; }
+    background-color: #109acc; }
+  .example-tooltip2:hover:before {
+    content: '';
+    display: block;
+    position: absolute;
+    border: 6px solid transparent;
+    border-bottom: 6px solid #109acc;
+    border-top: 0;
+    height: 0;
+    width: 0;
+    top: auto;
+    margin-top: 0;
+    bottom: -6px;
+    left: 50%;
+    -moz-transform: translate(-50%, 0);
+    -ms-transform: translate(-50%, 0);
+    -webkit-transform: translate(-50%, 0);
+    transform: translate(-50%, 0); }
+  .example-tooltip2:hover:after {
+    bottom: -40px;
+    left: 50%;
+    -moz-transform: translate(-50%, 0);
+    -ms-transform: translate(-50%, 0);
+    -webkit-transform: translate(-50%, 0);
+    transform: translate(-50%, 0); }
 
 /*
 # Toolbelt
@@ -4576,3 +4571,9 @@ body {
   bottom: 70px;
   left: 70px;
   background: rgba(233, 172, 0, 0.5); }
+
+/*
+# misc/_shame.scss
+
+Place your shameless hacks here
+*/
