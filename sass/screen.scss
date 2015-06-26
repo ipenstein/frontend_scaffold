@@ -60,12 +60,12 @@ $fa-font-path: "../bower_components/font-awesome/fonts/";
 
 Styles for gui-elements.
 */
-@import "elements/tables";              // Tabellen
-@import "elements/tooltips";            // Tooltips
-@import "elements/buttons";             // Buttons
 @import "elements/forms";               // Formulare
+@import "elements/buttons";             // Buttons
 @import "elements/tabs";                // Tabs
 @import "elements/collapse";            // Collapsables
+@import "elements/tables";              // Tabellen
+@import "elements/tooltips";            // Tooltips
 @import "elements/alerts";              // (Fehler-)meldungen
 @import "elements/dropdowns";           // Dropdownmenüs
 
@@ -92,5 +92,5 @@ Styles for specific pages.
 /*
 # Misc
 */
-@import "misc/shame";                   // Hacks
 @import "misc/example";                 // Example styles
+@import "misc/shame";                   // Hacks

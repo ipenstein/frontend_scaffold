@@ -3,6 +3,57 @@
 */
 
 /*
+# section headings
+*/
+section > h2 {
+    display: block;
+    position: relative;
+    padding: 20px 20px 20px 100px;
+    margin-bottom: 48px;
+    margin-bottom: 4.8rem;
+    color: $grey1;
+    background: $white;
+    &:before {
+        position: absolute;
+        top: 1px;
+        left: 1px;
+        bottom: 1px;
+        width: 60px;
+        padding: 20px 10px;
+        margin-right: 5px;
+        color: $white;
+        background: $blue1;
+        font-family: "FontAwesome";
+        font-size: 1.75em;
+        content: "\f135";
+    }
+}
+
+/*
+# External links
+*/
+a[href^="http"] {
+    &:before {
+        font-family: "FontAwesome";
+        font-size: 85%;
+        content: "\f08e";
+        margin-right: 3px;
+    }
+}
+
+/*
+# E-mail-links
+*/
+a[href^="mailto"] {
+    &:before {
+        font-family: "FontAwesome";
+        //font-size: 85%;
+        content: "\f0e0";
+        margin-right: 3px;
+    }
+}
+
+/*
 # Code coloring style-overrides
 */
 .hljs,
@@ -125,23 +176,7 @@ pre h4,
 # Example code
 */
 
-// Floats
-.example-floats {
-
-}
-
-// Tooltips
-.example-tooltip1 {
-    @include tooltip;
-}
-
-.example-tooltip2 {
-    @include tooltip(attr(data-tooltip), bottom);
-}
-
-/*
-# Grid presentation
-*/
+// Grid
 .example-grid {
     @include container;
 }
@@ -190,52 +225,13 @@ pre h4,
 .example-equal-2 {  @include bp(small) { @include span(4); }}
 .example-equal-3 {  @include bp(small) { @include span(4 last); }}
 
-/*
-# CSS selector example for external links
-*/
-a[href^="http"] {
-    &:before {
-        font-family: "FontAwesome";
-        font-size: 85%;
-        content: "\f08e";
-        margin-right: 3px;
-    }
+// Tooltips
+.example-tooltip1 {
+    @include tooltip;
 }
 
-a[href^="mailto"] {
-    &:before {
-        font-family: "FontAwesome";
-        //font-size: 85%;
-        content: "\f0e0";
-        margin-right: 3px;
-    }
-}
-
-section > h2 {
-    display: block;
-    position: relative;
-    background: $white;
-    padding: 20px 20px 20px 100px;
-    margin-bottom: 48px;
-    &:before {
-        position: absolute;
-        top: 1px;
-        left: 1px;
-        bottom: 1px;
-        width: 60px;
-        padding: 20px 10px;
-        color: $white;
-        background: $blue1;
-        font-family: "FontAwesome";
-        content: "\f135";
-        margin-right: 5px;
-        color: $white;
-        font-size: 1.75em;
-    }
-    &:after {
-        content: "";
-        clear: both;
-    }
+.example-tooltip2 {
+    @include tooltip(attr(data-tooltip), bottom);
 }
 
 /*
@@ -307,7 +303,7 @@ section > h2 {
 // Scrollbar-Styling
 @include scrollbar (20px, $blue1, transparent);
 
-// Positioning mixin
+// Positioning mixins
 .example-pos-wrapper {
     position: relative;
     height: 300px;
