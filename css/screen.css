@@ -3938,21 +3938,25 @@ Styles for specific sections of the page (i.E. Header, Footer etc.).
       line-height: 2rem; }
       .main-nav a:hover {
         background-color: transparent;
-        color: #ccc; } }
+        color: #b7e0ef; } }
 
 .main-nav li:nth-child(2n) a {
   border-right: 0; }
+  @media (min-width: 500px) {
+    .main-nav li:nth-child(2n) a {
+      border-right: 1px solid rgba(255, 255, 255, 0.1); } }
+  @media (min-width: 940px) {
+    .main-nav li:nth-child(2n) a {
+      border-right: 0; } }
 
 @media (min-width: 500px) {
-  .main-nav li:nth-child(2n) a {
-    border-right: 1px solid rgba(255, 255, 255, 0.1); }
-
   .main-nav li:nth-child(3n) a {
     border-right: 0; } }
-.main-nav li.active a {
-  color: #fff; }
 
 .main-nav li a:focus {
+  color: #b7e0ef; }
+
+.main-nav li.active a {
   color: #fff; }
 
 /*

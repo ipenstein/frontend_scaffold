@@ -96,28 +96,33 @@
         @include font-size(15, 20);
         &:hover {
             background-color: transparent;
-            color: $grey4;
+            color: $blue2;
         }
     }
 }
 
 .main-nav li:nth-child(2n) a {
     border-right: 0;
-}
 
-@include bp(small) {
-    .main-nav li:nth-child(2n) a {
+    @include bp(small) {
         border-right: 1px solid rgba($white, 0.1);
     }
-    .main-nav li:nth-child(3n) a {
+
+    @include bp(big) {
         border-right: 0;
     }
 }
 
-.main-nav li.active a {
-    color: $white;
+.main-nav li:nth-child(3n) a {
+    @include bp(small) {
+        border-right: 0;
+    }
 }
 
 .main-nav li a:focus {
+    color: $blue2;
+}
+
+.main-nav li.active a {
     color: $white;
 }
