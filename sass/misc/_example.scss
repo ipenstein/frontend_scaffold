@@ -301,7 +301,7 @@ pre h4,
 }
 
 // Scrollbar-Styling
-@include scrollbar (20px, $blue1, $grey5);
+@include scrollbar (20px, $blue1, transparent);
 
 // Positioning mixins
 .example-pos-wrapper {
