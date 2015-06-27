@@ -14,10 +14,14 @@ $.fn.initDropdown = function() {
     });
     $(document).on('click', function(event) {
         if (!$(event.target).closest(el).length) {
-            if (nav.is(':visible') && (el.hasClass('dropdown') || el.hasClass('dropup'))) {
+            if (nav.is(':visible') /*&& (el.hasClass('dropdown') || el.hasClass('dropup'))*/) {
                 nav.fadeOut(300);
                 trigger.removeClass('active');
+            } else {
+                console.log("if");
             }
+        } else {
+            console.log("closest");
         }
     });
     $("a", nav).on('click', function() {
