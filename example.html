@@ -61,11 +61,19 @@
 </head>
 <body>
     <div id="preloader"></div>
+    <div class="page">
     <header class="site-header">
-        <div class="container">
+
+        <div class="top-bar">
+            <div class="container">
+            <a href="#" class="open-panel"><i class="fa fa-bars"></i></a>
             <a class="logo" href="example.html"><i class="fa fa-rocket"></i> Nebula</a>
+            </div>
+        </div>
+        <div class="main-nav-container">
             <nav class="main-nav">
-                <button class="dropdown-toggle"><i class="fa fa-bars"></i></button>
+                <!--<button class="dropdown-toggle"><i class="fa fa-bars"></i></button>-->
+                <a href="#" class="close-panel"><i class="fa fa-times"></i></a>
                 <ul>
                     <li id="nav-basic"><a href="#basic">Basics</a></li>
                     <li id="nav-utilities"><a href="#utilities">Utilities</a></li>
@@ -83,6 +91,7 @@
             </nav>
         </div>
     </header>
+
     <section class="hero parallax-window">
         <a href="#basic"><i class="fa fa-angle-down"></i></a>
     </section>
@@ -2704,6 +2713,7 @@ $susy: (
             </div>
         </div>
     </footer>
+    </div>
     <span id="responsive-status"></span>
     <script src="bower_components/jquery/dist/jquery.min.js"></script>
     <script src="js/js.php"></script>

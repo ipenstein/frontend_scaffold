@@ -49,6 +49,7 @@ many layers the application uses, making it easy to understand what’s going on
 */
 $z-layers: (
     preloader:      999,
+    page:           10,
     site-header:    30,
     content:        10,
     site-footer:    20,

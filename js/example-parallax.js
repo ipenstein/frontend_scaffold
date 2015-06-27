@@ -15,7 +15,7 @@ $(document).ready(function() {
         bleed:          "10",
         naturalWidth:   "1680",
         naturalHeight:  "1050",
-        zIndex:         "1"
+        zIndex:         "-1"
     });
 
     // Detect initial hero unit height

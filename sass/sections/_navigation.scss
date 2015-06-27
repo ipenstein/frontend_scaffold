@@ -2,127 +2,166 @@
 # gui/_navigation.scss
 */
 
+@import "compass/css3";
+
+/* Setting things up */
+
+.main-nav-container {
+    @extend .container;
+    margin-top: -60px;
+}
+
 .main-nav {
-    z-index: z(main-nav);
-    position: absolute;
-    right: 0px;
-    left: 0px;
-    top: 0;
-    li {
-        background: none;
-    }
-    @include bp(big) {
-        right: 13px;
-        left: auto;
-    }
-}
-
-.main-nav .dropdown-toggle {
-    display: block;
-    padding: 4px 10px;
-    color: $blue1;
     float: right;
-    margin-right: 10px;
-    margin-top: 2px;
-    border: 1px solid rgba($blue1, 0.3);
-    background-color: transparent;
-    @include border-radius(5px);
-    @include font-size(24, 20);
-    @include transition-property(background-color);
-
-    @include bp(small) {
-        margin-right: 20px;
-    }
-
-    @include bp(big) {
-        display: none !important;
-    }
-
-    &:hover,
-    &.active,
-    &:active,
-    &:focus {
-        background-color: $blue1;
-        color: $grey1;
-    }
 }
+
+.content {
+    clear: both;
+    padding-top: 1em;
+}
+
+/* Important stuff */
 
 .main-nav ul {
-    @include no-list;
-    @include micro-clearfix;
-    display: none;
-    margin-top: 50px;
-    @include bp(big) {
-        margin-top: 0;
-        background-color: transparent;
-        display: block !important;
-        opacity: 1 !important;
-        @include inline-list;
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%;
+    padding: 0;
+    white-space: nowrap;
+
+    li {
+        list-style: none;
+        display: inline;
     }
+
+    a {
+        float: left;
+        padding: 0 7px;
+        color: $blue1;
+        font-family: $font-family-2;
+        font-size: 15px;
+        text-transform: uppercase;
+    }
+
+    a:hover {
+        color: $white;
+    }
+
 }
 
+a.open-panel,
+a.close-panel {
+    display: none;
+    z-index: 40;
+    left: 20px;
+    position: absolute;
+    font-size: 22px;
+    line-height: 22px;
+    padding: 4px 7px;
+    @include border-radius(5px);
+}
 
-.main-nav a {
-    font-family: $font-family-2;
+a.open-panel {
+    top: 5px;
     color: $blue1;
-    text-transform: uppercase;
-    text-decoration: none;
-    float: left;
-    padding: 13px 20px;
-    display: block;
-    border-top: 1px solid rgba($white, 0.1);
-    background-color: rgba($black, 0.85);
-    border-right: 1px solid rgba($white, 0.1);
-    width: 50%;
-
-    &:hover {
-        background-color: $blue1;
+    border: 1px solid $blue1;
+    &:hover,
+    &:focus,
+    &:active {
+        background: $blue1;
         color: $grey1;
     }
+}
 
-    @include bp(small) {
-        width: 33.333333%;
+a.close-panel {
+    top: 15px;
+    color: $red1;
+    border: 1px solid $red1;
+    &:hover,
+    &:focus,
+    &:active {
+        background: $red1;
+        color: $grey1;
+    }
+}
+
+@include bp-max(big) {
+
+    .main-nav-container {
+        min-width: 0;
+        width: 0;
+        position: static;
     }
 
-    @include bp(big) {
-        @include transition-property(color);
-        @include transition-duration(0.2s);
-        @include transition-timing-function(ease-in);
-        border: 0;
-        width: auto;
-        margin: 0 7px;
-        padding: 10px 0;
-        background-color: transparent;
-        @include font-size(15, 20);
-        &:hover {
-            background-color: transparent;
-            color: $blue2;
+    /* Move nav off screen, setup transitions */
+    .main-nav {
+        width: 70%;
+        position: absolute;
+        left: -70%;
+        top: 0;
+        padding-top: 60px;
+        height: 100%;
+        background: $grey1;
+        .container {
+            min-width: 0;
+        }
+
+    }
+
+    /* Display nav items vertically */
+    .main-nav ul {
+        border-top: 1px solid $black;
+        position: relative;
+        padding: 0;
+        margin: 0;
+
+        a {
+            display: block;
+            float: none;
+            width: 100%;
+            text-align: left;
+            padding: .5em 1em;
+            border-bottom: 1px solid $black;
         }
     }
-}
 
-.main-nav li:nth-child(2n) a {
-    border-right: 0;
-
-    @include bp(small) {
-        border-right: 1px solid rgba($white, 0.1);
+    /* Reveal open/close buttons */
+        a.open-panel, a.close-panel {
+        display: inline;
+        z-index: 40;
     }
 
-    @include bp(big) {
-        border-right: 0;
+    .close-panel {
+        position: relative;
+        top: .5em;
+        left: 1em;
     }
-}
 
-.main-nav li:nth-child(3n) a {
-    @include bp(small) {
-        border-right: 0;
+    .openNav .page {
+        left: 0;
+        -webkit-transform: translate3d(70%, 0, 0);
+        -moz-transform: translate3d(70%, 0, 0);
+        -ms-transform: translate3d(70%, 0, 0);
+        -o-transform: translate3d(70%, 0, 0);
+        transform: translate3d(70%, 0, 0);
+        -webkit-transition: -webkit-transform 500ms ease;
+        -moz-transition: -moz-transform 500ms ease;
+        -o-transition: -o-transform 500ms ease;
+        transition: transform 500ms ease;
     }
-}
 
-.main-nav li a:focus {
-    color: $blue2;
-}
-
-.main-nav li.active a {
-    color: $white;
+    /* When the panel is closed, transition the page back to the left */
+    .page {
+        left: 0;
+        -webkit-transform: translate3d(0, 0, 0);
+        -moz-transform: translate3d(0, 0, 0);
+        -ms-transform: translate3d(0, 0, 0);
+        -o-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);
+        -webkit-transition: -webkit-transform 500ms ease;
+        -moz-transition: -moz-transform 500ms ease;
+        -o-transition: -o-transform 500ms ease;
+        transition: transform 500ms ease;
+    }
 }
