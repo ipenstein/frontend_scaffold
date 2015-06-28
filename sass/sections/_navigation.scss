@@ -45,10 +45,6 @@
     @include transition-duration(0.3s);
     @include transition-timing-function(ease-out);
 
-    @include bp(small) {
-        //margin-right: 20px;
-    }
-
     @include bp(big) {
         display: none !important;
     }
