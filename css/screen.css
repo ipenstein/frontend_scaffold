@@ -2284,6 +2284,9 @@ many layers the application uses, making it easy to understand whatÔÇÖs going
 @require $z-layers
 */
 /*
+# Black and White
+*/
+/*
 # REM font-size and line-height with px-fallback
 
 http://css-tricks.com/snippets/css/less-mixin-for-rem-font-sizing/
@@ -2565,7 +2568,9 @@ Example:
 /*
 # base/_base.scss
 */
-* {
+*,
+*:after,
+*:before {
   -moz-box-sizing: border-box;
   box-sizing: border-box;
   -webkit-tap-highlight-color: transparent; }
@@ -2672,8 +2677,8 @@ hr {
   border: 0;
   border-bottom: 2px dashed #333;
   height: 1px;
-  margin-top: 47pxpx;
-  margin-bottom: 48pxpx;
+  margin-top: 47px;
+  margin-bottom: 47px;
   padding: 0; }
 
 img {
