@@ -17,11 +17,7 @@ $.fn.initDropdown = function() {
             if (nav.is(':visible') /*&& (el.hasClass('dropdown') || el.hasClass('dropup'))*/) {
                 nav.fadeOut(300);
                 trigger.removeClass('active');
-            } else {
-                console.log("if");
             }
-        } else {
-            console.log("closest");
         }
     });
     $("a", nav).on('click', function() {

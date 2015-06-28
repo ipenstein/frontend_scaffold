@@ -3835,12 +3835,14 @@ Styles for specific sections of the page (i.E. Header, Footer etc.).
 
 .main-nav .dropdown-toggle {
   display: block;
+  position: absolute;
+  right: 10px;
+  top: 0;
   width: 40px;
   height: 40px;
+  padding: 5px 8px;
   text-align: center;
   line-height: 20px;
-  float: right;
-  margin-right: 10px;
   border: 1px solid;
   background-color: transparent;
   font-family: "FontAwesome";
@@ -3865,14 +3867,9 @@ Styles for specific sections of the page (i.E. Header, Footer etc.).
   -o-transition-timing-function: ease-out;
   -webkit-transition-timing-function: ease-out;
   transition-timing-function: ease-out; }
-  .main-nav .dropdown-toggle:before {
-    content: "\f0c9"; }
-  .main-nav .dropdown-toggle:hover, .main-nav .dropdown-toggle.active, .main-nav .dropdown-toggle:active {
+  .main-nav .dropdown-toggle:hover {
     background-color: #109acc;
     color: #333; }
-  @media (min-width: 500px) {
-    .main-nav .dropdown-toggle {
-      margin-right: 20px; } }
   @media (min-width: 940px) {
     .main-nav .dropdown-toggle {
       display: none !important; } }
@@ -3880,11 +3877,17 @@ Styles for specific sections of the page (i.E. Header, Footer etc.).
 .main-nav .dropdown-toggle.active {
   color: #e53f32;
   border-color: rgba(229, 63, 50, 0.3); }
-  .main-nav .dropdown-toggle.active:before {
-    content: "\f00d"; }
-  .main-nav .dropdown-toggle.active:hover, .main-nav .dropdown-toggle.active.active, .main-nav .dropdown-toggle.active:active {
+  .main-nav .dropdown-toggle.active:hover {
     background-color: #e53f32;
     color: #333; }
+
+.active > .icon-open {
+  display: none; }
+
+.icon-close {
+  display: none; }
+  .active > .icon-close {
+    display: inline; }
 
 .main-nav ul {
   display: none;
