@@ -11,7 +11,8 @@ body {
     min-width: $min-width;
     padding: 0 10px;
     position: relative;
-    @include container();
+    //@include center-block; // not needed because of @include container
+    @include container;
     @include bp(small) {
         padding: 0 20px;
     }

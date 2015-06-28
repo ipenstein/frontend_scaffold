@@ -2311,6 +2311,14 @@ http://hackingui.com/front-end/10-best-scss-utilities/
 # @mixin cover everything
 */
 /*
+# @mixin center-block
+
+Quickly horizontally center any element within its parent.
+Requires width or max-width to be set.
+
+https://web-design-weekly.com/2013/05/12/handy-sass-mixins/
+*/
+/*
 # @mixin center-vertical
 
 For vertically centering elements with a dynamic size. Works beautifully and
@@ -4101,7 +4109,6 @@ section > h2 {
     top: 1px;
     left: 1px;
     bottom: 1px;
-    width: 60px;
     padding: 20px 10px;
     margin-right: 5px;
     color: #fff;
