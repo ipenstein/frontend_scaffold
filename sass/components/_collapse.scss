@@ -5,10 +5,10 @@
 .collapse-toggle {
     position: relative;
     cursor: pointer;
-    padding: $base-line-height-px 0 0;
+    padding: $base-line-height 0 0;
     padding-left: 1.25em;
     margin: 0;
-    color: $grey1;
+    color: $collapse-color;
     &:first-child {
         padding-top: 0;
     }
@@ -19,7 +19,7 @@
         content: "\f054";
     }
     &:hover:before {
-        color: $blue1;
+        color: $collapse-icon-color;
     }
     &.collapse-open:before {
         left: 0;
@@ -30,5 +30,5 @@
 .collapse-content {
     display: none;
     margin: 0;
-    padding: $base-line-height-px 0 0;
+    padding: $base-line-height 0 0;
 }

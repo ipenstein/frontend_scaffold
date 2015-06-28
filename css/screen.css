@@ -387,6 +387,12 @@ textarea {
   h2,
   h3 {
     page-break-after: avoid; } }
+/*
+# Config
+*/
+/*
+# base/_webfonts.scss
+*/
 /*!
  *  Font Awesome 4.3.0 by @davegandy - http://fontawesome.io - @fontawesome
  *  License - http://fontawesome.io/license (Font: SIL OFL 1.1, CSS: MIT License)
@@ -2178,13 +2184,7 @@ textarea {
   content: ""; }
 
 /*
-# Settings
-*/
-/*
-# base/_webfonts.scss
-*/
-/*
-# base/_vars.scss
+# config/_vars.scss
 
 Make your changes here.
 */
@@ -2218,16 +2218,22 @@ many layers the application uses, making it easy to understand whatÔÇÖs going
 # Basic typography
 */
 /*
+# config/_components.scss
+*/
+/*
 # Forms
 */
 /*
 # Buttons
 */
 /*
-# Tables
+# Tabs
 */
 /*
-# Tabs
+# Collapse
+*/
+/*
+# Tables
 */
 /*
 # Tooltips
@@ -2666,8 +2672,8 @@ hr {
   border: 0;
   border-bottom: 2px dashed #333;
   height: 1px;
-  margin-top: 47px;
-  margin-bottom: 48px;
+  margin-top: 47pxpx;
+  margin-bottom: 48pxpx;
   padding: 0; }
 
 img {
@@ -2742,9 +2748,9 @@ body {
   background: #333 url("http://files.mimoymima.com/images/loading.gif") no-repeat center center; }
 
 /*
-# Elements
+# Components
 
-Styles for gui-elements.
+Styles for gui-components.
 */
 /*
 # elements/_forms.scss
@@ -3772,7 +3778,7 @@ Alert messages
 /*
 # Sections
 
-Styles for specific sections of the page (i.E. Header, Footer etc.).
+Styles for specific sections of the pages (i.E. Header, Footer etc.).
 */
 /*
 # sections/_header.scss

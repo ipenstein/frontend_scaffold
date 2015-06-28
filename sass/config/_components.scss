@@ -1,116 +1,6 @@
 /*
-# base/_vars.scss
-
-Make your changes here.
+# config/_components.scss
 */
-
-/*
-# Basic layout
-*/
-$max-width: 1050px;
-$min-width: 320px;
-
-// Breakpoint configuration
-// Feel free to add more breakpoints!
-$breakpoints: (
-    small:  500px,
-    medium: 700px,
-    big:    940px
-) !default;
-
-/*
-# Easygrid settings
-
-tools/_easygrid.scss
-*/
-$grid-brakepoint:       small;          // min-brakepoint where easygrid will become active
-$grid-gutter:           20px;           // horizontal gap between grid columns
-
-/*
-# Susy settings
-
-Global settings for susy grid system.
-http://susydocs.oddbird.net/en/latest/settings/
-*/
-$susy: (
-    //debug:            (image: show),
-    columns:            12,
-    gutters:            1/3,
-    container:          $max-width,
-    //gutter-position:  inside,
-    global-box-sizing:  border-box
-);
-
-/*
-# Z-Layers
-Gather all z-indexes into a single map, and stick to them. Then you know how
-many layers the application uses, making it easy to understand what’s going on
-(and, sooner or later, to debug).
-*/
-$z-layers: (
-    preloader:      999,
-    site-header:    30,
-    content:        10,
-    site-footer:    20,
-
-    logo:           30,
-    main-nav:       20,
-    hero:           10,
-    tooltips:       20
-);
-
-/*
-# Basic color palette
-*/
-$black:             #000;
-$grey1:             #333;
-$grey2:             #666;
-$grey3:             #999;
-$grey4:             #ccc;
-$grey5:             #eee;
-$white:             #fff;
-
-$violet1:           #a5037c;
-$green1:            #6fa938;
-$blue1:             #109acc;
-$red1:              #e53f32;
-$yellow1:           #e9ac00;
-$turquise1:         #86cee0;
-
-$violet2:           tint($violet1, 70%);
-$blue2:             tint($blue1, 70%);
-$green2:            tint($green1, 70%);
-$red2:              tint($red1, 70%);
-$yellow2:           tint($yellow1, 70%);
-$turquise2:         tint($turquise1, 70%);
-
-/*
-# Basic site colors
-*/
-$text-color:            $grey1;
-
-$link-color:            $blue1;
-$link-hover-color:      darken($blue1, 30%);
-$link-active-color:     $white;
-$link-active-bg-color:  $blue1;
-$link-visited-color:    $violet1;
-
-$hr-color:              $grey1;
-
-$body-bg-color:         $grey5;
-
-/*
-# Basic typography
-*/
-$font-family-1:         "Roboto", "Helvetica-Neue", Helvetica, Arial, sans-serif;
-$font-family-2:         "Oswald", Arial, sans-serif;
-$font-family-3:         "Roboto Mono", "Consolas", "Source Code Pro", "Courier New", Courier, monospace;
-
-$base-font-size:        16;             //in px without unit
-$base-line-height:      24;             //in px without unit
-
-$base-font-size-px:     #{$base-font-size}px;
-$base-line-height-px:   #{$base-line-height}px;
 
 
 /*
@@ -124,8 +14,8 @@ $form-line-height:              $base-line-height;
 $form-placeholder-color:        $grey3;
 $form-input-margin:             4px 0;
 $form-input-padding:            6px;
-$form-input-border:             1px solid $grey4; //#d9d9d9;
-$form-input-bg-color:           $grey5; //#fafafa
+$form-input-border:             1px solid $grey4;
+$form-input-bg-color:           $grey5;
 $form-input-hover-border-color: darken($grey4, 10%);
 $form-input-focus-border-color: $blue1;
 $form-error-color:              $red1;
@@ -135,7 +25,6 @@ $form-label-font-size:          14px;
 $form-gutter-width:             10px;
 $form-fieldset-bg-color:        $white;
 $form-fieldset-border:          1px solid $grey4;
-
 
 /*
 # Buttons
@@ -174,7 +63,7 @@ $btn-decline-hover-bg-color:    darken($red1, 5%);
 $btn-decline-active-bg-color:   darken($red1, 10%);
 
 // Sizes
-$btn-font-size:                 $base-font-size-px;
+$btn-font-size:                 $base-font-size;
 $btn-padding:                   6px 20px;
 $btn-next-border-radius:        17px;
 
@@ -185,6 +74,26 @@ $btn-sm-next-border-radius:     14px;
 $btn-big-font-size:             20px;
 $btn-big-padding:               10px 30px;
 $btn-big-next-border-radius:    23px;
+
+/*
+# Tabs
+*/
+$tab-padding:                   10px 20px;
+$tab-color:                     $grey3;
+$tab-border-color:              $grey2;
+$tab-bg-color:                  $grey5;
+$tab-hover-color:               $grey1;
+$tab-hover-border-color:        darken($turquise1, 40%);
+$tab-hover-bg-color:            $turquise1;
+$tab-active-color:              $grey1;
+$tab-active-border-color:       $grey2;
+$tab-active-bg-color:           $white;
+
+/*
+# Collapse
+*/
+$collapse-color:                $grey1;
+$collapse-icon-color:           $blue1;
 
 /*
 # Tables
@@ -200,20 +109,6 @@ $table-info-bg-color:           $blue2;
 $table-success-bg-color:        $green2;
 $table-warning-bg-color:        $yellow2;
 $table-error-bg-color:          $red2;
-
-/*
-# Tabs
-*/
-$tab-padding:                   10px 20px;
-$tab-color:                     $grey3;
-$tab-border-color:              $grey2;
-$tab-bg-color:                  $grey5;
-$tab-hover-color:               $grey1;
-$tab-hover-border-color:        darken($turquise1, 40%);
-$tab-hover-bg-color:            $turquise1;
-$tab-active-color:              $grey1;
-$tab-active-border-color:       $grey2;
-$tab-active-bg-color:           $white;
 
 /*
 # Tooltips
@@ -235,7 +130,7 @@ $alert-font-family:             $font-family-1;
 $alert-font-size:               14;
 $alert-line-height:             20;
 $alert-padding:                 10px 15px;
-$alert-margin:                  0 0 $base-line-height-px 0;
+$alert-margin:                  0 0 $base-line-height 0;
 $alert-border:                  1px solid;
 
 $alert-info-color:              $grey1;

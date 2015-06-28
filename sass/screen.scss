@@ -28,22 +28,18 @@ Main stylesheet file. All Sass-files are included here.
 // http://susy.oddbird.net/
 @import "../bower_components/susy/sass/susy";
 
-// Font Awesome
-// http://fortawesome.github.io/Font-Awesome/
-$fa-font-path: "../bower_components/font-awesome/fonts/";
-@import "../bower_components/font-awesome/scss/font-awesome";
-
 /*
-# Settings
+# Config
 */
-@import "base/webfonts";                // Local webfonts
-@import "base/vars";                    // Variables
+@import "config/webfonts";              // Webfonts
+@import "config/vars";                  // Global Variables
+@import "config/components";            // Component Variables
 
 /*
 # Tools
 */
-@import "tools/utilities";              // Other helpful classes and mixins
-@import "tools/responsive";             // Helpful classes and mixins for responsive web design
+@import "tools/utilities";              // Helpful mixins
+@import "tools/responsive";             // Mixins for responsive web design
 @import "tools/easygrid";               // Basic grid system
 @import "tools/animations";             // CSS3 Animations
 //@import "tools/flexbox";              // Flexbox styles
@@ -55,23 +51,23 @@ $fa-font-path: "../bower_components/font-awesome/fonts/";
 @import "base/scaffold";                // Basic site scaffold
 
 /*
-# Elements
+# Components
 
-Styles for gui-elements.
+Styles for gui-components.
 */
-@import "elements/forms";               // Formulare
-@import "elements/buttons";             // Buttons
-@import "elements/tabs";                // Tabs
-@import "elements/collapse";            // Collapsables
-@import "elements/tables";              // Tabellen
-@import "elements/tooltips";            // Tooltips
-@import "elements/alerts";              // (Fehler-)meldungen
-@import "elements/dropdowns";           // Dropdownmenüs
+@import "components/forms";               // Formulare
+@import "components/buttons";             // Buttons
+@import "components/tabs";                // Tabs
+@import "components/collapse";            // Collapsables
+@import "components/tables";              // Tabellen
+@import "components/tooltips";            // Tooltips
+@import "components/alerts";              // (Fehler-)meldungen
+@import "components/dropdowns";           // Dropdownmenüs
 
 /*
 # Sections
 
-Styles for specific sections of the page (i.E. Header, Footer etc.).
+Styles for specific sections of the pages (i.E. Header, Footer etc.).
 */
 @import "sections/header";              // Header
 @import "sections/navigation";          // Main navigation
@@ -84,9 +80,6 @@ Styles for specific sections of the page (i.E. Header, Footer etc.).
 Styles for specific pages.
 */
 @import "pages/home";                   // Startseite
-//@import "pages/contact";                // Kontakt
-//@import "pages/route";                  // Anfahrtsbeschreibung (Google Maps)
-//@import "pages/imprint";                // Impressum
 
 /*
 # Misc

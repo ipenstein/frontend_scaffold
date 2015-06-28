@@ -7,7 +7,7 @@
     @include micro-clearfix;
     display: block;
     border-bottom: 1px solid $tab-active-border-color;
-    margin-bottom: $base-line-height-px;
+    margin-bottom: $base-line-height;
     li {
         display: inline;
     }

@@ -64,11 +64,17 @@ http://css-tricks.com/snippets/css/less-mixin-for-rem-font-sizing/
 @param {Integer} $size - font-size (without px)
 @param {Integer} $line - line-height (without px)
 */
+@function strip-unit($num) {
+  @return $num / ($num * 0 + 1);
+}
+
 @mixin font-size($size: 16, $line: $size * 1.5) {
-    font-size: ($size) + px;
-    line-height: ($line) + px;
-    font-size: ($size / 10) + rem;
-    line-height: ($line / 10) + rem;
+    $size: strip-unit($size);
+    $line: strip-unit($line);
+    font-size: ($size) * 1px;
+    line-height: ($line) * 1px;
+    font-size: ($size / 10) * 1rem;
+    line-height: ($line / 10) * 1rem;
 }
 
 /*

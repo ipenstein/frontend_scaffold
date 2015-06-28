@@ -26,7 +26,7 @@ th {
             > th,
             > td {
                 padding: $table-cell-padding;
-                line-height: $base-line-height-px;
+                line-height: $base-line-height;
                 vertical-align: top;
                 border-top: 1px solid $table-border-color;
             }
@@ -133,7 +133,7 @@ Everything above that will display normally.
 .table-responsive {
     @include bp-max($table-breakpoint) {
         width: 100%;
-        margin-bottom: ($base-line-height-px);
+        margin-bottom: $base-line-height;
         overflow-y: hidden;
         overflow-x: scroll;
         -ms-overflow-style: -ms-autohiding-scrollbar;
