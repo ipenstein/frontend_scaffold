@@ -59,11 +59,11 @@ many layers the application uses, making it easy to understand what’s going on
 /*
 # Black and White
 */
-@function black($opacity: 1){
+@function black($opacity: 1) {
     @return rgba(0, 0, 0, $opacity);
 }
 
-@function white($opacity: 1){
+@function white($opacity: 1) {
     @return rgba(255, 255, 255, $opacity);
 }
 
