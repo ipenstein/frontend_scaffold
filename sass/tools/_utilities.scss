@@ -72,8 +72,8 @@ many layers the application uses, making it easy to understand what’s going on
 
 http://css-tricks.com/snippets/css/less-mixin-for-rem-font-sizing/
 
-@param {Integer} $size - font-size
-@param {Integer} $line - line-height
+@param {Integer} $size - font-size in px
+@param {Integer} $line - line-height in px
 */
 @function strip-unit($num) {
   @return $num / ($num * 0 + 1);

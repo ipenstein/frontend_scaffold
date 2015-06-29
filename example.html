@@ -451,7 +451,10 @@
                             Especially when dealing with responsive web design, it is recommended using relative values like <b>em</b> or <b>rem</b> for your <code class="css">font size</code>-allocations. By sticking to this principle you are able to change the size of your entire website's typography by editing only the <code class="css">font-size</code> value of the <code class="html">&lt;html&gt;</code>-Element. While <b>em</b> is relative to the font-size of its direct or nearest parent, <b>rem</b> is only relative to the html (root) font-size, making using the latter easier to scale type across the entire page.
                         </p>
                         <p>
-                            <code class="css">html { font-size: 62.5%; }</code> sets up a base font-size of 10px. Therefore 10px equals 1rem, 15px equals 1.5rem, 24px equals 2.4rem and so on. With this prerequisite you can use this mixin to set your font-sizes and line-heights the old way - with pixel values (without the "px"-units however) - and still write code that is fit for responsive web design.
+                            With this mixin you can use this mixin to set your font-sizes and line-heights the old way - with pixel values (with or without the "px"-units) - and still write code that is fit for responsive web design.
+                        </p>
+                        <p>
+                            Please keep in mind to use <code class="css">html { font-size: 62.5%; }</code> to set up a base font-size of 10px that equals 1rem (15px equals 1.5rem, 24px equals 2.4rem and so on).
                         </p>
                         <p>
                             Of course this mixin has a px-fallback for legacy browsers.
@@ -467,7 +470,7 @@
                             <div id="rem-scss" class="tab-content">
 <pre>
 <code class="css">p {
-    @include font-size(16, 24);
+    @include font-size(16px, 24px);
 }
 </code></pre>
                             </div>
