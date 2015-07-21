@@ -1703,7 +1703,7 @@ $susy: (
                         </div>
                     </div>
                     <h3>Custom radiobuttons and checkboxes</h3>
-                    <p>Use <code class="html">&lt;div class="custom-ticks"&gt;</code> as a wrapper around checkboxes and radiobuttons to activate custom styling. Please keep in mind to place your labels <b>after</b> the input-elements, not around them.</p>
+                    <p>Use <code class="html">&lt;div class="custom-ticks"&gt;</code> or <code class="html">&lt;div class="ticks custom-ticks"&gt;</code> as a wrapper around a group of checkboxes and radiobuttons to activate custom styling. Be sure to place your labels <b>after</b> the input-elements, not around them.</p>
                     <div class="example-tabs tabs-container">
                         <ul class="tabs">
                             <li><a class="example" href="#customcheck-example">Example</a></li>
@@ -1715,7 +1715,7 @@ $susy: (
                                 <form action="#" method="get">
                                     <div class="formrow">
                                         <div class="formitem">
-                                            <div class="custom-ticks">
+                                            <div class="ticks custom-ticks">
                                                 <input type="radio" name="salutation" id="salutation-mrs" value="mrs">
                                                 <label for="salutation-mrs">Mrs.</label>
                                                 <input type="radio" name="salutation" id="salutation-mr" value="mr">
@@ -1727,7 +1727,7 @@ $susy: (
                                     </div>
                                     <div class="formrow">
                                         <div class="formitem">
-                                            <div class="custom-ticks">
+                                            <div class="ticks custom-ticks">
                                                 <input type="checkbox" name="newsletter" id="custom-newsletter">
                                                 <label for="custom-newsletter">Subcribe to newsletter</label>
                                             </div>
@@ -1740,7 +1740,7 @@ $susy: (
 <pre><code class="html">&lt;form action="#" method="get"&gt;
     &lt;div class="formrow"&gt;
         &lt;div class="formitem"&gt;
-            &lt;div class="custom-ticks"&gt;
+            &lt;div class="ticks custom-ticks"&gt;
                 &lt;input type="radio" name="salutation" id="salutation-mrs" value="mrs"&gt;
                 &lt;label for="salutation-mrs"&gt;Mrs.&lt;/label&gt;
                 &lt;input type="radio" name="salutation" id="salutation-mr" value="mr"&gt;
@@ -1752,7 +1752,7 @@ $susy: (
     &lt;/div&gt;
     &lt;div class="formrow"&gt;
         &lt;div class="formitem"&gt;
-            &lt;div class="custom-ticks"&gt;
+            &lt;div class="ticks custom-ticks"&gt;
                 &lt;input type="checkbox" name="newsletter" id="custom-newsletter"&gt;
                 &lt;label for="custom-newsletter"&gt;Subcribe to newsletter&lt;/label&gt;
             &lt;/div&gt;

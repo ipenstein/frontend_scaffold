@@ -3070,6 +3070,15 @@ fieldset {
   -webkit-box-shadow: inset 0 0 0 4px #fff;
   box-shadow: inset 0 0 0 4px #fff; }
 
+.ticks.custom-ticks input[type="checkbox"] + label:before,
+.ticks.custom-ticks input[type="radio"] + label:before {
+  top: 2px;
+  bottom: 2px; }
+.ticks.custom-ticks input[type="checkbox"]:checked + label, .ticks.custom-ticks input[type="checkbox"]:checked + label:before,
+.ticks.custom-ticks input[type="radio"]:checked + label,
+.ticks.custom-ticks input[type="radio"]:checked + label:before {
+  color: #333; }
+
 /*
 # elements/_buttons.scss
 */
