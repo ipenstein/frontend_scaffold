@@ -55,14 +55,14 @@ Main stylesheet file. All Sass-files are included here.
 
 Styles for gui-components.
 */
-@import "components/forms";               // Formulare
-@import "components/buttons";             // Buttons
-@import "components/tabs";                // Tabs
-@import "components/collapse";            // Collapsables
-@import "components/tables";              // Tabellen
-@import "components/tooltips";            // Tooltips
-@import "components/alerts";              // (Fehler-)meldungen
-@import "components/dropdowns";           // Dropdownmenüs
+@import "components/forms";             // Formulare
+@import "components/buttons";           // Buttons
+@import "components/tabs";              // Tabs
+@import "components/collapse";          // Collapsables
+@import "components/tables";            // Tabellen
+@import "components/tooltips";          // Tooltips
+@import "components/alerts";            // (Fehler-)meldungen
+@import "components/dropdowns";         // Dropdownmenüs
 
 /*
 # Sections

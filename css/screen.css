@@ -2291,8 +2291,8 @@ many layers the application uses, making it easy to understand whatÔÇÖs going
 
 http://css-tricks.com/snippets/css/less-mixin-for-rem-font-sizing/
 
-@param {Integer} $size - font-size (without px)
-@param {Integer} $line - line-height (without px)
+@param {Integer} $size - font-size in px
+@param {Integer} $line - line-height in px
 */
 /*
 # @mixin word-wrap
@@ -4378,7 +4378,7 @@ pre h4,
     content: attr(data-tooltip);
     display: block;
     position: absolute;
-    height: 22px;
+    height: 34px;
     padding: 6px 10px;
     font-size: 14px;
     line-height: 22px;
@@ -4418,7 +4418,7 @@ pre h4,
     content: attr(data-tooltip);
     display: block;
     position: absolute;
-    height: 22px;
+    height: 34px;
     padding: 6px 10px;
     font-size: 14px;
     line-height: 22px;
