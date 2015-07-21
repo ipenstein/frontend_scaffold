@@ -56,6 +56,7 @@ Main stylesheet file. All Sass-files are included here.
 Styles for gui-components.
 */
 @import "components/forms";             // Formulare
+@import "components/custom-radiobuttons-checkboxes";             // Custom radiobuttons and checkboxes
 @import "components/buttons";           // Buttons
 @import "components/tabs";              // Tabs
 @import "components/collapse";          // Collapsables
