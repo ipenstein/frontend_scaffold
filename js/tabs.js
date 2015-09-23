@@ -41,7 +41,7 @@ $.fn.initTabs = function() {
     //        $( ".tabs li:first" , u ).click () ;
     //    }
     //} else {
-        $( "> .tabs > li:first" , u ).click () ;
+    $( "> .tabs > li:first" , u ).click () ;
     //}
 }
 
